@@ -1,0 +1,54 @@
+[user]
+	name = Genadi Samokovarov
+	email = gsamokovarov@gmail.com
+
+[alias]
+	switch = !legit switch \"$@\"
+	branches = !legit branches
+	sprout = !legit sprout \"$@\"
+	unpublish = !legit unpublish \"$@\"
+	harvest = !legit harvest \"$@\"
+	sync = !legit sync \"$@\"
+	publish = !legit publish \"$@\"
+	graft = !legit graft \"$@\"
+
+[core]
+	filemode = true
+	logallrefupdates = true
+	whitespace = space-before-tab, trailing-space
+
+[branch]
+	autosetupmerge = true
+
+[diff]
+	renames = copies
+	mnemonicprefix = true
+
+[push]
+	default = current
+
+[color]
+	ui = auto
+
+[color "diff"]
+	meta = blue bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+
+[color "branch"]
+	current = yellow reverse
+	local = yellow bold
+	remote = green bold
+	plain = red bold
+
+[color "status"]
+	added = yellow
+	changed = green bold
+	untracked = blue bold
+
+[hub]
+	http-clone = true
+
+[browser "gitscm"]
+	cmd = sh -c 'gnome-open http://git-scm.com/docs/$(basename $1 .html)' --
