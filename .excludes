@@ -3,6 +3,7 @@
 ./.gitmodules
 
 ./.excludes
+./.files.png
 ./Makefile
 ./README.markdown
 
