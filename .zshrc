@@ -1,5 +1,5 @@
 export ZSH=$HOME/.oh-my-zsh
-export ZSH_THEME="agnoster"
+export ZSH_THEME="jnrowe"
 
 plugins=(git ruby ssh-agent command-not-found)
 source $ZSH/oh-my-zsh.sh
