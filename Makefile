@@ -1,4 +1,4 @@
-INSTALL_TARGET ?= ~
+INSTALL_TARGET ?= $$HOME
 OH_MY_ZSH_REPO ?= https://github.com/robbyrussell/oh-my-zsh.git
 EXCLUDE_FILE    = .excludes
 
