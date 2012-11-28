@@ -56,6 +56,8 @@ set modeline
 set backspace=indent,eol,start
 set listchars=eol:¬,tab:→\
 
+set laststatus=2
+
 if has('mouse')
   set mouse=a
 endif
