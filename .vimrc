@@ -14,22 +14,23 @@ call vundle#rc()
 " Bundles
 " -------
 
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'bbommarito/vim-slim'
+Bundle 'ervandew/supertab'
+Bundle 'godlygeek/tabular'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'pangloss/vim-javascript'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/syntastic'
+Bundle 'thinca/vim-prettyprint'
+Bundle 'tpope/vim-cucumber'
+Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-haml'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-cucumber'
 Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-endwise'
-Bundle 'scrooloose/syntastic'
-Bundle 'scrooloose/nerdtree'
-Bundle 'godlygeek/tabular'
+Bundle 'tpope/vim-surround'
 Bundle 'vim-ruby/vim-ruby'
-Bundle 'ervandew/supertab'
-Bundle 'bbommarito/vim-slim'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'thinca/vim-prettyprint'
 
 " Settings
 " --------
