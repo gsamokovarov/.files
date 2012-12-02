@@ -43,6 +43,9 @@ set wildmenu
 set number
 set nowrap
 set showcmd
+set showmode
+set lazyredraw
+set ttyfast
 
 set incsearch
 set hlsearch
@@ -55,14 +58,16 @@ set scrolloff=5
 
 set modeline
 
+set clipboard+=unnamed
+
+set complete-=i
+set completeopt-=preview
+set completeopt+=longest
+
 set backspace=indent,eol,start
 set listchars=eol:¬,tab:→\
 
 set laststatus=2
-
-if has("autocmd")
-  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-endif
 
 if has('mouse')
   set mouse=a
@@ -82,5 +87,23 @@ if !has('gui_running')
 endif
 
 set langmap+=чявертъуиопшщасдфгхйклзьцжбнмЧЯВЕРТЪУИОПШЩАСДФГХЙКЛЗѝЦЖБНМ;`qwertyuiop[]asdfghjklzxcvbnm~QWERTYUIOP{}ASDFGHJKLZXCVBNM,ю\\,Ю\|,
+
+" Custom
+" ------
+
+if has('autocmd')
+  " Save the last position in a file.
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+
+  autocmd FileType c          set expandtab tabstop=4 softtabstop=4 omnifunc=ccomplete#Complete
+  autocmd FileType python     set expandtab tabstop=4 softtabstop=4 omnifunc=pythoncomplete#Complete
+  autocmd FileType ruby       set expandtab tabstop=2 softtabstop=2 omnifunc=rubycomplete#Complete
+  autocmd FileType javascript set expandtab tabstop=2 softtabstop=2 omnifunc=javascriptcomplete#Complete
+  autocmd FileType html       set expandtab tabstop=2 softtabstop=2 omnifunc=htmlcomplete#Complete
+  autocmd FileType css        set expandtab tabstop=2 softtabstop=2 omnifunc=csscomplete#Complete
+
+  highlight                  ExtraWhitespace ctermbg=red guibg=red
+  autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\t/ containedin=ALL
+endif
 
 " vim: set et ts=2 sts=2:
