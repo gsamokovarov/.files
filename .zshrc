@@ -8,6 +8,6 @@ export EDITOR=vim
 export PAGER=less
 export PATH=$PATH:~/bin
 
-[ -f /etc/profile.d/rvm.sh ] && source /etc/profile.d/rvm.sh
-[ -f ~/.aliases ] && source ~/.aliases
-[ -f ~/.localrc ] && source ~/.localrc
+if [ -f /etc/profile.d/rvm.sh ] ; then source /etc/profile.d/rvm.sh ; fi
+if [ -f ~/.aliases ] ; then source ~/.aliases ; fi
+if [ -f ~/.localrc ] ; then source ~/.localrc ; fi
