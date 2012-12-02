@@ -17,6 +17,7 @@ call vundle#rc()
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'bbommarito/vim-slim'
+Bundle 'ciaranm/detectindent'
 Bundle 'ervandew/supertab'
 Bundle 'godlygeek/tabular'
 Bundle 'kchmck/vim-coffee-script'
