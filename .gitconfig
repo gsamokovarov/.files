@@ -2,6 +2,9 @@
 	name = Genadi Samokovarov
 	email = gsamokovarov@gmail.com
 
+[alias]
+	master = checkout master
+
 [core]
 	filemode = true
 	logallrefupdates = true
