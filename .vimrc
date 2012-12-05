@@ -13,6 +13,7 @@ call vundle#rc()
 
 " Bundles
 " -------
+
 Bundle 'adinapoli/vim-markmultiple'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'altercation/vim-colors-solarized'
@@ -75,6 +76,8 @@ set laststatus=2
 if has('mouse')
   set mouse=a
 endif
+
+let g:mark_multiple_trigger = "<C-d>"
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
