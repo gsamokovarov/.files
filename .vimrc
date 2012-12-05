@@ -13,11 +13,10 @@ call vundle#rc()
 
 " Bundles
 " -------
-
-Bundle 'Lokaltog/vim-powerline'
 Bundle 'adinapoli/vim-markmultiple'
+Bundle 'Lokaltog/vim-powerline'
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'AndrewRadev/multichange.vim'
+Bundle 'AndrewRadev/splitjoin.vim'
 Bundle 'bbommarito/vim-slim'
 Bundle 'ciaranm/detectindent'
 Bundle 'ervandew/supertab'
