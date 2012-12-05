@@ -15,7 +15,9 @@ call vundle#rc()
 " -------
 
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'adinapoli/vim-markmultiple'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'AndrewRadev/multichange.vim'
 Bundle 'bbommarito/vim-slim'
 Bundle 'ciaranm/detectindent'
 Bundle 'ervandew/supertab'
