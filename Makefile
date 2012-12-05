@@ -14,6 +14,6 @@ install-oh-my-zsh:
 	@(cd ${INSTALL_TARGET} ; [ -d .oh-my-zsh ] || git clone ${OH_MY_ZSH_REPO} .oh-my-zsh)
 
 install-vim-bundles:
-	@vim -c 'BundleInstall' -c 'qa!'
+	@vim +BundleInstall +qall
 
 .PHONY: install install-oh-my-zsh
