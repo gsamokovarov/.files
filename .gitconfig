@@ -3,9 +3,10 @@
 	email = gsamokovarov@gmail.com
 
 [alias]
-	master = checkout master
 	branches = branch -l
+	master = checkout master
 	tags = tag -l
+	unstash = stash pop
 
 [core]
 	filemode = true
