@@ -4,6 +4,8 @@
 
 [alias]
 	master = checkout master
+	branches = branch -l
+	tags = tag -l
 
 [core]
 	filemode = true
