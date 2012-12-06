@@ -5,6 +5,7 @@
 [alias]
 	branches = branch -l
 	master = checkout master
+	sprout = checkout -b
 	tags = tag -l
 	unstash = stash pop
 
