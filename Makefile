@@ -16,4 +16,4 @@ install-oh-my-zsh:
 install-vim-bundles:
 	@vim +BundleInstall +qall
 
-.PHONY: install install-oh-my-zsh
+.PHONY: install install-oh-my-zsh install-vim-bundles
