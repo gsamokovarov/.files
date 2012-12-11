@@ -1,6 +1,5 @@
 # Use hub for git.
 alias git=hub
 
-# Ripped off from @StanAngeloff.
-alias tmux='tmux -q has-session && exec tmux attach-session -d || exec tmux new-session -s default -n default'
+# Shortcuts
 alias _=sudo
