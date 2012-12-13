@@ -3,4 +3,3 @@ alias git=hub
 
 # Shortcuts
 alias _=sudo
-alias be="bundle exec"
