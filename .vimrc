@@ -14,14 +14,15 @@ call vundle#rc()
 " Bundles
 " -------
 
-Bundle 'adinapoli/vim-markmultiple'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'altercation/vim-colors-solarized'
 Bundle 'AndrewRadev/splitjoin.vim'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'adinapoli/vim-markmultiple'
+Bundle 'altercation/vim-colors-solarized'
 Bundle 'bbommarito/vim-slim'
 Bundle 'ciaranm/detectindent'
 Bundle 'ervandew/supertab'
 Bundle 'godlygeek/tabular'
+Bundle 'gregsexton/gitv'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
 Bundle 'pangloss/vim-javascript'
@@ -79,6 +80,8 @@ endif
 
 let g:mark_multiple_trigger = "<C-d>"
 
+let g:detectindent_preferred_expandtab=1
+
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -100,6 +103,7 @@ set langmap+=чявертъуиопшщасдфгхйклзьцжбнмЧЯВЕ�
 if has('autocmd')
   " Save the last position in a file.
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+  autocmd BufReadPost * :DetectIndent
 
   autocmd FileType c          set expandtab tabstop=4 shiftwidth=4 softtabstop=4 omnifunc=ccomplete#Complete
   autocmd FileType python     set expandtab tabstop=4 shiftwidth=4 softtabstop=4 omnifunc=pythoncomplete#Complete
