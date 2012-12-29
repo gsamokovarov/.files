@@ -15,8 +15,8 @@ call vundle#rc()
 " -------
 
 Bundle 'AndrewRadev/splitjoin.vim'
+Bundle 'AndrewRadev/multichange.vim'
 Bundle 'Lokaltog/vim-powerline'
-Bundle 'adinapoli/vim-markmultiple'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'bbommarito/vim-slim'
 Bundle 'ciaranm/detectindent'
@@ -77,8 +77,6 @@ set laststatus=2
 if has('mouse')
   set mouse=a
 endif
-
-let g:mark_multiple_trigger = "<C-d>"
 
 let g:detectindent_preferred_expandtab=1
 
