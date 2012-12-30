@@ -14,8 +14,8 @@ call vundle#rc()
 " Bundles
 " -------
 
-Bundle 'AndrewRadev/splitjoin.vim'
 Bundle 'AndrewRadev/multichange.vim'
+Bundle 'AndrewRadev/splitjoin.vim'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'bbommarito/vim-slim'
@@ -28,6 +28,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'pangloss/vim-javascript'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
+Bundle 'sjl/gundo.vim'
 Bundle 'thinca/vim-prettyprint'
 Bundle 'tpope/vim-cucumber'
 Bundle 'tpope/vim-endwise'
