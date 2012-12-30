@@ -39,8 +39,8 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'vim-ruby/vim-ruby'
 
-" Settings
-" --------
+" Builtin Settings
+" ----------------
 
 filetype plugin indent on
 
@@ -79,6 +79,11 @@ if has('mouse')
   set mouse=a
 endif
 
+set langmap+=чявертъуиопшщасдфгхйклзьцжбнмЧЯВЕРТЪУИОПШЩАСДФГХЙКЛЗѝЦЖБНМ;`qwertyuiop[]asdfghjklzxcvbnm~QWERTYUIOP{}ASDFGHJKLZXCVBNM,ю\\,Ю\|,
+
+" Plugin settings
+" ---------------
+
 let g:detectindent_preferred_expandtab=1
 
 set statusline+=%#warningmsg#
@@ -93,8 +98,6 @@ if !has('gui_running')
   let g:solarized_termtrans=1
   set background=light
 endif
-
-set langmap+=чявертъуиопшщасдфгхйклзьцжбнмЧЯВЕРТЪУИОПШЩАСДФГХЙКЛЗѝЦЖБНМ;`qwertyuiop[]asdfghjklzxcvbnm~QWERTYUIOP{}ASDFGHJKLZXCVBNM,ю\\,Ю\|,
 
 " Custom
 " ------
@@ -114,5 +117,11 @@ if has('autocmd')
   highlight                  ExtraWhitespace ctermbg=red guibg=red
   autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\t/ containedin=ALL
 endif
+
+" Mappings
+" --------
+
+nnoremap <F5> :NERDTreeToggle<CR>
+nnoremap <F6> :GundoToggle<CR>
 
 " vim: set et ts=2 sts=2:
