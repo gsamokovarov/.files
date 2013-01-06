@@ -39,6 +39,7 @@ Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'vim-ruby/vim-ruby'
+
 " Builtin Settings
 " ----------------
 
@@ -93,10 +94,13 @@ let g:syntastic_enable_signs=1
 let g:syntastic_auto_jump=0
 let g:syntastic_disabled_filetypes=['c', 'cc', 'cpp', 'h', 'hh', 'hpp']
 
+" I'm using mostly terminal vim, so style for that.
 if !has('gui_running')
   colorscheme solarized
   let g:solarized_termtrans=1
   set background=light
+  let g:Powerline_symbols='fancy'
+  let g:Powerline_colorscheme='solarized'
 endif
 
 " Custom
