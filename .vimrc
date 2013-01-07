@@ -85,26 +85,36 @@ set langmap+=чявертъуиопшщасдфгхйклзьцжбнмЧЯВЕ�
 " Plugin settings
 " ---------------
 
+" Tell detectindet to use one tab, if it is confused.
 let g:detectindent_preferred_expandtab=1
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" Tell syntastic not to jump to errors and skip /c(++)?/ files.
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_jump=0
 let g:syntastic_disabled_filetypes=['c', 'cc', 'cpp', 'h', 'hh', 'hpp']
 
+" Style settings
+" --------------
+
+" Style a bit the syntastic messages.
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
 " I'm using mostly terminal vim, so style for that.
 if !has('gui_running')
+  " Use light solarized theme on a transparent terminal.
   colorscheme solarized
   let g:solarized_termtrans=1
   set background=light
+
+  " Style powerline for fancy symbols and the solarized theme.
   let g:Powerline_symbols='fancy'
   let g:Powerline_colorscheme='solarized'
 endif
 
-" Custom
-" ------
+" Custom settings
+" ---------------
 
 if has('autocmd')
   " Save the last position in a file.
