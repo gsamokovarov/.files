@@ -89,6 +89,8 @@ set langmap+=чявертъуиопшщасдфгхйклзьцжбнмЧЯВЕ�
 " Tell detectindet to use one tab, if it is confused.
 let g:detectindent_preferred_expandtab=1
 
+let NERDTreeIgnore=['\~$', '\.py[co]$']
+
 " Tell syntastic not to jump to errors and skip /c(++)?/ files.
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_jump=0
