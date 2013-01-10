@@ -121,7 +121,7 @@ if !has('gui_running')
 
   " Style powerline for fancy symbols and the solarized theme.
   let g:Powerline_symbols='fancy'
-  let g:Powerline_colorscheme='solarized'
+  let g:Powerline_colorscheme='solarized256'
 endif
 
 " Custom settings
