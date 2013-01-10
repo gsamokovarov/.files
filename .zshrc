@@ -11,8 +11,13 @@ source $ZSH/oh-my-zsh.sh
 # Add color support for terminals pretending to be xterm.
 [ $TERM = xterm ] && export TERM=xterm-256color
 
-export EDITOR=vim # Help out programs spawning editors based on $EDITOR.
-export PAGER=less # The same for pagers, just use less.
+# Help out programs spawning editors based on $EDITOR. The same for pagers,
+# just use less for them.
+export EDITOR=vim
+export PAGER=less
+
+# One of my setups is actually quite unhappy about this...
+export PATH=~/bin:$PATH
 
 if [ -f /etc/profile.d/rvm.sh ] ; then source /etc/profile.d/rvm.sh ; fi
 if [ -f ~/.aliases ] ; then source ~/.aliases ; fi
