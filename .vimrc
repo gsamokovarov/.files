@@ -101,8 +101,8 @@ let g:syntastic_auto_jump=0
 let g:syntastic_disabled_filetypes=['c', 'cc', 'cpp', 'h', 'hh', 'hpp']
 
 " Add some fancy symbols for the error and warning messages.
-let g:syntastic_error_symbol='✗'
-let g:syntastic_warning_symbol='⚠'
+let g:syntastic_error_symbol='▶'
+let g:syntastic_warning_symbol='▶'
 
 " Style settings
 " --------------
