@@ -125,6 +125,12 @@ if !has('gui_running')
   let g:Powerline_colorscheme='solarized256'
 endif
 
+" Have rainbow paratheses everywhere
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
 " Custom settings
 " ---------------
 
