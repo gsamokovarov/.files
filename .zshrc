@@ -3,6 +3,9 @@
 export ZSH=$HOME/.oh-my-zsh
 export ZSH_THEME="jnrowe"
 
+# One of my setups is actually quite unhappy about this...
+export PATH=~/bin:$PATH
+
 # Add Ubuntu's command-not-found ZSH alternative and use ssh-agent on the first
 # terminal run. The other ones are just candies.
 plugins=(git ruby bundler ssh-agent command-not-found)
@@ -16,8 +19,8 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR=vim
 export PAGER=less
 
-# One of my setups is actually quite unhappy about this...
-export PATH=~/bin:$PATH
+# Use the custom solarized LS colors.
+if [ -f ~/.dir_colors ] ; then eval `dircolors ~/.dir_colors` ; fi
 
 if [ -f /etc/profile.d/rvm.sh ] ; then source /etc/profile.d/rvm.sh ; fi
 if [ -f ~/.aliases ] ; then source ~/.aliases ; fi
