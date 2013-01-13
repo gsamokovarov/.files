@@ -2,4 +2,4 @@
 
 SESSION_NAME=${1:default}
 
-tmux -q has-session && exec tmux attach-session -d || exec tmux new-session -s $SESSION_NAME -n $SESSION_NAME
+tmux -q has-session && exec tmux -2 attach-session -d || exec tmux -2 new-session -s $SESSION_NAME -n $SESSION_NAME
