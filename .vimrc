@@ -159,4 +159,7 @@ nnoremap <F5> :NERDTreeToggle<CR>
 nnoremap <F6> :GundoToggle<CR>
 nnoremap <F7> :set paste!<CR>
 
+nnoremap <Tab> gt
+nnoremap <S-Tab> gT
+
 " vim: set et ts=2 sts=2:
