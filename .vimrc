@@ -91,8 +91,8 @@ set langmap+=чявертъуиопшщасдфгхйклзьцжбнмЧЯВЕ�
 " Tell detectindet to use one tab, if it is confused.
 let g:detectindent_preferred_expandtab=1
 
-" Ignore tilda editor (and vim) leftovers and python junk in the NERDTree.
-let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$', '\.swp$', '\.swo$']
+" Ignore tilda editor leftovers and python junk in the NERDTree.
+let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$']
 
 " Ignore tilda, .sw? and python junk in CtrlP too.
 let g:ctrlp_custom_ignore='\v[\/](\~$)|(\.sw[op]$)|(\.py[co]$)'
