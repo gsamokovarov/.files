@@ -83,7 +83,13 @@ if has('mouse')
   set mouse=a
 endif
 
+" Make you keyboard actually do something whily you are switched to Cyrillic
+" layout. Ripped of @StanAngeloff
 set langmap+=чявертъуиопшщасдфгхйклзьцжбнмЧЯВЕРТЪУИОПШЩАСДФГХЙКЛЗѝЦЖБНМ;`qwertyuiop[]asdfghjklzxcvbnm~QWERTYUIOP{}ASDFGHJKLZXCVBNM,ю\\,Ю\|,
+
+" Widely ignore vim swapfiles, tilda backups, python bytecode and .git dirs.
+" Some plugins actually respect those.
+set wildignore+=*.sw?,*~,*py?,.git
 
 " Plugin settings
 " ---------------
@@ -91,11 +97,9 @@ set langmap+=чявертъуиопшщасдфгхйклзьцжбнмЧЯВЕ�
 " Tell detectindet to use one tab, if it is confused.
 let g:detectindent_preferred_expandtab=1
 
-" Ignore tilda editor leftovers and python junk in the NERDTree.
+" Ignore tilda editor leftovers and python junk in the NERDTree. Keep those as
+" NERDTree seem not to respect wildignore
 let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$']
-
-" Ignore tilda, .sw? and python junk in CtrlP too.
-let g:ctrlp_custom_ignore='\v[\/](\~$)|(\..*.sw[op]$)|(\.py[co]$)'
 
 " Tell syntastic not to jump to errors and skip /c(++)?/ files.
 let g:syntastic_enable_signs=1
