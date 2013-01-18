@@ -75,7 +75,7 @@ set completeopt-=preview
 set completeopt+=longest
 
 set backspace=indent,eol,start
-set listchars=eol:¬,tab:→
+set listchars=tab:▸\ ,eol:¬
 
 set laststatus=2
 
