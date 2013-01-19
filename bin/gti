@@ -17,7 +17,7 @@ from sys import stdout, argv, exit
 from termios import TIOCGWINSZ
 from time import sleep
 
-GIT_NAME = 'git'
+GIT_NAME = 'hub'
 GTI_SPEED = 50
 
 def term_width():
