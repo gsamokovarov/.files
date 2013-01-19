@@ -1,0 +1,81 @@
+#!/usr/bin/env python
+
+'''
+    ,---------------.
+   /  /``````|``````\\
+  /  /_______|_______\\________
+ |]      GTI |'       |        |]
+ =  .:-:.    |________|  .:-:.  =
+  `   X   --------------   X   '
+    ':-:'                ':-:'
+'''
+
+from fcntl import ioctl
+from os import getenv, execv, execvp
+from struct import unpack
+from sys import stdout, argv, exit
+from termios import TIOCGWINSZ
+from time import sleep
+
+GIT_NAME = 'git'
+GTI_SPEED = 50
+
+def term_width():
+    return unpack('hh', ioctl(1, TIOCGWINSZ, '    '))[1]
+
+def init_space():
+    stdout.write('\n\n\n\n\n\n\n')
+
+def move_to_top():
+    stdout.write('\033[7A')
+
+def line_at(start_x, s):
+    if start_x > 1:
+        stdout.write('\033[%dC' % start_x)
+    x = start_x
+    for i in range(len(s)):
+        if (x > 0 and x < TERM_WIDTH):
+            stdout.write(s[i])
+        x += 1
+    stdout.write('\n')
+    stdout.flush()
+
+def draw_car(x):
+    move_to_top()
+    line_at(x,     "   ,---------------.")
+    line_at(x,     "  /  /``````|``````\\\\")
+    line_at(x,     " /  /_______|_______\\\\________")
+    line_at(x,     "|]      GTI |'       |        |]")
+    if x % 2:
+        line_at(x, "=  .-:-.    |________|  .-:-.  =")
+        line_at(x, " `  -+-  --------------  -+-  '")
+        line_at(x, "   '-:-'                '-:-'  ")
+    else:
+        line_at(x, "=  .:-:.    |________|  .:-:.  =")
+        line_at(x, " `   X   --------------   X   '")
+        line_at(x, "   ':-:'                ':-:'  ")
+
+def clear_car(x):
+    move_to_top()
+    line_at(x, '  ')
+    line_at(x, '  ')
+    line_at(x, '  ')
+    line_at(x, '  ')
+    line_at(x, '  ')
+    line_at(x, '  ')
+    line_at(x, '  ')
+
+if __name__ == '__main__':
+    TERM_WIDTH = term_width()
+    SLEEP_DELAY = (TERM_WIDTH + GTI_SPEED) / 10000.0
+    init_space()
+    for i in range(-20, TERM_WIDTH):
+        draw_car(i)
+        sleep(SLEEP_DELAY)
+        clear_car(i)
+    git_path = getenv('GIT')
+    if git_path:
+        execv(git_path, argv)
+    else:
+        execvp(GIT_NAME, argv)
+    exit(1)
