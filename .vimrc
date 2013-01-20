@@ -43,6 +43,7 @@ Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'vim-ruby/vim-ruby'
+Bundle 'vim-scripts/AutoTag'
 
 " Builtin Settings
 " ----------------
