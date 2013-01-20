@@ -26,8 +26,10 @@ def term_width():
 def init_space():
     stdout.write('\n\n\n\n\n\n\n')
 
-def move_to_top():
+def move_to_top(flush=False):
     stdout.write('\033[7A')
+    if flush:
+        stdout.flush()
 
 def line_at(start_x, s):
     if start_x > 1:
@@ -73,6 +75,7 @@ if __name__ == '__main__':
         draw_car(i)
         sleep(SLEEP_DELAY)
         clear_car(i)
+    move_to_top(flush=True)
     git_path = getenv('GIT')
     if git_path:
         execv(git_path, argv)
