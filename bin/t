@@ -1,5 +1,11 @@
 #!/bin/bash
 
-SESSION_NAME=${1:default}
+set -x
 
-tmux -q has-session && exec tmux -2 attach-session -d || exec tmux -2 new-session -s $SESSION_NAME -n $SESSION_NAME
+TMUX=${TMUX:-"tmux -2"}
+SESSION_NAME=${1:-`basename $PWD`}
+
+$TMUX has -t $SESSION_NAME 2>/dev/null && {
+  exec $TMUX attach -t $SESSION_NAME
+}
+exec $TMUX new -s $SESSION_NAME
