@@ -3,6 +3,3 @@ alias git=hub
 
 # Some systems may not be happy with the $TERM of screen-256colors, so be sane.
 alias ssh="TERM=xterm ssh"
-
-# Some nice looking shortcuts.
-alias _=sudo
