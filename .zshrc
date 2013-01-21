@@ -24,4 +24,4 @@ if [ -f ~/.dir_colors ] ; then eval `dircolors ~/.dir_colors` ; fi
 
 if [ -f /etc/profile.d/rvm.sh ] ; then source /etc/profile.d/rvm.sh ; fi
 if [ -f ~/.aliases ] ; then source ~/.aliases ; fi
-if [ -f ~/.localrc ] ; then source ~/.localrc ; fi
+if [ -f ~/.zshrc.local ] ; then source ~/.zshrc.local ; fi
