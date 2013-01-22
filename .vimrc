@@ -90,9 +90,9 @@ endif
 " layout. Ripped of @StanAngeloff
 set langmap+=чявертъуиопшщасдфгхйклзьцжбнмЧЯВЕРТЪУИОПШЩАСДФГХЙКЛЗѝЦЖБНМ;`qwertyuiop[]asdfghjklzxcvbnm~QWERTYUIOP{}ASDFGHJKLZXCVBNM,ю\\,Ю\|,
 
-" Widely ignore vim swapfiles, tilda backups, python bytecode and .git dirs.
-" Some plugins actually respect those.
-set wildignore+=*.sw?,*~,*py?,.git
+" Widely ignore vim swapfiles, tilda backups, python bytecode, .git dirs and
+" node modules. Some plugins actually respect those.
+set wildignore+=*.sw?,*~,*py?,.git,node_modules
 
 " Plugin settings
 " ---------------
