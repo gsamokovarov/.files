@@ -164,7 +164,8 @@ endif
 
 nnoremap <F5> :NERDTreeToggle<CR>
 nnoremap <F6> :GundoToggle<CR>
-nnoremap <F7> :set paste!<CR>
+nnoremap <F7> :TagbarToggle<CR>
+nnoremap <F8> :set paste!<CR>
 
 nnoremap <Tab> gt
 nnoremap <S-Tab> gT
@@ -173,7 +174,7 @@ nnoremap <S-Tab> gT
 " --------------
 
 if filereadable(expand("~/.vimrc.local"))
-  source ~/.vimrc.local
+  source ~/.vimrc.local
 endif
 
 " vim: set et ts=2 sts=2:
