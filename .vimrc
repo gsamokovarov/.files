@@ -52,36 +52,26 @@ Bundle 'vim-scripts/AutoTag'
 
 filetype plugin indent on
 
-set ruler
 set wildmenu
 set number
 set nowrap
-set showcmd
 set showmode
 set lazyredraw
 set ttyfast
 
-set incsearch
 set hlsearch
 
-set autoindent
-set autoread
 set ignorecase
 set smartcase
-set scrolloff=5
 
 set modeline
 
 set clipboard+=unnamed
 
-set complete-=i
 set completeopt-=preview
 set completeopt+=longest
 
-set backspace=indent,eol,start
 set listchars=tab:▸\ ,eol:¬
-
-set laststatus=2
 
 if has('mouse')
   set mouse=a
