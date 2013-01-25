@@ -1,5 +1,6 @@
-# Your todo.txt directory.
-export TODO_DIR=$(dirname "$0")
+# I usually create todo's only for my projects, it makes sense for me the
+# todo's to live with them.
+export TODO_DIR=$PWD
 
 # Your todo/done/report.txt locations
 export TODO_FILE="$TODO_DIR/todo.txt"
