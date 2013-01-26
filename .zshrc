@@ -11,7 +11,7 @@ export PATH=~/bin:$PATH
 plugins=(git ruby bundler ssh-agent command-not-found)
 source $ZSH/oh-my-zsh.sh
 
-# oh-my-zsh alias sl to ls by default. I really like the lokomotive, though.
+# oh-my-zsh alias sl to ls by default. I really like the locomotive, though.
 unalias sl
 
 # Add color support for terminals pretending to be xterm.
