@@ -71,6 +71,7 @@ set clipboard+=unnamed
 set completeopt-=preview
 set completeopt+=longest
 
+set list
 set listchars=tab:▸\ ,eol:¬
 
 if has('mouse')
