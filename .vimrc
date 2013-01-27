@@ -162,6 +162,10 @@ nnoremap <F8> :set paste!<CR>
 nnoremap <Tab> gt
 nnoremap <S-Tab> gT
 
+" Custom commands
+command Light execute "set background=light"
+command Dark execute "set background=dark"
+
 " Local settings
 " --------------
 
