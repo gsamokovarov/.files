@@ -1,1 +1,2 @@
+#!/usr/bin/env bash
 vim +set\ noruler\ nonumber\ noshowmode +`shuf -e Nyancat Nyancat2 | head -1`

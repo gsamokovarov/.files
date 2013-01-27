@@ -1,5 +1,4 @@
-#!/bin/bash
-
+#!/usr/bin/env bash
 TMUX=${TMUX:-"tmux -2"}
 SESSION_NAME=${1:-`basename $PWD`}
 
