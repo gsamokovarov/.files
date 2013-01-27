@@ -1,6 +1,5 @@
 INSTALL_PATH   ?= $$HOME
 OH_MY_ZSH_REPO ?= https://github.com/robbyrussell/oh-my-zsh.git
-COLORS_REPO    ?= https://github.com/sigurdga/gnome-terminal-colors-solarized.git
 EXCLUDES       ?= ./.git ./.gitmodules ./.files.png ./Makefile ./README.markdown .*.sw?
 
 TAR_CMD   = tar `echo $(EXCLUDES) | tr ' ' '\n' | awk '{print "--exclude " $$0}'` --create `find .`
