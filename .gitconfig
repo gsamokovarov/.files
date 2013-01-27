@@ -6,8 +6,10 @@
 	branches = branch -l
 	master = checkout master
 	sprout = checkout -b
+	switch = checkout
 	tags = tag -l
 	unstash = stash pop
+	remotes = remote
 
 [core]
 	filemode = true
