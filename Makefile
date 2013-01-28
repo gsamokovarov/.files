@@ -16,4 +16,4 @@ install-oh-my-zsh:
 install-vim-bundles:
 	@vim +BundleInstall +qall
 
-.PHONY: install install-dotfiles install-colors install-oh-my-zsh install-vim-bundles
+.PHONY: install install-dotfiles install-oh-my-zsh install-vim-bundles
