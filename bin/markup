@@ -26,7 +26,7 @@ markdown = Redcarpet::Markdown.new AlbinoHTML,
   :tables              => true
 
 html  = markdown.render File.read(ARGV[0])
-title = File.basename ARGV[0]
+title = ARGV[1] || File.basename(ARGV[0], File.extname(ARGV[0]))
 
 puts ERB.new(DATA.read).result
 
