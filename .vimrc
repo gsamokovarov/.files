@@ -116,16 +116,27 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-" I'm using mostly terminal vim, so style for that first.
-if !has('gui_running')
-  " Use light solarized theme on a transparent terminal.
-  colorscheme solarized
-  let g:solarized_termtrans=1
-  set background=light
 
-  " Style powerline for fancy symbols and the solarized theme.
-  let g:Powerline_symbols='fancy'
-  let g:Powerline_colorscheme='solarized256'
+" Use light solarized theme on both the terminal and the GUI.
+colorscheme solarized
+set background=light
+
+" Style powerline for fancy symbols and the solarized theme.
+let g:Powerline_symbols='fancy'
+let g:Powerline_colorscheme='solarized256'
+
+" I use gnome-terminal - its not slow, but its not fast either. Sometimes I
+" need more snappier feel. The GUI one gives me that.
+if has('gui_running')
+  " Set-up a powerline capable font.
+  set guifont=Ubuntu\ Mono\ 13
+
+  " If we are running in a gui like GVim, make sure to hide every annoying UI
+  " piece. I don't like the GTK tabs, scrollbars and especially the toolbar.
+  set guioptions=
+else
+  " Use light solarized theme on a transparent terminal.
+  let g:solarized_termtrans=1
 endif
 
 " Have rainbow paratheses everywhere
