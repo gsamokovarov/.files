@@ -111,12 +111,14 @@ let g:syntastic_warning_symbol='▶'
 " Style settings
 " --------------
 
+
+
 " Style a bit the syntastic messages.
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-" I'm using mostly terminal vim, so style for that.
+" I'm using mostly terminal vim, so style for that first.
 if !has('gui_running')
   " Use light solarized theme on a transparent terminal.
   colorscheme solarized
@@ -126,6 +128,10 @@ if !has('gui_running')
   " Style powerline for fancy symbols and the solarized theme.
   let g:Powerline_symbols='fancy'
   let g:Powerline_colorscheme='solarized256'
+else
+  " If we are running in a gui like GVim, make sure to hide the annoying
+  " toolbar.
+  set guioptions-=t
 endif
 
 " Have rainbow paratheses everywhere
@@ -166,6 +172,8 @@ nnoremap <Tab> gt
 nnoremap <S-Tab> gT
 
 " Custom commands
+" ---------------
+
 command Light execute "set background=light"
 command Dark execute "set background=dark"
 
