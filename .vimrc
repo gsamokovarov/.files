@@ -111,8 +111,6 @@ let g:syntastic_warning_symbol='▶'
 " Style settings
 " --------------
 
-
-
 " Style a bit the syntastic messages.
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -128,10 +126,6 @@ if !has('gui_running')
   " Style powerline for fancy symbols and the solarized theme.
   let g:Powerline_symbols='fancy'
   let g:Powerline_colorscheme='solarized256'
-else
-  " If we are running in a gui like GVim, make sure to hide the annoying
-  " toolbar.
-  set guioptions-=t
 endif
 
 " Have rainbow paratheses everywhere
