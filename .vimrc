@@ -165,6 +165,10 @@ nnoremap <F8> :set paste!<CR>
 nnoremap <Tab> gt
 nnoremap <S-Tab> gT
 
+" Jump to syntastic errors with Shift-{Up,Down}.
+map <S-Up> <ESC>:lprev<CR>
+map <S-Down> <ESC>:lnext<CR>
+
 " Custom commands
 " ---------------
 
