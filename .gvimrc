@@ -9,8 +9,6 @@ set guifont=Inconsolata\ for\ Powerline\ Medium\ 13
 let g:Powerline_symbols='fancy'
 let g:Powerline_colorscheme='solarized256'
 
-" If we are running in a gui like GVim, make sure to hide the annoying
-" toolbar and scrollbars
-set guioptions-=T
-set guioptions-=r
-set guioptions-=l
+" If we are running in a gui like GVim, make sure to hide every annoying UI
+" piece, like GTK tabs, scrollbars, toolbars and etc.
+set guioptions=
