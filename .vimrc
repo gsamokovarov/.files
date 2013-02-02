@@ -173,12 +173,17 @@ nnoremap <F6> :GundoToggle<CR>
 nnoremap <F7> :TagbarToggle<CR>
 nnoremap <F8> :set paste!<CR>
 
+" Navigate through tabs with Tab and Shift-Tab.
 nnoremap <Tab> gt
 nnoremap <S-Tab> gT
 
 " Jump to syntastic errors with Shift-{Up,Down}.
 map <S-Up> <ESC>:lprev<CR>
 map <S-Down> <ESC>:lnext<CR>
+
+" Write using `sudo` in COMMAND mode if the file is read-only.
+" Ripped off @StanAngeloff.
+cnoremap w!! w !sudo tee % >/dev/null
 
 " Custom commands
 " ---------------
