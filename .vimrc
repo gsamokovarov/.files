@@ -117,8 +117,7 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 
-" Use light solarized theme on both the terminal and the GUI.
-colorscheme solarized
+" Use light background by default.
 set background=light
 
 " Style powerline for fancy symbols and the solarized theme.
@@ -128,6 +127,9 @@ let g:Powerline_colorscheme='solarized256'
 " I use gnome-terminal - its not slow, but its not fast either. Sometimes I
 " need more snappier feel. The GUI one gives me that.
 if has('gui_running')
+  " Set the GUI solarized theme.
+  colorscheme solarized
+
   " Set-up a powerline capable font.
   set guifont=Ubuntu\ Mono\ 13
 
@@ -135,8 +137,10 @@ if has('gui_running')
   " piece. I don't like the GTK tabs, scrollbars and especially the toolbar.
   set guioptions=
 else
-  " Use light solarized theme on a transparent terminal.
+  " Use light solarized theme on a transparent terminal. It's important to set
+  " the termtrans before the colorscheme.
   let g:solarized_termtrans=1
+  colorscheme solarized
 endif
 
 " Have rainbow paratheses everywhere
