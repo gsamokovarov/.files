@@ -189,6 +189,9 @@ map <S-Down> <ESC>:lnext<CR>
 " Ripped off @StanAngeloff.
 cnoremap w!! w !sudo tee % >/dev/null
 
+" Format a paragraph to fit in `textwidth`.
+nnoremap <leader>f gqip
+
 " Custom commands
 " ---------------
 
