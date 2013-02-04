@@ -116,7 +116,6 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-
 " Use light background by default.
 set background=light
 
