@@ -136,7 +136,10 @@ if has('gui_running')
   " piece. I don't like the GTK tabs, scrollbars and especially the toolbar.
   set guioptions=
 else
-  " Use light solarized theme on a transparent terminal. It's important to set
+  " Use 256 colors on the terminal.
+  set t_Co=256
+
+  " Use light solarized theme on a transparent terminal. Its important to set
   " the termtrans before the colorscheme.
   let g:solarized_termtrans=1
   colorscheme solarized
