@@ -84,7 +84,7 @@ set langmap+=чявертъуиопшщасдфгхйклзьцжбнмЧЯВЕ�
 
 " Widely ignore vim swapfiles, tilda backups, python bytecode, .git dirs and
 " node modules. Some plugins actually respect those.
-set wildignore+=*.sw?,*~,*py?,.git,node_modules
+set wildignore+=*.sw?,*.un~*~,*py?,.git,node_modules
 
 " Plugin settings
 " ---------------
