@@ -228,7 +228,7 @@ __END__
       article h3,
       article h4,
       article h5 {
-        font-weight: normal;margin-top:2em;color:black
+        font-weight: normal;margin-top:1em;color:black
       }
       article h1,
       article h2 {
