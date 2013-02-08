@@ -90,7 +90,7 @@ if has('mouse')
   set mouse=a
 endif
 
-" Make you keyboard actually do something whily you are switched to Cyrillic
+" Make you keyboard actually do something while you are switched to Cyrillic
 " layout. Ripped of @StanAngeloff
 set langmap+=чявертъуиопшщасдфгхйклзьцжбнмЧЯВЕРТЪУИОПШЩАСДФГХЙКЛЗѝЦЖБНМ;`qwertyuiop[]asdfghjklzxcvbnm~QWERTYUIOP{}ASDFGHJKLZXCVBNM,ю\\,Ю\|,
 
