@@ -55,6 +55,15 @@ Bundle 'vim-scripts/AutoTag'
 
 filetype plugin indent on
 
+" Keep the backup files in ~/.vim/backup.
+set backupdir=$HOME/.vim/backup
+
+" Keep the undp files in ~/.vim/undo.
+set undodir=$HOME/.vim/undo
+
+" Keep the swap files in ~/.vim/swap.
+set directory=$HOME/.vim/swap
+
 set wildmenu
 set number
 set nowrap
