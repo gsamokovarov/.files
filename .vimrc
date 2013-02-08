@@ -17,6 +17,7 @@ call vundle#rc()
 Bundle 'AndrewRadev/multichange.vim'
 Bundle 'AndrewRadev/splitjoin.vim'
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'SirVer/ultisnips'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'bbommarito/vim-slim'
 Bundle 'ciaranm/detectindent'
@@ -48,7 +49,6 @@ Bundle 'tpope/vim-sensible'
 Bundle 'tpope/vim-surround'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'vim-scripts/AutoTag'
-Bundle 'SirVer/ultisnips'
 
 
 " Builtin Settings
