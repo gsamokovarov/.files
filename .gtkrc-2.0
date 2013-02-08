@@ -1,0 +1,4 @@
+style "solarized-light-base3" {
+  bg[NORMAL] = "#FDF6E3"
+}
+widget "vim-main-window.*GtkForm" style "solarized-light-base3"
