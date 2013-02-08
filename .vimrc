@@ -47,6 +47,8 @@ Bundle 'tpope/vim-sensible'
 Bundle 'tpope/vim-surround'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'vim-scripts/AutoTag'
+Bundle 'jistr/vim-nerdtree-tabs'
+
 
 " Builtin Settings
 " ----------------
@@ -95,6 +97,10 @@ let g:detectindent_preferred_expandtab=1
 " Ignore tilda editor leftovers and python junk in the NERDTree. Keep those as
 " NERDTree seem not to respect wildignore
 let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$']
+
+" Just use one NERDTree on all tabs and don't show it on startup.
+let g:nerdtree_tabs_open_on_gui_startup=0
+let g:nerdtree_tabs_open_on_new_tab=0
 
 " Tell syntastic not to jump to errors and skip /c(++)?/ files.
 let g:syntastic_enable_signs=1
@@ -171,7 +177,7 @@ endif
 " Mappings
 " --------
 
-nnoremap <F5> :NERDTreeToggle<CR>
+nnoremap <F5> :NERDTreeTabsToggle<CR>
 nnoremap <F6> :GundoToggle<CR>
 nnoremap <F7> :TagbarToggle<CR>
 nnoremap <F8> :set paste!<CR>
