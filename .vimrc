@@ -48,6 +48,7 @@ Bundle 'tpope/vim-sensible'
 Bundle 'tpope/vim-surround'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'vim-scripts/AutoTag'
+Bundle 'SirVer/ultisnips'
 
 
 " Builtin Settings
