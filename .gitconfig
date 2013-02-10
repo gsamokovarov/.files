@@ -4,12 +4,13 @@
 
 [alias]
 	branches = branch -l
+	tags = tag -l
+	remotes = remote
 	master = checkout master
 	sprout = checkout -b
 	switch = checkout
-	tags = tag -l
 	unstash = stash pop
-	remotes = remote
+	forget = checkout -f
 
 [core]
 	filemode = true
@@ -25,26 +26,6 @@
 
 [push]
 	default = current
-
-[color]
-	ui = auto
-
-[color "diff"]
-	meta = blue bold
-	frag = magenta bold
-	old = red bold
-	new = green bold
-
-[color "branch"]
-	current = yellow reverse
-	local = yellow bold
-	remote = green bold
-	plain = red bold
-
-[color "status"]
-	added = yellow
-	changed = green bold
-	untracked = blue bold
 
 [hub]
 	http-clone = true
