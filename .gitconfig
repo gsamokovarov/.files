@@ -17,6 +17,9 @@
 	logallrefupdates = true
 	whitespace = space-before-tab, trailing-space
 
+[color]
+	ui = auto
+
 [branch]
 	autosetupmerge = true
 
