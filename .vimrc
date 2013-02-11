@@ -50,7 +50,6 @@ Bundle 'tpope/vim-surround'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'vim-scripts/AutoTag'
 
-
 " Builtin Settings
 " ----------------
 
