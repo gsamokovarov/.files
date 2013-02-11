@@ -108,6 +108,10 @@ let g:detectindent_preferred_expandtab=1
 " NERDTree seem not to respect wildignore
 let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$']
 
+" Use a minimal UI for the NERDTree. No wasted space on 'Press ? for help'
+" headers.
+let NERDTreeMinimalUI=1
+
 " Just use one NERDTree on all tabs and don't show it on startup.
 let g:nerdtree_tabs_open_on_gui_startup=0
 let g:nerdtree_tabs_open_on_new_tab=0
