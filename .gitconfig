@@ -11,6 +11,7 @@
 	switch = checkout
 	unstash = stash pop
 	forget = checkout -f
+	choose = !git checkout $(zenity --list --column Branches `git branch --list | cut -d ' ' -f 3 | xargs echo`)
 
 [core]
 	filemode = true
