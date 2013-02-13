@@ -1,5 +1,6 @@
 INSTALL_PATH   ?= $$HOME
 OH_MY_ZSH_REPO ?= https://github.com/robbyrussell/oh-my-zsh.git
+VUNDLE_REPO    ?= https://github.com/gmarik/vundle.git
 EXCLUDES       ?= ./.git ./.gitmodules ./.files.png ./Makefile ./README.markdown .*.sw? .*.un~
 
 TAR_CMD   = tar `echo $(EXCLUDES) | tr ' ' '\n' | awk '{print "--exclude " $$0}'` --create `find .`
@@ -13,7 +14,10 @@ install-dotfiles:
 install-oh-my-zsh:
 	@(cd ${INSTALL_PATH} ; [ -d .oh-my-zsh ] || git clone ${OH_MY_ZSH_REPO} .oh-my-zsh)
 
-install-vim-bundles:
+install-vundle:
+	@(cd ${INSTALL_PATH} ; [ -d .vim/bundle/vundle ] || git clone ${VUNDLE_REPO} .vim/bundle/vundle)
+
+install-vim-bundles: install-vundle
 	@vim +BundleInstall +qall
 
 .PHONY: install install-dotfiles install-oh-my-zsh install-vim-bundles
