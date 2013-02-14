@@ -212,6 +212,11 @@ nnoremap <leader>f gqip
 " Restore last visual selection in Visual mode.
 nnoremap <leader>v V`]
 
+" I always mess these up on my Das Keyboard. Trying to work around them at
+" least in Visual mode.
+vnoremap u y
+vnoremap U U
+
 " Custom commands
 " ---------------
 
