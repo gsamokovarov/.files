@@ -14,6 +14,9 @@ source $ZSH/oh-my-zsh.sh
 # oh-my-zsh alias sl to ls by default. I really like the locomotive, though.
 unalias sl
 
+# Ubuntu's node.js package binary is named nodejs.
+alias nodejs=node
+
 # Add color support for terminals pretending to be xterm.
 [ $TERM = xterm ] && export TERM=xterm-256color
 
