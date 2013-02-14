@@ -209,6 +209,9 @@ cnoremap w!! w !sudo tee % >/dev/null
 " Format a paragraph to fit in `textwidth`.
 nnoremap <leader>f gqip
 
+" Restore last visual selection in Visual mode.
+nnoremap <leader>v V`]
+
 " Custom commands
 " ---------------
 
