@@ -156,16 +156,16 @@ else
   colorscheme solarized
 endif
 
-" Have rainbow paratheses everywhere
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
-
 " Custom settings
 " ---------------
 
 if has('autocmd')
+  " Have rainbow paratheses everywhere
+  au VimEnter * RainbowParenthesesToggle
+  au Syntax * RainbowParenthesesLoadRound
+  au Syntax * RainbowParenthesesLoadSquare
+  au Syntax * RainbowParenthesesLoadBraces
+
   " Save the last position in a file.
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
   autocmd BufReadPost * :DetectIndent
