@@ -34,5 +34,8 @@ alias ssh="TERM=xterm ssh"
 # Use the custom solarized LS colors.
 if [ -f ~/.dir_colors ] ; then eval `dircolors ~/.dir_colors` ; fi
 
+# Use rvm if globally defined.
 if [ -f /etc/profile.d/rvm.sh ] ; then source /etc/profile.d/rvm.sh ; fi
+
+# Include local machine custom settings.
 if [ -f ~/.zshrc.local ] ; then source ~/.zshrc.local ; fi
