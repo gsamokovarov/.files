@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-TMUX=${TMUX:-"tmux -2"}
+TMUX_CMD=${TMUX_CMD:-"tmux -2"}
 SESSION_NAME=${1:-`basename $PWD`}
 
-$TMUX has -t $SESSION_NAME 2>/dev/null && {
-  exec $TMUX attach -t $SESSION_NAME
+$TMUX_CMD has -t $SESSION_NAME 2>/dev/null && {
+  exec $TMUX_CMD attach -t $SESSION_NAME
 }
-exec $TMUX new -s $SESSION_NAME
+exec $TMUX_CMD new -s $SESSION_NAME
