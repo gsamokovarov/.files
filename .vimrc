@@ -160,7 +160,7 @@ endif
 " ---------------
 
 if has('autocmd')
-  " Have rainbow paratheses everywhere
+  " Have rainbow parantheses everywhere
   au VimEnter * RainbowParenthesesToggle
   au Syntax * RainbowParenthesesLoadRound
   au Syntax * RainbowParenthesesLoadSquare
