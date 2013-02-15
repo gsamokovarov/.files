@@ -11,12 +11,6 @@ export PATH=~/bin:$PATH
 plugins=(git ruby bundler ssh-agent command-not-found)
 source $ZSH/oh-my-zsh.sh
 
-# oh-my-zsh alias sl to ls by default. I really like the locomotive, though.
-unalias sl
-
-# Ubuntu's node.js package binary is named nodejs.
-alias nodejs=node
-
 # Add color support for terminals pretending to be xterm.
 [ $TERM = xterm ] && export TERM=xterm-256color
 
@@ -25,9 +19,20 @@ alias nodejs=node
 export EDITOR=vim
 export PAGER=less
 
+# oh-my-zsh alias sl to ls by default. I really like the locomotive, though.
+unalias sl
+
+# Ubuntu's node.js package binary is named nodejs.
+alias nodejs=node
+
+# Use hub for git.
+alias git=hub
+
+# Some systems may not be happy with the $TERM of screen-256colors, so be sane.
+alias ssh="TERM=xterm ssh"
+
 # Use the custom solarized LS colors.
 if [ -f ~/.dir_colors ] ; then eval `dircolors ~/.dir_colors` ; fi
 
 if [ -f /etc/profile.d/rvm.sh ] ; then source /etc/profile.d/rvm.sh ; fi
-if [ -f ~/.aliases ] ; then source ~/.aliases ; fi
 if [ -f ~/.zshrc.local ] ; then source ~/.zshrc.local ; fi
