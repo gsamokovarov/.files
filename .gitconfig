@@ -32,7 +32,7 @@
 	default = current
 
 [hub]
-	http-clone = true
+	protocol = ssh
 
 [browser "gitscm"]
 	cmd = sh -c 'gnome-open http://git-scm.com/docs/$(basename $1 .html)' --
