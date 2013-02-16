@@ -61,27 +61,39 @@ set undodir=$HOME/.vim/undo
 " Keep the swap files in ~/.vim/swap.
 set directory=$HOME/.vim/swap
 
-set wildmenu
+" Display the line numbers.
 set number
+
+" Don't wrap the long lines.
 set nowrap
+
+" Display the current Vim mode.
 set showmode
+
+" Don't redraw while executing commands from macros and registers.
 set lazyredraw
 set ttyfast
 
+" Highlight the search term.
 set hlsearch
 
+" Ignore the case when searching.
 set ignorecase
 set smartcase
 
+" Read Vim file specific options.
 set modeline
 
+" Copy to the X clipboard too.
 set clipboard+=unnamed
 
-set completeopt-=preview
+" Always complete the longest available first.
 set completeopt+=longest
 
+" Display tabs as ▸ and newlines as ¬, when `list` is set.
 set listchars=tab:▸\ ,eol:¬
 
+" Enable the mouse support if Vim supports it.
 if has('mouse')
   set mouse=a
 endif
