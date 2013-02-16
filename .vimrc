@@ -93,6 +93,9 @@ set completeopt+=longest
 " Display tabs as ▸ and newlines as ¬, when `list` is set.
 set listchars=tab:▸\ ,eol:¬
 
+" Highlight the 80th column as an unobtrusive reminder.
+set colorcolumn=80
+
 " Enable the mouse support if Vim supports it.
 if has('mouse')
   set mouse=a
