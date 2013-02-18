@@ -222,8 +222,8 @@ cnoremap w!! w !sudo tee % >/dev/null
 " Format a paragraph to fit in `textwidth`.
 nnoremap <leader>f gqip
 
-" Restore last visual selection in Visual mode.
-nnoremap <leader>v V`]
+" Restore the last visual selection in Visual mode.
+nnoremap <leader>v gv
 
 " I always mess these up on my Das Keyboard. Trying to work around them at
 " least in Visual mode.
