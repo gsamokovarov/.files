@@ -20,4 +20,4 @@ install-vundle:
 install-vim-bundles: install-vundle
 	@vim +BundleInstall +qall
 
-.PHONY: install install-dotfiles install-oh-my-zsh install-vim-bundles
+.PHONY: install install-dotfiles install-oh-my-zsh install-vundle install-vim-bundles
