@@ -146,6 +146,9 @@ set background=light
 let g:Powerline_symbols='fancy'
 let g:Powerline_colorscheme='solarized256'
 
+" Use 256 colors on the terminal.
+set t_Co=256
+
 " I use gnome-terminal - its not slow, but its not fast either. Sometimes I
 " need more snappier feel. The GUI one gives me that.
 if has('gui_running')
@@ -159,9 +162,6 @@ if has('gui_running')
   " piece. I don't like the GTK tabs, scrollbars and especially the toolbar.
   set guioptions=
 else
-  " Use 256 colors on the terminal.
-  set t_Co=256
-
   " Use light solarized theme on a transparent terminal. Its important to set
   " the termtrans before the colorscheme.
   let g:solarized_termtrans=1
