@@ -223,11 +223,11 @@ cnoremap w!! w !sudo tee % >/dev/null
 nnoremap <leader>f gqip
 vnoremap <leader>f gq
 
-" Restore the last visual selection in Visual mode.
+" Restore the last selection in VISUAL mode.
 nnoremap <leader>v gv
 
 " I always mess these up on my Das Keyboard. Trying to work around them at
-" least in Visual mode.
+" least in VISUAL mode.
 vnoremap u y
 vnoremap U U
 
