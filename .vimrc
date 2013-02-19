@@ -139,11 +139,6 @@ let g:syntastic_warning_symbol='→'
 " Style settings
 " --------------
 
-" Style a bit the syntastic messages.
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
 " Use light background by default.
 set background=light
 
