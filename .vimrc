@@ -224,7 +224,7 @@ nnoremap <leader>v gv
 " I always mess these up on my Das Keyboard. Trying to work around them at
 " least in VISUAL mode.
 vnoremap u y
-vnoremap U U
+vnoremap U Y
 
 " Custom commands
 " ---------------
