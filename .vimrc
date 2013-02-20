@@ -224,6 +224,9 @@ nnoremap <leader>v gv
 " Strip semicolons out of the whole file.
 nnoremap <leader>; :%s/;//g<CR>
 
+" Convert `//` comments to `#` ones.
+nnoremap <leader># :%s/\/\//#/g<CR>
+
 " I always mess these up on my Das Keyboard. Trying to work around them at
 " least in VISUAL mode.
 vnoremap u y
