@@ -2,8 +2,8 @@ autoload -U add-zsh-hook
 autoload -Uz vcs_info
 
 zstyle ':vcs_info:*' actionformats \
-       '%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%F{3}|%F{1}%a%F{5}]'
-zstyle ':vcs_info:*' formats '%F{2}%s%F{7}:%F{2}(%F{1}%b%F{2})'
+       '%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%F{3}|%F{1}%a%F{5}]%f'
+zstyle ':vcs_info:*' formats '%F{2}%s%F{7}:%F{2}(%F{1}%b%F{2})%f'
 zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%F{1}:%F{3}%r'
 zstyle ':vcs_info:*' enable git
 
@@ -12,17 +12,8 @@ add-zsh-hook precmd prompt_vcs
 prompt_vcs () {
     vcs_info
 
-    if [ "${vcs_info_msg_0_}" = "" ]; then
-        dir_status="%F{2}"
-    elif [[ $(git diff --cached --name-status 2>/dev/null ) != "" ]]; then
+    if [ "${vcs_info_msg_0_}" != "" ]; then
         vcs_info_msg_0_=" ${vcs_info_msg_0_}"
-        dir_status="%F{1}"
-    elif [[ $(git diff --name-status 2>/dev/null ) != "" ]]; then
-        vcs_info_msg_0_=" ${vcs_info_msg_0_}"
-        dir_status="%F{3}"
-    else
-        vcs_info_msg_0_=" ${vcs_info_msg_0_}"
-        dir_status="%F{2}"
     fi
 }
 
@@ -36,6 +27,6 @@ function {
 
 local ret_status="%(?:%{$fg_bold[green]%}☺ :%{$fg_bold[red]%}☹ )"
 
-PROMPT='${ret_status}%{$fg[blue]%}${PROMPT_HOST}%{$fg_bold[green]%}%p %{$fg_bold[yellow]%}%2~${vcs_info_msg_0_}${dir_status}%{$reset_color%} '
+PROMPT='${ret_status}%{$fg[blue]%}${PROMPT_HOST}%{$fg_bold[green]%}%p %{$fg_bold[yellow]%}%2~${vcs_info_msg_0_}%{$reset_color%} '
 
 #  vim: set ft=zsh ts=4 sw=4 et:
