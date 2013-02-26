@@ -1,7 +1,8 @@
 # Setup the oh-my-zsh home directory and theme. I like the jnrowe one. Its
 # minimalistic and suites me well.
-export ZSH=$HOME/.oh-my-zsh
-export ZSH_THEME="jnrowe"
+export ZSH=~/.oh-my-zsh
+export ZSH_CUSTOM=~
+export ZSH_THEME=".smiley"
 
 # One of my setups is actually quite unhappy about this...
 export PATH=~/bin:$PATH
