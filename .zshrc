@@ -1,5 +1,4 @@
-# Setup the oh-my-zsh home directory and theme. I like the jnrowe one. Its
-# minimalistic and suites me well.
+# Setup the oh-my-zsh home directory and theme.
 export ZSH=~/.oh-my-zsh
 export ZSH_CUSTOM=~
 export ZSH_THEME=".smiley"
