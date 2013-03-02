@@ -149,7 +149,7 @@ set background=light
 let g:Powerline_symbols='fancy'
 let g:Powerline_colorscheme='solarized256'
 
-" Use 256 colors on the terminal.
+" Use 256 colors everywhere.
 set t_Co=256
 
 " I use gnome-terminal - its not slow, but its not fast either. Sometimes I
