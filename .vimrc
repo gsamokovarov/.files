@@ -14,6 +14,7 @@ call vundle#rc()
 " Bundles
 " -------
 
+Bundle 'AndrewRadev/inline_edit.vim'
 Bundle 'AndrewRadev/multichange.vim'
 Bundle 'AndrewRadev/splitjoin.vim'
 Bundle 'Lokaltog/vim-powerline'
