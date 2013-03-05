@@ -36,8 +36,11 @@ if [ -f ~/.dir_colors ] ; then eval `dircolors ~/.dir_colors` ; fi
 
 # Use rvm if globally defined. If there is no global config, look for a local
 # one too.
-if [ -f /etc/profile.d/rvm.sh ] ; then source /etc/profile.d/rvm.sh ; fi
-if [ -f ~/.rvm/scripts/rvm ] ; then source ~/.rvm/scripts/rvm ; fi
+if [ -f ~/.rvm/scripts/rvm ] ; then
+  source ~/.rvm/scripts/rvm
+elif [ -f /etc/profile.d/rvm.sh ] ; then
+  source /etc/profile.d/rvm.sh
+fi
 
 # Include local machine custom settings.
 if [ -f ~/.zshrc.local ] ; then source ~/.zshrc.local ; fi
