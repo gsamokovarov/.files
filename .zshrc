@@ -19,9 +19,6 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR=vim
 export PAGER=less
 
-# Try to make the Java GTK friendly.
-export _JAVA_OPTIONS='-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
-
 # oh-my-zsh alias sl to ls by default. I really like the locomotive, though.
 unalias sl
 
