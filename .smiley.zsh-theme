@@ -10,23 +10,24 @@ zstyle ':vcs_info:*' enable git
 add-zsh-hook precmd prompt_vcs
 
 prompt_vcs () {
-    vcs_info
+  vcs_info
 
-    if [ "${vcs_info_msg_0_}" != "" ]; then
-        vcs_info_msg_0_=" ${vcs_info_msg_0_}"
-    fi
+  if [ "${vcs_info_msg_0_}" != "" ]; then
+    vcs_info_msg_0_=" ${vcs_info_msg_0_}"
+  fi
 }
 
 function {
-    if [[ -n "$SSH_CLIENT" ]]; then
-        PROMPT_HOST="($HOST)"
-    else
-        PROMPT_HOST=''
-    fi
+  if [[ -n "$SSH_CLIENT" ]]; then
+    PROMPT_HOST="($HOST)"
+  else
+    PROMPT_HOST=''
+  fi
 }
 
 local ret_status="%(?:%{$fg_bold[green]%}☺ :%{$fg_bold[red]%}☹ )"
 
-PROMPT='${ret_status}%{$fg[blue]%}${PROMPT_HOST}%{$fg_bold[green]%}%p %{$fg_bold[yellow]%}%2~${vcs_info_msg_0_}%{$reset_color%} '
+PROMPT='${ret_status}%{$fg[blue]%} ${PROMPT_HOST}%{$fg_bold[green]%}%p%{$reset_color%}'
+RPROMPT='%{$fg_bold[yellow]%}%2~${vcs_info_msg_0_}%{$reset_color%}'
 
 #  vim: set ft=zsh ts=4 sw=4 et:
