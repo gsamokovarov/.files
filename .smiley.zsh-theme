@@ -1,25 +1,14 @@
-autoload -U add-zsh-hook
-autoload -Uz vcs_info
+local smiley_or_sad_face="%(?:%{$fg_bold[yellow]%}☺ :%{$fg_bold[red]%}☹ )"
 
-zstyle ':vcs_info:*' actionformats \
-       '%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%F{3}|%F{1}%a%F{5}]%f'
-zstyle ':vcs_info:*' formats '%F{2}%s%F{7}:%F{2}(%F{1}%b%F{2})%f'
-zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%F{1}:%F{3}%r'
-zstyle ':vcs_info:*' enable git
+local remote_host_info=''
+if [[ -n "$SSH_CLIENT" ]]; then
+  remote_host_info="%{$fg_bold[red]%}[%{$fg_no_bold[cyan]%}%B${HOST}%b%{$fg_bold[red]%}]%{$reset_color%} "
+fi
 
-add-zsh-hook precmd vcs_info
+PROMPT='${remote_host_info}${smiley_or_sad_face} %{$reset_color%}'
+RPROMPT='$(git_prompt_info) %2~%{$reset_color%}'
 
-function {
-  if [[ -n "$SSH_CLIENT" ]]; then
-    PROMPT_HOST="($HOST)"
-  else
-    PROMPT_HOST=''
-  fi
-}
-
-local ret_status="%(?:%{$fg_bold[green]%}☺ :%{$fg_bold[red]%}☹ )"
-
-PROMPT='${ret_status}%{$fg[blue]%} ${PROMPT_HOST}%{$fg_bold[green]%}%p%{$reset_color%}'
-RPROMPT='${vcs_info_msg_0_}%{$fg_bold[yellow]%} %2~%{$reset_color%}'
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[red]%}[%{$fg_no_bold[cyan]%}%B"
+ZSH_THEME_GIT_PROMPT_SUFFIX="%b%{$fg_bold[red]%}]%{$reset_color%}"
 
 #  vim: set ft=zsh ts=4 sw=4 et:
