@@ -6,7 +6,7 @@ if [[ -n "$SSH_CLIENT" ]]; then
 fi
 
 PROMPT='${remote_host_info}${smiley_or_sad_face} %{$reset_color%}'
-RPROMPT='$(git_prompt_info) %2~%{$reset_color%}'
+RPROMPT='$(git_prompt_info) %B%2~%b%{$reset_color%}'
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[red]%}[%{$fg_no_bold[cyan]%}%B"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%b%{$fg_bold[red]%}]%{$reset_color%}"
