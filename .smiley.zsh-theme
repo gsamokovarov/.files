@@ -1,4 +1,4 @@
-local smiley_or_sad_face="%(?:%{$fg_bold[yellow]%}☺ :%{$fg_bold[red]%}☹ )"
+local smiley_or_sad_face="%(?:%{$fg_bold[yellow]%}%B☺ %b:%{$fg_bold[red]%}%B☹ %b)"
 
 local remote_host_info=''
 if [[ -n "$SSH_CLIENT" ]]; then
