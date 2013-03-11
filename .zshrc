@@ -25,10 +25,6 @@ unalias sl
 # Ubuntu's node.js package binary is named nodejs.
 alias nodejs=node
 
-# Fancy `git pull` and `git push` shortcuts. Keep those before the `hub` alias.
-alias "git ["="git pull"
-alias "git ]"="git push"
-
 # Use hub for git.
 alias git=hub
 
