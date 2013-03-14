@@ -93,9 +93,6 @@ set clipboard+=unnamed
 " Always complete the longest available first.
 set completeopt+=longest
 
-" Display tabs as ▸ and newlines as ¬, when `list` is set.
-set listchars=tab:▸\ ,eol:¬
-
 " Highlight the 80th column as an unobtrusive reminder.
 set colorcolumn=80
 
