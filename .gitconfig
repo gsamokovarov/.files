@@ -3,7 +3,7 @@
 	email = gsamokovarov@gmail.com
 
 [alias]
-	branches = branch -l
+	branches = branch -a
 	tags = tag -l
 	remotes = remote
 	master = checkout master
@@ -11,7 +11,6 @@
 	switch = checkout
 	unstash = stash pop
 	forget = checkout -f
-	choose = !git checkout $(zenity --list --column Branches `git branch -a | cut -d ' ' -f 3 | xargs echo`)
 
 [core]
 	filemode = true

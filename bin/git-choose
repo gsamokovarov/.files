@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+ALL_GIT_BRANCHES=$(git branch -a | cut -d ' ' -f 3 | xargs echo)
+exec git checkout $(zenity --list --column Branches $ALL_GIT_BRANCHES)
