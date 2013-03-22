@@ -229,6 +229,9 @@ vnoremap <leader>f gq
 " Restore the last selection in VISUAL mode.
 nnoremap <leader>v gv
 
+" Edit an inlined chunked of code in it's own buffer.
+vnoremap <leader>e :InlineEdit<CR>
+
 " I always mess these up on my Das Keyboard. Trying to work around them at
 " least in VISUAL mode.
 vnoremap u y
