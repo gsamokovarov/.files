@@ -1,7 +1,6 @@
 # The smiley faces in Ubuntu Mono or Inconsolata are displayed in the width of
-# two characters. That's why I keep a space after them, so they render nicely
-# on my terminal. Feel free to change that for you fonts with exporting your
-# own smiley faces with the variables below.
+# two characters. I keep a space after them, so they render nicely on my
+# terminal. Feel free to export the variables below for your fonts.
 export SMILEY_HAPPY_FACE="☺ "
 export SMILEY_SAD_FACE="☹ "
 
