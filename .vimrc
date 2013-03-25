@@ -107,7 +107,7 @@ if has('mouse')
 endif
 
 " Make you keyboard actually do something while you are switched to Cyrillic
-" layout. Ripped of @StanAngeloff
+" layout. Ripped off @StanAngeloff
 set langmap+=чявертъуиопшщасдфгхйклзьцжбнмЧЯВЕРТЪУИОПШЩАСДФГХЙКЛЗѝЦЖБНМ;`qwertyuiop[]asdfghjklzxcvbnm~QWERTYUIOP{}ASDFGHJKLZXCVBNM,ю\\,Ю\|,
 
 " Widely ignore vim swapfiles, tilda backups, python bytecode, .git dirs and
@@ -233,6 +233,16 @@ nnoremap <leader>v gv
 " Edit an inlined chunked of code in it's own buffer.
 nnoremap <leader>e :InlineEdit<CR>
 vnoremap <leader>e :InlineEdit<CR>
+
+" Align commands.Ripped off @StanAngeloff.
+nnoremap <leader>a= :Tabularize /=<CR>
+vnoremap <leader>a= m[om]:Tabularize /=<CR>`]V`[
+
+nnoremap <leader>a> :Tabularize /=><CR>
+vnoremap <leader>a> m[om]:Tabularize /=><CR>`]V`[
+
+nnoremap <leader>a: :Tabularize /:\zs/l0l1<CR>
+vnoremap <leader>a: m[om]:Tabularize /:\zs/l0l1<CR>`]V`[
 
 " I always mess these up on my Das Keyboard. Trying to work around them at
 " least in VISUAL mode.
