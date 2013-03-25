@@ -122,7 +122,7 @@ let g:detectindent_preferred_expandtab=1
 
 " Ignore tilda editor leftovers and python junk in the NERDTree. Keep those as
 " NERDTree seem not to respect wildignore
-let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$']
+let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$', '^.sass-cache$']
 
 " Use a minimal UI for the NERDTree. No wasted space on 'Press ? for help'
 " headers.
