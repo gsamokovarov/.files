@@ -30,7 +30,9 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'koron/nyancat-vim'
+Bundle 'leshill/vim-json'
 Bundle 'majutsushi/tagbar'
+Bundle 'matchit.zip'
 Bundle 'mileszs/ack.vim'
 Bundle 'mintplant/vim-literate-coffeescript.git'
 Bundle 'pangloss/vim-javascript'
@@ -52,7 +54,6 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-sensible'
 Bundle 'tpope/vim-surround'
 Bundle 'vim-ruby/vim-ruby'
-Bundle 'matchit.zip'
 
 " Builtin Settings
 " ----------------
