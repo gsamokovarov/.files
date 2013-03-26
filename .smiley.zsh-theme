@@ -10,7 +10,7 @@ smiley_face() {
 
 smiley_remote_host_info() {
   if [[ -n "$SSH_CLIENT" ]]; then
-    print "%{$fg_bold[red]%}[%{$fg_no_bold[cyan]%}%B${HOST}%b%{$fg_bold[red]%}]%{$reset_color%} "
+    print "%{$fg_bold[red]%}%B${HOST}%b%{$reset_color%} "
   fi
 }
 
