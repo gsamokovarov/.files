@@ -17,5 +17,5 @@ smiley_remote_host_info() {
 PROMPT='$(smiley_remote_host_info)$(smiley_face) %{$reset_color%}'
 RPROMPT='%B%~%b$(git_prompt_info)%{$reset_color%}'
 
-ZSH_THEME_GIT_PROMPT_PREFIX=" %{$fg_bold[red]%}[%{$fg_no_bold[cyan]%}%B"
-ZSH_THEME_GIT_PROMPT_SUFFIX="%b%{$fg_bold[red]%}]%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_PREFIX=" %{$fg_bold[red]%}⭠ %{$fg_no_bold[cyan]%}%B"
+ZSH_THEME_GIT_PROMPT_SUFFIX="%b%{$reset_color%}"
