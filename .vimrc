@@ -53,6 +53,7 @@ Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-sensible'
 Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-tbone'
 Bundle 'vim-ruby/vim-ruby'
 
 " Builtin Settings
