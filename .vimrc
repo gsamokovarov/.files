@@ -236,7 +236,7 @@ nnoremap <leader>v gv
 nnoremap <leader>e :InlineEdit<CR>
 vnoremap <leader>e :InlineEdit<CR>
 
-" Align commands.Ripped off @StanAngeloff.
+" Align commands. Ripped off @StanAngeloff.
 nnoremap <leader>a= :Tabularize /=<CR>
 vnoremap <leader>a= m[om]:Tabularize /=<CR>`]V`[
 
