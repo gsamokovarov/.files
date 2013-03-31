@@ -205,9 +205,16 @@ endif
 " --------
 
 nnoremap <F5> :NERDTreeTabsToggle<CR>
+inoremap <F5> <ESC>:NERDTreeTabsToggle<CR>
+
 nnoremap <F6> :GundoToggle<CR>
+inoremap <F6> <ESC>:GundoToggle<CR>
+
 nnoremap <F7> :TagbarToggle<CR>
+inoremap <F7> <ESC>:TagbarToggle<CR>
+
 nnoremap <F8> :set paste!<CR>
+inoremap <F8> <ESC>:set paste!<CR>
 
 " Navigate through tabs with Tab and Shift-Tab.
 nnoremap <Tab> gt
