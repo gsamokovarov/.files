@@ -216,13 +216,13 @@ inoremap <F7> <ESC>:TagbarToggle<CR>
 nnoremap <F8> :set paste!<CR>
 inoremap <F8> <ESC>:set paste!<CR>
 
-" Navigate through tabs with Tab and Shift-Tab.
-nnoremap <Tab> gt
-nnoremap <S-Tab> gT
+" Navigate through tabs with <leader>(Tab and Shift-Tab).
+nnoremap <leader><Tab> gt
+nnoremap <leader><S-Tab> gT
 
-" Navigate through windows with <leader>(Tab and Shift-Tab).
-nnoremap <leader><Tab> <C-w><C-w>
-nnoremap <leader><S-Tab> <C-w><C-W>
+" Navigate through windows with Tab and Shift-Tab.
+nnoremap <Tab> <C-w><C-w>
+nnoremap <S-Tab> <C-w><C-W>
 
 " Jump to syntastic errors with Shift-{Up,Down}.
 map <S-Up> <ESC>:lprev<CR>
