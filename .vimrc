@@ -136,7 +136,6 @@ let g:nerdtree_tabs_open_on_new_tab=0
 " Tell syntastic not to jump to errors and skip /c(++)?/ files.
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_jump=0
-let g:syntastic_disabled_filetypes=['c', 'cc', 'cpp', 'h', 'hh', 'hpp']
 
 " Add some fancy symbols for the error and warning messages.
 let g:syntastic_error_symbol='→'
@@ -214,10 +213,6 @@ inoremap <F7> <ESC>:TagbarToggle<CR>
 
 nnoremap <F8> :set paste!<CR>
 inoremap <F8> <ESC>:set paste!<CR>
-
-" Navigate through tabs with <leader>(Tab and Shift-Tab).
-nnoremap <leader><Tab> gt
-nnoremap <leader><S-Tab> gT
 
 " Navigate through windows with Tab and Shift-Tab.
 nnoremap <Tab> <C-w><C-w>
