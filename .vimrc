@@ -197,6 +197,7 @@ if has('autocmd')
   autocmd FileType css        set expandtab tabstop=2 shiftwidth=2 softtabstop=2 omnifunc=csscomplete#Complete
 
   highlight                  ExtraWhitespace ctermbg=red guibg=red
+  highlight            clear SignColumn
   autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\t/ containedin=ALL
 endif
 
