@@ -6,7 +6,7 @@ export SMILEY_SAD_FACE="☹ "
 export SMILEY_BRANCH_SYMBOL="⭠"
 
 smiley_face() {
-  print "%(?:%{$fg_bold[yellow]%}%B${SMILEY_HAPPY_FACE}%b:%{$fg_bold[red]%}%B${SMILEY_SAD_FACE}%b)"
+  print "%(?:%{$fg_bold[cyan]%}%B${SMILEY_HAPPY_FACE}%b:%{$fg_bold[red]%}%B${SMILEY_SAD_FACE}%b)"
 }
 
 smiley_remote_host_info() {
