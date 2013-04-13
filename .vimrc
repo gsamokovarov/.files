@@ -145,8 +145,8 @@ let g:syntastic_warning_symbol='→'
 " Style settings
 " --------------
 
-" Use dark background by default.
-set background=dark
+" Use light background by default.
+set background=light
 
 " Style powerline for fancy symbols and the solarized theme.
 let g:Powerline_symbols='fancy'
@@ -168,7 +168,7 @@ if has('gui_running')
   " piece. I don't like the GTK tabs, scrollbars and especially the toolbar.
   set guioptions=
 else
-  " Use dark solarized theme on a transparent terminal. Its important to set
+  " Use light solarized theme on a transparent terminal. Its important to set
   " the termtrans before the colorscheme.
   let g:solarized_termtrans=1
   colorscheme solarized
