@@ -95,7 +95,7 @@ set smartcase
 set modeline
 
 " Copy to the X clipboard too.
-set clipboard+=unnamed
+set clipboard+=unnamedplus
 
 " Always complete the longest available first.
 set completeopt+=longest
