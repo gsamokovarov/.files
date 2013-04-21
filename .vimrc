@@ -26,6 +26,7 @@ Bundle 'ervandew/supertab'
 Bundle 'gmarik/vundle'
 Bundle 'godlygeek/tabular'
 Bundle 'guns/vim-clojure-static'
+Bundle 'jesseschalken/list-text-object'
 Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
@@ -56,7 +57,6 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-sensible'
 Bundle 'tpope/vim-tbone'
 Bundle 'vim-ruby/vim-ruby'
-
 " Builtin Settings
 " ----------------
 
