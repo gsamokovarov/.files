@@ -44,6 +44,7 @@ Bundle 'scrooloose/syntastic'
 Bundle 'sickill/vim-pasta'
 Bundle 'sjl/gundo.vim'
 Bundle 'slim-template/vim-slim'
+Bundle 'timcharper/textile.vim'
 Bundle 'tpope/vim-classpath'
 Bundle 'tpope/vim-cucumber'
 Bundle 'tpope/vim-dispatch'
@@ -57,6 +58,7 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-sensible'
 Bundle 'tpope/vim-tbone'
 Bundle 'vim-ruby/vim-ruby'
+
 " Builtin Settings
 " ----------------
 
