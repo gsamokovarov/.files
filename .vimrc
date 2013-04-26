@@ -144,6 +144,9 @@ let g:syntastic_auto_jump=0
 let g:syntastic_error_symbol='→'
 let g:syntastic_warning_symbol='→'
 
+" Show gundo on the right side of the screen.
+let g:gundo_right=1
+
 " Style settings
 " --------------
 
