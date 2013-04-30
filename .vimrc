@@ -105,6 +105,9 @@ set completeopt+=longest
 " Highlight the 80th column as an unobtrusive reminder.
 set colorcolumn=80
 
+" Syntax highlight only the first 512 characters.
+set synmaxcol=512
+
 " Enable the mouse support if Vim supports it.
 if has('mouse')
   set mouse=a
