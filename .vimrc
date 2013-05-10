@@ -223,9 +223,6 @@ inoremap <F6> <ESC>:GundoToggle<CR>
 nnoremap <F7> :TagbarToggle<CR>
 inoremap <F7> <ESC>:TagbarToggle<CR>
 
-nnoremap <F8> :set paste!<CR>
-inoremap <F8> <ESC>:set paste!<CR>
-
 " Navigate through windows with Tab and Shift-Tab.
 nnoremap <Tab> <C-w><C-w>
 nnoremap <S-Tab> <C-w><C-W>
