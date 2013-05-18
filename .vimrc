@@ -60,6 +60,7 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-sensible'
 Bundle 'tpope/vim-tbone'
 Bundle 'tpope/vim-unimpaired'
+Bundle 'tristen/vim-sparkup'
 Bundle 'vim-ruby/vim-ruby'
 
 " Builtin Settings
