@@ -36,3 +36,6 @@
 
 [browser "gitscm"]
 	cmd = sh -c 'gnome-open http://git-scm.com/docs/$(basename $1 .html)' --
+
+[include]
+	path = .gitconfig.local
