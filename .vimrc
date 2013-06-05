@@ -221,6 +221,23 @@ endif
 " Mappings
 " --------
 
+" I have to force myself not to use those anymore.
+noremap  <Up> <NOP>
+inoremap <Up> <NOP>
+vnoremap <Up> <NOP>
+
+noremap  <Down> <NOP>
+inoremap <Down> <NOP>
+vnoremap <Down> <NOP>
+
+noremap  <Left> <NOP>
+inoremap <Left> <NOP>
+vnoremap <Left> <NOP>
+
+noremap  <Right> <NOP>
+inoremap <Right> <NOP>
+vnoremap <Right> <NOP>
+
 nnoremap <F5> :NERDTreeTabsToggle<CR>
 inoremap <F5> <ESC>:NERDTreeTabsToggle<CR>
 
