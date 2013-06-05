@@ -251,9 +251,9 @@ inoremap <F7> <ESC>:TagbarToggle<CR>
 nnoremap <Tab> <C-w><C-w>
 nnoremap <S-Tab> <C-w><C-W>
 
-" Jump to syntastic errors with Shift-{Up,Down}.
-map <S-Up> <ESC>:lprev<CR>
-map <S-Down> <ESC>:lnext<CR>
+" Jump to syntastic errors with Up and Down.
+map <Up> <ESC>:lprev<CR>
+map <Down> <ESC>:lnext<CR>
 
 " Write using `sudo` in COMMAND mode if the file is read-only.
 " Ripped off @StanAngeloff.
