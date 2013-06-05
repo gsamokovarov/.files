@@ -87,6 +87,9 @@ set nowrap
 " Display the current Vim mode.
 set showmode
 
+" Display relative line numbers to the selected line.
+set rnu
+
 " Don't redraw while executing commands from macros and registers.
 set lazyredraw
 set ttyfast
