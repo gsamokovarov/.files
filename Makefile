@@ -18,6 +18,6 @@ install-vundle:
 	@(cd ${INSTALL_PATH} ; [ -d .vim/bundle/vundle ] || git clone ${VUNDLE_REPO} .vim/bundle/vundle)
 
 install-vim-bundles: install-vundle
-	@vim +BundleClean +BundleInstall! +qall
+	@vim +BundleClean! +BundleInstall! +qall
 
 .PHONY: install install-dotfiles install-oh-my-zsh install-vundle install-vim-bundles
