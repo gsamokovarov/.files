@@ -88,7 +88,7 @@ set nowrap
 set showmode
 
 " Display relative line numbers to the selected line.
-set rnu
+set relativenumber
 
 " Don't redraw while executing commands from macros and registers.
 set lazyredraw
@@ -198,14 +198,22 @@ endif
 " ---------------
 
 if has('autocmd')
+  " Turn the relative numbers on and off, based on the COMMAND mode and the
+  " focus of the window.
+  autocmd FocusLost   * :set number
+  autocmd FocusGained * :set relativenumber
+
+  autocmd InsertEnter * :set number
+  autocmd InsertLeave * :set relativenumber
+
   " Have rainbow parantheses everywhere
-  au VimEnter * RainbowParenthesesToggle
-  au Syntax * RainbowParenthesesLoadRound
-  au Syntax * RainbowParenthesesLoadSquare
-  au Syntax * RainbowParenthesesLoadBraces
+  autocmd VimEnter * RainbowParenthesesToggle
+  autocmd Syntax * RainbowParenthesesLoadRound
+  autocmd Syntax * RainbowParenthesesLoadSquare
+  autocmd Syntax * RainbowParenthesesLoadBraces
 
   " Save the last position in a file.
-  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+  autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
   autocmd BufReadPost * :DetectIndent
 
   autocmd FileType python     set expandtab tabstop=4 shiftwidth=4 softtabstop=4 omnifunc=pythoncomplete#Complete
@@ -220,6 +228,17 @@ if has('autocmd')
   highlight            clear SignColumn
   autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\t/ containedin=ALL
 endif
+
+" Functions
+" ---------
+
+function! ToggleRelativeNumbers()
+  if (&relativenumber == 1)
+    set number
+  else
+    set relativenumber
+  endif
+endfunc
 
 " Mappings
 " --------
@@ -249,6 +268,9 @@ inoremap <F6> <ESC>:GundoToggle<CR>
 
 nnoremap <F7> :TagbarToggle<CR>
 inoremap <F7> <ESC>:TagbarToggle<CR>
+
+nnoremap <F8> :call ToggleRelativeNumbers()<CR>
+inoremap <F8> <ESC>:call ToggleRelativeNumbers()<CR>
 
 " Navigate through windows with Tab and Shift-Tab.
 nnoremap <Tab> <C-w><C-w>
