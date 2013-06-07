@@ -90,6 +90,11 @@ set showmode
 " Display relative line numbers to the selected line.
 set relativenumber
 
+" Reserve 5 columns for the lines gutter. Now that I trigger the relative and
+" the absolute numbers on NORMAL and INSERT mode, it changes the width of the
+" numbers gutter and that moves the cursor, if the file is too long.
+set numberwidth=5
+
 " Don't redraw while executing commands from macros and registers.
 set lazyredraw
 set ttyfast
