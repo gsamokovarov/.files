@@ -296,30 +296,33 @@ inoremap <Down> <ESC>:lnext<CR>
 cnoremap w!! w !sudo tee % >/dev/null
 
 " Format a paragraph to fit in `textwidth`.
-nnoremap <leader>f gqip
-vnoremap <leader>f gq
+nnoremap <Leader>f gqip
+vnoremap <Leader>f gq
 
 " Restore the last selection in VISUAL mode.
-nnoremap <leader>v gv
+nnoremap <Leader>v gv
 
 " Edit an inlined chunked of code in it's own buffer.
-nnoremap <leader>e :InlineEdit<CR>
-vnoremap <leader>e :InlineEdit<CR>
+nnoremap <Leader>e :InlineEdit<CR>
+vnoremap <Leader>e :InlineEdit<CR>
 
 " Align commands. Ripped off @StanAngeloff.
-nnoremap <leader>a= :Tabularize /=<CR>
-vnoremap <leader>a= m[om]:Tabularize /=<CR>`]V`[
+nnoremap <Leader>a= :Tabularize /=<CR>
+vnoremap <Leader>a= m[om]:Tabularize /=<CR>`]V`[
 
-nnoremap <leader>a> :Tabularize /=><CR>
-vnoremap <leader>a> m[om]:Tabularize /=><CR>`]V`[
+nnoremap <Leader>a> :Tabularize /=><CR>
+vnoremap <Leader>a> m[om]:Tabularize /=><CR>`]V`[
 
-nnoremap <leader>a: :Tabularize /:\zs/l0l1<CR>
-vnoremap <leader>a: m[om]:Tabularize /:\zs/l0l1<CR>`]V`[
+nnoremap <Leader>a: :Tabularize /:\zs/l0l1<CR>
+vnoremap <Leader>a: m[om]:Tabularize /:\zs/l0l1<CR>`]V`[
 
 " I always mess these up on my Das Keyboard. Trying to work around them at
 " least in VISUAL mode.
 vnoremap u y
 vnoremap U Y
+
+" Hide the current search.
+nnoremap <Space> :nohlsearch<CR>
 
 " Custom commands
 " ---------------
