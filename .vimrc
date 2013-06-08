@@ -215,6 +215,8 @@ if has('autocmd')
 
   " Save the last position in a file.
   autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+
+  " Try to automatically detect the indentation of the current buffer.
   autocmd BufReadPost * :DetectIndent
 
   autocmd FileType python     set expandtab tabstop=4 shiftwidth=4 softtabstop=4 omnifunc=pythoncomplete#Complete
