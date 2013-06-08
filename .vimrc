@@ -17,6 +17,7 @@ call vundle#rc()
 Bundle 'AndrewRadev/inline_edit.vim'
 Bundle 'AndrewRadev/multichange.vim'
 Bundle 'AndrewRadev/splitjoin.vim'
+Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'SirVer/ultisnips'
 Bundle 'airblade/vim-gitgutter'
@@ -162,6 +163,9 @@ let g:syntastic_warning_symbol='→'
 
 " Show gundo on the right side of the screen.
 let g:gundo_right=1
+
+" Have EasyMotion bindings with just one <leader>, instead of two.
+let g:EasyMotion_leader_key='<leader>'
 
 " Style settings
 " --------------
