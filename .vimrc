@@ -164,9 +164,6 @@ let g:syntastic_warning_symbol='→'
 " Show gundo on the right side of the screen.
 let g:gundo_right=1
 
-" Have EasyMotion bindings with just one <leader>, instead of two.
-let g:EasyMotion_leader_key='<leader>'
-
 " Style settings
 " --------------
 
