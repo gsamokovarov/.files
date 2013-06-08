@@ -200,15 +200,11 @@ endif
 if has('autocmd')
   " Turn the relative numbers on and off, based on the COMMAND mode and the
   " focus of the window.
-  autocmd FocusLost   * :set number
-  autocmd FocusGained * :set relativenumber
-
-  autocmd InsertEnter * :set number
-  autocmd InsertLeave * :set relativenumber
+  autocmd FocusLost,InsertEnter   * :set number
+  autocmd FocusGained,InsertLeave * :set relativenumber
 
   " Recalculate the numbers width on each buffer write.
-  autocmd VimEnter    * :let &numberwidth=CalculateBestNumberWidth()
-  autocmd BufWritePre * :let &numberwidth=CalculateBestNumberWidth()
+  autocmd BufReadPost,BufWritePre * :let &numberwidth=CalculateBestNumberWidth()
 
   " Have rainbow parantheses everywhere
   autocmd VimEnter * RainbowParenthesesToggle
