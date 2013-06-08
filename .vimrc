@@ -284,8 +284,11 @@ nnoremap <Tab> <C-w><C-w>
 nnoremap <S-Tab> <C-w><C-W>
 
 " Jump to syntastic errors with Up and Down.
-map <Up> <ESC>:lprev<CR>
-map <Down> <ESC>:lnext<CR>
+nnoremap <Up> <ESC>:lprev<CR>
+inoremap <Up> <ESC>:lprev<CR>
+
+nnoremap <Down> <ESC>:lnext<CR>
+inoremap <Down> <ESC>:lnext<CR>
 
 " Write using `sudo` in COMMAND mode if the file is read-only.
 " Ripped off @StanAngeloff.
