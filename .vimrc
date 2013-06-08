@@ -90,11 +90,6 @@ set showmode
 " Display relative line numbers to the selected line.
 set relativenumber
 
-" Reserve 5 columns for the lines gutter. Now that I trigger the relative and
-" the absolute numbers on NORMAL and INSERT mode, it changes the width of the
-" numbers gutter and that moves the cursor, if the file is too long.
-set numberwidth=5
-
 " Don't redraw while executing commands from macros and registers.
 set lazyredraw
 set ttyfast
@@ -211,11 +206,15 @@ if has('autocmd')
   autocmd InsertEnter * :set number
   autocmd InsertLeave * :set relativenumber
 
+  " Recalculate the numbers width on each buffer write.
+  autocmd VimEnter    * :let &numberwidth=CalculateBestNumberWidth()
+  autocmd BufWritePre * :let &numberwidth=CalculateBestNumberWidth()
+
   " Have rainbow parantheses everywhere
   autocmd VimEnter * RainbowParenthesesToggle
-  autocmd Syntax * RainbowParenthesesLoadRound
-  autocmd Syntax * RainbowParenthesesLoadSquare
-  autocmd Syntax * RainbowParenthesesLoadBraces
+  autocmd Syntax   * RainbowParenthesesLoadRound
+  autocmd Syntax   * RainbowParenthesesLoadSquare
+  autocmd Syntax   * RainbowParenthesesLoadBraces
 
   " Save the last position in a file.
   autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
@@ -238,12 +237,16 @@ endif
 " ---------
 
 function! ToggleRelativeNumbers()
-  if (&relativenumber == 1)
+  if &relativenumber == 1
     set number
   else
     set relativenumber
   endif
 endfunc
+
+function! CalculateBestNumberWidth()
+  return strlen(line('$')) + 1
+endfunction
 
 " Mappings
 " --------
