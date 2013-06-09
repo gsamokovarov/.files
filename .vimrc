@@ -119,9 +119,7 @@ set colorcolumn=80
 set synmaxcol=512
 
 " Enable the mouse support if Vim supports it.
-if has('mouse')
-  set mouse=a
-endif
+if has('mouse') | set mouse=a | endif
 
 " Make you keyboard actually do something while you are switched to Cyrillic
 " layout. Ripped off @StanAngeloff
