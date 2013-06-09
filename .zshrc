@@ -32,6 +32,10 @@ alias git=hub
 # Some systems may not be happy with the $TERM of screen-256colors, so be sane.
 alias ssh="TERM=xterm ssh"
 
+# Make the forward/backward search in vi-mode incremental.
+bindkey -M vicmd '?' history-incremental-search-forward
+bindkey -M vicmd '/' history-incremental-search-backward
+
 # Use the custom solarized LS colors.
 if [ -f ~/.dir_colors ] ; then eval `dircolors ~/.dir_colors` ; fi
 
