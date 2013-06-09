@@ -4,9 +4,10 @@
 export SMILEY_HAPPY_FACE="☺ "
 export SMILEY_SAD_FACE="☹ "
 export SMILEY_BRANCH_SYMBOL="⭠"
+export SMILEY_VI_MODE_SYMBOL="⇦"
 
 # The Vi-Mode prompt use this to determine the format.
-export MODE_INDICATOR=" %{$fg_bold[red]%}<%{$fg[red]%}<<%{$reset_color%}"
+export MODE_INDICATOR=" %{$fg_bold[red]%}${SMILEY_VI_MODE_SYMBOL}%{$reset_color%}"
 
 smiley_face() {
   print "%(?:%{$fg_bold[cyan]%}%B${SMILEY_HAPPY_FACE}%b:%{$fg_bold[red]%}%B${SMILEY_SAD_FACE}%b)"
