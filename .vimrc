@@ -320,9 +320,12 @@ vnoremap <Leader>a: m[om]:Tabularize /:\zs/l0l1<CR>`]V`[
 vnoremap u y
 vnoremap U Y
 
-" Have a saner ESCAPE in INSERT mode.
+" Have a saner ESCAPE in INSERT and VISUAL mode.
 inoremap jk <Esc>
+vnoremap jk <Esc>
+
 inoremap kj <Esc>
+vnoremap kj <Esc>
 
 " Hide the current search.
 nnoremap <Space> :nohlsearch<CR>
