@@ -5,6 +5,9 @@ export SMILEY_HAPPY_FACE="☺ "
 export SMILEY_SAD_FACE="☹ "
 export SMILEY_BRANCH_SYMBOL="⭠"
 
+# The Vi-Mode prompt use this to determine the format.
+export MODE_INDICATOR=" %{$fg_bold[red]%}<%{$fg[red]%}<<%{$reset_color%}"
+
 smiley_face() {
   print "%(?:%{$fg_bold[cyan]%}%B${SMILEY_HAPPY_FACE}%b:%{$fg_bold[red]%}%B${SMILEY_SAD_FACE}%b)"
 }
@@ -16,7 +19,7 @@ smiley_remote_host_info() {
 }
 
 PROMPT='$(smiley_remote_host_info)$(smiley_face) %{$reset_color%}'
-RPROMPT='%B%1~%b$(git_prompt_info)%{$reset_color%}'
+RPROMPT='%B%1~%b$(git_prompt_info)$(vi_mode_prompt_info)%{$reset_color%}'
 
 ZSH_THEME_GIT_PROMPT_PREFIX=" %{$fg_bold[red]%}${SMILEY_BRANCH_SYMBOL}%{$fg_no_bold[cyan]%} %B"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%b%{$reset_color%}"
