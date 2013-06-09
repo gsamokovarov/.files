@@ -252,19 +252,19 @@ endfunction
 " --------
 
 " I have to force myself not to use those anymore.
-noremap  <Up> <NOP>
+nnoremap <Up> <NOP>
 inoremap <Up> <NOP>
 vnoremap <Up> <NOP>
 
-noremap  <Down> <NOP>
+nnoremap <Down> <NOP>
 inoremap <Down> <NOP>
 vnoremap <Down> <NOP>
 
-noremap  <Left> <NOP>
+nnoremap <Left> <NOP>
 inoremap <Left> <NOP>
 vnoremap <Left> <NOP>
 
-noremap  <Right> <NOP>
+nnoremap <Right> <NOP>
 inoremap <Right> <NOP>
 vnoremap <Right> <NOP>
 
