@@ -205,7 +205,7 @@ if has('autocmd')
   autocmd FocusGained,InsertLeave * :set relativenumber
 
   " Recalculate the numbers width on each buffer write.
-  autocmd BufReadPost,BufWritePre * :let &numberwidth=CalculateBestNumberWidth()
+  autocmd BufReadPost,BufWritePre * :let &l:numberwidth=CalculateBestNumberWidth()
 
   " Have rainbow parantheses everywhere
   autocmd VimEnter * RainbowParenthesesToggle
