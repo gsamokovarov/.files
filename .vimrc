@@ -96,8 +96,9 @@ set relativenumber
 set lazyredraw
 set ttyfast
 
-" Highlight the search term.
+" Highlight the search term, while still typing it.
 set hlsearch
+set incsearch
 
 " Ignore the case when searching.
 set ignorecase

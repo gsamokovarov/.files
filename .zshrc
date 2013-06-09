@@ -7,8 +7,9 @@ export ZSH_THEME=".smiley"
 export PATH=~/bin:$PATH
 
 # Add Ubuntu's command-not-found ZSH alternative and use ssh-agent on the first
-# terminal run. The other ones are just candies.
-plugins=(git ruby bundler ssh-agent command-not-found)
+# terminal run. Also, use the vi-mode, just to be awesome! The other stuff ones
+# are just candies.
+plugins=(git ruby bundler ssh-agent command-not-found vi-mode)
 source $ZSH/oh-my-zsh.sh
 
 # Add color support for terminals pretending to be xterm.
