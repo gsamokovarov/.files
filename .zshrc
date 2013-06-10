@@ -7,9 +7,8 @@ export ZSH_THEME=".smiley"
 export PATH=~/bin:$PATH
 
 # Add Ubuntu's command-not-found ZSH alternative and use ssh-agent on the first
-# terminal run. Also, use the vi-mode, just to be awesome! The other stuff ones
-# are just candies.
-plugins=(git ruby bundler ssh-agent command-not-found vi-mode)
+# terminal run. The other ones are just candies.
+plugins=(git ruby bundler ssh-agent command-not-found)
 source $ZSH/oh-my-zsh.sh
 
 # Add color support for terminals pretending to be xterm.
@@ -31,10 +30,6 @@ alias git=hub
 
 # Some systems may not be happy with the $TERM of screen-256colors, so be sane.
 alias ssh="TERM=xterm ssh"
-
-# Make the forward/backward search in vi-mode incremental.
-bindkey -M vicmd '?' history-incremental-search-forward
-bindkey -M vicmd '/' history-incremental-search-backward
 
 # Use the custom solarized LS colors.
 if [ -f ~/.dir_colors ] ; then eval `dircolors ~/.dir_colors` ; fi
