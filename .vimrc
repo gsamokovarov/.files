@@ -241,7 +241,7 @@ function! ToggleRelativeNumbers()
   else
     set relativenumber
   endif
-endfunc
+endfunction
 
 function! CalculateBestNumberWidth()
   return strlen(line('$')) + 1
