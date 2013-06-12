@@ -237,7 +237,12 @@ endif
 " ---------
 
 function! ToggleRelativeNumbers()
-  if &relativenumber == 1
+  " If neither of the number settings are turned on, do nothing.
+  if !(&l:relativenumber || &l:number)
+    return
+  endif
+
+  if &l:relativenumber == 1
     set number
   else
     set relativenumber
@@ -245,7 +250,10 @@ function! ToggleRelativeNumbers()
 endfunction
 
 function! CalculateBestNumberWidth()
-  return strlen(line('$')) + 1
+  " Only try to calculate the width, if there is a number setting turned on.
+  if &l:relativenumber || &l:number
+    return strlen(line('$')) + 1
+  endif
 endfunction
 
 " Mappings
