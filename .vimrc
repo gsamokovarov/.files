@@ -331,10 +331,7 @@ vnoremap U Y
 
 " Have a saner ESCAPE in INSERT and VISUAL mode.
 inoremap jk <Esc>
-vnoremap jk <Esc>
-
 inoremap kj <Esc>
-vnoremap kj <Esc>
 
 " Hide the current search.
 nnoremap <Space> :nohlsearch<CR>
