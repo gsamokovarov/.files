@@ -329,6 +329,8 @@ vnoremap <Leader>a: m[om]:Tabularize /:\zs/l0l1<CR>`]V`[
 
 " I always mess these up on my Das Keyboard. Trying to work around them at
 " least in VISUAL mode.
+vnoremap t y
+vnoremap T Y
 vnoremap u y
 vnoremap U Y
 
