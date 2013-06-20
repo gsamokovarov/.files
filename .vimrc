@@ -81,16 +81,13 @@ set undodir=$HOME/.vim/undo
 " Keep the swap files in ~/.vim/swap.
 set directory=$HOME/.vim/swap
 
-" Display the line numbers.
-set number
-
 " Don't wrap the long lines.
 set nowrap
 
 " Display the current Vim mode.
 set showmode
 
-" Display relative line numbers to the selected line.
+" Display relative to the selected line number.
 set relativenumber
 
 " Don't redraw while executing commands from macros and registers.
