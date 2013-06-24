@@ -3,8 +3,8 @@ export ZSH=~/.oh-my-zsh
 export ZSH_CUSTOM=~
 export ZSH_THEME=".smiley"
 
-# One of my setups is actually quite unhappy about this...
-export PATH=~/bin:$PATH
+# Make sure that ~/.rbenv/bin and ~/bin are prepended to the PATH.
+export PATH=~/.rbenv/bin:~/bin:$PATH
 
 # Add Ubuntu's command-not-found ZSH alternative and use ssh-agent on the first
 # terminal run. The other ones are just candies.
@@ -22,7 +22,6 @@ export PAGER=less
 # oh-my-zsh alias sl to ls by default. I really like the locomotive, though.
 unalias sl
 
-
 # Use hub for git.
 alias git=hub
 
@@ -32,13 +31,8 @@ alias ssh="TERM=xterm ssh"
 # Use the custom solarized LS colors.
 if [ -f ~/.dir_colors ] ; then eval `dircolors ~/.dir_colors` ; fi
 
-# Use rvm if globally defined. If there is no global config, look for a local
-# one too.
-if [ -f ~/.rvm/scripts/rvm ] ; then
-  source ~/.rvm/scripts/rvm
-elif [ -f /etc/profile.d/rvm.sh ] ; then
-  source /etc/profile.d/rvm.sh
-fi
+# Initialize rbenv.
+eval "$(rbenv init -)"
 
 # Include local machine custom settings.
 if [ -f ~/.zshrc.local ] ; then source ~/.zshrc.local ; fi
