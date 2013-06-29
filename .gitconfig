@@ -12,6 +12,7 @@
 	switch = checkout
 	unstash = stash pop
 	forget = checkout -f
+	remember = checkout -f
 
 [core]
 	filemode = true
