@@ -8,7 +8,7 @@ export PATH=~/.rbenv/bin:~/bin:$PATH
 
 # Add Ubuntu's command-not-found ZSH alternative and use ssh-agent on the first
 # terminal run. The other ones are just candies.
-plugins=(git ruby bundler ssh-agent command-not-found)
+plugins=(git ruby bundler autojump ssh-agent command-not-found)
 source $ZSH/oh-my-zsh.sh
 
 # Add color support for terminals pretending to be xterm.
