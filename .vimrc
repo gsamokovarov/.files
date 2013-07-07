@@ -163,6 +163,13 @@ let g:syntastic_warning_symbol='⇨'
 " Show gundo on the right side of the screen.
 let g:gundo_right=1
 
+" Use <Leader>{j,s} for the split joins. I refuse to remember the gJ and gS.
+let g:splitjoin_split_mapping=''
+let g:splitjoin_join_mapping=''
+
+nmap <Leader>j :SplitjoinJoin<CR>
+nmap <Leader>s :SplitjoinSplit<CR>
+
 " Style settings
 " --------------
 
