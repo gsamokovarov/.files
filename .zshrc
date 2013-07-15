@@ -28,6 +28,9 @@ alias git=hub
 # Some systems may not be happy with the $TERM of screen-256colors, so be sane.
 alias ssh="TERM=xterm ssh"
 
+# I use vim a lot, so shortcut it to just v.
+alias v=vim
+
 # Use the custom solarized LS colors.
 if [ -f ~/.dir_colors ] ; then eval `dircolors ~/.dir_colors` ; fi
 
