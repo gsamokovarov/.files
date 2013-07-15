@@ -18,7 +18,7 @@ Bundle 'AndrewRadev/inline_edit.vim'
 Bundle 'AndrewRadev/multichange.vim'
 Bundle 'AndrewRadev/splitjoin.vim'
 Bundle 'Lokaltog/vim-easymotion'
-Bundle 'Lokaltog/vim-powerline'
+Bundle 'Lokaltog/powerline'
 Bundle 'SirVer/ultisnips'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'altercation/vim-colors-solarized'
@@ -84,8 +84,8 @@ set directory=$HOME/.vim/swap
 " Don't wrap the long lines.
 set nowrap
 
-" Display the current Vim mode.
-set showmode
+" Don't display the current Vim mode.
+set noshowmode
 
 " Display relative to the selected line number.
 set relativenumber
@@ -116,6 +116,9 @@ set colorcolumn=80
 
 " Syntax highlight only the first 512 characters.
 set synmaxcol=512
+
+" Enable the next gen powerline.
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 
 " Enable the mouse support if Vim supports it.
 if has('mouse')
