@@ -5,7 +5,7 @@ RUBY_BUILD_REPO ?= https://github.com/sstephenson/ruby-build.git
 VUNDLE_REPO     ?= https://github.com/gmarik/vundle.git
 EXCLUDES        ?= ./.git ./.files.png ./Makefile ./README.markdown
 
-TAR_CMD   = tar `echo $(EXCLUDES) | tr ' ' '\n' | awk '{print "--exclude " $$0}'` --create `find .`
+TAR_CMD   = find . -print0 | xargs -0 tar `echo $(EXCLUDES) | tr ' ' '\n' | awk '{print "--exclude " $$0}'` --create
 UNTAR_CMD = tar --extract --preserve-permissions --verbose --directory=$(INSTALL_PATH)
 
 clone-git-repo-if-not-exist = \
