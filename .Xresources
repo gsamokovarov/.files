@@ -46,10 +46,10 @@ URxvt.scrollTtyKeypress: true
 
 URxvt.inheritPixmap: false
 
-URxvt.font:           xft:SourceCodePro for Powerline:pixelsize=18:antialias=true:hinting=true,xft:dejavu sans mono:pixelsize=18:antialias=true:hinting=true
-URxvt.boldFont:       xft:SourceCodePro for Powerline:bold:pixelsize=18:antialias=true:hinting=true,xft:dejavu sans mono:bold:pixelsize=18:antialias=true:hinting=true
-URxvt.italicFont:     xft:SourceCodePro for Powerline:italic:pixelsize=18:antialias=true:hinting=true,xft:dejavu sans mono:italic:pixelsize=18:antialias=true:hinting=true
-URxvt.boldItalicFont: xft:SourceCodePro for Powerline:bold:italic:pixelsize=18:antialias=true:hinting=true,xft:dejavu sans mono:bold:italic:pixelsize=18:antialias=true:hinting=true
+URxvt.font:           xft:Ubuntu Mono derivative Powerline:pixelsize=15:antialias=true:hinting=true
+URxvt.boldFont:       xft:Ubuntu Mono derivative Powerline:bold:pixelsize=15:antialias=true:hinting=true
+URxvt.italicFont:     xft:Ubuntu Mono derivative Powerline:italic:pixelsize=15:antialias=true:hinting=true
+URxvt.boldItalicFont: xft:Ubuntu Mono derivative Powerline:bold:italic:pixelsize=15:antialias=true:hinting=true
 
 ! Disable screen printing by overriding the default print pipe.
 URxvt.print-pipe: "cat >/dev/null"
