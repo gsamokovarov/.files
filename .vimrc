@@ -118,7 +118,7 @@ set colorcolumn=80
 set synmaxcol=512
 
 " Enable the next gen powerline.
-set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+set runtimepath+=~/.vim/bundle/powerline/powerline/bindings/vim
 
 " Enable the mouse support if Vim supports it.
 if has('mouse')
