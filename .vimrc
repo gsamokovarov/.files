@@ -120,9 +120,6 @@ set synmaxcol=512
 " Enable the next gen powerline.
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 
-" Reduce the default timeout length.
-set ttimeoutlen=10
-
 " Enable the mouse support if Vim supports it.
 if has('mouse')
   set mouse=a
@@ -203,25 +200,12 @@ else
   " the termtrans before the colorscheme.
   let g:solarized_termtrans=1
   colorscheme solarized
-
-  " When you’re pressing Escape to leave insert mode in the terminal, it will
-  " by default take a second or another keystroke to leave insert mode
-  " completely and update the statusline.
-
 endif
 
 " Custom settings
 " ---------------
 
 if has('autocmd')
-  if ! has('gui_running')
-    augroup FastEscape
-      autocmd!
-      au InsertEnter * set timeoutlen=0
-      au InsertLeave * set timeoutlen=1000
-    augroup END
-  endif
-
   " Turn the relative numbers on and off, based on the COMMAND mode and the
   " focus of the window.
   autocmd FocusLost,InsertEnter   * :set number
