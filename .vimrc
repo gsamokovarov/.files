@@ -176,10 +176,6 @@ let g:splitjoin_join_mapping=''
 " Use light background by default.
 set background=light
 
-" Style powerline for fancy symbols and the solarized theme.
-let g:Powerline_symbols='fancy'
-let g:Powerline_colorscheme='solarized256'
-
 " Use 256 colors everywhere.
 set t_Co=256
 
