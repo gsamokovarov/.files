@@ -3,7 +3,7 @@
 # terminal. Feel free to export the variables below for your fonts.
 export SMILEY_HAPPY_FACE="☺ "
 export SMILEY_SAD_FACE="☹ "
-export SMILEY_BRANCH_SYMBOL="⭠"
+export SMILEY_BRANCH_SYMBOL=""
 export SMILEY_VI_MODE_SYMBOL="⇦"
 
 # The Vi-Mode prompt use this to determine the format.
