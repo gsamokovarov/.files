@@ -17,7 +17,7 @@ URxvt*color13: #6c71c4
 URxvt*color14: #586e75
 URxvt*color15: #002b36
 
-URxvt*background:             #fdf6e3
+URxvt*background:             rgba:fd00/f600/e300/efef
 URxvt*foreground:             #657b83
 URxvt*fadeColor:              #fdf6e3
 URxvt*cursorColor:            #586e75
@@ -50,9 +50,6 @@ URxvt.font:           xft:Ubuntu Mono derivative Powerline:pixelsize=18:antialia
 URxvt.boldFont:       xft:Ubuntu Mono derivative Powerline:bold:pixelsize=18:antialias=true:hinting=true
 URxvt.italicFont:     xft:Ubuntu Mono derivative Powerline:italic:pixelsize=18:antialias=true:hinting=true
 URxvt.boldItalicFont: xft:Ubuntu Mono derivative Powerline:bold:italic:pixelsize=18:antialias=true:hinting=true
-
-! Disable screen printing by overriding the default print pipe.
-URxvt.print-pipe: "cat >/dev/null"
 
 URxvt.keysym.Shift-Up:          \033[1;2A
 URxvt.keysym.Shift-Down:        \033[1;2B
