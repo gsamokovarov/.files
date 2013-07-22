@@ -13,6 +13,7 @@
 	unstash = stash pop
 	forget = checkout -f
 	remember = checkout -f
+	root = rev-parse --show-toplevel
 
 [core]
 	filemode = true
