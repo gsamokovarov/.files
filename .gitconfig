@@ -14,6 +14,7 @@
 	forget = checkout -f
 	remember = checkout -f
 	root = rev-parse --show-toplevel
+	back = checkout -
 
 [help]
 	autocorrect = 1
