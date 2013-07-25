@@ -15,6 +15,9 @@
 	remember = checkout -f
 	root = rev-parse --show-toplevel
 
+[help]
+	autocorrect = 1
+
 [core]
 	filemode = true
 	logallrefupdates = true
