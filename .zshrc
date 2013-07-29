@@ -31,10 +31,11 @@ alias ssh="TERM=xterm ssh"
 # I use vim a lot, so shortcut it to just v.
 alias v=vim
 
-# Same goes for rake, grunt and make.
+# Same goes for rake, grunt, make and lately, docker.
 alias r=rake
 alias u=grunt
 alias m=make
+alias d=docker
 
 # Use the custom solarized LS colors.
 if [ -f ~/.dir_colors ] ; then eval `dircolors ~/.dir_colors` ; fi
