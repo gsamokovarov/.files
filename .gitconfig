@@ -15,6 +15,7 @@
 	remember = checkout -f
 	root = rev-parse --show-toplevel
 	back = checkout -
+	amend = commit --amend
 
 [help]
 	autocorrect = 1
