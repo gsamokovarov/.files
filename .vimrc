@@ -39,6 +39,7 @@ Bundle 'majutsushi/tagbar'
 Bundle 'matchit.zip'
 Bundle 'mileszs/ack.vim'
 Bundle 'mintplant/vim-literate-coffeescript.git'
+Bundle 'myusuf3/numbers.vim'
 Bundle 'othree/html5.vim'
 Bundle 'pangloss/vim-javascript'
 Bundle 'rking/ag.vim'
@@ -87,9 +88,6 @@ set nowrap
 
 " Don't display the current Vim mode.
 set noshowmode
-
-" Display relative to the selected line number.
-set relativenumber
 
 " Don't redraw while executing commands from macros and registers.
 set lazyredraw
@@ -203,11 +201,6 @@ endif
 " ---------------
 
 if has('autocmd')
-  " Turn the relative numbers on and off, based on the COMMAND mode and the
-  " focus of the window.
-  autocmd FocusLost,InsertEnter   * :set number
-  autocmd FocusGained,InsertLeave * :set relativenumber
-
   " Recalculate the numbers width on each buffer write.
   autocmd BufReadPost,BufWritePre * :let &l:numberwidth=CalculateBestNumberWidth()
 
@@ -238,19 +231,6 @@ endif
 
 " Functions
 " ---------
-
-function! ToggleRelativeNumbers()
-  " If neither of the number settings are turned on, do nothing.
-  if !(&l:relativenumber || &l:number)
-    return
-  endif
-
-  if &l:relativenumber
-    set number
-  else
-    set relativenumber
-  endif
-endfunction
 
 function! CalculateBestNumberWidth()
   " Only try to calculate the width, if there is a number setting turned on.
@@ -291,8 +271,8 @@ inoremap <F6> <ESC>:GundoToggle<CR>
 nnoremap <F7> :TagbarToggle<CR>
 inoremap <F7> <ESC>:TagbarToggle<CR>
 
-nnoremap <F8> :call ToggleRelativeNumbers()<CR>
-inoremap <F8> <ESC>:call ToggleRelativeNumbers()<CR>
+nnoremap <F8> :call NumbersToggle()<CR>
+inoremap <F8> <ESC>:call NumbersToggle()<CR>
 
 " Navigate through windows with Tab and Shift-Tab.
 nnoremap <Tab> <C-w><C-w>
