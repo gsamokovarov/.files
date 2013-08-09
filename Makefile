@@ -8,8 +8,7 @@ EXCLUDES        ?= ./.git ./.files.png ./Makefile ./README.markdown
 TAR_CMD   = find . -print0 | xargs -0 tar `echo $(EXCLUDES) | tr ' ' '\n' | awk '{print "--exclude " $$0}'` --create
 UNTAR_CMD = tar --extract --preserve-permissions --verbose --directory=$(INSTALL_PATH)
 
-clone-git-repo-if-not-exist = \
-	@(cd ${INSTALL_PATH} ; [ -d $(2) ] || git clone $(1) $(2))
+clone-git-repo-if-not-exist = @(cd ${INSTALL_PATH} ; [ -d $(2) ] || git clone $(1) $(2))
 
 install: install-dotfiles install-oh-my-zsh install-rbenv install-ruby-build install-vim-bundles
 
