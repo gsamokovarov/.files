@@ -153,6 +153,8 @@ let NERDTreeMinimalUI=1
 " Just use one NERDTree on all tabs and don't show it on startup.
 let g:nerdtree_tabs_open_on_gui_startup=0
 let g:nerdtree_tabs_open_on_new_tab=1
+" Try to focus on actual file content when jumping to it.
+let g:nerdtree_tabs_focus_on_files=1
 
 " Tell syntastic not to jump to errors and skip /c(++)?/ files.
 let g:syntastic_enable_signs=1
