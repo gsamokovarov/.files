@@ -171,6 +171,9 @@ let g:gundo_right=1
 let g:splitjoin_split_mapping=''
 let g:splitjoin_join_mapping=''
 
+" Highlight shell scripts by the POSIX.
+let g:is_posix=1
+
 " Style settings
 " --------------
 
