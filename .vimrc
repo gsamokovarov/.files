@@ -19,6 +19,7 @@ Bundle 'AndrewRadev/multichange.vim'
 Bundle 'AndrewRadev/splitjoin.vim'
 Bundle 'Lokaltog/powerline'
 Bundle 'Lokaltog/vim-easymotion'
+Bundle 'Shougo/neocomplcache.vim'
 Bundle 'SirVer/ultisnips'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'altercation/vim-colors-solarized'
@@ -138,6 +139,9 @@ let g:is_posix=1
 
 " Plugin settings
 " ---------------
+
+" Enable neocomplcache at startup.
+let g:neocomplcache_enable_at_startup=1
 
 " Tell detectindet to use one tab, if it is confused.
 let g:detectindent_preferred_expandtab=1
