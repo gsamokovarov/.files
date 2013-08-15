@@ -196,7 +196,7 @@ if has('gui_running')
   colorscheme solarized
 
   " Set-up a powerline capable font.
-  set guifont=Ubuntu\ Mono\ 15
+  set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 15
 
   " If we are running in a gui like GVim, make sure to hide every annoying UI
   " piece. I don't like the GTK tabs, scrollbars and especially the toolbar.
