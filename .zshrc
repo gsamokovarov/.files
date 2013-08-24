@@ -37,6 +37,9 @@ alias u=grunt
 alias m=make
 alias d=docker
 
+# Sudo apt-get as it is always what you want.
+alias apt-get="sudo apt-get"
+
 # Use the custom solarized LS colors.
 if [ -f ~/.dir_colors ] ; then eval `dircolors ~/.dir_colors` ; fi
 
