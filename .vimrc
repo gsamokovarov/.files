@@ -69,6 +69,7 @@ Bundle 'tpope/vim-tbone'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tristen/vim-sparkup'
 Bundle 'vim-ruby/vim-ruby'
+Bundle 'marijnh/tern_for_vim'
 
 " Builtin Settings
 " ----------------
