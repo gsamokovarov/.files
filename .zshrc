@@ -19,26 +19,8 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR=vim
 export PAGER=less
 
-# oh-my-zsh alias sl to ls by default. I really like the locomotive, though.
-unalias sl
-
-# Use hub for git.
-alias git=hub
-
-# Some systems may not be happy with the $TERM of screen-256colors, so be sane.
-alias ssh="TERM=xterm ssh"
-
-# I use vim a lot, so shortcut it to just v.
-alias v=vim
-
-# Same goes for rake, grunt, make and lately, docker.
-alias r=rake
-alias u=grunt
-alias m=make
-alias d=docker
-
-# Sudo apt-get as it is always what you want.
-alias apt-get="sudo apt-get"
+# Source all of the aliases living in ~/.aliases.
+if [ -f ~/.aliases ] ; then source ~/.aliases ; fi
 
 # Use the custom solarized LS colors.
 if [ -f ~/.dir_colors ] ; then eval `dircolors ~/.dir_colors` ; fi

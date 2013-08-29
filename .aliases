@@ -1,0 +1,20 @@
+# oh-my-zsh alias sl to ls by default. I really like the locomotive, though.
+unalias sl
+
+# Use hub for git.
+alias git=hub
+
+# Some systems may not be happy with the $TERM of screen-256colors, so be sane.
+alias ssh="TERM=xterm ssh"
+
+# I use vim a lot, so shortcut it to just v.
+alias v=vim
+
+# Same goes for rake, grunt, make and lately, docker.
+alias r=rake
+alias u=grunt
+alias m=make
+alias d=docker
+
+# Sudo apt-get as it is always what you want.
+alias apt-get="sudo apt-get"
