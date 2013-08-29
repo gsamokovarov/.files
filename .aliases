@@ -18,3 +18,7 @@ alias d=docker
 
 # Sudo apt-get as it is always what you want.
 alias apt-get="sudo apt-get"
+
+# I never learned how to type freakin' killall.
+alias kilalll=killall
+alias kilall=killall
