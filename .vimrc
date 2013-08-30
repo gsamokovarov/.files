@@ -351,6 +351,10 @@ vnoremap U Y
 inoremap jk <Esc>
 inoremap kj <Esc>
 
+" Those seems friendlier to type than g{t,T}.
+nnoremap <C-L> gt
+nnoremap <C-H> gT
+
 " Hide the current search.
 nnoremap <Space> :nohlsearch<CR>
 
