@@ -235,13 +235,35 @@ if has('autocmd')
   " Try to automatically detect the indentation of the current buffer.
   autocmd BufReadPost * :DetectIndent
 
-  autocmd FileType python     set expandtab tabstop=4 shiftwidth=4 softtabstop=4 omnifunc=pythoncomplete#Complete
-  autocmd FileType c          set expandtab tabstop=2 shiftwidth=2 softtabstop=2 omnifunc=ccomplete#Complete
-  autocmd FileType ruby       set expandtab tabstop=2 shiftwidth=2 softtabstop=2 omnifunc=rubycomplete#Complete
-  autocmd FileType javascript set expandtab tabstop=2 shiftwidth=2 softtabstop=2 omnifunc=javascriptcomplete#Complete
-  autocmd FileType coffee     set expandtab tabstop=2 shiftwidth=2 softtabstop=2 omnifunc=coffeecomplete#Complete
-  autocmd FileType html       set expandtab tabstop=2 shiftwidth=2 softtabstop=2 omnifunc=htmlcomplete#Complete
-  autocmd FileType css        set expandtab tabstop=2 shiftwidth=2 softtabstop=2 omnifunc=csscomplete#Complete
+  autocmd FileType python
+        \ set expandtab tabstop=4 shiftwidth=4 softtabstop=4 |
+        \ set omnifunc=pythoncomplete#Complete |
+        \ syn include syntax/css/vim-coloresque.vim
+
+  autocmd FileType c
+        \ set expandtab tabstop=2 shiftwidth=2 softtabstop=2 |
+        \ set omnifunc=ccomplete#Complete
+
+  autocmd FileType ruby
+        \ set expandtab tabstop=2 shiftwidth=2 softtabstop=2 |
+        \ set omnifunc=rubycomplete#Complete |
+        \ syn include syntax/css/vim-coloresque.vim
+
+  autocmd FileType javascript
+        \ set expandtab tabstop=2 shiftwidth=2 softtabstop=2 |
+        \ set omnifunc=javascriptcomplete#Complete
+
+  autocmd FileType coffee
+        \ set expandtab tabstop=2 shiftwidth=2 softtabstop=2 |
+        \ set omnifunc=coffeecomplete#Complete
+
+  autocmd FileType html
+        \ set expandtab tabstop=2 shiftwidth=2 softtabstop=2 |
+        \ set omnifunc=htmlcomplete#Complete
+
+  autocmd FileType css
+        \ set expandtab tabstop=2 shiftwidth=2 softtabstop=2
+        \ set omnifunc=csscomplete#Complete
 
   highlight                  ExtraWhitespace ctermbg=red guibg=red
   highlight            clear SignColumn
