@@ -4,7 +4,7 @@ export ZSH_CUSTOM=~
 export ZSH_THEME=".smiley"
 
 # Make sure that ~/.rbenv/bin and ~/bin are prepended to the PATH.
-export PATH=~/.rbenv/bin:~/bin:$PATH
+export PATH=~/.rbenv/bin:~/bin:/usr/local/bin:$PATH
 
 # Add Ubuntu's command-not-found ZSH alternative and use ssh-agent on the first
 # terminal run. The other ones are just candies.
