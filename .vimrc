@@ -93,6 +93,7 @@ set nowrap
 set noshowmode
 
 " Display relative to the selected line number.
+set nonumber
 set relativenumber
 
 " Don't redraw while executing commands from macros and registers.
@@ -280,8 +281,10 @@ function! ToggleRelativeNumbers()
   endif
 
   if &l:relativenumber
+    set norelativenumber
     set number
   else
+    set nonumber
     set relativenumber
   endif
 endfunction
