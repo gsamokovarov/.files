@@ -81,6 +81,9 @@ Bundle 'vim-ruby/vim-ruby'
 
 filetype plugin indent on
 
+" Enforce UTF-8 to reduce my WTF's per minute.
+set encoding=utf-8
+
 " Keep the backup files in ~/.vim/backup.
 set backupdir=$HOME/.vim/backup
 
