@@ -114,8 +114,10 @@ set smartcase
 " Read Vim file specific options.
 set modeline
 
-" Copy to the X clipboard too.
-set clipboard+=unnamedplus
+" Copy to the X clipboard too, unless we are on OSX and inside a tmux session.
+if !(has('macunix') || empty($TMUX))
+  set clipboard+=unnamedplus
+endif
 
 " Always complete the longest available first.
 set completeopt+=longest
