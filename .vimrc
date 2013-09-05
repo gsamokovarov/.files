@@ -1,7 +1,3 @@
-" This is kind of a bisected effort to find which bundles break my Vim in OSX
-" and another place for me to complain why Vim and ZSH run like shit on the
-" OSX (or at least mine).
-
 " Setup
 " -----
 
@@ -21,10 +17,10 @@ call vundle#rc()
 Bundle 'AndrewRadev/inline_edit.vim'
 Bundle 'AndrewRadev/multichange.vim'
 Bundle 'AndrewRadev/splitjoin.vim'
-" Bundle 'Lokaltog/powerline'
+Bundle 'Lokaltog/powerline'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Shougo/neocomplcache.vim'
-" Bundle 'SirVer/ultisnips'
+Bundle 'SirVer/ultisnips'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'ciaranm/detectindent'
@@ -40,7 +36,7 @@ Bundle 'jesseschalken/list-text-object'
 Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
-" Bundle 'kien/rainbow_parentheses.vim'
+Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'koron/nyancat-vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'marijnh/tern_for_vim'
@@ -140,7 +136,7 @@ endif
 
 " Make you keyboard actually do something while you are switched to Cyrillic
 " layout. Ripped off @StanAngeloff
-" set langmap+=чявертъуиопшщасдфгхйклзьцжбнмЧЯВЕРТЪУИОПШЩАСДФГХЙКЛЗѝЦЖБНМ;`qwertyuiop[]asdfghjklzxcvbnm~QWERTYUIOP{}ASDFGHJKLZXCVBNM,ю\\,Ю\|,
+set langmap+=чявертъуиопшщасдфгхйклзьцжбнмЧЯВЕРТЪУИОПШЩАСДФГХЙКЛЗѝЦЖБНМ;`qwertyuiop[]asdfghjklzxcvbnm~QWERTYUIOP{}ASDFGHJKLZXCVBNM,ю\\,Ю\|,
 
 " Widely ignore vim swapfiles, tilda backups, python bytecode, .git dirs and
 " node modules. Some plugins actually respect those.
@@ -178,8 +174,8 @@ let g:syntastic_enable_signs=1
 let g:syntastic_auto_jump=0
 
 " Add some fancy symbols for the error and warning messages.
-" let g:syntastic_error_symbol='⇨'
-" let g:syntastic_warning_symbol='⇨'
+let g:syntastic_error_symbol='⇨'
+let g:syntastic_warning_symbol='⇨'
 
 " Show gundo on the right side of the screen.
 let g:gundo_right=1
@@ -232,10 +228,10 @@ if has('autocmd')
   autocmd BufReadPost,BufWritePre * :let &l:numberwidth=CalculateBestNumberWidth()
 
   " Have rainbow parantheses everywhere
-  " autocmd VimEnter * RainbowParenthesesToggle
-  " autocmd Syntax   * RainbowParenthesesLoadRound
-  " autocmd Syntax   * RainbowParenthesesLoadSquare
-  " autocmd Syntax   * RainbowParenthesesLoadBraces
+  autocmd VimEnter * RainbowParenthesesToggle
+  autocmd Syntax   * RainbowParenthesesLoadRound
+  autocmd Syntax   * RainbowParenthesesLoadSquare
+  autocmd Syntax   * RainbowParenthesesLoadBraces
 
   " Save the last position in a file.
   autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
