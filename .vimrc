@@ -222,8 +222,8 @@ endif
 if has('autocmd')
   " Turn the relative numbers on and off, based on the COMMAND mode and the
   " focus of the window.
-  autocmd FocusLost,InsertEnter   * :set number
-  autocmd FocusGained,InsertLeave * :set relativenumber
+  autocmd FocusLost,InsertEnter   * :set norelativenumber | :set number
+  autocmd FocusGained,InsertLeave * :set nonumber | :set relativenumber
 
   " Recalculate the numbers width on each buffer write.
   autocmd BufReadPost,BufWritePre * :let &l:numberwidth=CalculateBestNumberWidth()
