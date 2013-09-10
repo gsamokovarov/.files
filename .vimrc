@@ -45,7 +45,6 @@ Bundle 'mileszs/ack.vim'
 Bundle 'mintplant/vim-literate-coffeescript.git'
 Bundle 'othree/html5.vim'
 Bundle 'pangloss/vim-javascript'
-Bundle 'rking/ag.vim'
 Bundle 'rodjek/vim-puppet'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
@@ -189,6 +188,17 @@ let g:splitjoin_join_mapping=''
 " Highlight shell scripts by the POSIX.
 let g:is_posix=1
 
+" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
+if executable('ag')
+  let g:ackprg = 'ag --nogroup --column'
+
+  " Use Ag over Grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
+
 " Style settings
 " --------------
 
@@ -205,7 +215,7 @@ if has('gui_running')
   colorscheme solarized
 
   " Set-up a powerline capable font.
-  set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 15
+  set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 21
 
   " If we are running in a gui like GVim, make sure to hide every annoying UI
   " piece. I don't like the GTK tabs, scrollbars and especially the toolbar.
