@@ -1,2 +1,5 @@
 # Don't show shadows around the captured windows.
 defaults write com.apple.screencapture disable-shadow -bool true
+
+# Kill the SystemUI Server for the changes to take affect.
+killall SystemUIServer
