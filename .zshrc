@@ -26,7 +26,10 @@ export PAGER=less
 # Source all of the aliases living in ~/.aliases.
 if [ -f ~/.aliases ] ; then source ~/.aliases ; fi
 
-if `which dircolors &> /dev/null`; then
+# Source all of the custom functions living in ~/.functions.
+if [ -f ~/.functions ] ; then source ~/.functions ; fi
+
+if `which dircolors &> /dev/null` ; then
   if [ -f ~/.dir_colors ] ; then eval `dircolors ~/.dir_colors` ; fi
 fi
 # Use the custom solarized LS colors.
