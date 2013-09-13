@@ -3,8 +3,10 @@ export ZSH=~/.oh-my-zsh
 export ZSH_CUSTOM=~
 export ZSH_THEME=".smiley"
 
-# Make sure that ~/.rbenv/bin and ~/bin are prepended to the PATH.
-export PATH=~/.rbenv/bin:~/bin:/usr/local/bin:$PATH
+# Make sure that ~/.rbenv/bin and ~/bin are prepended to the PATH, so we can
+# override system utils, if needed. The path for the custom coreutils and
+# /usr/loca/bin are my preferences on OSX.
+export PATH=~/.rbenv/bin:~/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:$PATH
 
 # Add Ubuntu's command-not-found ZSH alternative and use ssh-agent on the first
 # terminal run. The other ones are just candies.
