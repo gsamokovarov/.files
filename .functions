@@ -1,0 +1,5 @@
+# I hate things on my desktop. I don't track todos. Let's see for how long I'll
+# use this one.
+todo() {
+  touch ~/Desktop/"$(echo $@)"
+}
