@@ -28,7 +28,7 @@ brew install ag
 # --------
 
 # Don't require sudo password for the current user. Don't copy this if you have
-# the fear that it'll broke your sudo and lock you out your own system.
+# the fear that it'll break your sudo and lock you out your own system.
 cat <<-RUBY | sudo ruby
   no_password_definition = <<-DEF
 # Don't require password for the $USER user.
