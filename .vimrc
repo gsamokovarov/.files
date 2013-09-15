@@ -19,7 +19,6 @@ Bundle 'AndrewRadev/multichange.vim'
 Bundle 'AndrewRadev/splitjoin.vim'
 Bundle 'Lokaltog/powerline'
 Bundle 'Lokaltog/vim-easymotion'
-Bundle 'Shougo/neocomplcache.vim'
 Bundle 'SirVer/ultisnips'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'altercation/vim-colors-solarized'
@@ -71,6 +70,12 @@ Bundle 'tpope/vim-tbone'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tristen/vim-sparkup'
 Bundle 'vim-ruby/vim-ruby'
+
+if has('lua')
+  Bundle 'Shougo/neocomplete.vim'
+else
+  Bundle 'Shougo/neocomplcache.vim'
+endif
 
 " Builtin Settings
 " ----------------
