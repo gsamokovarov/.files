@@ -27,6 +27,20 @@ brew install ag
 # Settings
 # --------
 
+# Don't require sudo password for the current user. Don't copy this if you have
+# the fear that it'll broke your sudo and lock you out your own system.
+cat <<-RUBY | sudo ruby
+  no_password_definition = <<-DEF
+# Don't require password for the $USER user.
+$USER ALL=(ALL) NOPASSWD: ALL
+DEF
+
+  open("/etc/sudoers", "a+") do |sudoers|
+    break if sudoers.read.include?(no_password_definition)
+    sudoers.write("\n#{no_password_definition}")
+  end
+RUBY
+
 # Don't show shadows around the captured windows.
 defaults write com.apple.screencapture disable-shadow -bool true
 
