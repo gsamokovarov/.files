@@ -48,9 +48,14 @@ defaults write NSGlobalDomain KeyRepeat -int 2
 # Updates
 # -------
 
+# Running `brew update` will sync up the formulae, but won't upgrade the
+# currently installed packages to their latest versions.
 brew update && brew upgrade
 
 # Diagnostics
 # -----------
 
+# Running `brew doctor` will show pretty useful diagnostics information about
+# Homebrew's health. For example, if I ever forget to install the XCode command
+# line tools, it will remind me.
 brew doctor
