@@ -19,3 +19,6 @@ defaults write com.apple.screencapture disable-shadow -bool true
 
 # Kill the SystemUI Server for the changes to take affect.
 killall SystemUIServer
+
+# Check for software updates daily, not just once per week.
+defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
