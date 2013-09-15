@@ -20,6 +20,10 @@ brew install coreutils
 brew install lua
 brew install vim --override-system-vi --with-lua
 
+# The silver searcher is a great fast searching tool. Similiar to ack, but
+# faster.
+brew install ag
+
 # Settings
 # --------
 
