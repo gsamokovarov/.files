@@ -41,3 +41,8 @@ defaults write NSGlobalDomain KeyRepeat -int 2
 # -------
 
 brew update && brew upgrade
+
+# Diagnostics
+# -----------
+
+brew doctor
