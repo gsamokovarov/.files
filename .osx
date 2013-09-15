@@ -7,9 +7,14 @@ which brew &> /dev/null || {
 }
 
 # Now, install the GNU core utilities (ls, rm, etc.). By default they are
-# prefixed with `g` (gls, grm, getc.), but the zshrc adds their unprefixed
+# prefixed with `g` (gls, grm, etc.), but the zshrc adds their unprefixed
 # versions to the $PATH.
 brew install coreutils
+
+# I like Vim, so have it installed by default. Build it with Lua support, so I
+# can test some of the new plugins.
+brew install lua mercurial
+brew install vim --override-system-vi --with-lua
 
 # Settings
 # --------
