@@ -1,3 +1,19 @@
+# Applications
+# ------------
+
+# Install homebrew unless it is already available.
+which brew &> /dev/null || {
+  ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
+}
+
+# Now, install the GNU core utilities (ls, rm, etc.). By default they are
+# prefixed with `g` (gls, grm, getc.), but the zshrc adds their unprefixed
+# versions to the $PATH.
+brew install coreutils
+
+# Settings
+# --------
+
 # Don't show shadows around the captured windows.
 defaults write com.apple.screencapture disable-shadow -bool true
 
