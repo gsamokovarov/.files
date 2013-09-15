@@ -90,6 +90,7 @@ set backupdir=$HOME/.vim/backup
 
 " Keep the undp files in ~/.vim/undo.
 set undodir=$HOME/.vim/undo
+set undofile
 
 " Keep the swap files in ~/.vim/swap.
 set directory=$HOME/.vim/swap
