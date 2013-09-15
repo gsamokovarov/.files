@@ -1,10 +1,14 @@
 # Applications
 # ------------
 
-# Install homebrew unless it is already available.
+# Install Homebrew unless it is already available.
 which brew &> /dev/null || {
   ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
 }
+
+# Git is essential to Homebrew, so have it installed right after it. While I
+# don't use Mercurial, a lot of packages require it for HEAD installs.
+brew install git mercurial
 
 # Now, install the GNU core utilities (ls, rm, etc.). By default they are
 # prefixed with `g` (gls, grm, etc.), but the zshrc adds their unprefixed
@@ -13,7 +17,7 @@ brew install coreutils
 
 # I like Vim, so have it installed by default. Build it with Lua support, so I
 # can test some of the new plugins.
-brew install lua mercurial
+brew install lua
 brew install vim --override-system-vi --with-lua
 
 # Settings
