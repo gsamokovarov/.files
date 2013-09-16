@@ -16,9 +16,10 @@ source $ZSH/oh-my-zsh.sh
 # Add color support for terminals pretending to be xterm.
 [ $TERM = xterm ] && export TERM=xterm-256color
 
-# Make sure we have a unicode LC_CTYPE so the unicode characters does not look
-# like crap.
-export LC_CTYPE=UTF-8
+# Make sure we have a unicode capable LANG and  LC_CTYPE so the unicode
+# characters does not look like crap on OSX and other environments.
+export LANG=en_US.UTF-8
+export LC_CTYPE=en_US.UTF-8
 
 # Help out programs spawning editors based on $EDITOR. The same for pagers,
 # just use less for them.
