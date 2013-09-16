@@ -71,7 +71,7 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'tristen/vim-sparkup'
 Bundle 'vim-ruby/vim-ruby'
 
-if has('lua')
+if has('lua') && v:version > 703
   Bundle 'Shougo/neocomplete.vim'
 else
   Bundle 'Shougo/neocomplcache.vim'
