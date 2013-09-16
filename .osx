@@ -59,6 +59,9 @@ defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 # Set a keyboard repeat rate of 2ms.
 defaults write NSGlobalDomain KeyRepeat -int 2
 
+# Disable the two-finge swipe that triggers back and forward in Chrome.
+defaults write com.google.Chrome.plist AppleEnableSwipeNavigateWithScrolls -bool false
+
 # Updates
 # -------
 
