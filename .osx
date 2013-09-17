@@ -62,6 +62,9 @@ defaults write NSGlobalDomain KeyRepeat -int 2
 # Disable the two-finge swipe that triggers back and forward in Chrome.
 defaults write com.google.Chrome.plist AppleEnableSwipeNavigateWithScrolls -bool false
 
+# Display the battery charge in a percentage.
+defaults write com.apple.menuextra.battery ShowPercent -string "YES"
+
 # Updates
 # -------
 
