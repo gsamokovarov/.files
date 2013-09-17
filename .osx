@@ -12,6 +12,9 @@ which brew &> /dev/null || {
 # don't use Mercurial, a lot of packages require it for HEAD installs.
 brew install git mercurial
 
+# Wget is handy too, so keep it around.
+brew instaall wget
+
 # Now, install the GNU core utilities (ls, rm, etc.). By default they are
 # prefixed with `g` (gls, grm, etc.), but the zshrc adds their unprefixed
 # versions to the $PATH.
