@@ -25,9 +25,18 @@ brew install coreutils
 brew install lua
 brew install vim --override-system-vi --with-lua
 
-# The silver searcher is a great fast searching tool. Similiar to ack, but
-# faster.
+# The silver searcher is a great searching tool. Similiar to ack, but faster.
 brew install ag
+
+# Cask let you install Mac applications distributed as binaries.
+brew tap phinze/homebrew-cask
+brew install brew-cask
+
+# Install Google Chrome as it is my default browser of choice.
+brew cask install google-chrome
+
+# I don't really like the default Terminal.app. iTerm2 is better.
+brew cask install iterm2
 
 # Settings
 # --------
