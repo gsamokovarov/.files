@@ -16,7 +16,7 @@ source $ZSH/oh-my-zsh.sh
 # Add color support for terminals pretending to be xterm.
 [ $TERM = xterm ] && export TERM=xterm-256color
 
-# Make sure we have a unicode capable LANG and  LC_CTYPE so the unicode
+# Make sure we have a unicode capable LANG and LC_CTYPE so the unicode
 # characters does not look like crap on OSX and other environments.
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
