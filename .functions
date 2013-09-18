@@ -1,5 +1,6 @@
 # I hate things on my desktop. I don't track todos. Let's see for how long I'll
 # use this one.
-todo() {
-  touch ~/Desktop/"$(echo $@)"
-}
+todo() { touch ~/Desktop/"$(echo $@)" }
+
+# Shortcut resty to `resty http://example.com/api`.
+resty() { . ~/bin/resty ; [ -n "$1" ] && resty $1 }

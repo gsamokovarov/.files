@@ -40,8 +40,5 @@ fi
 # Initialize rbenv.
 eval "$(rbenv init -)"
 
-# Shortcut resty to `resty http://example.com/api`.
-resty() { . ~/bin/resty ; [ -n "$1" ] && resty $1 }
-
 # Include local machine custom settings.
 if [ -f ~/.zshrc.local ] ; then source ~/.zshrc.local ; fi
