@@ -13,7 +13,7 @@ which brew &> /dev/null || {
 brew install git mercurial
 
 # Wget is handy too, so keep it around.
-brew instaall wget
+brew install wget
 
 # Now, install the GNU core utilities (ls, rm, etc.). By default they are
 # prefixed with `g` (gls, grm, etc.), but the zshrc adds their unprefixed
@@ -90,6 +90,9 @@ defaults write com.google.Chrome.plist AppleEnableSwipeNavigateWithScrolls -bool
 
 # Display the battery charge in a percentage.
 defaults write com.apple.menuextra.battery ShowPercent -string "YES"
+
+# Disable mouse (not trackpad) acceleration.
+defaults .GlobalPreferences write com.apple.mouse.scaling -int -1
 
 # Updates
 # -------
