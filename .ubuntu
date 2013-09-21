@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+
+# Applications
+# ------------
+
+# Install the essential application building stack.
+sudo apt-get install -y build-essential
+
+# Check install let's you easily create DEB packages of compiled code.
+sudo apt-get install -y checkinstall
+
+# I use Git by default, but sometimes I check out mercural repositories as
+# well.
+sudo apt-get install -y git mercurial
+
+# I'm a Vim user. I like to have this everywhere I go.
+sudo apt-get install -y vim
+
+# Settings
+# --------
+
+# Don't require sudo password for the current user. Don't copy this if you have
+# the fear that it'll break your sudo and lock you out your own system.
+cat <<-RUBY | sudo ruby
+  no_password_definition = <<-DEF.gsub(/^[ ]{4}/, '')
+    # Don't require password for the $USER user.
+    $USER ALL=(ALL) NOPASSWD: ALL
+  DEF
+
+  open("/etc/sudoers", "a+") do |sudoers|
+    break if sudoers.read.include?(no_password_definition)
+    sudoers.write("\n#{no_password_definition}")
+  end
+RUBY
+
+# Disable the annoying Apport popups.
+echo enabled=0 | sudo tee /etc/default/apport &> /dev/null
+sudo service apport stop
+
+# Updates
+# -------
+
+# Update the packages sources and try to install the available upgrades.
+sudo apt-get update && sudo apt-get upgrade -y
