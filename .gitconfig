@@ -16,6 +16,7 @@
 	root = rev-parse --show-toplevel
 	back = checkout -
 	amend = commit --amend
+	track = follow
 
 [help]
 	autocorrect = 1
