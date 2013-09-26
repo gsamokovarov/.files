@@ -3,7 +3,7 @@
 # Applications
 # ------------
 
-# Let lunchy help with the manage launch applications.
+# Let lunchy help with the manage of launch applications.
 which lunchy &> /dev/null || gem install lunchy
 
 # Install Homebrew unless it is already available.
