@@ -106,6 +106,9 @@ defaults write .GlobalPreferences com.apple.mouse.scaling -int -1
 # Use all F1, F2, etc. keys as standard function keys.
 defaults write com.apple.keyboard.fnState -boolean true
 
+# Now kill the affected applications so they can be restarted.
+for app in Dashboard Dock SystemUIServer ; do killall $app > /dev/null ; done
+
 # Updates
 # -------
 
