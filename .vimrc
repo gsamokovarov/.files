@@ -403,7 +403,7 @@ nnoremap <C-K> gt
 nnoremap <C-J> gT
 
 " Hide the current search.
-nnoremap <Space> :nohlsearch<CR>
+nnoremap <Return> :nohlsearch<CR>
 
 " Use <Leader>{j,s} for the split joins. I refuse to remember the gJ and gS.
 nmap <Leader>j :SplitjoinJoin<CR>
