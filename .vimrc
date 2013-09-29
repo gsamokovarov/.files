@@ -16,6 +16,7 @@ call vundle#rc()
 
 Bundle 'AndrewRadev/inline_edit.vim'
 Bundle 'AndrewRadev/multichange.vim'
+Bundle 'AndrewRadev/sideways.vim'
 Bundle 'AndrewRadev/splitjoin.vim'
 Bundle 'Lokaltog/powerline'
 Bundle 'Lokaltog/vim-easymotion'
@@ -401,6 +402,10 @@ inoremap kj <Esc>
 " Those seems friendlier to type than g{t,T}.
 nnoremap <C-K> gt
 nnoremap <C-J> gT
+
+" Move function arguments left and right.
+nnoremap <C-H> :SidewaysLeft<CR>
+nnoremap <C-L> :SidewaysRight<CR>
 
 " Hide the current search.
 nnoremap <Return> :nohlsearch<CR>
