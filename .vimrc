@@ -216,14 +216,19 @@ set background=light
 " Use 256 colors everywhere.
 set t_Co=256
 
-" I use gnome-terminal - its not slow, but its not fast either. Sometimes I
-" need more snappier feel. The GUI one gives me that.
+" The terminal Vim on OSX is slow as f*ck. I don't believe its iTerm that
+" that bringing the slownes, either. Someone... HALP!
 if has('gui_running')
   " Set the GUI solarized theme.
   colorscheme solarized
 
   " Set-up a powerline capable font.
-  set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 21
+  if has('gui_macvim')
+    " I have an Air. The DPS is quite bigger there.
+    set guifont=Ubuntu\ Mono\ derivative\ Powerline:h21
+  else
+    set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 15
+  endif
 
   " If we are running in a gui like GVim, make sure to hide every annoying UI
   " piece. I don't like the GTK tabs, scrollbars and especially the toolbar.
