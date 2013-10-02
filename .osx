@@ -31,9 +31,18 @@ brew install vim --override-system-vi --with-lua
 # The silver searcher is a great searching tool. Similiar to ack, but faster.
 brew install ag
 
+# ImageMagick is needed quite often for web development. Gifsicle is there to
+# make gifify happy.
+brew install imagemagick
+brew install gifsicle
+
 # Cask let you install Mac applications distributed as binaries.
 brew tap phinze/homebrew-cask
 brew install brew-cask
+
+# I come from Linux. I miss most of my old applications. They require X.Org X
+# Window System.
+brew cask install x-quartz
 
 # Install Google Chrome as it is my default browser of choice.
 brew cask install google-chrome
