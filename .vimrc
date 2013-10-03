@@ -270,7 +270,6 @@ if has('autocmd')
   autocmd FileType python
         \ set expandtab tabstop=4 shiftwidth=4 softtabstop=4 |
         \ set omnifunc=pythoncomplete#Complete |
-        \ syn include syntax/css/vim-coloresque.vim
 
   autocmd FileType c
         \ set expandtab tabstop=2 shiftwidth=2 softtabstop=2 |
@@ -279,7 +278,6 @@ if has('autocmd')
   autocmd FileType ruby
         \ set expandtab tabstop=2 shiftwidth=2 softtabstop=2 |
         \ set omnifunc=rubycomplete#Complete |
-        \ syn include syntax/css/vim-coloresque.vim
 
   autocmd FileType javascript
         \ set expandtab tabstop=2 shiftwidth=2 softtabstop=2 |
