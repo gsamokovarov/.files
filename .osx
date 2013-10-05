@@ -44,6 +44,12 @@ brew install brew-cask
 # Window System.
 brew cask install x-quartz
 
+# I bought alfred for a plasibo based productivity increase. Have it installed
+# by default. Also the the brew-cask caskroom to the applictaions search path,
+# so brewed applications can be found.
+brew cask install alfred
+brew cask alfred link
+
 # Install Google Chrome as it is my default browser of choice.
 brew cask install google-chrome
 
