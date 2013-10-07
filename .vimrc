@@ -30,7 +30,6 @@ Bundle 'editorconfig/editorconfig-vim'
 Bundle 'ervandew/supertab'
 Bundle 'gmarik/vundle'
 Bundle 'godlygeek/tabular'
-Bundle 'gorodinskiy/vim-coloresque'
 Bundle 'guns/vim-clojure-static'
 Bundle 'jesseschalken/list-text-object'
 Bundle 'jistr/vim-nerdtree-tabs'
@@ -71,6 +70,10 @@ Bundle 'tpope/vim-tbone'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tristen/vim-sparkup'
 Bundle 'vim-ruby/vim-ruby'
+
+if !has('macunix')
+  Bundle 'gorodinskiy/vim-coloresque'
+endif
 
 if has('lua') && v:version > 703
   Bundle 'Shougo/neocomplete.vim'
