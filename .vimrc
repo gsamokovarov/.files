@@ -295,7 +295,7 @@ if has('autocmd')
         \ set omnifunc=htmlcomplete#Complete
 
   autocmd FileType css
-        \ set expandtab tabstop=2 shiftwidth=2 softtabstop=2
+        \ set expandtab tabstop=2 shiftwidth=2 softtabstop=2 |
         \ set omnifunc=csscomplete#Complete
 
   highlight                  ExtraWhitespace ctermbg=red guibg=red
@@ -423,6 +423,15 @@ nmap <Leader>s :SplitjoinSplit<CR>
 
 " Custom commands
 " ---------------
+
+" When I'm in Bulgarian layout, I don't want to switch it, just to save or
+" quit.
+cnoreabbrev в w
+cnoreabbrev я q
+
+" Some other times I just write with the Shift key down. Take care of that
+" too.
+cnoreabbrev W w
 
 command Light execute "set background=light"
 command Dark execute "set background=dark"
