@@ -1,10 +1,10 @@
 # The smiley faces in Ubuntu Mono or Inconsolata are displayed in the width of
 # two characters. I keep a space after them, so they render nicely on my
 # terminal. Feel free to export the variables below for your fonts.
-export SMILEY_HAPPY_FACE="☺ "
-export SMILEY_SAD_FACE="☹ "
-export SMILEY_BRANCH_SYMBOL=""
-export SMILEY_VI_MODE_SYMBOL="⇦"
+[ -z $SMILEY_HAPPY_FACE     ] && export SMILEY_HAPPY_FACE="☺ "
+[ -z $SMILEY_SAD_FACE       ] && export SMILEY_SAD_FACE="☹ "
+[ -z $SMILEY_BRANCH_SYMBOL  ] && export SMILEY_BRANCH_SYMBOL=""
+[ -z $SMILEY_VI_MODE_SYMBOL ] && export SMILEY_VI_MODE_SYMBOL="⇦"
 
 # The Vi-Mode prompt use this to determine the format.
 export MODE_INDICATOR=" %{$fg_bold[red]%}${SMILEY_VI_MODE_SYMBOL}%{$reset_color%}"
