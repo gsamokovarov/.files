@@ -4,7 +4,7 @@ export ZSH_CUSTOM=~
 export ZSH_THEME=".smiley"
 
 export SMILEY_HAPPY_FACE="❯"
-export SMILEY_HAPPY_FACE="❯"
+export SMILEY_SAD_FACE="❯"
 
 # Make sure that ~/.rbenv/bin and ~/bin are prepended to the PATH, so we can
 # override system utils, if needed. The path for the custom coreutils and
