@@ -298,6 +298,9 @@ if has('autocmd')
         \ set expandtab tabstop=2 shiftwidth=2 softtabstop=2 |
         \ set omnifunc=csscomplete#Complete
 
+  " Automatically rebalance windows on vim resize.
+  autocmd VimResized * :wincmd =
+
   highlight                  ExtraWhitespace ctermbg=red guibg=red
   highlight            clear SignColumn
   autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\t/ containedin=ALL
