@@ -17,6 +17,7 @@
 	back = checkout -
 	amend = commit --amend
 	track = follow
+	info = status -s
 
 [help]
 	autocorrect = 1
