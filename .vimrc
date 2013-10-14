@@ -352,6 +352,13 @@ nnoremap <Right> <NOP>
 inoremap <Right> <NOP>
 vnoremap <Right> <NOP>
 
+" Jump to syntastic errors with Up and Down. They're still useful.
+nnoremap <Up> <ESC>:lprev<CR>
+inoremap <Up> <ESC>:lprev<CR>
+
+nnoremap <Down> <ESC>:lnext<CR>
+inoremap <Down> <ESC>:lnext<CR>
+
 nnoremap <F5> :NERDTreeTabsToggle<CR>
 inoremap <F5> <ESC>:NERDTreeTabsToggle<CR>
 
@@ -367,13 +374,6 @@ inoremap <F8> <ESC>:call ToggleRelativeNumbers()<CR>
 " Navigate through windows with Tab and Shift-Tab.
 nnoremap <Tab> <C-w><C-w>
 nnoremap <S-Tab> <C-w><C-W>
-
-" Jump to syntastic errors with Up and Down.
-nnoremap <Up> <ESC>:lprev<CR>
-inoremap <Up> <ESC>:lprev<CR>
-
-nnoremap <Down> <ESC>:lnext<CR>
-inoremap <Down> <ESC>:lnext<CR>
 
 " Write using `sudo` in COMMAND mode if the file is read-only.
 " Ripped off @StanAngeloff.
@@ -416,7 +416,8 @@ vnoremap <Leader>a: m[om]:Tabularize /:\zs/l0l1<CR>`]V`[
 vnoremap u y
 vnoremap U Y
 
-" Have a saner ESCAPE in INSERT mode. Don't try to map those in VISUAL mode!
+" Have a saner ESCAPE in INSERT mode. Don't try to map those in VISUAL mode or
+" you'll get a nasty delay if you type {j,k}.
 inoremap jk <Esc>
 inoremap kj <Esc>
 
