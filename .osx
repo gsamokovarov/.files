@@ -31,6 +31,10 @@ brew install vim --override-system-vi --with-lua
 # My terminal multiplexer of choice.
 brew install tmux
 
+# Ctags generates an index (or tag) file of language objects found in source
+# files that allows these items to be quickly and easily located.
+brew install ctags
+
 # The silver searcher is a great searching tool. Similiar to ack, but faster.
 brew install ag
 
