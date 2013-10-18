@@ -28,6 +28,9 @@ brew install coreutils
 brew install lua
 brew install vim --override-system-vi --with-lua
 
+# My terminal multiplexer of choice.
+brew install tmux
+
 # The silver searcher is a great searching tool. Similiar to ack, but faster.
 brew install ag
 
