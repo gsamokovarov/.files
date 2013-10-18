@@ -2,7 +2,15 @@
 TMUX_CMD=${TMUX_CMD:-"tmux -2"}
 SESSION_NAME=${1:-`basename $PWD`}
 
-$TMUX_CMD has -t $SESSION_NAME 2>/dev/null && {
+# If the host platform is OSX and reattach-to-user-namespace is available,
+# inject reattach-to-user-namespace into the shell. We do this in the wrapper
+# and not the tmux.conf since if-shell of default-command doesn't work well.
+[ "$(uname)" == "Darwin" ] && which reattach-to-user-namespace &> /dev/null && {
+  export SHELL="reattach-to-user-namespace -l $SHELL"
+}
+
+$TMUX_CMD has -t $SESSION_NAME &> /dev/null && {
   exec $TMUX_CMD attach -t $SESSION_NAME
 }
+
 exec $TMUX_CMD new -s $SESSION_NAME

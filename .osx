@@ -31,6 +31,10 @@ brew install vim --override-system-vi --with-lua
 # My terminal multiplexer of choice.
 brew install tmux
 
+# Connect tmux to the OSX clipboard. E.g. pbcopy will work insiude of tmux
+# sessions.
+brew install reattach-to-user-namespace
+
 # Ctags generates an index (or tag) file of language objects found in source
 # files that allows these items to be quickly and easily located.
 brew install ctags
