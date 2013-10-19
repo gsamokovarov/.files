@@ -12,8 +12,6 @@ SESSION_NAME=${1:-`basename $PWD`}
   export PATH=
 }
 
-echo $TMUX_CMD
-
 $TMUX_CMD has -t $SESSION_NAME &> /dev/null && {
   exec $TMUX_CMD attach -t $SESSION_NAME
 }
