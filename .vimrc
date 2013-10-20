@@ -327,8 +327,8 @@ function! CalculateBestNumberWidth()
   " Only try to calculate the width, if there is a number setting turned on.
   if &l:relativenumber || &l:number
     " A default numberwidth of 4, looks great to me. You will rarely have
-    " files that are less than 10 lines of code and less than 10 line rows and
-    " having the relative lines centered is great.
+    " files that are less than 10 lines of code and having the relative lines
+    " centered is great.
     return max([strlen(line('$')), 3]) + 1
   endif
 endfunction
