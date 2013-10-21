@@ -6,6 +6,15 @@
 # Install the essential application building stack.
 sudo apt-get install -y build-essential
 
+# I like the interface of aptitude.
+sudo apt-get install aptitude
+
+# ZSH doesn't come by default and its my favourite shell.
+sudo apt-get install -y zsh
+
+# My favourite terminal multiplexer is a must.
+sudo apt-get install -y tmux
+
 # Check install let's you easily create DEB packages of compiled code.
 sudo apt-get install -y checkinstall
 
@@ -18,6 +27,10 @@ sudo apt-get install -y git mercurial
 
 # I'm a Vim user. I like to have this everywhere I go.
 sudo apt-get install -y vim
+
+# If you are installing Ubuntu on an HDD, you'll appreciate the speed thatj
+# application preloading gives.
+sudo apt-get install preload
 
 # Required for the gifify function.
 sudo apt-get install -y gifsicle
