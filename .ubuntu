@@ -28,8 +28,8 @@ sudo apt-get install -y git mercurial
 # I'm a Vim user. I like to have this everywhere I go.
 sudo apt-get install -y vim
 
-# If you are installing Ubuntu on an HDD, you'll appreciate the speed thatj
-# application preloading gives.
+# If you are installing Ubuntu on an HDD, you'll appreciate the speed that
+# application preloading gives you.
 sudo apt-get install preload
 
 # Required for the gifify function.
@@ -54,10 +54,16 @@ RUBY
 
 # Disable the annoying Apport popups.
 echo enabled=0 | sudo tee /etc/default/apport &> /dev/null
-sudo service apport stop
+sudo stop apport
 
 # Updates
 # -------
 
 # Update the packages sources and try to install the available upgrades.
 sudo apt-get update && sudo apt-get upgrade -y
+
+# Cleanup
+# -------
+
+# Remove no longer needed dependencies.
+sudo apt-get autoremove -y
