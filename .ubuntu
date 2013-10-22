@@ -6,8 +6,13 @@
 # Install the essential application building stack.
 sudo apt-get install -y build-essential
 
+# Have some system ruby installed. I still use rbenv to manage my ruby
+# installations, but having a system one may help with the case of _just_
+# executing some ruby code.
+sudo apt-get install -y ruby
+
 # I like the interface of aptitude.
-sudo apt-get install aptitude
+sudo apt-get install -y aptitude
 
 # ZSH doesn't come by default and its my favourite shell.
 sudo apt-get install -y zsh
@@ -30,7 +35,7 @@ sudo apt-get install -y vim
 
 # If you are installing Ubuntu on an HDD, you'll appreciate the speed that
 # application preloading gives you.
-sudo apt-get install preload
+sudo apt-get install -y preload
 
 # Required for the gifify function.
 sudo apt-get install -y gifsicle
