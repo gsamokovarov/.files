@@ -87,6 +87,15 @@ cat <<-RUBY | sudo ruby
   end
 RUBY
 
+# I sometimes need Java 6, because of the tools I use. Take a not of how
+# elegantly I'm handling this. Pure genius!
+{
+  sudo mkdir -p /Library/Internet\ Plug-Ins/disabled
+  sudo mv /Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin /Library/Internet\ Plug-Ins/disabled
+  sudo ln -sf /System/Library/Java/Support/Deploy.bundle/Contents/Resources/JavaPlugin2_NPAPI.plugin /Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin
+  sudo ln -sf /System/Library/Frameworks/JavaVM.framework/Commands/javaws /usr/bin/javaws
+} &> /dev/null
+
 # Enable the menu bar transparency.
 defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool true
 
