@@ -11,6 +11,12 @@ which brew &> /dev/null || {
   ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
 }
 
+# ZSH is my favourite shell.
+brew install zsh
+
+# The j shell function relies on autojump.
+brew install autojump
+
 # Git is essential to Homebrew, so have it installed right after it. While I
 # don't use Mercurial, a lot of packages require it for HEAD installs.
 brew install git mercurial
