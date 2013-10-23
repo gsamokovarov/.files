@@ -3,25 +3,28 @@
 # Applications
 # ------------
 
+# I like the interface of aptitude.
+sudo apt-get install -y aptitude
+
 # Install the essential application building stack.
 sudo apt-get install -y build-essential
+
+# Check install let's you easily create DEB packages of compiled code.
+sudo apt-get install -y checkinstall
 
 # Have some system ruby installed. I still use rbenv to manage my ruby
 # installations, but having a system one may help with the case of _just_
 # executing some ruby code.
 sudo apt-get install -y ruby
 
-# I like the interface of aptitude.
-sudo apt-get install -y aptitude
-
 # ZSH doesn't come by default and its my favourite shell.
 sudo apt-get install -y zsh
 
+# The j shell function relies on autojump.
+sudo apt-get install -y autojump
+
 # My favourite terminal multiplexer is a must.
 sudo apt-get install -y tmux
-
-# Check install let's you easily create DEB packages of compiled code.
-sudo apt-get install -y checkinstall
 
 # Ensure that cURL is installed by default.
 sudo apt-get install -y curl
