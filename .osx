@@ -87,7 +87,7 @@ cat <<-RUBY | sudo ruby
   end
 RUBY
 
-# I sometimes need Java 6, because of the tools I use. Take a not of how
+# I sometimes need Java 6, because of the tools I use. Take a note of how
 # elegantly I'm handling this. Pure genius!
 {
   sudo mkdir -p /Library/Internet\ Plug-Ins/disabled
@@ -115,13 +115,9 @@ defaults -currentHost write NSGlobalDomain com.apple.trackpad.enableSecondaryCli
 
 # Don't show shadows around the captured windows.
 defaults write com.apple.screencapture disable-shadow -bool true
-killall SystemUIServer
 
 # Check for software updates daily, not just once per week.
 defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
-
-# Disable Notification Center and remove the menu bar icon.
-sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist &> /dev/null
 
 # Disable press-and-hold for keys in favor of key repeat.
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
