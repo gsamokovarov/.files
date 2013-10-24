@@ -60,6 +60,29 @@ cat <<-RUBY | sudo ruby
   end
 RUBY
 
+# Ubuntu 13.10 comes with broken layout changer. Just ditch it and configure
+# the layouts system wide.
+cat <<-EOF | sudo tee /etc/default/keyboard &> /dev/null
+  # Check /usr/share/doc/keyboard-configuration/README.Debian for
+  # documentation on what to do after having modified this file.
+
+  # The following variables describe your keyboard and can have the same
+  # values as the XkbModel, XkbLayout, XkbVariant and XkbOptions options
+  # in /etc/X11/xorg.conf.
+
+  XKBMODEL="pc105"
+  XKBLAYOUT="us,bg(phonetic)"
+  XKBVARIANT=""
+  XKBOPTIONS="ctrl:nocaps,grp:alt_shift_toggle,grp_led:caps"
+
+  # If you don't want to use the XKB layout on the console, you can
+  # specify an alternative keymap.  Make sure it will be accessible
+  # before /usr is mounted.
+  # KMAP=/etc/console-setup/defkeymap.kmap.gz
+EOF
+
+sudo dpkg-reconfigure keyboard-configuration
+
 # Disable the annoying Apport popups.
 echo enabled=0 | sudo tee /etc/default/apport &> /dev/null
 sudo stop apport
