@@ -383,7 +383,12 @@ cnoremap w!! w !sudo tee % >/dev/null
 " When I'm in Bulgarian layout, I don't want to switch it, just to save or
 " quit.
 cnoreabbrev в w
+cnoreabbrev В w
+cnoreabbrev Q я
 cnoreabbrev я q
+cnoreabbrev яа qа
+cnoreabbrev яал qаl
+cnoreabbrev яалл qаll
 
 " Some other times I just write with the Shift key down. Take care of that
 " too.
