@@ -110,9 +110,6 @@ set noshowmode
 set nonumber
 set relativenumber
 
-" Keep the selected line in the center of the screen.
-set scrolloff=999
-
 " Don't redraw while executing commands from macros and registers.
 set lazyredraw
 set ttyfast
