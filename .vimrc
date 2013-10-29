@@ -41,6 +41,7 @@ Bundle 'koron/nyancat-vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'marijnh/tern_for_vim'
 Bundle 'matchit.zip'
+Bundle 'mattn/emmet-vim'
 Bundle 'mileszs/ack.vim'
 Bundle 'mintplant/vim-literate-coffeescript.git'
 Bundle 'othree/html5.vim'
@@ -69,7 +70,6 @@ Bundle 'tpope/vim-sensible'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-tbone'
 Bundle 'tpope/vim-unimpaired'
-Bundle 'tristen/vim-sparkup'
 Bundle 'vim-ruby/vim-ruby'
 
 if !has('macunix')
@@ -197,6 +197,9 @@ let g:gundo_right=1
 let g:splitjoin_split_mapping=''
 let g:splitjoin_join_mapping=''
 
+" Don't install emmet globally.
+let g:user_emmet_install_global = 0
+
 " Highlight shell scripts by the POSIX.
 let g:is_posix=1
 
@@ -295,6 +298,9 @@ if has('autocmd')
   autocmd FileType css
         \ set expandtab tabstop=2 shiftwidth=2 softtabstop=2 |
         \ set omnifunc=csscomplete#Complete
+
+  " Install emmet only in HTML and CSS files.
+  autocmd FileType *html*,*css* EmmetInstall
 
   " Automatically rebalance windows on vim resize.
   autocmd VimResized * :wincmd =
