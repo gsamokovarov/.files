@@ -200,9 +200,6 @@ let g:splitjoin_join_mapping=''
 " Don't install emmet globally.
 let g:user_emmet_install_global = 0
 
-" Highlight shell scripts by the POSIX.
-let g:is_posix=1
-
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 if executable('ag')
   let g:ackprg = 'ag --nogroup --column'
