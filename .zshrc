@@ -8,6 +8,10 @@ export ZSH_THEME=".smiley"
 # /usr/loca/bin are my preferences on OSX.
 export PATH=~/.rbenv/bin:~/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:$PATH
 
+# Initialize rbenv before initializing the plugins. The bundler plugin needs
+# the bundle executable available, so...
+eval "$(rbenv init -)"
+
 # Add Ubuntu's command-not-found ZSH alternative and use ssh-agent on the first
 # terminal run. The other ones are just candies.
 plugins=(git ruby bundler autojump ssh-agent command-not-found)
@@ -32,13 +36,10 @@ if [ -f ~/.aliases ] ; then source ~/.aliases ; fi
 # Source all of the custom functions living in ~/.functions.
 if [ -f ~/.functions ] ; then source ~/.functions ; fi
 
+# Use the custom solarized LS colors.
 if `which dircolors &> /dev/null` ; then
   if [ -f ~/.dir_colors ] ; then eval `dircolors ~/.dir_colors` ; fi
 fi
-# Use the custom solarized LS colors.
-
-# Initialize rbenv.
-eval "$(rbenv init -)"
 
 # Include local machine custom settings.
 if [ -f ~/.zshrc.local ] ; then source ~/.zshrc.local ; fi
