@@ -125,8 +125,8 @@ set smartcase
 " Read Vim file specific options.
 set modeline
 
-" Indenting by indentation usually works well for me.
-set foldmethod=indent
+" Just indent manually with zf.
+set foldmethod=manual
 
 " Copy to the X clipboard too, unless we are on OSX and inside a tmux session.
 if !(has('macunix') || empty($TMUX))
@@ -442,7 +442,8 @@ nnoremap <C-L> :SidewaysRight<CR>
 nnoremap <Return> :nohlsearch<CR>
 
 " Toggle the current fold.
-nnoremap <Space> za
+nnoremap <silent> <Space> @=(foldlevel('.') ? 'za' : "\<Space>")<CR>
+vnoremap <Space> zf
 
 " Use <Leader>{j,s} for the split joins. I refuse to remember the gJ and gS.
 nmap <Leader>j :SplitjoinJoin<CR>
