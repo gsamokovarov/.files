@@ -233,6 +233,10 @@ if has('gui_running')
   if has('gui_macvim')
     " I have an Air. The DPS is quite bigger there.
     set guifont=Ubuntu\ Mono\ derivative\ Powerline:h21
+
+    " Try to fit the maximum characters on the screen and feel the rest of it
+    " with the background color in MacVim.
+    set fuoptions=maxvert,maxhorz,background:#FFFDF6E3
   else
     set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 15
   endif
