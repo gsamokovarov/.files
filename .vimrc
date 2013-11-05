@@ -125,6 +125,9 @@ set smartcase
 " Read Vim file specific options.
 set modeline
 
+" Indenting by indentation usually works well for me.
+set foldmethod=indent
+
 " Copy to the X clipboard too, unless we are on OSX and inside a tmux session.
 if !(has('macunix') || empty($TMUX))
   set clipboard+=unnamedplus
@@ -437,6 +440,9 @@ nnoremap <C-L> :SidewaysRight<CR>
 
 " Hide the current search.
 nnoremap <Return> :nohlsearch<CR>
+
+" Toggle the current fold.
+nnoremap <Space> za
 
 " Use <Leader>{j,s} for the split joins. I refuse to remember the gJ and gS.
 nmap <Leader>j :SplitjoinJoin<CR>
