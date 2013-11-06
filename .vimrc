@@ -229,6 +229,11 @@ if has('gui_running')
   " Set the GUI solarized theme.
   colorscheme solarized
 
+  " If we are running in a gui like GVim, make sure to hide every annoying UI
+  " piece, by default. In MacVim I like the graphical tabs, but those actually
+  " look good, so enable it only for the MacVim.
+  set guioptions=
+
   " Set-up a powerline capable font.
   if has('gui_macvim')
     " I have an Air. The DPS is quite bigger there.
@@ -237,13 +242,12 @@ if has('gui_running')
     " Try to fit the maximum characters on the screen and feel the rest of it
     " with the background color in MacVim.
     set fuoptions=maxvert,maxhorz,background:#FFFDF6E3
+
+    " Enable the graphical tabs on Macvim, as those look awesome.
+    set guioptions=e
   else
     set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 15
   endif
-
-  " If we are running in a gui like GVim, make sure to hide every annoying UI
-  " piece. I don't like the GTK tabs, scrollbars and especially the toolbar.
-  set guioptions=
 else
   " Use light solarized theme on a transparent terminal. Its important to set
   " the termtrans before the colorscheme.
