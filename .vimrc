@@ -387,6 +387,10 @@ inoremap <F8> <ESC>:call ToggleRelativeNumbers()<CR>
 nnoremap <Tab> <C-w><C-w>
 nnoremap <S-Tab> <C-w><C-W>
 
+" Easier to type than :. I don't really use the default ; behavior, so I'm
+" fine with just getting rid of it.
+nnoremap ; :
+
 " Write using `sudo` in COMMAND mode if the file is read-only.
 " Ripped off @StanAngeloff.
 cnoremap w!! w !sudo tee % >/dev/null
