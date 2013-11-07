@@ -18,6 +18,7 @@ Bundle 'AndrewRadev/inline_edit.vim'
 Bundle 'AndrewRadev/multichange.vim'
 Bundle 'AndrewRadev/sideways.vim'
 Bundle 'AndrewRadev/splitjoin.vim'
+Bundle 'AndrewRadev/switch.vim'
 Bundle 'Lokaltog/powerline'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'SirVer/ultisnips'
@@ -434,6 +435,9 @@ vnoremap <Leader>a> m[om]:Tabularize /=><CR>`]V`[
 
 nnoremap <Leader>a: :Tabularize /:\zs/l0l1<CR>
 vnoremap <Leader>a: m[om]:Tabularize /:\zs/l0l1<CR>`]V`[
+
+" Use - for switching values. For example - on true will turn it to false.
+nnoremap - :Switch<cr>
 
 " I always mess these up on my Das Keyboard. Trying to work around them at
 " least in VISUAL mode.
