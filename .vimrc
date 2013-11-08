@@ -19,6 +19,7 @@ Bundle 'AndrewRadev/multichange.vim'
 Bundle 'AndrewRadev/sideways.vim'
 Bundle 'AndrewRadev/splitjoin.vim'
 Bundle 'AndrewRadev/switch.vim'
+Bundle 'AndrewRadev/whitespaste.vim'
 Bundle 'Lokaltog/powerline'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'SirVer/ultisnips'
@@ -206,6 +207,14 @@ let g:splitjoin_join_mapping=''
 
 " Don't install emmet globally.
 let g:user_emmet_install_global = 0
+
+" Disable vim-pasta's mappings so they can work with whitespace.vim.
+let g:pasta_enabled_filetypes = []
+
+" Now, let whitespace.vim happy with vim-pasta.
+let g:whitespaste_paste_before_command = "normal \<Plug>BeforePasta"
+let g:whitespaste_paste_after_command  = "normal \<Plug>AfterPasta"
+let g:whitespaste_paste_visual_command = "normal gv\<Plug>VisualPasta"
 
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 if executable('ag')
