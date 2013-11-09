@@ -425,7 +425,7 @@ cnoreabbrev Q q
 cnoreabbrev Wq wq
 
 " Format a paragraph to fit in `textwidth`.
-nnoremap <Leader>f gqip
+nnoremap <Leader>f gqap
 vnoremap <Leader>f gq
 
 " Restore the last selection in VISUAL mode.
