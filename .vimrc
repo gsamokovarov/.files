@@ -124,9 +124,6 @@ set incsearch
 set ignorecase
 set smartcase
 
-" Don't quit the buffer, just hide them.
-set hidden
-
 " Read Vim file specific options.
 set modeline
 
