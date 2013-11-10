@@ -19,3 +19,16 @@ gifify() {
     echo "proper usage: gifify <input_movie.mov>. You DO need to include extension."
   fi
 }
+
+# Checks if the first git argument is an existing branch and switch to it if it
+# is, otherwise git works as usual.
+git() {
+  local target_branch=$1
+  local git=${GIT:-"$(which -a git | tail -1)"}
+
+  if [ -e .git/refs/heads/${target_branch} ]; then
+    $git checkout $target_branch
+  else
+    $git $*
+  fi
+}
