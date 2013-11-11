@@ -471,8 +471,8 @@ nnoremap <silent> <Space> @=(foldlevel('.') ? 'za' : "\<Space>")<CR>
 vnoremap <Space> zf
 
 " Use <Leader>{j,s} for the split joins. I refuse to remember the gJ and gS.
-nmap <Leader>j :SplitjoinJoin<CR>
-nmap <Leader>s :SplitjoinSplit<CR>
+nnoremap <Leader>j :SplitjoinJoin<CR>
+nnoremap <Leader>s :SplitjoinSplit<CR>
 
 " Custom commands
 " ---------------
