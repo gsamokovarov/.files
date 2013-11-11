@@ -255,6 +255,9 @@ if has('gui_running')
 
     " Enable the graphical tabs on Macvim, as those look awesome.
     set guioptions=e
+
+    " Enable a bit of transperancy for the MacVim window. Looks pretty cool.
+    set transparency=4
   else
     set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 15
   endif
