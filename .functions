@@ -26,7 +26,7 @@ git() {
   local target_branch=$1
   local git=${GIT:-"$(which -a git | tail -1)"}
 
-  if [ -e .git/refs/heads/${target_branch} ]; then
+  if [ -e "$($git rev-parse --git-dir)/refs/heads/$target_branch" ]; then
     $git checkout $target_branch
   else
     $git $*
