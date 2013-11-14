@@ -6,8 +6,6 @@
 	branches = branch -a
 	tags = tag -l
 	remotes = remote
-	master = checkout master
-	gh-pages = checkout gh-pages
 	sprout = checkout -b
 	switch = checkout
 	unstash = stash pop
