@@ -31,15 +31,15 @@ export EDITOR=vim
 export PAGER=less
 
 # Source all of the aliases living in ~/.aliases.
-if [ -f ~/.aliases ]; then source ~/.aliases; fi
+[ -f ~/.aliases ] && source ~/.aliases
 
 # Source all of the custom functions living in ~/.functions.
-if [ -f ~/.functions ]; then source ~/.functions; fi
+[ -f ~/.functions ] && source ~/.functions
 
 # Use the custom solarized LS colors.
-if `which dircolors &> /dev/null`; then
-  if [ -f ~/.dir_colors ]; then eval `dircolors ~/.dir_colors`; fi
+if $(which dircolors &> /dev/null); then
+  [ -f ~/.dir_colors ] && $(dircolors ~/.dir_colors)
 fi
 
 # Include local machine custom settings.
-if [ -f ~/.zshrc.local ]; then source ~/.zshrc.local; fi
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
