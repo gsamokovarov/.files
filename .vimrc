@@ -404,6 +404,10 @@ nnoremap <S-Tab> <C-w><C-W>
 " fine with just getting rid of it.
 nnoremap ; :
 
+" I'm thinking of a decent usage for the Q key, so I'm starting with a rege
+" quit.
+nnoremap Q :q!<CR>
+
 " Write using `sudo` in COMMAND mode if the file is read-only.
 " Ripped off @StanAngeloff.
 cnoremap w!! w !sudo tee % >/dev/null
