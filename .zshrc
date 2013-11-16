@@ -38,7 +38,7 @@ export PAGER=less
 
 # Use the custom solarized LS colors.
 if $(which dircolors &> /dev/null); then
-  [ -f ~/.dir_colors ] && $(dircolors ~/.dir_colors)
+  [ -f ~/.dir_colors ] && eval "$(dircolors ~/.dir_colors)"
 fi
 
 # Include local machine custom settings.
