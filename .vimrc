@@ -360,6 +360,9 @@ endfunction
 " Mappings
 " --------
 
+" Map the <Leader> to the comma.
+let mapleader=","
+
 " I have to force myself not to use those anymore.
 nnoremap <Up> <NOP>
 inoremap <Up> <NOP>
