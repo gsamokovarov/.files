@@ -1,8 +1,17 @@
 # oh-my-zsh alias sl to ls by default. I really like the locomotive, though.
 unalias sl
 
-# Use hub for git.
-alias git=hub
+# Use hub for git with a twist -- if the first argument is an existing branch
+# then switch to it.
+git() {
+  local target_branch=$1
+
+  if [ -e "$(hub rev-parse --git-dir)/refs/heads/$target_branch" ]; then
+    hub checkout $target_branch
+  else
+    hub $*
+  fi
+}
 
 # Some systems may not be happy with the $TERM of screen-256colors, so be sane.
 alias ssh="TERM=xterm ssh"
