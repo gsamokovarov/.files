@@ -357,14 +357,6 @@ function! CalculateBestNumberWidth()
   endif
 endfunction
 
-function WriteAndOrQuit()
-  try
-    execute "wq!"
-  catch
-    execute "q!"
-  endtry
-endfunction
-
 " Mappings
 " --------
 
@@ -417,7 +409,7 @@ nnoremap ; :
 
 " I'm thinking of a decent usage for the Q key, so I'm starting with the rage
 " quit.
-nnoremap Q :call WriteAndOrQuit()<CR>
+nnoremap Q ZZ
 
 " Write using `sudo` in COMMAND mode if the file is read-only.
 " Ripped off @StanAngeloff.
