@@ -13,6 +13,9 @@ git() {
   fi
 }
 
+# Force the regular Vim to open multiple files in tabs.
+alias vim='vim -p'
+
 # Some systems may not be happy with the $TERM of screen-256colors, so be sane.
 alias ssh="TERM=xterm ssh"
 
