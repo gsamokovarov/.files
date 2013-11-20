@@ -258,6 +258,9 @@ if has('gui_running')
 
     " Enable a bit of transperancy for the MacVim window. Looks pretty cool.
     set transparency=4
+
+    " The focus follows the mouse. No need to click on a window for that.
+    set mousefocus
   else
     set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 15
   endif
