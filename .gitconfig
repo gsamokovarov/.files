@@ -16,6 +16,7 @@
 	amend = commit --amend
 	track = follow
 	state = status -s
+	rewind = reset --hard HEAD~1
 
 [help]
 	autocorrect = 1
