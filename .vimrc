@@ -8,80 +8,96 @@ filetype off
 
 call pathogen#runtime_append_all_bundles()
 
-set runtimepath+=~/.vim/bundle/vundle
-call vundle#rc()
+if has('vim_starting')
+   set nocompatible               " Be iMproved
+   set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+
+call neobundle#rc(expand('~/.vim/bundle/'))
 
 " Bundles
 " -------
 
-Bundle 'AndrewRadev/inline_edit.vim'
-Bundle 'AndrewRadev/multichange.vim'
-Bundle 'AndrewRadev/sideways.vim'
-Bundle 'AndrewRadev/splitjoin.vim'
-Bundle 'AndrewRadev/switch.vim'
-Bundle 'AndrewRadev/whitespaste.vim'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'SirVer/ultisnips'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'ciaranm/detectindent'
-Bundle 'dbext.vim'
-Bundle 'digitaltoad/vim-jade'
-Bundle 'bling/vim-airline'
-Bundle 'editorconfig/editorconfig-vim'
-Bundle 'ervandew/supertab'
-Bundle 'gmarik/vundle'
-Bundle 'godlygeek/tabular'
-Bundle 'guns/vim-clojure-static'
-Bundle 'hail2u/vim-css3-syntax'
-Bundle 'jesseschalken/list-text-object'
-Bundle 'jistr/vim-nerdtree-tabs'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'kien/ctrlp.vim'
-Bundle 'kien/rainbow_parentheses.vim'
-Bundle 'koron/nyancat-vim'
-Bundle 'majutsushi/tagbar'
-Bundle 'marijnh/tern_for_vim'
-Bundle 'matchit.zip'
-Bundle 'mattn/emmet-vim'
-Bundle 'mileszs/ack.vim'
-Bundle 'mintplant/vim-literate-coffeescript.git'
-Bundle 'othree/html5.vim'
-Bundle 'pangloss/vim-javascript'
-Bundle 'rodjek/vim-puppet'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/syntastic'
-Bundle 'sickill/vim-monokai'
-Bundle 'sickill/vim-pasta'
-Bundle 'sjl/gundo.vim'
-Bundle 'slim-template/vim-slim'
-Bundle 'timcharper/textile.vim'
-Bundle 'tomtom/tcomment_vim'
-Bundle 'tpope/vim-afterimage'
-Bundle 'tpope/vim-classpath'
-Bundle 'tpope/vim-cucumber'
-Bundle 'tpope/vim-dispatch'
-Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-fireplace'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-haml'
-Bundle 'tpope/vim-markdown'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-sensible'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-tbone'
-Bundle 'tpope/vim-unimpaired'
-Bundle 'vim-ruby/vim-ruby'
+" Let NeoBundle manage NeoBundle.
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+" Install vimproc, so NeoBundle can be async.
+NeoBundle 'Shougo/vimproc', {
+        \ 'build' : {
+        \     'windows' : 'make -f make_mingw32.mak',
+        \     'cygwin' : 'make -f make_cygwin.mak',
+        \     'mac' : 'make -f make_mac.mak',
+        \     'unix' : 'make -f make_unix.mak',
+        \    },
+        \ }
+
+NeoBundle 'AndrewRadev/inline_edit.vim'
+NeoBundle 'AndrewRadev/multichange.vim'
+NeoBundle 'AndrewRadev/sideways.vim'
+NeoBundle 'AndrewRadev/splitjoin.vim'
+NeoBundle 'AndrewRadev/switch.vim'
+NeoBundle 'AndrewRadev/whitespaste.vim'
+NeoBundle 'Lokaltog/vim-easymotion'
+NeoBundle 'SirVer/ultisnips'
+NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'ciaranm/detectindent'
+NeoBundle 'dbext.vim'
+NeoBundle 'digitaltoad/vim-jade'
+NeoBundle 'bling/vim-airline'
+NeoBundle 'editorconfig/editorconfig-vim'
+NeoBundle 'ervandew/supertab'
+NeoBundle 'godlygeek/tabular'
+NeoBundle 'guns/vim-clojure-static'
+NeoBundle 'hail2u/vim-css3-syntax'
+NeoBundle 'jesseschalken/list-text-object'
+NeoBundle 'jistr/vim-nerdtree-tabs'
+NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'kien/rainbow_parentheses.vim'
+NeoBundle 'koron/nyancat-vim'
+NeoBundle 'majutsushi/tagbar'
+NeoBundle 'marijnh/tern_for_vim'
+NeoBundle 'matchit.zip'
+NeoBundle 'mattn/emmet-vim'
+NeoBundle 'mileszs/ack.vim'
+NeoBundle 'mintplant/vim-literate-coffeescript.git'
+NeoBundle 'othree/html5.vim'
+NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'rodjek/vim-puppet'
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'sickill/vim-monokai'
+NeoBundle 'sickill/vim-pasta'
+NeoBundle 'sjl/gundo.vim'
+NeoBundle 'slim-template/vim-slim'
+NeoBundle 'timcharper/textile.vim'
+NeoBundle 'tomtom/tcomment_vim'
+NeoBundle 'tpope/vim-afterimage'
+NeoBundle 'tpope/vim-classpath'
+NeoBundle 'tpope/vim-cucumber'
+NeoBundle 'tpope/vim-dispatch'
+NeoBundle 'tpope/vim-endwise'
+NeoBundle 'tpope/vim-fireplace'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'tpope/vim-haml'
+NeoBundle 'tpope/vim-markdown'
+NeoBundle 'tpope/vim-rails'
+NeoBundle 'tpope/vim-repeat'
+NeoBundle 'tpope/vim-sensible'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'tpope/vim-tbone'
+NeoBundle 'tpope/vim-unimpaired'
+NeoBundle 'vim-ruby/vim-ruby'
 
 if !has('macunix')
-  Bundle 'gorodinskiy/vim-coloresque'
+  NeoBundle 'gorodinskiy/vim-coloresque'
 endif
 
 if has('lua') && v:version > 703
-  Bundle 'Shougo/neocomplete.vim'
+  NeoBundle 'Shougo/neocomplete.vim'
 else
-  Bundle 'Shougo/neocomplcache.vim'
+  NeoBundle 'Shougo/neocomplcache.vim'
 endif
 
 " Builtin Settings
