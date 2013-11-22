@@ -20,7 +20,6 @@ Bundle 'AndrewRadev/sideways.vim'
 Bundle 'AndrewRadev/splitjoin.vim'
 Bundle 'AndrewRadev/switch.vim'
 Bundle 'AndrewRadev/whitespaste.vim'
-Bundle 'Lokaltog/powerline'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'SirVer/ultisnips'
 Bundle 'airblade/vim-gitgutter'
@@ -28,6 +27,7 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'ciaranm/detectindent'
 Bundle 'dbext.vim'
 Bundle 'digitaltoad/vim-jade'
+Bundle 'bling/vim-airline'
 Bundle 'editorconfig/editorconfig-vim'
 Bundle 'ervandew/supertab'
 Bundle 'gmarik/vundle'
@@ -144,9 +144,6 @@ set colorcolumn=80
 " Syntax highlight only the first 512 characters.
 set synmaxcol=512
 
-" Enable the next gen powerline.
-set runtimepath+=~/.vim/bundle/powerline/powerline/bindings/vim
-
 " Enable the mouse support if Vim supports it.
 if has('mouse')
   set mouse=a
@@ -166,6 +163,9 @@ let g:is_posix=1
 
 " Plugin settings
 " ---------------
+
+" Use powerline patched fonts in airline.
+let g:airline_powerline_fonts=1
 
 " Enable neocomplcache at startup.
 let g:neocomplcache_enable_at_startup=1
