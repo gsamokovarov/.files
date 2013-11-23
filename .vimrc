@@ -6,11 +6,9 @@ set nocompatible
 
 filetype off
 
-call pathogen#runtime_append_all_bundles()
-
 if has('vim_starting')
-   set nocompatible               " Be iMproved
-   set runtimepath+=~/.vim/bundle/neobundle.vim/
+  set nocompatible
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
 call neobundle#rc(expand('~/.vim/bundle/'))
