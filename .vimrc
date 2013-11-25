@@ -311,11 +311,11 @@ if has('autocmd')
 
   autocmd FileType python
         \ set expandtab tabstop=4 shiftwidth=4 softtabstop=4 |
-        \ set omnifunc=pythoncomplete#Complete |
+        \ set omnifunc=pythoncomplete#Complete
 
   autocmd FileType c
-        \ set expandtab tabstop=2 shiftwidth=2 softtabstop=2 |
-        \ set omnifunc=ccomplete#Complete
+        \ set cindent expandtab tabstop=2 shiftwidth=2 softtabstop=2 |
+        \ set omnifunc=ccomplete#Complete |
 
   autocmd FileType ruby
         \ set expandtab tabstop=2 shiftwidth=2 softtabstop=2 |
