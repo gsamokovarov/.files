@@ -315,11 +315,11 @@ if has('autocmd')
 
   autocmd FileType c
         \ set cindent expandtab tabstop=2 shiftwidth=2 softtabstop=2 |
-        \ set omnifunc=ccomplete#Complete |
+        \ set omnifunc=ccomplete#Complete
 
   autocmd FileType ruby
         \ set expandtab tabstop=2 shiftwidth=2 softtabstop=2 |
-        \ set omnifunc=rubycomplete#Complete |
+        \ set omnifunc=rubycomplete#Complete
 
   autocmd FileType javascript
         \ set expandtab tabstop=2 shiftwidth=2 softtabstop=2 |
