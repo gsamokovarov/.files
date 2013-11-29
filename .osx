@@ -11,6 +11,9 @@ which brew &> /dev/null || {
   ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
 }
 
+# Keep Pow installed by default.
+[ -e "$HOME/Library/Application Support/Pow" ] && { curl get.pow.cx | sh }
+
 # ZSH is my favourite shell.
 brew install zsh
 
