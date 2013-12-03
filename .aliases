@@ -6,7 +6,7 @@ unalias sl
 git() {
   local target_branch=$1
 
-  if [ $# -eq 1 ] && [ -e "$(hub rev-parse --git-dir)/refs/heads/$target_branch" ]; then
+  if [ $# -eq 1 ] && [ -e "$(hub rev-parse --git-dir 2>/dev/null)/refs/heads/$target_branch" ]; then
     hub checkout $target_branch
   else
     hub $*
