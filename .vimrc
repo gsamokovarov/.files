@@ -283,6 +283,9 @@ else
   " the termtrans before the colorscheme.
   let g:solarized_termtrans=1
   colorscheme solarized
+
+  " Use fancy airline tabs in the terminal.
+  let g:airline#extensions#tabline#enabled=1
 endif
 
 " Custom settings
