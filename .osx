@@ -35,7 +35,7 @@ brew install coreutils
 # I like Vim, so have it installed by default. Build it with Lua support, so I
 # can test some of the new plugins.
 brew install lua
-brew install vim --override-system-vi --with-lua
+brew install macvim --override-system-vi --with-lua
 
 # My terminal multiplexer of choice.
 brew install tmux
