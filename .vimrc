@@ -286,6 +286,8 @@ else
 
   " Use fancy airline tabs in the terminal.
   let g:airline#extensions#tabline#enabled=1
+  let g:airline#extensions#tabline#show_buffers=0
+  let g:airline#extensions#tabline#tab_nr_type=1
 endif
 
 " Custom settings
