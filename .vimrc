@@ -29,6 +29,15 @@ NeoBundle 'Shougo/vimproc', {
         \    },
         \ }
 
+NeoBundle 'marijnh/tern_for_vim', {
+        \ 'build' : {
+        \     'windows' : 'npm install .',
+        \     'cygwin' : 'npm install .',
+        \     'mac' : 'npm install .',
+        \     'unix' : 'npm install .',
+        \    },
+        \ }
+
 NeoBundle 'AndrewRadev/inline_edit.vim'
 NeoBundle 'AndrewRadev/multichange.vim'
 NeoBundle 'AndrewRadev/sideways.vim'
@@ -55,7 +64,6 @@ NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'kien/rainbow_parentheses.vim'
 NeoBundle 'koron/nyancat-vim'
 NeoBundle 'majutsushi/tagbar'
-NeoBundle 'marijnh/tern_for_vim'
 NeoBundle 'matchit.zip'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'mileszs/ack.vim'
