@@ -43,3 +43,7 @@ fi
 
 # Include local machine custom settings.
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
+
+# Be happy. (The above are expressions, If I don't have a ~/.zshrc.local file
+# I'll start with a sad face. I like happy faces.)
+true
