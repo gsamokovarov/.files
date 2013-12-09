@@ -1,14 +1,34 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
+
+# Setup
+# -----
+
+# Change the default shell to ZSH.
+[ "$SHELL" = "/bin/zsh" ] || chsh -s /bin/zsh
+
+# Don't require sudo password for the current user. Don't copy this if you have
+# the fear that it'll break your sudo and lock you out your own system.
+cat <<-RUBY | sudo ruby
+  no_password_definition = <<-DEF.gsub(/^[ ]{4}/, '')
+    # Don't require password for the $USER user.
+    $USER ALL=(ALL) NOPASSWD: ALL
+  DEF
+
+  open("/etc/sudoers", "a+") do |sudoers|
+    break if sudoers.read.include?(no_password_definition)
+    sudoers.write("\n#{no_password_definition}")
+  end
+RUBY
 
 # Applications
 # ------------
 
 # Let lunchy help with the manage of launch applications.
-which lunchy &> /dev/null || gem install lunchy
+which lunchy &> /dev/null || sudo gem install lunchy
 
 # Install Homebrew unless it is already available.
 which brew &> /dev/null || {
-  ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
+  ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)"
 }
 
 # Keep Pow installed by default.
@@ -35,7 +55,7 @@ brew install coreutils
 # I like Vim, so have it installed by default. Build it with Lua support, so I
 # can test some of the new plugins.
 brew install lua
-brew install macvim --override-system-vi --with-lua
+brew install macvim --override-system-vim --with-lua
 
 # My terminal multiplexer of choice.
 brew install tmux
@@ -62,7 +82,7 @@ brew install brew-cask
 
 # I come from Linux. I miss most of my old applications. They require X.Org X
 # Window System.
-brew cask install x-quartz
+brew cask install xquartz
 
 # I bought alfred for a plasibo based productivity increase. Have it installed
 # by default. Also the the brew-cask caskroom to the applictaions search path,
@@ -81,20 +101,6 @@ brew cask install skype
 
 # Settings
 # --------
-
-# Don't require sudo password for the current user. Don't copy this if you have
-# the fear that it'll break your sudo and lock you out your own system.
-cat <<-RUBY | sudo ruby
-  no_password_definition = <<-DEF.gsub(/^[ ]{4}/, '')
-    # Don't require password for the $USER user.
-    $USER ALL=(ALL) NOPASSWD: ALL
-  DEF
-
-  open("/etc/sudoers", "a+") do |sudoers|
-    break if sudoers.read.include?(no_password_definition)
-    sudoers.write("\n#{no_password_definition}")
-  end
-RUBY
 
 # Enable the menu bar transparency.
 defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool true
@@ -154,3 +160,4 @@ brew update && brew upgrade
 # Homebrew's health. For example, if I ever forget to install the XCode command
 # line tools, it will remind me.
 brew doctor
+
