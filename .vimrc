@@ -268,8 +268,8 @@ if has('gui_running')
 
   " Set-up a powerline capable font.
   if has('gui_macvim')
-    " I have an Air. The DPS is quite bigger there.
-    set guifont=Ubuntu\ Mono\ derivative\ Powerline:h19
+    " I have a MacBook Pro Retina. The DPS is quite bigger here.
+    set guifont=Ubuntu\ Mono\ derivative\ Powerline:h16
 
     " Try to fit the maximum characters on the screen and feel the rest of it
     " with the background color in MacVim.
