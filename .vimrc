@@ -296,12 +296,6 @@ if has('autocmd')
   " Recalculate the numbers width on each buffer write.
   autocmd BufReadPost,BufWritePre * :let &l:numberwidth=CalculateBestNumberWidth()
 
-  " Have rainbow parantheses everywhere
-  autocmd VimEnter * RainbowParenthesesToggle
-  autocmd Syntax   * RainbowParenthesesLoadRound
-  autocmd Syntax   * RainbowParenthesesLoadSquare
-  autocmd Syntax   * RainbowParenthesesLoadBraces
-
   " Save the last position in a file.
   autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
