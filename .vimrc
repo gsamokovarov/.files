@@ -38,7 +38,6 @@ NeoBundle 'marijnh/tern_for_vim', {
         \    },
         \ }
 
-NeoBundle 'AndrewRadev/multichange.vim'
 NeoBundle 'AndrewRadev/sideways.vim'
 NeoBundle 'AndrewRadev/splitjoin.vim'
 NeoBundle 'AndrewRadev/switch.vim'
@@ -66,11 +65,9 @@ NeoBundle 'sickill/vim-pasta'
 NeoBundle 'sjl/gundo.vim'
 NeoBundle 'slim-template/vim-slim'
 NeoBundle 'tomtom/tcomment_vim'
-NeoBundle 'tpope/vim-classpath'
 NeoBundle 'tpope/vim-cucumber'
 NeoBundle 'tpope/vim-dispatch'
 NeoBundle 'tpope/vim-endwise'
-NeoBundle 'tpope/vim-fireplace'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-haml'
 NeoBundle 'tpope/vim-markdown'
@@ -210,9 +207,6 @@ let g:gundo_right=1
 let g:splitjoin_split_mapping=''
 let g:splitjoin_join_mapping=''
 
-" Don't install emmet globally.
-let g:user_emmet_install_global = 0
-
 " Disable vim-pasta's mappings so they can work with whitespace.vim.
 let g:pasta_enabled_filetypes = []
 
@@ -294,7 +288,7 @@ if has('autocmd')
   autocmd FocusGained,InsertLeave * if !exists("b:NERDTreeType") | :set nonumber relativenumber | endif
 
   " Recalculate the numbers width on each buffer write.
-  autocmd BufReadPost,BufWritePre * :let &l:numberwidth=CalculateBestNumberWidth()
+  autocmd BufWritePre * :let &l:numberwidth=CalculateBestNumberWidth()
 
   " Save the last position in a file.
   autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
