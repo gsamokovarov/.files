@@ -54,7 +54,6 @@ NeoBundle 'jistr/vim-nerdtree-tabs'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'koron/nyancat-vim'
-NeoBundle 'majutsushi/tagbar'
 NeoBundle 'matchit.zip'
 NeoBundle 'mileszs/ack.vim'
 NeoBundle 'pangloss/vim-javascript'
@@ -65,7 +64,6 @@ NeoBundle 'sickill/vim-pasta'
 NeoBundle 'sjl/gundo.vim'
 NeoBundle 'slim-template/vim-slim'
 NeoBundle 'tomtom/tcomment_vim'
-NeoBundle 'tpope/vim-cucumber'
 NeoBundle 'tpope/vim-dispatch'
 NeoBundle 'tpope/vim-endwise'
 NeoBundle 'tpope/vim-fugitive'
@@ -78,10 +76,6 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-tbone'
 NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'vim-ruby/vim-ruby'
-
-if !has('macunix')
-  NeoBundle 'gorodinskiy/vim-coloresque'
-endif
 
 if has('lua') && v:version > 703
   NeoBundle 'Shougo/neocomplete.vim'
