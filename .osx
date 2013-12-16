@@ -26,6 +26,9 @@ RUBY
 # Let lunchy help with the manage of launch applications.
 which lunchy &> /dev/null || sudo gem install lunchy
 
+# Install puppet, to eventually deprecate most of this script.
+which puppet &> /dev/null || sudo gem install puppet
+
 # Install Homebrew unless it is already available.
 which brew &> /dev/null || {
   ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)"
