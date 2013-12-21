@@ -13,9 +13,6 @@ git() {
   fi
 }
 
-# Rage quit everywhere.
-alias Q=exit
-
 # Force the regular Vim to open multiple files in tabs.
 alias vim='vim -p'
 
