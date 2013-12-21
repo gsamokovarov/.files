@@ -402,9 +402,11 @@ inoremap <F8> <ESC>:call ToggleRelativeNumbers()<CR>
 nnoremap <Tab> <C-w><C-w>
 nnoremap <S-Tab> <C-w><C-W>
 
-" Easier to type than :. I don't really use the default ; behavior, so I'm
-" fine with just getting rid of it.
+" Easier to type than :. I don't really use the default ; behavior, but I'm
+" keeping it just in case in the :. Plus, swapping those two will teach me not
+" to press the damn Shift anymore.
 nnoremap ; :
+nnoremap : ;
 
 " I'm thinking of a decent usage for the Q key, so I'm starting with the rage
 " quit.
