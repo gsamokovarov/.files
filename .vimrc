@@ -379,12 +379,9 @@ nnoremap <Right> <NOP>
 inoremap <Right> <NOP>
 vnoremap <Right> <NOP>
 
-" Jump to syntastic errors with Up and Down. They're still useful.
-nnoremap <Up> <ESC>:lprev<CR>
-inoremap <Up> <ESC>:lprev<CR>
-
-nnoremap <Down> <ESC>:lnext<CR>
-inoremap <Down> <ESC>:lnext<CR>
+" Jump to next * matches.
+nnoremap <Up>   N
+nnoremap <Down> n
 
 nnoremap <F5> :NERDTreeTabsToggle<CR>
 inoremap <F5> <ESC>:NERDTreeTabsToggle<CR>
