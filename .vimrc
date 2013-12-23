@@ -319,9 +319,6 @@ if has('autocmd')
         \ set expandtab tabstop=2 shiftwidth=2 softtabstop=2 |
         \ set omnifunc=csscomplete#Complete
 
-  " Install emmet only in HTML and CSS files.
-  autocmd FileType *html*,*css* EmmetInstall
-
   " Automatically rebalance windows on vim resize.
   autocmd VimResized * :wincmd =
 
