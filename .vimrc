@@ -397,11 +397,8 @@ inoremap <F8> <ESC>:call ToggleRelativeNumbers()<CR>
 nnoremap <Tab> <C-w><C-w>
 nnoremap <S-Tab> <C-w><C-W>
 
-" Easier to type than :. I don't really use the default ; behavior, but I'm
-" keeping it just in case in the :. Plus, swapping those two will teach me not
-" to press the damn Shift anymore.
+" Easier to type than :.
 nnoremap ; :
-nnoremap : ;
 
 " Write using `sudo` in COMMAND mode if the file is read-only.
 " Ripped off @StanAngeloff.
