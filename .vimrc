@@ -41,7 +41,6 @@ NeoBundle 'marijnh/tern_for_vim', {
 NeoBundle 'AndrewRadev/sideways.vim'
 NeoBundle 'AndrewRadev/splitjoin.vim'
 NeoBundle 'AndrewRadev/switch.vim'
-NeoBundle 'AndrewRadev/whitespaste.vim'
 NeoBundle 'SirVer/ultisnips'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'digitaltoad/vim-jade'
@@ -61,7 +60,6 @@ NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'rodjek/vim-puppet'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/syntastic'
-NeoBundle 'sickill/vim-pasta'
 NeoBundle 'sjl/gundo.vim'
 NeoBundle 'slim-template/vim-slim'
 NeoBundle 'tomtom/tcomment_vim'
@@ -201,14 +199,6 @@ let g:gundo_right=1
 " Clear the default splitjoin mappings.
 let g:splitjoin_split_mapping=''
 let g:splitjoin_join_mapping=''
-
-" Disable vim-pasta's mappings so they can work with whitespace.vim.
-let g:pasta_enabled_filetypes = []
-
-" Now, let whitespace.vim happy with vim-pasta.
-let g:whitespaste_paste_before_command = "normal \<Plug>BeforePasta"
-let g:whitespaste_paste_after_command  = "normal \<Plug>AfterPasta"
-let g:whitespaste_paste_visual_command = "normal gv\<Plug>VisualPasta"
 
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 if executable('ag')
@@ -397,8 +387,14 @@ inoremap <F8> <ESC>:call ToggleRelativeNumbers()<CR>
 nnoremap <Tab> <C-w><C-w>
 nnoremap <S-Tab> <C-w><C-W>
 
-" Easier to type than :.
+" Easier to type than :. I don't really use the default ; behavior, but I'm
+" keeping it just in case in the :. Plus, swapping those two will teach me not
+" to press the damn Shift anymore.
 nnoremap ; :
+nnoremap : ;
+
+vnoremap ; :
+vnoremap : ;
 
 " Write using `sudo` in COMMAND mode if the file is read-only.
 " Ripped off @StanAngeloff.
