@@ -6,7 +6,13 @@
 [ -z $SMILEY_BRANCH_SYMBOL  ] && export SMILEY_BRANCH_SYMBOL=""
 [ -z $SMILEY_VI_MODE_SYMBOL ] && export SMILEY_VI_MODE_SYMBOL="⇦"
 
-# The Vi-Mode prompt use this to determine the format.
+# Merry christmas, xo xo xo!
+if [[ "$(date)" =~ "Dec [23][0-9]" ]]; then
+  export SMILEY_HAPPY_FACE="☃ "
+  export SMILEY_SAD_FACE="☃ "
+fi
+
+# The Vi-Mode prompt uses this to determine the format.
 export MODE_INDICATOR=" %{$fg_bold[red]%}${SMILEY_VI_MODE_SYMBOL}%{$reset_color%}"
 
 smiley_face() {
