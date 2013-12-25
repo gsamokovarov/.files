@@ -231,7 +231,7 @@ set background=light
 set t_Co=256
 
 " The terminal Vim on OSX is slow as f*ck. I don't believe its iTerm that
-" that bringing the slownes, either. Someone... HALP!
+" is bringing the slownes, either. Someone... HALP!
 if has('gui_running')
   " Set the GUI solarized theme.
   colorscheme solarized
