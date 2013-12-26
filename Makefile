@@ -28,6 +28,6 @@ install-neobundle:
 	$(call clone-git-repo-if-not-exist,${NEOBUNDLE_REPO},.vim/bundle/neobundle.vim)
 
 install-vim-bundles: install-neobundle
-	@vim +NeoBundleClean! +NeoBundleInstall! +qall
+	@vim +"silent NeoBundleClean!" +"silent NeoBundleInstall!" +"qall!"
 
 .PHONY: install install-dotfiles install-oh-my-zsh install-neobundle install-rbenv install-ruby-build install-vim-bundles
