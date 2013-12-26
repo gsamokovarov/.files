@@ -420,6 +420,9 @@ cnoreabbrev W w
 cnoreabbrev Q q
 cnoreabbrev Wq wq
 
+" Tabe is typed quite often around here.
+cnoreabbrev Tabe tabe
+
 " Format a paragraph to fit in `textwidth`.
 nnoremap <Leader>f gqap
 vnoremap <Leader>f gq
