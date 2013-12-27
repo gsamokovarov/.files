@@ -369,7 +369,10 @@ vnoremap <Right> <NOP>
 
 " Jump to next * matches.
 nnoremap <Up>   N
-nnoremap <Down> n
+nnoremap <Left> N
+
+nnoremap <Down>  n
+nnoremap <Right> n
 
 nnoremap <F5> :NERDTreeTabsToggle<CR>
 inoremap <F5> <ESC>:NERDTreeTabsToggle<CR>
