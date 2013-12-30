@@ -155,6 +155,9 @@ set langmap+=чявертъуиопшщасдфгхйклзьцжбнмЧЯВЕ�
 " node modules. Some plugins actually respect those.
 set wildignore+=*.sw?,*.un,*~,*py?,.git,node_modules
 
+" Don't ring any bells.
+set visualbell t_vb=
+
 " Syntax highlight shell scripts as per POSIX, not the original Bourne shell
 " which very few use.
 let g:is_posix=1
