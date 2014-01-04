@@ -43,10 +43,11 @@ NeoBundle 'AndrewRadev/splitjoin.vim'
 NeoBundle 'AndrewRadev/switch.vim'
 NeoBundle 'SirVer/ultisnips'
 NeoBundle 'airblade/vim-gitgutter'
-NeoBundle 'digitaltoad/vim-jade'
 NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'ciaranm/detectindent'
 NeoBundle 'bling/vim-airline'
+NeoBundle 'ciaranm/detectindent'
+NeoBundle 'dag/vim-fish'
+NeoBundle 'digitaltoad/vim-jade'
 NeoBundle 'ervandew/supertab'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'jesseschalken/list-text-object'
@@ -129,7 +130,9 @@ set modeline
 set foldmethod=manual
 
 " Copy to the X clipboard too, unless we are on OSX and inside a tmux session.
-if !(has('macunix') || empty($TMUX)) | set clipboard+=unnamedplus | endif
+if !(has('macunix') || empty($TMUX))
+  set clipboard+=unnamedplus
+endif
 
 " Always complete the longest available first.
 set completeopt+=longest
@@ -141,7 +144,9 @@ set colorcolumn=80
 set synmaxcol=512
 
 " Enable the mouse support if Vim supports it.
-if has('mouse') | set mouse=a | endif
+if has('mouse')
+  set mouse=a
+endif
 
 " Make you keyboard actually do something while you are switched to Cyrillic
 " layout. Ripped off @StanAngeloff
@@ -322,7 +327,9 @@ endif
 
 function! ToggleRelativeNumbers()
   " If neither of the number settings are turned on, do nothing.
-  if !(&l:relativenumber || &l:number) | return | endif
+  if !(&l:relativenumber || &l:number)
+    return
+  endif
 
   if &l:relativenumber
     set norelativenumber number
