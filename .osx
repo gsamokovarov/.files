@@ -3,9 +3,6 @@
 # Setup
 # -----
 
-# Change the default shell to ZSH.
-[ "$SHELL" = "/bin/zsh" ] || chsh -s /bin/zsh
-
 # Don't require sudo password for the current user. Don't copy this if you have
 # the fear that it'll break your sudo and lock you out your own system.
 cat <<-RUBY | sudo ruby
@@ -39,6 +36,10 @@ which brew &> /dev/null || {
 
 # ZSH is my favourite shell.
 brew install zsh
+
+# The fish shell looks quite interesting, I'm gonna try it out, while keeping
+# the default one.
+brew install fish
 
 # The j shell function relies on autojump.
 brew install autojump
