@@ -3,6 +3,9 @@
 # /usr/loca/bin are my preferences on OSX.
 set PATH $PATH ~/.rbenv/bin ~/bin /usr/local/opt/coreutils/libexec/gnubin /usr/local/bin
 
+# Don't show the greeting message on fish boot.
+set -x fish_greeting ''
+
 # Initialize rbenv.
 status --is-interactive; and . (rbenv init -|psub)
 
