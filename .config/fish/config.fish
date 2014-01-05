@@ -41,7 +41,7 @@ alias Q exit
 alias vim 'vim -p'
 
 # Some systems may not be happy with the $TERM of screen-256colors, so be sane.
-alias ssh "TERM xterm ssh"
+alias ssh "env TERM=xterm ssh"
 
 # I use vim a lot, so shortcut it to just v.
 alias v vim
