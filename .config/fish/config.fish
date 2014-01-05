@@ -39,6 +39,24 @@ end
 function j; cd (command autojump $argv); end
 complete -x -c j -a '(command autojump --complete (commandline -t))'
 
+# Use hub for git with a twist -- if the first argument is an existing branch
+# then switch to it.
+function git
+  switch (count $argv)
+    case 1
+      set -l target_branch $argv[1]
+      if test -e ""(command git rev-parse --git-dir 2>/dev/null)"/refs/heads/$target_branch"
+        command git checkout $target_branch
+        return 0
+      end
+  end
+  hub $argv
+end
+
+make_completion git 'command git'
+
+function g; git $argv; end; make_completion g 'command git'
+
 # Rage quit everywhere.
 alias Q exit
 
