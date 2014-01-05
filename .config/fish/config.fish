@@ -64,8 +64,10 @@ make_completion vi 'vim -p'
 make_completion vim 'vim -p'
 
 function j
-  cd (autojump $argv)
+  cd (command autojump $argv)
 end
+
+complete -x -c j -a '(command autojump --complete (commandline -t))'
 
 # Sudo apt-get as it is always what you want.
 alias apt-get "sudo apt-get"
