@@ -10,7 +10,7 @@ set -x fish_greeting ''
 status --is-interactive; and . (rbenv init -|psub)
 
 # Add color support for terminals pretending to be xterm.
-if [ $TERM = xterm ]
+if test $TERM = xterm
   set -x TERM xterm-256color
 end
 
@@ -34,40 +34,13 @@ function make_completion --argument alias command
   )"
 end
 
+# Alias for autojump. Note that the aliases in fish shell are just functions,
+# anyway. alias is just a helper defining functions.
+function j; cd (command autojump $argv); end
+complete -x -c j -a '(command autojump --complete (commandline -t))'
+
 # Rage quit everywhere.
 alias Q exit
-
-# Force the regular Vim to open multiple files in tabs.
-alias vim 'vim -p'
-
-# Some systems may not be happy with the $TERM of screen-256colors, so be sane.
-alias ssh "env TERM=xterm ssh"
-
-# I use vim a lot, so shortcut it to just v.
-alias v vim
-
-# Don't even bother with old vi.
-alias vi vim
-
-# Same goes for rake, grunt, make and git.
-alias r rake
-alias u grunt
-alias m make
-alias d docker
-alias g git
-
-# Make completions for the most commonly used aliases.
-make_completion g 'git'
-make_completion ssh 'ssh'
-make_completion v 'vim -p'
-make_completion vi 'vim -p'
-make_completion vim 'vim -p'
-
-function j
-  cd (command autojump $argv)
-end
-
-complete -x -c j -a '(command autojump --complete (commandline -t))'
 
 # Sudo apt-get as it is always what you want.
 alias apt-get "sudo apt-get"
@@ -76,7 +49,23 @@ alias apt-get "sudo apt-get"
 alias kilalll killall
 alias kilall killall
 
-# Use the custom solarized LS colors.
+# Some systems may not be happy with the $TERM of screen-256colors, so be sane.
+alias ssh "env TERM=xterm ssh"; make_completion ssh 'ssh'
+
+# I use vim a lot, so shortcut it to just v. On top of that, don't bother with
+# vi if I mistype it and open multiple files in tabs.
+alias v vim;        make_completion v 'vim -p'
+alias vi vim;       make_completion vi 'vim -p'
+alias vim 'vim -p'; make_completion vim 'vim -p'
+
+# Shortcuts for rake, grunt, make, docker and git.
+alias r rake;   make_completion r 'rake'
+alias u grunt;  make_completion u 'grunt'
+alias m make;   make_completion m 'make'
+alias d docker; make_completion d 'docker'
+
+# Use the custom solarized LS colors. Its quite hacky, because they expect bash
+# or zsh and exporting environment variables looks differently in fish.
 if which dircolors > /dev/null ^&1
-  [ -f ~/.dir_colors ] and . (dircolors ~/.dir_colors | psub)
+  test -f ~/.dir_colors; and . (echo 'set -x '(dircolors ~/.dir_colors | head -1)'' | psub)
 end
