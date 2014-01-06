@@ -55,8 +55,6 @@ end
 
 make_completion git 'command git'
 
-function g; git $argv; end; make_completion g 'command git'
-
 # Rage quit everywhere.
 alias Q exit
 
@@ -81,6 +79,7 @@ alias r rake;   make_completion r 'rake'
 alias u grunt;  make_completion u 'grunt'
 alias m make;   make_completion m 'make'
 alias d docker; make_completion d 'docker'
+alias g git;    make_completion g 'command git'
 
 # Use the custom solarized LS colors. Its quite hacky, because they expect bash
 # or zsh and exporting environment variables looks differently in fish.
