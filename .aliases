@@ -34,6 +34,9 @@ alias u=grunt
 alias m=make
 alias d=docker
 
+# Shortcut for vagrant.
+alias vag=vagrant
+
 # Sudo apt-get as it is always what you want.
 alias apt-get="sudo apt-get"
 

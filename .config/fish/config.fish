@@ -6,7 +6,7 @@ set PATH $PATH ~/.rbenv/bin ~/bin /usr/local/opt/coreutils/libexec/gnubin /usr/l
 # Don't show the greeting message on fish boot.
 set -x fish_greeting ''
 
-# Initialize rbenv.
+# Initialize rbenv for the fish shell.
 status --is-interactive; and . (rbenv init -|psub)
 
 # Add color support for terminals pretending to be xterm.
@@ -80,6 +80,9 @@ alias u grunt;  make_completion u 'grunt'
 alias m make;   make_completion m 'make'
 alias d docker; make_completion d 'docker'
 alias g git;    make_completion g 'command git'
+
+# Just don't, OK?
+alias vag vagrant; make_completion vag 'vagrant'
 
 # Use the custom solarized LS colors. Its quite hacky, because they expect bash
 # or zsh and exporting environment variables looks differently in fish.
