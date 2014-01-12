@@ -38,24 +38,19 @@ end
 # ------
 
 function fish_prompt
-  set_color -o
   if test $status -eq 0
-    set_color cyan
-    echo -n "☺  "
+    echo -n (set_color -o cyan)"☺  "
   else
-    set_color red
-    echo -n "☹  "
+    echo -n (set_color red)"☹  "
   end
   set_color normal
 end
 
 function fish_right_prompt
-  set_color -o
-  echo -n (basename $PWD)
-  set_color red
-  echo -n "  "
-  set_color cyan
-  echo -n (__fish_git_prompt "%s")
+  echo -n (set_color -o)(basename $PWD)
+  if eval (command git rev-parse --is-inside-work-tree ^/dev/null; or echo false)
+    echo -n (set_color -o red)"  "(set_color -o cyan)(__fish_git_prompt "%s")
+  end
   set_color normal
 end
 
