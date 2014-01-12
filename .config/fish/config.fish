@@ -1,3 +1,6 @@
+# General
+# -------
+
 # Make sure that ~/.rbenv/bin and ~/bin are prepended to the PATH, so we can
 # override system utils, if needed. The path for the custom coreutils and
 # /usr/loca/bin are my preferences on OSX.
@@ -24,6 +27,40 @@ set -x LC_CTYPE en_US.UTF-8
 set -x EDITOR vim
 set -x PAGER less
 set -x BROWSER open
+
+# Use the custom solarized LS colors. Its quite hacky, because they expect bash
+# or zsh and exporting environment variables looks differently in fish.
+if which dircolors > /dev/null ^&1
+  test -f ~/.dir_colors; and . (echo 'set -x '(dircolors ~/.dir_colors | head -1)'' | psub)
+end
+
+# Prompt
+# ------
+
+function fish_prompt
+  set_color -o
+  if test $status -eq 0
+    set_color cyan
+    echo -n "☺  "
+  else
+    set_color red
+    echo -n "☹  "
+  end
+  set_color normal
+end
+
+function fish_right_prompt
+  set_color -o
+  echo -n (basename $PWD)
+  set_color red
+  echo -n "  "
+  set_color cyan
+  echo -n (__fish_git_prompt "%s")
+  set_color normal
+end
+
+# Aliases
+# -------
 
 # Create completion for an alias.
 function make_completion --argument alias command
@@ -83,9 +120,3 @@ alias g git;    make_completion g 'command git'
 
 # Just don't, OK?
 alias vag vagrant; make_completion vag 'vagrant'
-
-# Use the custom solarized LS colors. Its quite hacky, because they expect bash
-# or zsh and exporting environment variables looks differently in fish.
-if which dircolors > /dev/null ^&1
-  test -f ~/.dir_colors; and . (echo 'set -x '(dircolors ~/.dir_colors | head -1)'' | psub)
-end
