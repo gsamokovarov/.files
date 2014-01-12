@@ -40,7 +40,6 @@ NeoBundle 'marijnh/tern_for_vim', {
 
 NeoBundle 'AndrewRadev/sideways.vim'
 NeoBundle 'AndrewRadev/splitjoin.vim'
-NeoBundle 'AndrewRadev/switch.vim'
 NeoBundle 'SirVer/ultisnips'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'altercation/vim-colors-solarized'
@@ -458,9 +457,6 @@ vnoremap <Leader>a> m[om]:Tabularize /=><CR>`]V`[
 
 nnoremap <Leader>a: :Tabularize /:\zs/l0l1<CR>
 vnoremap <Leader>a: m[om]:Tabularize /:\zs/l0l1<CR>`]V`[
-
-" Use - for switching values. For example - on true will turn it to false.
-nnoremap - :Switch<cr>
 
 " I always mess these up on my Das Keyboard. Trying to work around them at
 " least in VISUAL mode.
