@@ -28,6 +28,9 @@ set -x EDITOR vim
 set -x PAGER less
 set -x BROWSER open
 
+# Don't let fish masquerade itself as other shells.
+set -x SHELL (which fish)
+
 # Use the custom solarized LS colors. Its quite hacky, because they expect bash
 # or zsh and exporting environment variables looks differently in fish.
 if which dircolors > /dev/null ^&1
