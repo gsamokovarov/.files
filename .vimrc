@@ -158,6 +158,11 @@ set wildignore+=*.sw?,*.un,*~,*py?,.git,node_modules
 " Don't ring any bells.
 set visualbell t_vb=
 
+" Some plugins expect bash or zsh as their shells. Fish shell has a different
+" stderr redirection syntax and it may break stuff, like Syntastic, for
+" example.
+set shell=/bin/bash
+
 " Syntax highlight shell scripts as per POSIX, not the original Bourne shell
 " which very few use.
 let g:is_posix=1
