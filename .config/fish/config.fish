@@ -91,11 +91,11 @@ end
 make_completion git 'command git'
 
 # Dot aliases.
-allias .. "cd .."
-allias ... "cd ../.."
-allias .... "cd ../../.."
-allias ..... "cd ../../../.."
-allias ...... "cd ../../../../.."
+alias .. "cd .."
+alias ... "cd ../.."
+alias .... "cd ../../.."
+alias ..... "cd ../../../.."
+alias ...... "cd ../../../../.."
 
 # Rage quit everywhere.
 alias Q exit
