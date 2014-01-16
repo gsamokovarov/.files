@@ -4,7 +4,7 @@
 # Make sure that ~/.rbenv/bin and ~/bin are prepended to the PATH, so we can
 # override system utils, if needed. The path for the custom coreutils and
 # /usr/loca/bin are my preferences on OSX.
-set PATH $PATH ~/.rbenv/bin ~/bin /usr/local/opt/coreutils/libexec/gnubin /usr/local/bin
+set PATH ~/.rbenv/bin ~/bin /usr/local/opt/coreutils/libexec/gnubin /usr/local/bin $PATH
 
 # Don't show the greeting message on fish boot.
 set -x fish_greeting ''
