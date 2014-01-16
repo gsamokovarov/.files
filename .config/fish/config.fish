@@ -125,6 +125,7 @@ alias g git;    make_completion g 'command git'
 
 # Git subcommands shortcuts.
 alias gc 'git commit'; make_completion gc 'command git commit'
+alias gd 'git diff';   make_completion gd 'command git diff'
 
 # Just don't, OK?
 alias vag vagrant; make_completion vag 'vagrant'
