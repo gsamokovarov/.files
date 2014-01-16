@@ -80,7 +80,7 @@ function git
   switch (count $argv)
     case 1
       set -l target_branch $argv[1]
-      if test -e ""(command git rev-parse --git-dir 2>/dev/null)"/refs/heads/$target_branch"
+      if test -e ""(command git rev-parse --git-dir ^/dev/null)"/refs/heads/$target_branch"
         command git checkout $target_branch
         return 0
       end
@@ -124,6 +124,7 @@ alias g git;    make_completion g 'git'
 # Git subcommands shortcuts.
 alias gc 'git commit'; make_completion gc 'git commit'
 alias gd 'git diff';   make_completion gd 'git diff'
+alias gl 'git log';    make_completion gl 'git log'
 
 # Just don't, OK?
 alias vag vagrant; make_completion vag 'vagrant'
