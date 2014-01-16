@@ -88,8 +88,6 @@ function git
   hub $argv
 end
 
-make_completion git 'command git'
-
 # Dot aliases.
 alias .. "cd .."
 alias ... "cd ../.."
@@ -121,11 +119,11 @@ alias r rake;   make_completion r 'rake'
 alias u grunt;  make_completion u 'grunt'
 alias m make;   make_completion m 'make'
 alias d docker; make_completion d 'docker'
-alias g git;    make_completion g 'command git'
+alias g git;    make_completion g 'git'
 
 # Git subcommands shortcuts.
-alias gc 'git commit'; make_completion gc 'command git commit'
-alias gd 'git diff';   make_completion gd 'command git diff'
+alias gc 'git commit'; make_completion gc 'git commit'
+alias gd 'git diff';   make_completion gd 'git diff'
 
 # Just don't, OK?
 alias vag vagrant; make_completion vag 'vagrant'
