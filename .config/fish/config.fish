@@ -134,9 +134,10 @@ alias d docker; make_completion d 'docker'
 alias g git;    make_completion g 'git'
 
 # Git subcommands shortcuts.
-alias gc 'git commit'; make_completion gc 'git commit'
-alias gd 'git diff';   make_completion gd 'git diff'
-alias gl 'git log';    make_completion gl 'git log'
+alias gc 'git commit';         make_completion gc 'git commit'
+alias gd 'git diff';           make_completion gd 'git diff'
+alias gl 'git log';            make_completion gl 'git log'
+alias ga 'git commit --amend'; make_completion ga 'git commit';
 
 # Just don't, OK?
 alias vag vagrant; make_completion vag 'vagrant'
