@@ -9,9 +9,6 @@ set PATH ~/.rbenv/bin ~/bin /usr/local/opt/coreutils/libexec/gnubin /usr/local/b
 # Don't show the greeting message on fish boot.
 set -x fish_greeting ''
 
-# Initialize rbenv for the fish shell.
-status --is-interactive; and . (rbenv init -|psub)
-
 # Add color support for terminals pretending to be xterm.
 if test $TERM = xterm
   set -x TERM xterm-256color
@@ -31,10 +28,16 @@ set -x BROWSER open
 # Don't let fish masquerade itself as other shells.
 set -x SHELL (which fish)
 
+# Initialize rbenv for the fish shell.
+status --is-interactive; and . (rbenv init - | psub)
+
+# Initialize direnv for the fish shell.
+eval (direnv hook fish)
+
 # Use the custom solarized LS colors. Its quite hacky, because they expect bash
 # or zsh and exporting environment variables looks differently in fish.
 if which dircolors > /dev/null ^&1
-  test -f ~/.dir_colors; and . (echo 'set -x '(dircolors ~/.dir_colors | head -1)'' | psub)
+  test -f ~/.dir_colors; and . (echo 'set -x '(dircolors ~/.dir_colors | head -1) | psub)
 end
 
 # Prompt

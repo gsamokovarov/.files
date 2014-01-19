@@ -12,6 +12,9 @@ export PATH=~/.rbenv/bin:~/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/loca
 # the bundle executable available, so...
 eval "$(rbenv init -)"
 
+# Initialize direnv for the ZSH.
+eval "$(direnv hook zsh)"
+
 # Add Ubuntu's command-not-found ZSH alternative and use ssh-agent on the first
 # terminal run. The other ones are just candies.
 plugins=(git ruby bundler autojump ssh-agent command-not-found)

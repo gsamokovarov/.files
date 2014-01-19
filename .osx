@@ -37,6 +37,9 @@ which brew &> /dev/null || {
 # ZSH is my favourite shell.
 brew install zsh
 
+# Try out direnv.
+brew install direnv
+
 # The fish shell looks quite interesting, I'm gonna try it out, while keeping
 # the default one.
 brew install fish
