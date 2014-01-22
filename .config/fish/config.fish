@@ -66,15 +66,6 @@ end
 # Aliases
 # -------
 
-# Create completion for an alias.
-function make_completion --argument alias command
-  complete -c $alias -a "(
-    set -l cmd (commandline -op);
-    set -e cmd[1];
-    complete -C\"$command \$cmd\";
-  )"
-end
-
 # Dot aliases.
 alias .. "cd .."
 alias ... "cd ../.."
@@ -97,22 +88,22 @@ alias ssh "env TERM=xterm command ssh"
 
 # I use vim a lot, so shortcut it to just v. On top of that, don't bother with
 # vi if I mistype it and open multiple files in tabs.
-alias v vim;        make_completion v 'vim -p'
-alias vi vim;       make_completion vi 'vim -p'
-alias vim 'vim -p'; make_completion vim 'vim -p'
+alias v vim;        complete_like v 'vim -p'
+alias vi vim;       complete_like vi 'vim -p'
+alias vim 'vim -p'; complete_like vim 'vim -p'
 
 # Shortcuts for rake, grunt, make, docker and git.
-alias r rake;   make_completion r 'rake'
-alias u grunt;  make_completion u 'grunt'
-alias m make;   make_completion m 'make'
-alias d docker; make_completion d 'docker'
-alias g git;    make_completion g 'git'
+alias r rake;   complete_like r 'rake'
+alias u grunt;  complete_like u 'grunt'
+alias m make;   complete_like m 'make'
+alias d docker; complete_like d 'docker'
+alias g git;    complete_like g 'git'
 
 # Git subcommands shortcuts.
-alias gc 'git commit';         make_completion gc 'git commit'
-alias gd 'git diff';           make_completion gd 'git diff'
-alias gl 'git log';            make_completion gl 'git log'
-alias ga 'git commit --amend'; make_completion ga 'git commit';
+alias gc 'git commit';         complete_like gc 'git commit'
+alias gd 'git diff';           complete_like gd 'git diff'
+alias gl 'git log';            complete_like gl 'git log'
+alias ga 'git commit --amend'; complete_like ga 'git commit';
 
 # Just don't, OK?
-alias vag vagrant; make_completion vag 'vagrant'
+alias vag vagrant; complete_like vag 'vagrant'
