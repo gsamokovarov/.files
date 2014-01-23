@@ -10,9 +10,7 @@ set PATH ~/.rbenv/bin ~/bin /usr/local/opt/coreutils/libexec/gnubin /usr/local/b
 set -x fish_greeting ''
 
 # Add color support for terminals pretending to be xterm.
-if test $TERM = xterm
-  set -x TERM xterm-256color
-end
+test $TERM = xterm; and set -x TERM xterm-256color
 
 # Make sure we have a unicode capable LANG and LC_CTYPE so the unicode
 # characters does not look like crap on OSX and other environments.
