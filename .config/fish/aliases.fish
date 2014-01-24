@@ -35,7 +35,10 @@ alias g git;    complete_like g 'git'
 alias gc 'git commit';         complete_like gc 'git commit'
 alias gd 'git diff';           complete_like gd 'git diff'
 alias gl 'git log';            complete_like gl 'git log'
-alias ga 'git commit --amend'; complete_like ga 'git commit';
+alias ga 'git commit --amend'; complete_like ga 'git commit'
+
+# Bundle shortcuts.
+alias be 'bundle exec'; complete_like be 'bundle exec'
 
 # Just don't, OK?
 alias vag vagrant; complete_like vag 'vagrant'
