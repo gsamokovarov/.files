@@ -5,10 +5,10 @@ export PATH=~/.rbenv/bin:~/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/loca
 
 # Initialize rbenv before initializing the plugins. The bundler plugin needs
 # the bundle executable available, so...
-$(which rbenv &> /dev/null); && eval "$(rbenv init -)"
+$(which rbenv &> /dev/null) && eval "$(rbenv init -)"
 
 # Initialize direnv for the bash
-$(which direnv &> /dev/null); && eval "$(direnv hook bash)"
+$(which direnv &> /dev/null) && eval "$(direnv hook bash)"
 
 # Add color support for terminals pretending to be xterm.
 [ $TERM = xterm ] && export TERM=xterm-256color
@@ -27,7 +27,7 @@ export PAGER=less
 [ -f ~/.aliases ] && source ~/.aliases
 
 # Use the custom solarized LS colors.
-$(which dircolors &> /dev/null); && {
+$(which dircolors &> /dev/null) && {
   [ -f ~/.dir_colors ] && eval "$(dircolors ~/.dir_colors)"
 }
 
