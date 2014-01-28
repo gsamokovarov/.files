@@ -1,5 +1,5 @@
 # oh-my-zsh alias sl to ls by default. I really like the locomotive, though.
-unalias sl
+$(unalias sl 2> /dev/null)
 
 # Use hub for git with a twist -- if the first argument is an existing branch
 # then switch to it.
