@@ -1,5 +1,5 @@
 # oh-my-zsh alias sl to ls by default. I really like the locomotive, though.
-$(unalias sl 2> /dev/null)
+$(unalias sl &> /dev/null)
 
 # Use hub for git with a twist -- if the first argument is an existing branch
 # then switch to it.
@@ -28,11 +28,14 @@ alias v=vim
 # Don't even bother with old vi.
 alias vi=vim
 
-# Same goes for rake, grunt, make and lately, docker.
+# Same goes for git, rake, grunt, make and lately, docker.
+alias g=git
 alias r=rake
 alias u=grunt
 alias m=make
 alias d=docker
+
+alias be='bundle exec'
 
 # Shortcut for vagrant.
 alias vag=vagrant
