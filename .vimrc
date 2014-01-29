@@ -145,6 +145,9 @@ set synmaxcol=512
 " Enable the mouse support if Vim supports it.
 if has('mouse')
   set mouse=a
+
+  " Force dragging support with the mouse.
+  set ttymouse=xterm2
 endif
 
 " Make you keyboard actually do something while you are switched to Cyrillic
