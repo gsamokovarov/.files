@@ -1,14 +1,20 @@
-# Make sure that ~/.rbenv/bin and ~/bin are prepended to the PATH, so we can
-# override system utils, if needed. The path for the custom coreutils and
-# /usr/loca/bin are my preferences on OSX.
-export PATH=~/.rbenv/bin:~/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:$PATH
+# Include local machine custom settings.
+[ -f ~/.bashrc.before ] && source ~/.bashrc.before
+
+# ~/bin are prepended to the PATH, so we can override system utils, if needed.
+# The path for the custom coreutils and /usr/loca/bin are my preferences on
+# OSX.
+export PATH=~/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:$PATH
 
 # Initialize rbenv before initializing the plugins. The bundler plugin needs
 # the bundle executable available, so...
-$(which rbenv &> /dev/null) && eval "$(rbenv init -)"
+[ -z $SKIP_RBENV ] && $(which rbenv &> /dev/null) && {
+  export PATH=~/.rbenv/bin:/~/.rbenv/shims:$PATH
+  eval "$(rbenv init -)"
+}
 
 # Initialize direnv for the bash
-$(which direnv &> /dev/null) && eval "$(direnv hook bash)"
+[ -z $SKIP_DIRENV ] && $(which direnv &> /dev/null) && eval "$(direnv hook bash)"
 
 # Add color support for terminals pretending to be xterm.
 [ $TERM = xterm ] && export TERM=xterm-256color
@@ -24,12 +30,12 @@ export EDITOR=vim
 export PAGER=less
 
 # Source all of the aliases living in ~/.aliases.
-[ -f ~/.aliases ] && source ~/.aliases
+[ -z $SKIP_ALIASES] && [ -f ~/.aliases ] && source ~/.aliases
 
 # Use the custom solarized LS colors.
 $(which dircolors &> /dev/null) && {
-  [ -f ~/.dir_colors ] && eval "$(dircolors ~/.dir_colors)"
+  [ -z $SKIP_DIRCOLORS ] && [ -f ~/.dir_colors ] && eval "$(dircolors ~/.dir_colors)"
 }
 
 # Include local machine custom settings.
-[ -f ~/.bashrc.local ] && source ~/.bashrc.local
+[ -f ~/.bashrc.after ] && source ~/.bashrc.after
