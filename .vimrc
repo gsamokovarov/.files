@@ -214,10 +214,10 @@ let g:splitjoin_join_mapping=''
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher for
 " grep and Ack.
 if executable('ag')
-  let g:ackprg='ag --nogroup --column'
+  let g:ackprg='ag --nogroup --column --ignore=vendor --ignore=node_modules'
 
   " Use Ag over Grep
-  set grepprg=ag\ --nogroup\ --nocolor
+  set grepprg=ag\ --nogroup\ --nocolor\ --ignore=vendor\ --ignore=node_modules\
 endif
 
 " Use speedier git-list-files and mercurial alternatives to listing files in a
