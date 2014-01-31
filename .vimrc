@@ -151,12 +151,12 @@ if has('mouse')
 endif
 
 " Make you keyboard actually do something while you are switched to Cyrillic
-" layout. Ripped off @StanAngeloff
+" layout. Ripped off @StanAngeloff.
 set langmap+=чявертъуиопшщасдфгхйклзьцжбнмЧЯВЕРТЪУИОПШЩАСДФГХЙКЛЗѝЦЖБНМ;`qwertyuiop[]asdfghjklzxcvbnm~QWERTYUIOP{}ASDFGHJKLZXCVBNM,ю\\,Ю\|,
 
 " Widely ignore vim swapfiles, tilda backups, python bytecode, .git dirs and
-" node modules. Some plugins actually respect those.
-set wildignore+=*.sw?,*.un,*~,*py?,.git,node_modules
+" node modules and vendor directories. Some plugins actually respect those.
+set wildignore+=*.sw?,*.un,*~,*py?,.git,node_modules,vendor
 
 " Don't ring any bells.
 set visualbell t_vb=
@@ -224,11 +224,14 @@ endif
 " folder when possible and fall back to ag otherwise.
 let g:ctrlp_user_command={
     \ 'types': {
-    \   1: ['.git', 'cd %s && git ls-files . -co --exclude-standard'],
+    \   1: ['.git', 'cd %s && git ls-files . -co --exclude-standard -x vendor -x node_modules'],
     \   2: ['.hg', 'hg --cwd %s locate -I .'],
     \ },
     \ 'fallback': 'ag %s -l --nocolor -g ""'
     \ }
+
+" Use caching to speed CtrlP up.
+let g:ctrlp_use_caching=1
 
 " Style settings
 " --------------
