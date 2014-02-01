@@ -338,6 +338,21 @@ if has('autocmd')
   highlight                  ExtraWhitespace ctermbg=red guibg=red
   highlight            clear SignColumn
   autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\t/ containedin=ALL
+
+  " Words to avoid in tech writing.
+  "
+  "   obviously, basically, simply, of course, clearly,
+  "   just, everyone knows, However, So, easy
+  "
+  " See http://css-tricks.com/words-avoid-educational-writing/.
+
+  highlight TechWordsToAvoid ctermbg=red ctermfg=white
+
+  autocmd FileType markdown call MatchTechWordsToAvoid()
+  autocmd BufWinEnter *.md call MatchTechWordsToAvoid()
+  autocmd InsertEnter *.md call MatchTechWordsToAvoid()
+  autocmd InsertLeave *.md call MatchTechWordsToAvoid()
+  autocmd BufWinLeave *.md call clearmatches()
 endif
 
 " Functions
@@ -364,6 +379,10 @@ function! CalculateBestNumberWidth()
     " centered is great.
     return max([strlen(line('$')), 3]) + 1
   endif
+endfunction
+
+function! MatchTechWordsToAvoid()
+  match TechWordsToAvoid /\c\<\(obviously\|basically\|simply\|of\scourse\|clearly\|just\|everyone\sknows\|however\|so,\|easy\)\>/
 endfunction
 
 " Mappings
