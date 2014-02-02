@@ -5,7 +5,7 @@
 set PATH /opt/boxen/homebrew/bin $PATH
 
 # Use the Boxen rbenv on OSX.
-set PATH /opt/boxen/rbenv/bin $PATH
+set PATH /opt/boxen/rbenv/bin /opt/boxen/rbenv/shims $PATH
 
 # Make sure that ~/bin is prepended to the PATH, so we can override system
 # utils, if needed. The path for the custom coreutils and /usr/loca/bin are my
@@ -35,8 +35,9 @@ set -x BROWSER open
 # Tell Vagrant to use VMware Fusion as it's default provider.
 set -x VAGRANT_DEFAULT_PROVIDER vmware_fusion
 
-# Initialize rbenv for the fish shell.
-status --is-interactive; and . (rbenv init - | psub)
+# Initialize rbenv for the fish shell. Now, the `tail -n +2` is a huge hack,
+# with which I stop rbenv prepending ~/.rbenv/shims to the $PATH.
+status --is-interactive; and . (rbenv init - | tail -n +2 | psub)
 
 # Initialize direnv for the fish shell.
 eval (direnv hook fish)
