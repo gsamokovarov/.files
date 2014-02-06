@@ -4,8 +4,8 @@
 # Set the homebrew path to the default place where Boxen puts it.
 set PATH /opt/boxen/homebrew/bin $PATH
 
-# Use the Boxen rbenv on OSX.
-set PATH /opt/boxen/rbenv/bin /opt/boxen/rbenv/shims $PATH
+# Use my own .rbenv, I don't like what Boxen is doing.
+set PATH ~/.rbenv/bin ~/.rbenv/shims $PATH
 
 # Make sure that ~/bin is prepended to the PATH, so we can override system
 # utils, if needed. The path for the custom coreutils and /usr/loca/bin are my
@@ -37,7 +37,7 @@ set -x VAGRANT_DEFAULT_PROVIDER vmware_fusion
 
 # Initialize rbenv for the fish shell. Now, the `tail -n +2` is a huge hack,
 # with which I stop rbenv prepending ~/.rbenv/shims to the $PATH.
-status --is-interactive; and . (rbenv init - | tail -n +2 | psub)
+status --is-interactive; and . (rbenv init - | psub)
 
 # Initialize direnv for the fish shell.
 eval (direnv hook fish)
