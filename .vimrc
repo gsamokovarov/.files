@@ -128,6 +128,9 @@ set modeline
 " Just indent manually with zf.
 set foldmethod=manual
 
+" Turn the spell check on by default.
+set spell
+
 " Copy to the X clipboard too, unless we are on OSX and inside a tmux session.
 if !(has('macunix') || empty($TMUX))
   set clipboard+=unnamedplus
