@@ -2,9 +2,6 @@
 # use this one.
 todo() { touch ~/Desktop/"$(echo $@)" }
 
-# Shortcut resty to `resty http://example.com/api`.
-resty() { . ~/bin/resty ; [ -n "$1" ] && resty $1 }
-
 # Convert a movie to gif. See https://gist.github.com/SlexAxton/4989674.
 gifify() {
   if [[ -n "$1" ]]; then
