@@ -220,7 +220,7 @@ if executable('ag')
   let g:ackprg='ag --nogroup --column --ignore=vendor --ignore=node_modules'
 
   " Use Ag over Grep
-  set grepprg=ag\ --nogroup\ --nocolor\ --ignore=vendor\ --ignore=node_modules\
+  set grepprg=ag\ --nogroup\ --nocolor\ --ignore=vendor\ --ignore=node_modules
 endif
 
 " Use speedier git-list-files and mercurial alternatives to listing files in a
