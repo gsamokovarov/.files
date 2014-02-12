@@ -61,6 +61,7 @@ NeoBundle 'rodjek/vim-puppet'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'sjl/gundo.vim'
+NeoBundle 'reedes/vim-colors-pencil'
 NeoBundle 'slim-template/vim-slim'
 NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'tpope/bundler.vim'
@@ -241,8 +242,8 @@ let g:ctrlp_use_caching=1
 " Style settings
 " --------------
 
-" Use light background by default.
-set background=light
+" Assume dark background by default.
+set background=dark
 
 " Use 256 colors everywhere.
 set t_Co=256
@@ -250,8 +251,8 @@ set t_Co=256
 " The terminal Vim on OSX is slow as f*ck. I don't believe its iTerm that
 " is bringing the slownes, either. Someone... HALP!
 if has('gui_running')
-  " Set the GUI solarized theme.
-  colorscheme solarized
+  " Set the GUI pencil theme.
+  colorscheme pencil
 
   " If we are running in a gui like GVim, make sure to hide every annoying UI
   " piece, by default. In MacVim I like the graphical tabs, but those actually
@@ -280,10 +281,7 @@ if has('gui_running')
     set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 15
   endif
 else
-  " Use light solarized theme on a transparent terminal. Its important to set
-  " the termtrans before the colorscheme.
-  let g:solarized_termtrans=1
-  colorscheme solarized
+  colorscheme pencil
 
   " Use fancy airline tabs in the terminal.
   let g:airline#extensions#tabline#enabled=1
