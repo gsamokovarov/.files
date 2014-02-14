@@ -1,7 +1,3 @@
-# I hate things on my desktop. I don't track todos. Let's see for how long I'll
-# use this one.
-todo() { touch ~/Desktop/"$(echo $@)" }
-
 # Convert a movie to gif. See https://gist.github.com/SlexAxton/4989674.
 gifify() {
   if [[ -n "$1" ]]; then
