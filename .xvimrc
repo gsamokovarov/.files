@@ -1,0 +1,17 @@
+" Settings
+" --------
+
+" Sadly, no relative numbers are supported here.
+set number
+
+" Mappings
+" --------
+
+" Easier to type than :. I don't really use the default ; behavior, but I'm
+" keeping it just in case in the :. Plus, swapping those two will teach me not
+" to press the damn Shift anymore.
+nnoremap ; :
+nnoremap : ;
+
+vnoremap ; :
+vnoremap : ;
