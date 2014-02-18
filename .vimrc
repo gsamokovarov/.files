@@ -384,6 +384,14 @@ function! CalculateBestNumberWidth()
   endif
 endfunction
 
+function WriteAndOrQuit()
+  try
+    execute "ZZ"
+  catch
+    execute "q!"
+  endtry
+endfunction
+
 function! MatchTechWordsToAvoid()
   match TechWordsToAvoid /\c\<\(obviously\|basically\|simply\|of\scourse\|clearly\|just\|everyone\sknows\|however\|so,\|easy\)\>/
 endfunction
@@ -445,7 +453,7 @@ vnoremap : ;
 
 " I'm thinking of a decent usage for the Q key, so I'm starting with the rage
 " quit.
-nnoremap Q ZZ
+nnoremap Q :call WriteAndOrQuit()<CR>
 
 " Write using `sudo` in COMMAND mode if the file is read-only.
 " Ripped off @StanAngeloff.
