@@ -48,6 +48,7 @@ NeoBundle 'ciaranm/detectindent'
 NeoBundle 'dag/vim-fish'
 NeoBundle 'digitaltoad/vim-jade'
 NeoBundle 'ervandew/supertab'
+NeoBundle 'gcmt/wildfire.vim'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'jesseschalken/list-text-object'
 NeoBundle 'jistr/vim-nerdtree-tabs'
@@ -57,11 +58,11 @@ NeoBundle 'koron/nyancat-vim'
 NeoBundle 'matchit.zip'
 NeoBundle 'mileszs/ack.vim'
 NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'reedes/vim-colors-pencil'
 NeoBundle 'rodjek/vim-puppet'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'sjl/gundo.vim'
-NeoBundle 'reedes/vim-colors-pencil'
 NeoBundle 'slim-template/vim-slim'
 NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'tpope/bundler.vim'
@@ -516,9 +517,6 @@ nnoremap <C-J> gT
 " Move function arguments left and right.
 nnoremap <C-H> :SidewaysLeft<CR>
 nnoremap <C-L> :SidewaysRight<CR>
-
-" Hide the current search.
-nnoremap <Return> :nohlsearch<CR>
 
 " Toggle the current fold.
 nnoremap <silent> <Space> @=(foldlevel('.') ? 'za' : "\<Space>")<CR>
