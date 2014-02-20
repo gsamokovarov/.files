@@ -3,17 +3,23 @@ export ZSH=~/.oh-my-zsh
 export ZSH_CUSTOM=~
 export ZSH_THEME=".smiley"
 
+# Include local machine custom settings.
+[ -f ~/.zshrc.befor ] && source ~/.zshrc.before
+
 # Make sure that ~/.rbenv/bin and ~/bin are prepended to the PATH, so we can
 # override system utils, if needed. The path for the custom coreutils and
 # /usr/loca/bin are my preferences on OSX.
-export PATH=~/.rbenv/bin:~/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:$PATH
+export PATH=~/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:$PATH
 
 # Initialize rbenv before initializing the plugins. The bundler plugin needs
 # the bundle executable available, so...
-eval "$(rbenv init -)"
+[ -z $SKIP_RBENV ] && $(which rbenv &> /dev/null) && {
+  export PATH=~/.rbenv/bin:/~/.rbenv/shims:$PATH
+  eval "$(rbenv init -)"
+}
 
 # Initialize direnv for the ZSH.
-eval "$(direnv hook zsh)"
+[ -z $SKIP_DIRENV ] && $(which direnv &> /dev/null) && eval "$(direnv hook zsh)"
 
 # Add Ubuntu's command-not-found ZSH alternative and use ssh-agent on the first
 # terminal run. The other ones are just candies.
@@ -40,12 +46,12 @@ export PAGER=less
 [ -f ~/.functions ] && source ~/.functions
 
 # Use the custom solarized LS colors.
-if $(which dircolors &> /dev/null); then
-  [ -f ~/.dir_colors ] && eval "$(dircolors ~/.dir_colors)"
-fi
+$(which dircolors &> /dev/null) && {
+  [ -z $SKIP_DIRCOLORS ] && [ -f ~/.dir_colors ] && eval "$(dircolors ~/.dir_colors)"
+}
 
 # Include local machine custom settings.
-[ -f ~/.zshrc.local ] && source ~/.zshrc.local
+[ -f ~/.zshrc.after ] && source ~/.zshrc.after
 
 # Be happy. (The above are expressions, If I don't have a ~/.zshrc.local file
 # I'll start with a sad face. I like happy faces.)
