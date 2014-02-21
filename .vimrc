@@ -243,6 +243,9 @@ let g:ctrlp_user_command={
 " Use caching to speed CtrlP up.
 let g:ctrlp_use_caching=1
 
+" Don't use typographic quotes. Dunno how to type them :D
+let g:litecorrect#typographic=1
+
 " Style settings
 " --------------
 
