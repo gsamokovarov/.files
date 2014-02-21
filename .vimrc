@@ -296,6 +296,9 @@ else
   let g:airline#extensions#tabline#tab_nr_type=1
 endif
 
+" Use the badwolf theme for airline. Fits well with pencil-dark.
+let g:airline_theme='badwolf'
+
 " Custom settings
 " ---------------
 
