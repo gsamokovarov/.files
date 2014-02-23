@@ -538,6 +538,11 @@ cnoreabbrev Wq wq
 " Tabe is typed quite often around here.
 cnoreabbrev Tabe tabe
 
+" I type this often and holding Shift each time isn't that nice. Sometimes I
+" would also mistake it for ag anyway, so put that one to use too.
+cnoreabbrev ack Ack
+cnoreabbrev ag Ack
+
 command Light execute "set background=light"
 command Dark execute "set background=dark"
 
