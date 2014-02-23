@@ -465,29 +465,6 @@ vnoremap : ;
 " quit.
 nnoremap Q :call WriteAndOrQuit()<CR>
 
-" Write using `sudo` in COMMAND mode if the file is read-only.
-" Ripped off @StanAngeloff.
-cnoremap w!! w !sudo tee % >/dev/null
-
-" When I'm in Bulgarian layout, I don't want to switch it, just to save or
-" quit.
-cnoreabbrev в w
-cnoreabbrev В w
-cnoreabbrev Q я
-cnoreabbrev я q
-cnoreabbrev яа qа
-cnoreabbrev яал qаl
-cnoreabbrev яалл qаll
-
-" Some other times I just write with the Shift key down. Take care of that
-" too.
-cnoreabbrev W w
-cnoreabbrev Q q
-cnoreabbrev Wq wq
-
-" Tabe is typed quite often around here.
-cnoreabbrev Tabe tabe
-
 " Format a paragraph to fit in `textwidth`.
 nnoremap <Leader>f gqap
 vnoremap <Leader>f gq
@@ -537,6 +514,29 @@ nnoremap <Leader>s :SplitjoinSplit<CR>
 
 " Custom commands
 " ---------------
+
+" Write using `sudo` in COMMAND mode if the file is read-only.
+" Ripped off @StanAngeloff.
+cnoremap w!! w !sudo tee % >/dev/null
+
+" When I'm in Bulgarian layout, I don't want to switch it, just to save or
+" quit.
+cnoreabbrev в w
+cnoreabbrev В w
+cnoreabbrev Q я
+cnoreabbrev я q
+cnoreabbrev яа qа
+cnoreabbrev яал qаl
+cnoreabbrev яалл qаll
+
+" Some other times I just write with the Shift key down. Take care of that
+" too.
+cnoreabbrev W w
+cnoreabbrev Q q
+cnoreabbrev Wq wq
+
+" Tabe is typed quite often around here.
+cnoreabbrev Tabe tabe
 
 command Light execute "set background=light"
 command Dark execute "set background=dark"
