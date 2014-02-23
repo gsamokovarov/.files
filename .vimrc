@@ -224,17 +224,17 @@ let g:splitjoin_join_mapping=''
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher for
 " grep and Ack.
 if executable('ag')
-  let g:ackprg='ag --nogroup --column --ignore=vendor --ignore=node_modules'
+  let g:ackprg='ag --nogroup --column --ignore=vendor --ignore=node_modules --ignore=.bundle'
 
   " Use Ag over Grep
-  set grepprg=ag\ --nogroup\ --nocolor\ --ignore=vendor\ --ignore=node_modules
+  set grepprg=ag\ --nogroup\ --nocolor\ --ignore=vendor\ --ignore=node_modules\ --ignore=.bundle
 endif
 
 " Use speedier git-list-files and mercurial alternatives to listing files in a
 " folder when possible and fall back to ag otherwise.
 let g:ctrlp_user_command={
     \ 'types': {
-    \   1: ['.git', 'cd %s && git ls-files . -co --exclude-standard -x vendor -x node_modules'],
+    \   1: ['.git', 'cd %s && git ls-files . -co --exclude-standard -x vendor -x node_modules -x .bundle'],
     \   2: ['.hg', 'hg --cwd %s locate -I .'],
     \ },
     \ 'fallback': 'ag %s -l --nocolor -g ""'
