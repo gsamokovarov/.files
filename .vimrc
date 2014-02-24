@@ -246,6 +246,12 @@ let g:ctrlp_use_caching=1
 " Don't use typographic quotes. Dunno how to type them :D
 let g:litecorrect#typographic=1
 
+" Configure wildfire to accept caret fences and be more effective in HTML.
+let g:wildfire_objects={
+    \ "*" : ["i'", 'i"', "i`", "i)", "i]", "i}", "ip"],
+    \ "html,xml" : ["i'", 'i"', "i`", "i)", "i]", "i}", "i<", "at"],
+    \ }
+
 " Style settings
 " --------------
 
