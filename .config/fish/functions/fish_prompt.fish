@@ -1,8 +1,8 @@
 function fish_prompt
   if test $status -eq 0
-    echo -n (set_color -o green)"☺  "
+    echo -n (set_color -o green)" "
   else
-    echo -n (set_color red)"☹  "
+    echo -n (set_color red)" "
   end
   set_color normal
 end
