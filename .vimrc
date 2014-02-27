@@ -82,6 +82,7 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-tbone'
 NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'vim-ruby/vim-ruby'
+NeoBundle 'vim-scripts/AutoTag'
 
 if has('lua') && v:version > 703
   NeoBundle 'Shougo/neocomplete.vim'
