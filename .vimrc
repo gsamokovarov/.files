@@ -108,6 +108,9 @@ set undofile
 " Keep the swap files in ~/.vim/swap.
 set directory=$HOME/.vim/swap
 
+" I name my tags file .tags so I don mess them up with important files.
+set tags+=.tags
+
 " Don't wrap the long lines.
 set nowrap
 
