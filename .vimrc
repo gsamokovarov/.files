@@ -256,6 +256,10 @@ let g:wildfire_objects={
     \ "html,xml" : ["i'", 'i"', "i`", "i)", "i]", "i}", "i<", "at"],
     \ }
 
+" Tell AutoTag to look for .tags instead of tags. I should probably rewrite
+" this, AutoTag is a great idea, but it looks like crap...
+let g:autotagTagsFile = '.tags'
+
 " Style settings
 " --------------
 
