@@ -108,10 +108,10 @@ set undofile
 " Keep the swap files in ~/.vim/swap.
 set directory=$HOME/.vim/swap
 
-" I name my tags file .tags so they don't mess them up with important files.
+" I name my tags file .tags as I don't like them listed by ls and the like.
 set tags+=.tags
 
-" Watch for file changes and automatically read the file if such appear.
+" Watch for file changes.
 set autoread
 
 " Don't wrap the long lines.
@@ -128,7 +128,7 @@ set relativenumber
 set lazyredraw
 set ttyfast
 
-" Highlight the search term, while still typing it.
+" Highlight the search term while still typing it.
 set hlsearch
 set incsearch
 
