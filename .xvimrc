@@ -4,6 +4,9 @@
 " Sadly, no relative numbers are supported here.
 set number
 
+" XCode will wrap the lines by default. I don't like that.
+set nowrap
+
 " Mappings
 " --------
 
