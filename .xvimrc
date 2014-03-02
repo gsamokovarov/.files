@@ -19,6 +19,9 @@ nnoremap : ;
 vnoremap ; :
 vnoremap : ;
 
+" Jump to the next editor with Tab in NORMAL mode.
+nnoremap <Tab> <C-w>w
+
 " I'm used to the fish shell and auto-completing suggestions with Ctrl-e.
-" Remapping it to Return does the trick in XVim.
+" Remapping it to Return in NORMAL mode does the trick in XVim.
 inoremap <C-e> <CR>
