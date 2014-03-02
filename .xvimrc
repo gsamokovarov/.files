@@ -22,6 +22,12 @@ vnoremap : ;
 " Jump to the next editor with Tab in NORMAL mode.
 nnoremap <Tab> <C-w>w
 
+" Create new editor with Ctrl-n in NORMAL mode.
+nnoremap <C-n> <C-w>n
+
+" Quit the current editor with Q in NORMAL mode.
+nnoremap Q <C-w>q
+
 " I'm used to the fish shell and auto-completing suggestions with Ctrl-e.
-" Remapping it to Return in NORMAL mode does the trick in XVim.
+" Remapping it to Return in INSERT mode does the trick in XVim.
 inoremap <C-e> <CR>
