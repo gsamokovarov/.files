@@ -15,3 +15,7 @@ nnoremap : ;
 
 vnoremap ; :
 vnoremap : ;
+
+" I'm used to the fish shell and auto-completing suggestions with Ctrl-e.
+" Remapping it to Return does the trick in XVim.
+inoremap <C-e> <CR>
