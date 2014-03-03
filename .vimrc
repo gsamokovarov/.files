@@ -38,6 +38,15 @@ NeoBundle 'marijnh/tern_for_vim', {
         \    },
         \ }
 
+NeoBundle 'JazzCore/ctrlp-cmatcher', {
+        \ 'build' : {
+        \     'windows' : 'install_windows.bat',
+        \     'cygwin' : './install_linux.sh',
+        \     'mac' : './install_linux.sh',
+        \     'unix' : './install_linux.sh',
+        \    },
+        \ }
+
 NeoBundle 'AndrewRadev/sideways.vim'
 NeoBundle 'AndrewRadev/splitjoin.vim'
 NeoBundle 'SirVer/ultisnips'
@@ -246,6 +255,10 @@ let g:ctrlp_user_command={
     \ },
     \ 'fallback': 'ag %s -l --nocolor -g ""'
     \ }
+
+" Use the C matcher function provided by ctrlp-cmatcher.
+let g:ctrlp_match_func = { 'match': 'matcher#cmatch' }
+let g:ctrlp_max_files = 0
 
 " Use caching to speed CtrlP up.
 let g:ctrlp_use_caching=1
