@@ -253,7 +253,7 @@ let g:ctrlp_user_command={
     \   1: ['.git', 'cd %s && git ls-files . -co --exclude-standard -x vendor -x node_modules -x .bundle'],
     \   2: ['.hg', 'hg --cwd %s locate -I .'],
     \ },
-    \ 'fallback': 'ag %s -l --nocolor -g ""'
+    \ 'fallback': 'ag %s -l --nocolor -g --ignore=vendor --ignore=node_modules --ignore=.bundle""'
     \ }
 
 " Use the C matcher function provided by ctrlp-cmatcher.
@@ -375,7 +375,7 @@ if has('autocmd')
         \ set expandtab tabstop=2 shiftwidth=2 softtabstop=2 |
         \ set omnifunc=csscomplete#Complete
 
-  " Automatically rebalance windows on vim resize.
+  " Automatically rebalance windows on Vim resize.
   autocmd VimResized * :wincmd =
 
   highlight                  ExtraWhitespace ctermbg=red guibg=red
@@ -525,6 +525,10 @@ vnoremap U Y
 " you'll get a nasty delay if you type {j,k}.
 inoremap jk <Esc>
 inoremap kj <Esc>
+
+" Disable the ESCAPE key in INSERT mode. Let's see if I'll jk my way out of
+" it.
+inoremap <Esc> <NOP>
 
 " Those seems friendlier to type than g{t,T}.
 nnoremap <C-K> gt
