@@ -1,6 +1,3 @@
-# General
-# -------
-
 # Set the homebrew path to the default place where Boxen puts it.
 set PATH /opt/boxen/homebrew/bin $PATH
 
