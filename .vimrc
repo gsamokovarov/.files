@@ -523,12 +523,16 @@ vnoremap U Y
 
 " Have a saner ESCAPE in INSERT mode. Don't try to map those in VISUAL mode or
 " you'll get a nasty delay if you type {j,k}.
-inoremap jk <Esc>
-inoremap kj <Esc>
+inoremap jk <ESC>
+inoremap kj <ESC>
+
+" If you're writing in Bulgarian, don't switch to English only to ESCAPE.
+inoremap йк <ESC>
+inoremap кй <ESC>
 
 " Disable the ESCAPE key in INSERT mode. Let's see if I'll jk my way out of
 " it.
-inoremap <Esc> <NOP>
+inoremap <ESC> <NOP>
 
 " Those seems friendlier to type than g{t,T}.
 nnoremap <C-K> gt
