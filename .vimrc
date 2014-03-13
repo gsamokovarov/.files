@@ -530,10 +530,6 @@ inoremap kj <ESC>
 inoremap йк <ESC>
 inoremap кй <ESC>
 
-" Disable the ESCAPE key in INSERT mode. Let's see if I'll jk my way out of
-" it.
-inoremap <ESC> <NOP>
-
 " Those seems friendlier to type than g{t,T}.
 nnoremap <C-K> gt
 nnoremap <C-J> gT
