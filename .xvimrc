@@ -19,6 +19,11 @@ nnoremap : ;
 vnoremap ; :
 vnoremap : ;
 
+" Have a saner ESCAPE in INSERT mode. Don't try to map those in VISUAL mode or
+" you'll get a nasty delay if you type {j,k}.
+inoremap jk <ESC>
+inoremap kj <ESC>
+
 " Jump to the next editor with Tab in NORMAL mode.
 nnoremap <Tab> <C-w>w
 

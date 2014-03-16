@@ -522,9 +522,15 @@ vnoremap U Y
 inoremap jk <ESC>
 inoremap kj <ESC>
 
+inoremap jj <ESC>
+inoremap kk <ESC>
+
 " If you're writing in Bulgarian, don't switch to English only to ESCAPE.
 inoremap йк <ESC>
 inoremap кй <ESC>
+
+inoremap йй <ESC>
+inoremap кк <ESC>
 
 " Those seems friendlier to type than g{t,T}.
 nnoremap <C-K> gt
