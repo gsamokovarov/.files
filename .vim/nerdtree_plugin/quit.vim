@@ -5,11 +5,10 @@ call NERDTreeAddKeyMap({
       \ })
 
 function! NERDTreeCloseTab()
+  wincmd p
   try
-    tabclose
+    execute "ZZ"
   catch
-    " If we end up here, its probably because we're trying to close the last
-    " tab.
-    qa!
+    execute "q!"
   endtry
 endfunction
