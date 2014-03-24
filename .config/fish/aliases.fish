@@ -37,6 +37,9 @@ alias gd 'git diff';           complete_like gd 'git diff'
 alias gl 'git log';            complete_like gl 'git log'
 alias ga 'git commit --amend'; complete_like ga 'git commit'
 
+# Yes, that happened today. Age, you know...
+alias mdkir mkdir
+
 # Bundle shortcuts.
 alias be 'bundle exec'; complete_like be 'bundle exec'
 
