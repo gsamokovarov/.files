@@ -1,4 +1,3 @@
--f .tags
 --tag-relative=yes
 --format=2
 --excmd=pattern
