@@ -428,6 +428,15 @@ function! MatchTechWordsToAvoid()
   match TechWordsToAvoid /\c\<\(obviously\|basically\|simply\|of\scourse\|clearly\|just\|everyone\sknows\|however\|so,\|easy\)\>/
 endfunction
 
+" Choose '^' or '0' depending on the cursor position.
+function! CleverJumpFirst()
+  let l:before = getline('.')[:col('.') - 1]
+  if l:before =~ '^\s\+\S$'
+    return '0'
+  endif
+  return '^'
+endfunction
+
 " Mappings
 " --------
 
@@ -473,6 +482,10 @@ inoremap <F8> <ESC>:call ToggleRelativeNumbers()<CR>
 " Navigate through windows with Tab and Shift-Tab.
 nnoremap <Tab> <C-w><C-w>
 nnoremap <S-Tab> <C-w><C-W>
+
+" Choose '^' or '0' depending on the cursor position.
+nnoremap <expr> 0 CleverJumpFirst()
+vnoremap <expr> 0 CleverJumpFirst()
 
 " Easier to type than :. I don't really use the default ; behavior, but I'm
 " keeping it just in case in the :. Plus, swapping those two will teach me not
