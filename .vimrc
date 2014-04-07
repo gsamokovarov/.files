@@ -437,6 +437,19 @@ function! CleverJumpFirst()
   return '^'
 endfunction
 
+function! ToggleMouse()
+  if !exists("s:old_mouse")
+    let s:old_mouse = "a"
+  endif
+
+  if &mouse == ""
+    let &mouse = s:old_mouse
+  else
+    let s:old_mouse = &mouse
+    let &mouse=""
+  endif
+endfunction
+
 " Mappings
 " --------
 
@@ -473,8 +486,8 @@ inoremap <F5> <ESC>:NERDTreeTabsToggle<CR>
 nnoremap <F6> :GundoToggle<CR>
 inoremap <F6> <ESC>:GundoToggle<CR>
 
-nnoremap <F7> :TagbarToggle<CR>
-inoremap <F7> <ESC>:TagbarToggle<CR>
+nnoremap <F7> :call ToggleMouse()<CR>
+inoremap <F7> <ESC>:call ToggleMouse()<CR>
 
 nnoremap <F8> :call ToggleRelativeNumbers()<CR>
 inoremap <F8> <ESC>:call ToggleRelativeNumbers()<CR>
