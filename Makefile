@@ -2,6 +2,7 @@ INSTALL_PATH    ?= $$HOME
 OH_MY_ZSH_REPO  ?= https://github.com/robbyrussell/oh-my-zsh.git
 RBENV_REPO      ?= https://github.com/sstephenson/rbenv.git
 RUBY_BUILD_REPO ?= https://github.com/sstephenson/ruby-build.git
+GEM_REHASH_REPO ?= https://github.com/sstephenson/rbenv-gem-rehash.git
 NEOBUNDLE_REPO  ?= https://github.com/Shougo/neobundle.vim.git
 EXCLUDES        ?= ./.git ./.files.png ./Makefile ./README.markdown
 
@@ -10,7 +11,7 @@ UNTAR_CMD = tar --extract --preserve-permissions --verbose --directory=$(INSTALL
 
 clone-git-repo-if-not-exist = @(cd ${INSTALL_PATH} ; [ -d $(2) ] || git clone $(1) $(2))
 
-install: install-dotfiles install-oh-my-zsh install-rbenv install-ruby-build install-vim-bundles
+install: install-dotfiles install-oh-my-zsh install-rbenv install-gem-rehash install-ruby-build install-vim-bundles
 
 install-dotfiles:
 	@(${TAR_CMD} | ${UNTAR_CMD})
@@ -24,10 +25,13 @@ install-rbenv:
 install-ruby-build:
 	$(call clone-git-repo-if-not-exist,${RUBY_BUILD_REPO},.rbenv/plugins/ruby-build)
 
+install-gem-rehash:
+	$(call clone-git-repo-if-not-exist,${RUBY_BUILD_REPO},.rbenv/plugins/rbenv-gem-rehash)
+
 install-neobundle:
 	$(call clone-git-repo-if-not-exist,${NEOBUNDLE_REPO},.vim/bundle/neobundle.vim)
 
 install-vim-bundles: install-neobundle
 	@vim +"silent NeoBundleClean!" +"silent NeoBundleInstall!" +qall!
 
-.PHONY: install install-dotfiles install-oh-my-zsh install-neobundle install-rbenv install-ruby-build install-vim-bundles
+.PHONY: install install-dotfiles install-oh-my-zsh install-neobundle install-rbenv install-ruby-build install-gem-rehash install-vim-bundles
