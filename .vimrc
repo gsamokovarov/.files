@@ -264,7 +264,7 @@ let g:litecorrect#typographic=1
 
 " Configure wildfire to accept caret fences and be more effective in HTML.
 let g:wildfire_objects={
-    \ "*" : ["i'", 'i"', "i`", "i)", "i]", "i}", "ip"],
+    \ "*" : ["i'", 'i"', "i`", "i)", "i]", "i}", 'im', 'iM', "ip"],
     \ "html,xml" : ["i'", 'i"', "i`", "i)", "i]", "i}", "i<", "at"],
     \ }
 
