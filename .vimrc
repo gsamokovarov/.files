@@ -271,8 +271,8 @@ let g:wildfire_objects={
 " Style settings
 " --------------
 
-" Assume dark background by default.
-set background=dark
+" Assume light background by default.
+set background=light
 
 " Use 256 colors everywhere.
 set t_Co=256
@@ -280,8 +280,7 @@ set t_Co=256
 " The terminal Vim on OSX is slow as f*ck. I don't believe its iTerm that
 " is bringing the slownes, either. Someone... HALP!
 if has('gui_running')
-  " Set the GUI pencil theme.
-  colorscheme pencil
+  colorscheme solarized
 
   " If we are running in a gui like GVim, make sure to hide every annoying UI
   " piece, by default. In MacVim I like the graphical tabs, but those actually
@@ -310,16 +309,13 @@ if has('gui_running')
     set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 15
   endif
 else
-  colorscheme pencil
+  colorscheme solarized
 
   " Use fancy airline tabs in the terminal.
   let g:airline#extensions#tabline#enabled=1
   let g:airline#extensions#tabline#show_buffers=0
   let g:airline#extensions#tabline#tab_nr_type=1
 endif
-
-" Use the badwolf theme for airline. Fits well with pencil-dark.
-let g:airline_theme='badwolf'
 
 " Custom settings
 " ---------------
