@@ -33,6 +33,7 @@ alias g git;    complete_like g 'git'
 
 # Git subcommands shortcuts.
 alias gc 'git commit';         complete_like gc 'git commit'
+alias gco 'git commit';        complete_like gco 'git commit'
 alias gd 'git diff';           complete_like gd 'git diff'
 alias gl 'git log';            complete_like gl 'git log'
 alias ga 'git commit --amend'; complete_like ga 'git commit'
