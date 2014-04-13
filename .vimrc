@@ -411,7 +411,7 @@ function! CalculateBestNumberWidth()
   endif
 endfunction
 
-function WriteAndOrQuit()
+function! WriteAndOrQuit()
   try
     execute "ZZ"
   catch
