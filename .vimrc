@@ -67,6 +67,7 @@ NeoBundle 'mileszs/ack.vim'
 NeoBundle 'reedes/vim-colors-pencil'
 NeoBundle 'reedes/vim-litecorrect'
 NeoBundle 'reedes/vim-textobj-sentence'
+NeoBundle 'reedes/vim-wordy'
 NeoBundle 'rodjek/vim-puppet'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/syntastic'
@@ -369,20 +370,11 @@ if has('autocmd')
   highlight            clear SignColumn
   autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\t/ containedin=ALL
 
-  " Words to avoid in tech writing.
-  "
-  "   obviously, basically, simply, of course, clearly,
-  "   just, everyone knows, However, So, easy
-  "
-  " See http://css-tricks.com/words-avoid-educational-writing/.
-
-  highlight TechWordsToAvoid ctermbg=red ctermfg=white
-
-  autocmd FileType markdown call MatchTechWordsToAvoid()
-  autocmd BufWinEnter *.md call MatchTechWordsToAvoid()
-  autocmd InsertEnter *.md call MatchTechWordsToAvoid()
-  autocmd InsertLeave *.md call MatchTechWordsToAvoid()
-  autocmd BufWinLeave *.md call clearmatches()
+  autocmd FileType markdown silent WeakWordy
+  autocmd BufWinEnter *.md  silent WeakWordy
+  autocmd InsertEnter *.md  silent WeakWordy
+  autocmd InsertLeave *.md  silent WeakWordy
+  autocmd BufWinLeave *.md  silent WeakWordy
 endif
 
 " Functions
@@ -417,10 +409,6 @@ function! WriteAndOrQuit()
   catch
     execute "q!"
   endtry
-endfunction
-
-function! MatchTechWordsToAvoid()
-  match TechWordsToAvoid /\c\<\(obviously\|basically\|simply\|of\scourse\|clearly\|just\|everyone\sknows\|however\|so,\|easy\)\>/
 endfunction
 
 " Choose '^' or '0' depending on the cursor position.
@@ -507,6 +495,9 @@ vnoremap : ;
 " I'm thinking of a decent usage for the Q key, so I'm starting with the rage
 " quit.
 nnoremap Q :call WriteAndOrQuit()<CR>
+
+" Cycle through bad words.
+nnoremap <silent> K :NextWordy<cr>
 
 " Format a paragraph to fit in `textwidth`.
 nnoremap <Leader>f gqap
