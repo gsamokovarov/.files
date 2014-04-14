@@ -572,7 +572,6 @@ cnoremap w!! w !sudo tee % >/dev/null
 " quit.
 cnoreabbrev в w
 cnoreabbrev В w
-cnoreabbrev Q я
 cnoreabbrev я q
 cnoreabbrev яа qа
 cnoreabbrev яал qаl
