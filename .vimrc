@@ -59,7 +59,7 @@ NeoBundle 'gcmt/wildfire.vim'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'jesseschalken/list-text-object'
 NeoBundle 'jistr/vim-nerdtree-tabs'
-NeoBundle 'kana/vim-textobject-user'
+NeoBundle 'kana/vim-textobj-user'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'koron/nyancat-vim'
 NeoBundle 'matchit.zip'
@@ -265,7 +265,8 @@ let g:litecorrect#typographic=1
 
 " Configure wildfire to accept caret fences and be more effective in HTML.
 let g:wildfire_objects={
-    \ "*" : ["i'", 'i"', "i`", "i)", "i]", "i}", 'im', 'iM', "ip"],
+    \ "*" : ["i'", 'i"', "i`", "i)", "i]", "i}", "ip"],
+    \ "rb,Rakefile,Gemfile" : ["i'", 'i"', "i`", "i)", "i]", "i}", 'ir'],
     \ "html,xml" : ["i'", 'i"', "i`", "i)", "i]", "i}", "i<", "at"],
     \ }
 
