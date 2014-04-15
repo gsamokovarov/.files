@@ -230,6 +230,9 @@ let g:syntastic_auto_jump=0
 let g:syntastic_error_symbol='⇨'
 let g:syntastic_warning_symbol='⇨'
 
+" Use rubocop as the default ruby linter.
+let g:syntastic_ruby_checkers = ['rubocop']
+
 " Show gundo on the right side of the screen.
 let g:gundo_right=1
 
