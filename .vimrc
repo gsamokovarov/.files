@@ -232,8 +232,8 @@ let g:syntastic_style_error_symbol='⇨'
 let g:syntastic_warning_symbol='⚠'
 let g:syntastic_style_warning_symbol='⇨'
 
-" Use rubocop as the default ruby linter.
-let g:syntastic_ruby_checkers = ['rubocop']
+" Use rubocop as the default ruby linter, but first run it through MRI.
+let g:syntastic_ruby_checkers = ['mri', 'rubocop']
 
 " Show gundo on the right side of the screen.
 let g:gundo_right=1
