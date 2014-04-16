@@ -275,7 +275,8 @@ let g:litecorrect#typographic=1
 let g:wildfire_objects={
     \ "*" : ["i'", 'i"', "i`", "i)", "i]", "i}", "ip"],
     \ "rb,Rakefile,Gemfile" : ["i'", 'i"', "i`", "i)", "i]", "i}", 'ir'],
-    \ "html,xml" : ["i'", 'i"', "i`", "i)", "i]", "i}", "i<", "at"],
+    \ "html,xml" : ["i'", 'i"', "i`", "i)", "i]", "i}", "i<", "it"],
+    \ "erb" : ["i'", 'i"', "i`", "i)", "i]", "i}", "i<", "it"],
     \ }
 
 " Style settings
