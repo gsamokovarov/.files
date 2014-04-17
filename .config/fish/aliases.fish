@@ -36,6 +36,7 @@ alias gc 'git commit';         complete_like gc 'git commit'
 alias gco 'git commit';        complete_like gco 'git commit'
 alias gd 'git diff';           complete_like gd 'git diff'
 alias gl 'git log';            complete_like gl 'git log'
+alias gs 'git state';            complete_like gs 'git state'
 alias ga 'git commit --amend'; complete_like ga 'git commit'
 
 # Yes, that happened today. Age, you know...
