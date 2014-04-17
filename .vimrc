@@ -47,6 +47,7 @@ NeoBundle 'JazzCore/ctrlp-cmatcher', {
         \    },
         \ }
 
+NeoBundle 'AndrewRadev/switch.vim'
 NeoBundle 'AndrewRadev/sideways.vim'
 NeoBundle 'AndrewRadev/splitjoin.vim'
 NeoBundle 'airblade/vim-gitgutter'
@@ -570,6 +571,9 @@ vnoremap <Space> zf
 " Use <Leader>{j,s} for the split joins. I refuse to remember the gJ and gS.
 nnoremap <Leader>j :SplitjoinJoin<CR>
 nnoremap <Leader>s :SplitjoinSplit<CR>
+
+" Use - to switch stuff around, like old-style to new-style Ruby hashes.
+nnoremap - :Switch<cr>
 
 " Custom commands
 " ---------------
