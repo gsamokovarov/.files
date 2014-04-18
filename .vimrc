@@ -275,9 +275,8 @@ let g:litecorrect#typographic=1
 " Configure wildfire to accept caret fences and be more effective in HTML.
 let g:wildfire_objects={
     \ "*" : ["i'", 'i"', "i`", "i)", "i]", "i}", "ip"],
-    \ "rb,Rakefile,Gemfile" : ["i'", 'i"', "i`", "i)", "i]", "i}", 'ir'],
-    \ "html,xml" : ["i'", 'i"', "i`", "i)", "i]", "i}", "i<", "it"],
-    \ "erb" : ["i'", 'i"', "i`", "i)", "i]", "i}", "i<", "it"],
+    \ "ruby" : ["i'", 'i"', "i`", "i)", "i]", "i}", "ir", "ar"],
+    \ "html,xml" : ["i'", 'i"', "it", "at"],
     \ }
 
 " Style settings
