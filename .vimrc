@@ -47,9 +47,9 @@ NeoBundle 'JazzCore/ctrlp-cmatcher', {
         \    },
         \ }
 
-NeoBundle 'AndrewRadev/switch.vim'
 NeoBundle 'AndrewRadev/sideways.vim'
 NeoBundle 'AndrewRadev/splitjoin.vim'
+NeoBundle 'AndrewRadev/switch.vim'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'bling/vim-airline'
@@ -69,6 +69,7 @@ NeoBundle 'nelstrom/vim-textobj-rubyblock'
 NeoBundle 'reedes/vim-colors-pencil'
 NeoBundle 'reedes/vim-litecorrect'
 NeoBundle 'reedes/vim-textobj-sentence'
+NeoBundle 'reedes/vim-thematic'
 NeoBundle 'reedes/vim-wordy'
 NeoBundle 'rodjek/vim-puppet'
 NeoBundle 'scrooloose/nerdtree'
@@ -282,8 +283,39 @@ let g:wildfire_objects={
 " Style settings
 " --------------
 
-" Assume light background by default.
-set background=light
+" Define my common used thematic themes.
+let g:thematic#themes={
+    \ 'solarized_light': {
+    \   'colorscheme': 'solarized',
+    \   'background': 'light',
+    \   'airline-theme': 'solarized',
+    \  },
+    \ 'solarized_dark': {
+    \   'colorscheme': 'solarized',
+    \   'background': 'dark',
+    \   'airline-theme': 'solarized',
+    \  },
+    \ 'pencil_dark': {
+    \   'colorscheme': 'pencil',
+    \   'background': 'dark',
+    \   'airline-theme': 'badwolf',
+    \ },
+    \ 'pencil_light': {
+    \   'colorscheme': 'pencil',
+    \   'background': 'light',
+    \   'airline-theme': 'badwolf',
+    \ }
+    \ }
+
+let g:thematic#defaults = {
+    \ 'typeface': 'Ubuntu Mono derivative Powerline',
+    \ 'font-size': 15,
+    \ 'laststatus': 2,
+    \ 'sign-column-color-fix': 1,
+    \ 'fullscreen-background-color-fix': 1,
+    \ }
+
+let g:thematic#theme_name = 'solarized_light'
 
 " Use 256 colors everywhere.
 set t_Co=256
@@ -291,8 +323,6 @@ set t_Co=256
 " The terminal Vim on OSX is slow as f*ck. I don't believe its iTerm that
 " is bringing the slownes, either. Someone... HALP!
 if has('gui_running')
-  colorscheme solarized
-
   " If we are running in a gui like GVim, make sure to hide every annoying UI
   " piece, by default. In MacVim I like the graphical tabs, but those actually
   " look good, so enable it only for the MacVim.
@@ -300,13 +330,12 @@ if has('gui_running')
 
   " Set-up a powerline capable font.
   if has('gui_macvim')
-    " Fifteen points works well on 1440x900 simulated resolution on a fancy
-    " new Retina MacBook Pro.
-    set guifont=Ubuntu\ Mono\ derivative\ Powerline:h15
+    " Better fonts in the UI.
+    set antialias
 
     " Try to fit the maximum characters on the screen and feel the rest of it
     " with the background color in MacVim.
-    set fuoptions=maxvert,maxhorz,background:#FFFDF6E3
+    set fuoptions=maxvert,maxhorz
 
     " Enable the graphical tabs on Macvim, as those look awesome.
     set guioptions=e
@@ -316,12 +345,8 @@ if has('gui_running')
 
     " The focus follows the mouse. No need to click on a window for that.
     set mousefocus
-  else
-    set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 15
   endif
 else
-  colorscheme solarized
-
   " Use fancy airline tabs in the terminal.
   let g:airline#extensions#tabline#enabled=1
   let g:airline#extensions#tabline#show_buffers=0
@@ -509,6 +534,9 @@ nnoremap Q :call WriteAndOrQuit()<CR>
 
 " Cycle through bad words.
 nnoremap <silent> K :NextWordy<cr>
+
+" Cycle through thematic themes.
+nnoremap <Leader>t :ThematicNext<CR>
 
 " Format a paragraph to fit in `textwidth`.
 nnoremap <Leader>f gqap
