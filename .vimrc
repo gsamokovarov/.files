@@ -76,6 +76,7 @@ NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'sheerun/vim-polyglot'
 NeoBundle 'sjl/gundo.vim'
+NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'thinca/vim-visualstar'
 NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'tpope/bundler.vim'
@@ -527,6 +528,9 @@ nnoremap : ;
 
 vnoremap ; :
 vnoremap : ;
+
+" I mistype that a lot. 
+nmap <C-m> <C-n>
 
 " I'm thinking of a decent usage for the Q key, so I'm starting with the rage
 " quit.
