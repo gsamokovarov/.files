@@ -382,7 +382,8 @@ if has('autocmd')
 
   autocmd FileType ruby
         \ set expandtab tabstop=2 shiftwidth=2 softtabstop=2 |
-        \ set omnifunc=rubycomplete#Complete
+        \ set omnifunc=rubycomplete#Complete |
+        \ set iskeyword+=?,!
 
   autocmd FileType javascript
         \ set expandtab tabstop=2 shiftwidth=2 softtabstop=2 |
