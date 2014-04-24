@@ -283,6 +283,9 @@ let g:wildfire_objects={
 " Don't do the default mapping plugin mapping.
 let g:EasyMotion_do_mapping=0
 
+" Ley YouCompleteMe load candidates from the tags file.
+let g:ycm_collect_identifiers_from_tags_files=1
+
 " Style settings
 " --------------
 
