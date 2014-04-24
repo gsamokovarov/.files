@@ -278,6 +278,7 @@ let g:wildfire_objects={
     \ "*" : ["i'", 'i"', "i`", "i)", "i]", "i}", "ip"],
     \ "ruby" : ["i'", 'i"', "i`", "i)", "i]", "i}", "ir", "ar"],
     \ "html,xml" : ["i'", 'i"', "it", "at"],
+    \ "eruby" : ["i'", 'i"', "it", "at"],
     \ }
 
 " Don't do the default mapping plugin mapping.
