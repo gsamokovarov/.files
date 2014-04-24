@@ -58,6 +58,7 @@ NeoBundle 'Valloric/YouCompleteMe', {
 NeoBundle 'AndrewRadev/sideways.vim'
 NeoBundle 'AndrewRadev/splitjoin.vim'
 NeoBundle 'AndrewRadev/switch.vim'
+NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'bling/vim-airline'
@@ -279,6 +280,9 @@ let g:wildfire_objects={
     \ "html,xml" : ["i'", 'i"', "it", "at"],
     \ }
 
+" Don't do the default mapping plugin mapping.
+let g:EasyMotion_do_mapping=0
+
 " Style settings
 " --------------
 
@@ -492,7 +496,12 @@ nnoremap <Right> <NOP>
 inoremap <Right> <NOP>
 vnoremap <Right> <NOP>
 
-" Jump to next * matches.
+" Let EasyMotion be the default motions.
+map f <Plug>(easymotion-f)
+map t <Plug>(easymotion-t)
+map F <Plug>(easymotion-F)
+map T <Plug>(easymotion-T)
+
 nnoremap <Up>   N
 nnoremap <Left> N
 
