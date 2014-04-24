@@ -47,6 +47,14 @@ NeoBundle 'JazzCore/ctrlp-cmatcher', {
         \    },
         \ }
 
+NeoBundle 'Valloric/YouCompleteMe', {
+        \ 'build' : {
+        \     'cygwin' : './install.sh --clang-completer',
+        \     'mac' : './install.sh --clang-completer',
+        \     'unix' : './install.sh --clang-completer',
+        \    },
+        \ }
+
 NeoBundle 'AndrewRadev/sideways.vim'
 NeoBundle 'AndrewRadev/splitjoin.vim'
 NeoBundle 'AndrewRadev/switch.vim'
@@ -55,7 +63,6 @@ NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'ciaranm/detectindent'
 NeoBundle 'dag/vim-fish'
-NeoBundle 'ervandew/supertab'
 NeoBundle 'gcmt/wildfire.vim'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'jesseschalken/list-text-object'
@@ -92,12 +99,6 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-tbone'
 NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'vim-scripts/AutoTag'
-
-if has('lua') && v:version > 703
-  NeoBundle 'Shougo/neocomplete.vim'
-else
-  NeoBundle 'Shougo/neocomplcache.vim'
-endif
 
 " Builtin Settings
 " ----------------
@@ -204,9 +205,6 @@ let g:is_posix=1
 
 " Use powerline patched fonts in airline.
 let g:airline_powerline_fonts=1
-
-" Enable neocomplcache at startup.
-let g:neocomplcache_enable_at_startup=1
 
 " Tell detectindet to use one tab, if it is confused.
 let g:detectindent_preferred_expandtab=1
