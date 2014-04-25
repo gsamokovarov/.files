@@ -228,14 +228,20 @@ let g:nerdtree_tabs_focus_on_files=1
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_jump=0
 
+" Try to optimize syntastic in terminal Vim as its already 0 on MacVim.
+let syntastic_full_redraws=0
+
 " Add some fancy symbols for the error and warning messages.
 let g:syntastic_error_symbol='✗'
 let g:syntastic_style_error_symbol='⇨'
 let g:syntastic_warning_symbol='⚠'
 let g:syntastic_style_warning_symbol='⇨'
 
+" Skip schema.rb, it can destroy the terminal Vim.
+let g:syntastic_ignore_files=['\mschema\.rb$']
+
 " Use rubocop as the default ruby linter, but first run it through MRI.
-let g:syntastic_ruby_checkers = ['mri', 'rubocop']
+let g:syntastic_ruby_checkers=['mri', 'rubocop']
 
 " Show gundo on the right side of the screen.
 let g:gundo_right=1
