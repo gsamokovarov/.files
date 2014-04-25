@@ -536,7 +536,7 @@ nnoremap <S-Tab> <C-w><C-W>
 
 " I'm used to the fish shell and auto-completing suggestions with Ctrl-e.
 " Remapping it to Tab does the job for YouCompleteMe.
-inoremap <C-e> <Tab>
+imap <C-e> <Tab>
 
 " Choose '^' or '0' depending on the cursor position.
 nnoremap <expr> 0 CleverJumpFirst()
