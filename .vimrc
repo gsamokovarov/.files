@@ -528,6 +528,10 @@ inoremap <F8> <ESC>:call ToggleRelativeNumbers()<CR>
 nnoremap <Tab> <C-w><C-w>
 nnoremap <S-Tab> <C-w><C-W>
 
+" I'm used to the fish shell and auto-completing suggestions with Ctrl-e.
+" Remapping it to Tab does the job for YouCompleteMe.
+inoremap <C-e> <Tab>
+
 " Choose '^' or '0' depending on the cursor position.
 nnoremap <expr> 0 CleverJumpFirst()
 vnoremap <expr> 0 CleverJumpFirst()
