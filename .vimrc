@@ -283,8 +283,8 @@ let g:litecorrect#typographic=1
 let g:wildfire_objects={
     \ "*" : ["i'", 'i"', "i`", "i)", "i]", "i}", "ip"],
     \ "ruby" : ["i'", 'i"', "i`", "i)", "i]", "i}", "ir", "ar"],
-    \ "html,xml" : ["i'", 'i"', "it", "at"],
-    \ "eruby" : ["i'", 'i"', "it", "at"],
+    \ "html,xml" : ["it", "at"],
+    \ "eruby" : ["it", "at"],
     \ }
 
 " Don't do the default plugin mapping.
