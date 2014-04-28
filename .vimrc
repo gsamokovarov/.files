@@ -84,6 +84,7 @@ NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'sheerun/vim-polyglot'
 NeoBundle 'sjl/gundo.vim'
+NeoBundle 'tacahiroy/ctrlp-funky'
 NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'thinca/vim-visualstar'
 NeoBundle 'tomtom/tcomment_vim'
@@ -270,11 +271,14 @@ let g:ctrlp_user_command={
     \ }
 
 " Use the C matcher function provided by ctrlp-cmatcher.
-let g:ctrlp_match_func = { 'match': 'matcher#cmatch' }
-let g:ctrlp_max_files = 0
+let g:ctrlp_match_func={'match': 'matcher#cmatch'}
+
+" Use the funky extension to navigate more easily inside bigger files.
+let g:ctrlp_extensions = ['funky']
 
 " Use caching to speed CtrlP up.
 let g:ctrlp_use_caching=1
+let g:ctrlp_max_files=10000
 
 " Don't use typographic quotes. Dunno how to type them :D
 let g:litecorrect#typographic=1
@@ -553,6 +557,9 @@ vnoremap : ;
 
 " I mistype that a lot. 
 nmap <C-m> <C-n>
+
+" Get funky with Ctrl-Space.
+nnoremap <C-@> :CtrlPFunky<Cr>
 
 " I'm thinking of a decent usage for the Q key, so I'm starting with the rage
 " quit.
