@@ -233,9 +233,9 @@ let syntastic_full_redraws=0
 
 " Add some fancy symbols for the error and warning messages.
 let g:syntastic_error_symbol='✗'
-let g:syntastic_style_error_symbol='⇨'
+let g:syntastic_style_error_symbol='✠'
 let g:syntastic_warning_symbol='⚠'
-let g:syntastic_style_warning_symbol='⇨'
+let g:syntastic_style_warning_symbol='≈'
 
 " Skip schema.rb, it can destroy the terminal Vim.
 let g:syntastic_ignore_files=['\mschema\.rb$']
