@@ -555,6 +555,10 @@ nnoremap : ;
 vnoremap ; :
 vnoremap : ;
 
+" Get back the "Undo motion".
+nnoremap <Leader><Leader> ,
+vnoremap <Leader><Leader> ,
+
 " I mistype that a lot. 
 nmap <C-m> <C-n>
 
