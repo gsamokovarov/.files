@@ -73,6 +73,7 @@ NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'koron/nyancat-vim'
 NeoBundle 'matchit.zip'
 NeoBundle 'mileszs/ack.vim'
+NeoBundle 'morhetz/gruvbox'
 NeoBundle 'nelstrom/vim-textobj-rubyblock'
 NeoBundle 'reedes/vim-colors-pencil'
 NeoBundle 'reedes/vim-litecorrect'
@@ -321,18 +322,21 @@ let g:thematic#themes={
     \   'colorscheme': 'pencil',
     \   'background': 'light',
     \   'airline-theme': 'badwolf',
+    \ },
+    \ 'gruvbox': {
+    \   'colorscheme': 'gruvbox',
+    \   'background': 'dark',
+    \   'airline-theme': 'tomorrow',
     \ }
     \ }
 
-let g:thematic#defaults = {
+let g:thematic#defaults={
     \ 'typeface': 'Ubuntu Mono derivative Powerline',
     \ 'font-size': 15,
     \ 'laststatus': 2,
     \ 'sign-column-color-fix': 1,
     \ 'fullscreen-background-color-fix': 1,
     \ }
-
-let g:thematic#theme_name = 'solarized_light'
 
 " Use 256 colors everywhere.
 set t_Co=256
@@ -363,11 +367,17 @@ if has('gui_running')
     " The focus follows the mouse. No need to click on a window for that.
     set mousefocus
   endif
+
+  " Gruvbox for the UI. Looks really cool on it.
+  let g:thematic#theme_name='gruvbox'
 else
   " Use fancy airline tabs in the terminal.
   let g:airline#extensions#tabline#enabled=1
   let g:airline#extensions#tabline#show_buffers=0
   let g:airline#extensions#tabline#tab_nr_type=1
+
+  " Solarized for the terminal.
+  let g:thematic#theme_name='solarized_light'
 endif
 
 " Custom settings
