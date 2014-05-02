@@ -336,6 +336,7 @@ let g:thematic#defaults={
     \ 'laststatus': 2,
     \ 'sign-column-color-fix': 1,
     \ 'fullscreen-background-color-fix': 1,
+    \ 'columns': 120,
     \ }
 
 " Use 256 colors everywhere.
@@ -366,6 +367,12 @@ if has('gui_running')
 
     " The focus follows the mouse. No need to click on a window for that.
     set mousefocus
+
+    " Don't let thematic spawn the window to its fullest. Use 120 columns, which
+    " are enough for NERDTree, Gundo, etc. and text around 80 chars. On the
+    " other hand, if I don't follow the 79 char rule for that piece of code,
+    " 120 chars are a good measurement for a long line.
+    set columns=120
   endif
 
   " Gruvbox for the UI. Looks really cool on it.
