@@ -540,15 +540,19 @@ nnoremap <Right> n
 
 nnoremap <F5> :NERDTreeTabsToggle<CR>
 inoremap <F5> <ESC>:NERDTreeTabsToggle<CR>
+nnoremap <Leader>5 :NERDTreeTabsToggle<CR>
 
 nnoremap <F6> :GundoToggle<CR>
 inoremap <F6> <ESC>:GundoToggle<CR>
+nnoremap <Leader>6 :GundoToggle<CR>
 
 nnoremap <F7> :call ToggleMouse()<CR>
 inoremap <F7> <ESC>:call ToggleMouse()<CR>
+nnoremap <Leader>7 :call ToggleMouse()<CR>
 
 nnoremap <F8> :call ToggleRelativeNumbers()<CR>
 inoremap <F8> <ESC>:call ToggleRelativeNumbers()<CR>
+nnoremap <Leader>8 :call ToggleRelativeNumbers()<CR>
 
 " Navigate through windows with Tab and Shift-Tab.
 nnoremap <Tab> <C-w><C-w>
