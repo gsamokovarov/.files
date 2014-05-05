@@ -453,6 +453,10 @@ if has('autocmd')
   " Automatically rebalance windows on Vim resize.
   autocmd VimResized * :wincmd =
 
+  " Automatically save and load view state.
+  autocmd BufWritePost * if expand('%') != '' && &buftype !~ 'nofile' | mkview | endif
+  autocmd BufRead      * if expand('%') != '' && &buftype !~ 'nofile' | silent loadview | endif
+
   highlight                  ExtraWhitespace ctermbg=red guibg=red
   highlight            clear SignColumn
   autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\t/ containedin=ALL
