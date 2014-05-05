@@ -209,6 +209,12 @@ set shell=/bin/bash
 " Syntax highlight shell scripts as per POSIX, not the original Bourne shell
 " which very few use.
 let g:is_posix=1
+ 
+" Use the older RegExp engine as Ruby syntax is painfully slow with the current one.
+set re=1
+
+" Use the system Ruby for the ftplugin shenanigans.
+let g:ruby_path="/usr/bin/ruby"
 
 " Plugin settings
 " ---------------
