@@ -164,6 +164,10 @@ set spell
 " Make split behave.
 set splitbelow
 
+" Get rid of the annoying |,= characters on vertical split bar separator and
+" the filling characters of the folded lines.
+set fillchars=vert:\ ,fold:\ 
+
 " Copy to the X clipboard too, unless we are on OSX and inside a tmux session.
 if !(has('macunix') || empty($TMUX))
   set clipboard+=unnamedplus
