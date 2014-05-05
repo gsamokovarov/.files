@@ -113,9 +113,13 @@ set encoding=utf-8
 " Keep the backup files in ~/.vim/backup.
 set backupdir=$HOME/.vim/backup
 
-" Keep the undp files in ~/.vim/undo.
+" Keep the undo files in ~/.vim/undo.
 set undodir=$HOME/.vim/undo
 set undofile
+
+" Save the view files in ~/.vim/view. The view files keep the state of manual
+" folds, etc.
+set viewdir=$HOME/.vim/view
 
 " Keep the swap files in ~/.vim/swap.
 set directory=$HOME/.vim/swap
