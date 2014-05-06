@@ -23,8 +23,6 @@ alias ssh "env TERM=xterm command ssh"
 alias v vim;        complete_like v 'vim -p'
 alias vi vim;       complete_like vi 'vim -p'
 alias vim 'vim -p'; complete_like vim 'vim -p'
-alias mv mvim;      complete_like mv 'mvim -p'
-
 
 # Shortcuts for rake, grunt, make, docker and git.
 alias r rake;   complete_like r 'rake'
