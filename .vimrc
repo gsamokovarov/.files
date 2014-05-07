@@ -611,10 +611,10 @@ nnoremap <C-@> :CtrlPFunky<Cr>
 
 " I'm thinking of a decent usage for the Q key, so I'm starting with the rage
 " quit.
-nnoremap Q :call WriteAndOrQuit()<CR>
+nnoremap <silent> Q :call WriteAndOrQuit()<CR>
 
 " Cycle through bad words.
-nnoremap <silent> K :NextWordy<cr>
+nnoremap <silent> K :NextWordy<CR>
 
 " Cycle through thematic themes.
 nnoremap <Leader>t :ThematicNext<CR>
