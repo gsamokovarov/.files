@@ -246,6 +246,9 @@ let g:syntastic_auto_jump=0
 " Try to optimize syntastic in terminal Vim as its already 0 on MacVim.
 let syntastic_full_redraws=0
 
+" Speed up syntastic a bit.
+let g:syntastic_enable_highlighting=0
+
 " Add some fancy symbols for the error and warning messages.
 let g:syntastic_error_symbol='✗'
 let g:syntastic_style_error_symbol='✠'
