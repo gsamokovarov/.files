@@ -107,6 +107,9 @@ NeoBundle 'vim-scripts/AutoTag'
 
 filetype plugin indent on
 
+" Enable matchit.vim.
+runtime macros/matchit.vim
+
 " Enforce UTF-8 to reduce my WTF's per minute.
 set encoding=utf-8
 
