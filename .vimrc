@@ -71,7 +71,6 @@ NeoBundle 'kana/vim-textobj-user'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'koron/nyancat-vim'
 NeoBundle 'matchit.zip'
-NeoBundle 'mileszs/ack.vim'
 NeoBundle 'morhetz/gruvbox'
 NeoBundle 'nelstrom/vim-textobj-rubyblock'
 NeoBundle 'reedes/vim-colors-pencil'
@@ -274,8 +273,6 @@ let g:splitjoin_join_mapping=''
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher for
 " grep and Ack.
 if executable('ag')
-  let g:ackprg='ag --nogroup --column --ignore=vendor --ignore=node_modules --ignore=.bundle'
-
   " Use Ag over Grep
   set grepprg=ag\ --nogroup\ --nocolor\ --ignore=vendor\ --ignore=node_modules\ --ignore=.bundle
 endif
@@ -709,11 +706,6 @@ cnoreabbrev Wq wq
 
 " Tabe is typed quite often around here.
 cnoreabbrev Tabe tabe
-
-" I type this often and holding Shift each time isn't that nice. Sometimes I
-" would also mistake it for ag anyway, so put that one to use too.
-cnoreabbrev ack Ack
-cnoreabbrev ag Ack
 
 command Light execute "set background=light"
 command Dark execute "set background=dark"
