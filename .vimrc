@@ -453,6 +453,10 @@ if has('autocmd')
         \ set expandtab tabstop=2 shiftwidth=2 softtabstop=2 |
         \ set omnifunc=csscomplete#Complete
 
+  autocmd FileType markdown 
+        \ nnoremap <buffer> = yypVr= |
+        \ nnoremap <buffer> - yypVr-
+
   " Automatically rebalance windows on Vim resize.
   autocmd VimResized * :wincmd =
 
