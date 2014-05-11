@@ -212,9 +212,6 @@ set shell=/bin/bash
 " which very few use.
 let g:is_posix=1
  
-" Use the older RegExp engine as Ruby syntax is painfully slow with the current one.
-set re=1
-
 " Use the system Ruby for the ftplugin shenanigans.
 let g:ruby_path="/usr/bin/ruby"
 
@@ -435,7 +432,10 @@ if has('autocmd')
   autocmd FileType ruby
         \ set expandtab tabstop=2 shiftwidth=2 softtabstop=2 |
         \ set omnifunc=rubycomplete#Complete |
-        \ set iskeyword+=?,!
+        \ set iskeyword+=?,! |
+        " Use the older RegExp engine as Ruby syntax is painfully slow with
+        " the current one.
+        \ setlocal re=1
 
   autocmd FileType javascript
         \ set expandtab tabstop=2 shiftwidth=2 softtabstop=2 |
