@@ -450,7 +450,7 @@ if has('autocmd')
         \ set omnifunc=htmlcomplete#Complete
 
   autocmd FileType css
-        \ set expandtab tabstop=2 shiftwidth=2 softtabstop=2 |
+        \ set expandtab tabstop=2 shiftwidth=2 softtabstop=1 |
         \ set omnifunc=csscomplete#Complete
 
   autocmd FileType markdown 
@@ -460,9 +460,16 @@ if has('autocmd')
   " Automatically rebalance windows on Vim resize.
   autocmd VimResized * :wincmd =
 
-  " Automatically save and load view state.
-  autocmd BufWritePost * if expand('%') != '' && &buftype !~ 'nofile' | mkview | endif
-  autocmd BufRead      * if expand('%') != '' && &buftype !~ 'nofile' | silent loadview | endif
+  " See https://github.com/tpope/vim-rails/issues/25.
+  autocmd BufReadPre *.rb let b:skip_auto_mkview_magic=1
+
+  " Automatically save and load view state, unless it's Ruby, cause vim-rails
+  " gets really confused and the useful A* and R* commands don't work. Need to
+  " find a way to disable it only for Rails projects.
+  if !exists('b:skip_auto_mkview_magic')
+    autocmd BufWritePost * if expand('%') != '' && &buftype !~ 'nofile' | mkview | endif
+    autocmd BufRead      * if expand('%') != '' && &buftype !~ 'nofile' | silent loadview | endif
+  endif
 
   highlight                  ExtraWhitespace ctermbg=red guibg=red
   highlight            clear SignColumn
