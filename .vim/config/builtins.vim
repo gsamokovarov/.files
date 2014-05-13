@@ -102,6 +102,13 @@ set visualbell t_vb=
 " example.
 set shell=/bin/bash
 
+" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher for
+" grep and Ack.
+if executable('ag')
+  " Use Ag over Grep
+  set grepprg=ag\ --nogroup\ --nocolor\ --ignore=vendor\ --ignore=node_modules\ --ignore=.bundle
+endif
+
 " Syntax highlight shell scripts as per POSIX, not the original Bourne shell
 " which very few use.
 let g:is_posix=1
