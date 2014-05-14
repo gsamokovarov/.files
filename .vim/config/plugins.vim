@@ -84,7 +84,7 @@ let g:ctrlp_max_files=10000
 " {{{ Litecorrect
 " Don't use typographic quotes. Dunno how to type them :D
 let g:litecorrect#typographic=1
-# }}} 
+" }}} 
 
 " {{{ Wildfire
 " Configure wildfire to accept caret fences and be more effective in HTML.
