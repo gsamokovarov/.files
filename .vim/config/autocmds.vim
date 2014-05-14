@@ -1,88 +1,75 @@
-" Define my common used thematic themes.
-let g:thematic#themes={
-    \ 'solarized_light': {
-    \   'colorscheme': 'solarized',
-    \   'background': 'light',
-    \   'airline-theme': 'solarized',
-    \  },
-    \ 'solarized_dark': {
-    \   'colorscheme': 'solarized',
-    \   'background': 'dark',
-    \   'airline-theme': 'solarized',
-    \  },
-    \ 'pencil_dark': {
-    \   'colorscheme': 'pencil',
-    \   'background': 'dark',
-    \   'airline-theme': 'badwolf',
-    \ },
-    \ 'pencil_light': {
-    \   'colorscheme': 'pencil',
-    \   'background': 'light',
-    \   'airline-theme': 'badwolf',
-    \ },
-    \ 'gruvbox': {
-    \   'colorscheme': 'gruvbox',
-    \   'background': 'dark',
-    \   'airline-theme': 'tomorrow',
-    \ }
-    \ }
+if has('autocmd')
+  " Turn the relative numbers on and off, based on the COMMAND mode and the
+  " focus of the window.
+  autocmd FocusLost,InsertEnter   * if !exists("b:NERDTreeType") | :set norelativenumber number | endif
+  autocmd FocusGained,InsertLeave * if !exists("b:NERDTreeType") | :set nonumber relativenumber | endif
 
-let g:thematic#defaults={
-    \ 'typeface': 'Ubuntu Mono derivative Powerline',
-    \ 'font-size': 15,
-    \ 'laststatus': 2,
-    \ 'sign-column-color-fix': 1,
-    \ 'fullscreen-background-color-fix': 1,
-    \ 'columns': 120,
-    \ }
+  " Recalculate the numbers width on each buffer write.
+  autocmd BufWritePre * :let &l:numberwidth=CalculateBestNumberWidth()
 
-" Blend the sign column background.
-let g:gruvbox_sign_column='dark0'
+  " Save the last position in a file.
+  autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
-" Use 256 colors everywhere.
-set t_Co=256
+  " Try to automatically detect the indentation of the current buffer.
+  autocmd BufReadPost * :DetectIndent
 
-" The terminal Vim on OSX is slow as f*ck. I don't believe its iTerm that
-" is bringing the slownes, either. Someone... HALP!
-if has('gui_running')
-  " If we are running in a gui like GVim, make sure to hide every annoying UI
-  " piece, by default. In MacVim I like the graphical tabs, but those actually
-  " look good, so enable it only for the MacVim.
-  set guioptions=
+  autocmd FileType python
+        \ set expandtab tabstop=4 shiftwidth=4 softtabstop=4 |
+        \ set omnifunc=pythoncomplete#Complete
 
-  " Set-up a powerline capable font.
-  if has('gui_macvim')
-    " Better fonts in the UI.
-    set antialias
+  autocmd FileType c
+        \ set cindent expandtab tabstop=2 shiftwidth=2 softtabstop=2 |
+        \ set omnifunc=ccomplete#Complete
 
-    " Try to fit the maximum characters on the screen and feel the rest of it
-    " with the background color in MacVim.
-    set fuoptions=maxvert,maxhorz
+  autocmd FileType ruby
+        \ set expandtab tabstop=2 shiftwidth=2 softtabstop=2 |
+        \ set omnifunc=rubycomplete#Complete |
+        \ set iskeyword+=?,! |
+        " Use the older RegExp engine as Ruby syntax is painfully slow with
+        " the current one.
+        \ setlocal re=1
 
-    " Enable the graphical tabs on Macvim, as those look awesome.
-    set guioptions=e
+  autocmd FileType javascript
+        \ set expandtab tabstop=2 shiftwidth=2 softtabstop=2 |
+        \ set omnifunc=javascriptcomplete#Complete
 
-    " Enable a bit of transperancy for the MacVim window. Looks pretty cool.
-    set transparency=4
+  autocmd FileType coffee
+        \ set expandtab tabstop=2 shiftwidth=2 softtabstop=2 |
+        \ set omnifunc=coffeecomplete#Complete
 
-    " The focus follows the mouse. No need to click on a window for that.
-    set mousefocus
+  autocmd FileType html
+        \ set expandtab tabstop=2 shiftwidth=2 softtabstop=2 |
+        \ set omnifunc=htmlcomplete#Complete
 
-    " Don't let thematic spawn the window to its fullest. Use 120 columns, which
-    " are enough for NERDTree, Gundo, etc. and text around 80 chars. On the
-    " other hand, if I don't follow the 79 char rule for that piece of code,
-    " 120 chars are a good measurement for a long line.
-    set columns=120
+  autocmd FileType css
+        \ set expandtab tabstop=2 shiftwidth=2 softtabstop=1 |
+        \ set omnifunc=csscomplete#Complete
+
+  autocmd FileType markdown 
+        \ nnoremap <buffer> = yypVr= |
+        \ nnoremap <buffer> - yypVr-
+
+  " Automatically rebalance windows on Vim resize.
+  autocmd VimResized * :wincmd =
+
+  " See https://github.com/tpope/vim-rails/issues/25.
+  autocmd BufReadPre *.rb let b:skip_auto_mkview_magic=1
+
+  " Automatically save and load view state, unless it's Ruby, cause vim-rails
+  " gets really confused and the useful A* and R* commands don't work. Need to
+  " find a way to disable it only for Rails projects.
+  if !exists('b:skip_auto_mkview_magic')
+    autocmd BufWritePost * if expand('%') != '' && &buftype !~ 'nofile' | mkview | endif
+    autocmd BufRead      * if expand('%') != '' && &buftype !~ 'nofile' | silent loadview | endif
   endif
 
-  " Gruvbox for the UI. Looks really cool on it.
-  let g:thematic#theme_name='gruvbox'
-else
-  " Use fancy airline tabs in the terminal.
-  let g:airline#extensions#tabline#enabled=1
-  let g:airline#extensions#tabline#show_buffers=0
-  let g:airline#extensions#tabline#tab_nr_type=1
+  highlight                  ExtraWhitespace ctermbg=red guibg=red
+  highlight            clear SignColumn
+  autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\t/ containedin=ALL
 
-  " Solarized for the terminal.
-  let g:thematic#theme_name='solarized_light'
+  autocmd FileType markdown silent WeakWordy
+  autocmd BufWinEnter *.md  silent WeakWordy
+  autocmd InsertEnter *.md  silent WeakWordy
+  autocmd InsertLeave *.md  silent WeakWordy
+  autocmd BufWinLeave *.md  silent WeakWordy
 endif
