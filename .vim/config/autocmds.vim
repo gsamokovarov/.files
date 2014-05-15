@@ -1,12 +1,4 @@
 if has('autocmd')
-  " Turn the relative numbers on and off, based on the COMMAND mode and the
-  " focus of the window.
-  autocmd FocusLost,InsertEnter   * if !exists("b:NERDTreeType") | :set norelativenumber number | endif
-  autocmd FocusGained,InsertLeave * if !exists("b:NERDTreeType") | :set nonumber relativenumber | endif
-
-  " Recalculate the numbers width on each buffer write.
-  autocmd BufWritePre * :let &l:numberwidth=CalculateBestNumberWidth()
-
   " Save the last position in a file.
   autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 

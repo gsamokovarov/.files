@@ -32,9 +32,10 @@ set nowrap
 " Don't display the current Vim mode.
 set noshowmode
 
-" Display relative to the selected line number.
-set nonumber
-set relativenumber
+" Display the selected line number. Although the relative numbers are nice,
+" they waste CPU and you can really tell that on OSX.
+set norelativenumber
+set number
 
 " Don't redraw while executing commands from macros and registers.
 set lazyredraw
