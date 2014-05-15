@@ -78,6 +78,9 @@ set colorcolumn=80
 " Syntax highlight only the first 512 characters.
 set synmaxcol=512
 
+" Don't match any pair characters. Wastes CPU redrawing the screen.
+set matchpairs=
+
 " Enable the mouse support if Vim supports it.
 if has('mouse')
   set mouse=a
