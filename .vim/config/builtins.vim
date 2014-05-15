@@ -14,8 +14,9 @@ set undodir=$HOME/.vim/undo
 set undofile
 
 " Save the view files in ~/.vim/view. The view files keep the state of manual
-" folds, etc.
+" folds and the cursor only.
 set viewdir=$HOME/.vim/view
+set viewoptions=folds,cursor
 
 " Keep the swap files in ~/.vim/swap.
 set directory=$HOME/.vim/swap
