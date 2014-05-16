@@ -58,6 +58,11 @@ let g:gundo_right=1
 let g:splitjoin_split_mapping=''
 let g:splitjoin_join_mapping=''
 " }}}
+"
+
+" {{{ GitGutter
+let g:gitgutter_sign_column_always=1
+" }}}
 
 " {{{ CtrlP
 " Use speedier git-list-files and mercurial alternatives to listing files in a
