@@ -18,6 +18,12 @@ nnoremap <Right> <NOP>
 inoremap <Right> <NOP>
 vnoremap <Right> <NOP>
 
+" When text is wrapped, move up and down by visual lines.
+nnoremap j gj
+vnoremap j gj
+nnoremap k gk
+vnoremap k gk
+
 " Let EasyMotion be the default motions.
 map f <Plug>(easymotion-f)
 map t <Plug>(easymotion-t)
