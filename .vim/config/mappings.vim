@@ -24,11 +24,13 @@ vnoremap j gj
 nnoremap k gk
 vnoremap k gk
 
-" Let EasyMotion be the default motions.
-map f <Plug>(easymotion-f)
-map t <Plug>(easymotion-t)
-map F <Plug>(easymotion-F)
-map T <Plug>(easymotion-T)
+" Jump to anywhere you want with minimal keystrokes, with just one key binding.
+" `<Space>{char}{label}`
+nmap <Space> <Plug>(easymotion-s)
+
+" JK motions: Line motions
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
 
 nnoremap <Up>   N
 nnoremap <Left> N
@@ -144,10 +146,6 @@ nnoremap <C-J> gT
 " Move function arguments left and right.
 nnoremap <C-H> :SidewaysLeft<CR>
 nnoremap <C-L> :SidewaysRight<CR>
-
-" Toggle the current fold.
-nnoremap <silent> <Space> @=(foldlevel('.') ? 'za' : "\<Space>")<CR>
-vnoremap <Space> zf
 
 " Use <Leader>{j,s} for the split joins. I refuse to remember the gJ and gS.
 nnoremap <Leader>j :SplitjoinJoin<CR>

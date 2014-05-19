@@ -104,6 +104,9 @@ let g:wildfire_objects={
 " {{{ EasyMotion
 " Don't do the default plugin mapping.
 let g:EasyMotion_do_mapping=0
+
+" Turn on case sensitive feature.
+let g:EasyMotion_smartcase = 1
 " }}}
 
 " {{{ YouCompleteMe
