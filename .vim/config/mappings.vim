@@ -18,17 +18,15 @@ nnoremap <Right> <NOP>
 inoremap <Right> <NOP>
 vnoremap <Right> <NOP>
 
+" Filter Ex commands with <C-{P,N}>.
+cnoremap <C-p> <Up>
+cnoremap <C-n> <Down>
+
 " When text is wrapped, move up and down by visual lines.
 nnoremap j gj
 vnoremap j gj
 nnoremap k gk
 vnoremap k gk
-
-" Let EasyMotion be the default motions.
-map f <Plug>(easymotion-f)
-map t <Plug>(easymotion-t)
-map F <Plug>(easymotion-F)
-map T <Plug>(easymotion-T)
 
 nnoremap <Up>   N
 nnoremap <Left> N

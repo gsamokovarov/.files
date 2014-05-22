@@ -101,9 +101,8 @@ let g:wildfire_objects={
     \ }
 " }}}
 
-" {{{ EasyMotion
-" Don't do the default plugin mapping.
-let g:EasyMotion_do_mapping=0
+" {{{ Sneak
+let g:sneak#s_next=1
 " }}}
 
 " {{{ YouCompleteMe
