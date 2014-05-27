@@ -399,6 +399,10 @@ let g:sneak#s_next=1
 let g:ycm_collect_identifiers_from_tags_files=1
 " }}}
 
+" {{{ Eclim
+let g:EclimCompletionMethod='omnifunc'
+" }}}
+
 " }}}
 
 " {{{ Auto Commands
@@ -417,6 +421,9 @@ if has('autocmd')
   autocmd FileType c
         \ set cindent expandtab tabstop=2 shiftwidth=2 softtabstop=2 |
         \ set omnifunc=ccomplete#Complete
+
+  autocmd FileType java
+        \ set cindent expandtab tabstop=4 shiftwidth=4 softtabstop=4
 
   autocmd Filetype go
         \ set tabstop=4 shiftwidth=4 softtabstop=4
