@@ -24,9 +24,6 @@ runtime config/styles.vim
 runtime config/autocmds.vim
 runtime config/mappings.vim
 
-" Enable matchit.vim.
-runtime macros/matchit.vim
-
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
@@ -87,7 +84,6 @@ NeoBundle 'justinmk/vim-sneak'
 NeoBundle 'kana/vim-textobj-user'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'koron/nyancat-vim'
-NeoBundle 'matchit.zip'
 NeoBundle 'morhetz/gruvbox'
 NeoBundle 'nelstrom/vim-textobj-rubyblock'
 NeoBundle 'reedes/vim-colors-pencil'
