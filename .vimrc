@@ -419,11 +419,11 @@ if has('autocmd')
         \ set omnifunc=pythoncomplete#Complete
 
   autocmd FileType c
-        \ set cindent expandtab tabstop=2 shiftwidth=2 softtabstop=2 |
+        \ set smartindent cindent expandtab tabstop=2 shiftwidth=2 softtabstop=2 |
         \ set omnifunc=ccomplete#Complete
 
   autocmd FileType java
-        \ set cindent expandtab tabstop=4 shiftwidth=4 softtabstop=4
+        \ set smartindent cindent expandtab tabstop=4 shiftwidth=4 softtabstop=4
 
   autocmd Filetype go
         \ set tabstop=4 shiftwidth=4 softtabstop=4
