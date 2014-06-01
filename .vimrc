@@ -428,7 +428,7 @@ if has('autocmd')
         \ set smartindent cindent expandtab tabstop=4 shiftwidth=4 softtabstop=4
 
   autocmd Filetype go
-        \ set tabstop=4 shiftwidth=4 softtabstop=4 |
+        \ set noexpandtab tabstop=4 shiftwidth=4 softtabstop=4 |
         \ let b:delimitMate_matchpairs = "(:),[:],{:}"
 
   autocmd FileType ruby
