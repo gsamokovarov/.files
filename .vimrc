@@ -1,5 +1,5 @@
 " {{{ Setup
-" 
+ 
 syntax on
 
 set nocompatible
@@ -71,6 +71,7 @@ NeoBundle 'Valloric/YouCompleteMe', {
 NeoBundle 'AndrewRadev/sideways.vim'
 NeoBundle 'AndrewRadev/splitjoin.vim'
 NeoBundle 'AndrewRadev/switch.vim'
+NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'bling/vim-airline'
@@ -398,6 +399,12 @@ let g:ycm_collect_identifiers_from_tags_files=1
 let g:EclimCompletionMethod='omnifunc'
 " }}}
 
+" {{{ DelimitMate
+
+" Let it work with vim-endwise which also expands on return.
+let b:delimitMate_expand_cr=1
+" }}}
+
 " }}}
 
 " {{{ Auto Commands
@@ -421,7 +428,8 @@ if has('autocmd')
         \ set smartindent cindent expandtab tabstop=4 shiftwidth=4 softtabstop=4
 
   autocmd Filetype go
-        \ set tabstop=4 shiftwidth=4 softtabstop=4
+        \ set tabstop=4 shiftwidth=4 softtabstop=4 |
+        \ let b:delimitMate_matchpairs = "(:),[:],{:}"
 
   autocmd FileType ruby
         \ set expandtab tabstop=2 shiftwidth=2 softtabstop=2 |
