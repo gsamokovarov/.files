@@ -560,6 +560,9 @@ vnoremap : ;
 nnoremap <Leader><Leader> ,
 vnoremap <Leader><Leader> ,
 
+" Format the whole file by default.
+nnoremap = mmg=GG`m
+
 " I mistype that a lot. 
 nmap <C-m> <C-n>
 
