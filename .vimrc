@@ -343,7 +343,6 @@ let g:gundo_right=1
 let g:splitjoin_split_mapping=''
 let g:splitjoin_join_mapping=''
 " }}}
-"
 
 " {{{ GitGutter
 let g:gitgutter_sign_column_always=1
@@ -403,6 +402,7 @@ let b:delimitMate_expand_cr=1
 
 " {{{ Unite
 let g:unite_source_grep_command='ag'
+let g:unite_source_grep_default_opts='--nogroup --nocolor --column'
 " }}}
 
 " }}}
