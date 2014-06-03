@@ -72,6 +72,7 @@ NeoBundle 'AndrewRadev/sideways.vim'
 NeoBundle 'AndrewRadev/splitjoin.vim'
 NeoBundle 'AndrewRadev/switch.vim'
 NeoBundle 'Raimondi/delimitMate'
+NeoBundle 'Shougo/unite.vim'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'bling/vim-airline'
@@ -400,9 +401,12 @@ let g:EclimCompletionMethod='omnifunc'
 " }}}
 
 " {{{ DelimitMate
-
 " Let it work with vim-endwise which also expands on return.
 let b:delimitMate_expand_cr=1
+" }}}
+
+" {{{ Unite
+let g:unite_source_grep_command='ag'
 " }}}
 
 " }}}
@@ -576,6 +580,9 @@ nmap <C-m> <C-n>
 
 " Get funky with Ctrl-Space.
 nnoremap <C-@> :CtrlPFunky<Cr>
+
+" Grep with unite, its better than ack.vim and the likes.
+nnoremap <Space>/ :Unite grep:.<CR>
 
 " I'm thinking of a decent usage for the Q key, so I'm starting with the rage
 " quit.
