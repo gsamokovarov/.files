@@ -667,12 +667,12 @@ nnoremap <C-L> :SidewaysRight<CR>
 nnoremap <silent> <Space> @=(foldlevel('.') ? 'za' : "\<Space>")<CR>
 vnoremap <Space> zf
 
-" Use <Leader>{j,s} for the split joins. I refuse to remember the gJ and gS.
-nnoremap <Leader>j :SplitjoinJoin<CR>
-nnoremap <Leader>s :SplitjoinSplit<CR>
+" Use {_,+}. I refuse to remember the gJ and gS.
+nnoremap _ :SplitjoinJoin<CR>
+nnoremap + :SplitjoinSplit<CR>
 
 " Use - to switch stuff around, like old-style to new-style Ruby hashes.
-nnoremap - :Switch<cr>
+nnoremap - :Switch<CR>
 
 " Write using `sudo` in COMMAND mode if the file is read-only.
 " Ripped off @StanAngeloff.
