@@ -575,7 +575,7 @@ nnoremap = mmg=GG`m
 nmap <C-m> <C-n>
 
 " Grep with unite, its better than ack.vim and the likes.
-nnoremap <C-@> :Unite grep:.<CR>
+nnoremap <C-g> :Unite grep:.<CR>
 
 " I'm thinking of a decent usage for the Q key, so I'm starting with the rage
 " quit.
