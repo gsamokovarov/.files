@@ -515,6 +515,30 @@ vnoremap <Right> <NOP>
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
 
+if has("gui_macvim") && has("gui_running")
+  " Map Command-# to switch tabs in MacVim.
+  nnoremap <D-0> 0gt
+  inoremap <D-0> <Esc>0gt
+  nnoremap <D-1> 1gt
+  inoremap <D-1> <Esc>1gt
+  nnoremap <D-2> 2gt
+  inoremap <D-2> <Esc>2gt
+  nnoremap <D-3> 3gt
+  inoremap <D-3> <Esc>3gt
+  nnoremap <D-4> 4gt
+  inoremap <D-4> <Esc>4gt
+  nnoremap <D-5> 5gt
+  inoremap <D-5> <Esc>5gt
+  nnoremap <D-6> 6gt
+  inoremap <D-6> <Esc>6gt
+  nnoremap <D-7> 7gt
+  inoremap <D-7> <Esc>7gt
+  nnoremap <D-8> 8gt
+  inoremap <D-8> <Esc>8gt
+  nnoremap <D-9> :tablast<CR>
+  inoremap <D-9> <Esc>:tablast<CR>
+endif
+
 " When text is wrapped, move up and down by visual lines.
 nnoremap j gj
 vnoremap j gj
