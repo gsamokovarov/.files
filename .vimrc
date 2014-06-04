@@ -232,8 +232,8 @@ endif
 " Always complete the longest available first.
 set completeopt+=longest
 
-" Highlight the 80th column as an unobtrusive reminder.
-set colorcolumn=80
+" Don't hilight the 80th (or any) column as an unobtrusive reminder.
+set colorcolumn=0
 
 " Syntax highlight only the first 512 characters.
 set synmaxcol=512
