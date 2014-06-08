@@ -7,5 +7,12 @@ slate.configAll({
 });
 
 slate.bindAll({
-  'space:alt,ctrl,cmd': slate.operation('grid')
+  // Bring up the Grid.
+  'space:ctrl,alt,cmd': slate.operation('grid'),
+
+  // Nudge a window by then pixels.
+  'l:ctrl,shift,alt': slate.operation('nudge', { x: '+10', y: '+0' }),
+  'h:ctrl,shift,alt': slate.operation('nudge', { x: '-10', y: '+0' }),
+  'k:ctrl,shift,alt': slate.operation('nudge', { x: '+0', y: '-10' }),
+  'j:ctrl,shift,alt': slate.operation('nudge', { x: '+0', y: '+10' }),
 });
