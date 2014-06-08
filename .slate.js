@@ -15,4 +15,6 @@ slate.bindAll({
   'h:ctrl,shift,alt': slate.operation('nudge', { x: '-10', y: '+0' }),
   'k:ctrl,shift,alt': slate.operation('nudge', { x: '+0', y: '-10' }),
   'j:ctrl,shift,alt': slate.operation('nudge', { x: '+0', y: '+10' }),
+
+  'r:ctrl,alt,cmd': function() { slate.source('~/.slate.js'); },
 });
