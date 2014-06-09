@@ -1,2 +1,7 @@
 #!/usr/bin/env bash
-exec git pull $@
+
+if git svn info &>/dev/null; then
+  exec git svn fetch $@
+else
+  exec git pull $@
+fi
