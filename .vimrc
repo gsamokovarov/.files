@@ -499,8 +499,9 @@ if has('autocmd')
   " Save the last position in a file.
   autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
-  " Try to automatically detect the indentation of the current buffer.
-  autocmd BufReadPost * :DetectIndent
+  " Try to automatically detect the indentation of the current buffer. The
+  " BufWritePost is there to detect indentation on new files.
+  autocmd BufReadPost,BufWritePost * :DetectIndent
 
   autocmd FileType python
         \ set expandtab tabstop=4 shiftwidth=4 softtabstop=4 |
@@ -528,7 +529,8 @@ if has('autocmd')
   autocmd FileType javascript
         \ set expandtab tabstop=2 shiftwidth=2 softtabstop=2 |
         \ set omnifunc=javascriptcomplete#Complete |
-        \ let b:delimitMate_matchpairs = "(:),[:],{:}"
+        \ let b:delimitMate_matchpairs = "(:),[:],{:}" |
+        \ :DetectIndent
 
   autocmd FileType coffee
         \ set expandtab tabstop=2 shiftwidth=2 softtabstop=2 |
@@ -536,11 +538,13 @@ if has('autocmd')
 
   autocmd FileType html
         \ set expandtab tabstop=2 shiftwidth=2 softtabstop=2 |
-        \ set omnifunc=htmlcomplete#Complete
+        \ set omnifunc=htmlcomplete#Complete |
+        \ :DetectIndent
 
   autocmd FileType css
         \ set expandtab tabstop=2 shiftwidth=2 softtabstop=1 |
-        \ set omnifunc=csscomplete#Complete
+        \ set omnifunc=csscomplete#Complete |
+        \ :DetectIndent
 
   autocmd FileType markdown 
         \ nnoremap <buffer> = yypVr= |
