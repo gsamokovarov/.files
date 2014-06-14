@@ -527,7 +527,8 @@ if has('autocmd')
 
   autocmd FileType javascript
         \ set expandtab tabstop=2 shiftwidth=2 softtabstop=2 |
-        \ set omnifunc=javascriptcomplete#Complete
+        \ set omnifunc=javascriptcomplete#Complete |
+        \ let b:delimitMate_matchpairs = "(:),[:],{:}"
 
   autocmd FileType coffee
         \ set expandtab tabstop=2 shiftwidth=2 softtabstop=2 |
