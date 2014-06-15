@@ -46,9 +46,9 @@ NeoBundle 'marijnh/tern_for_vim', {
 NeoBundle 'JazzCore/ctrlp-cmatcher', {
         \ 'build' : {
         \     'windows' : 'install_windows.bat',
-        \     'cygwin' : './install_linux.sh',
-        \     'mac' : './install_linux.sh',
-        \     'unix' : './install_linux.sh',
+        \     'cygwin' : './install.sh',
+        \     'mac' : './install.sh',
+        \     'unix' : './install.sh',
         \    },
         \ }
 
