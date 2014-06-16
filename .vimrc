@@ -47,7 +47,7 @@ NeoBundle 'JazzCore/ctrlp-cmatcher', {
         \ 'build' : {
         \     'windows' : 'install_windows.bat',
         \     'cygwin' : './install.sh',
-        \     'mac' : './install.sh',
+        \     'mac' : 'FLAGS=-Qunused-arguments CPPFLAGS=-Qunused-arguments ./install.sh',
         \     'unix' : './install.sh',
         \    },
         \ }
