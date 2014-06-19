@@ -1,21 +1,63 @@
 slate.configAll({
-  'defaultToCurrentScreen': true,
-  'secondsBetweenRepeat': 0.1,
-  'checkDefaultsOnLoad': true,
-  'focusCheckWidthMax': 3000,
-  'orderScreensLeftToRight': true
+  defaultToCurrentScreen: true,
+  secondsBetweenRepeat: 0.1,
+  checkDefaultsOnLoad: true,
+  focusCheckWidthMax: 3000,
+  orderScreensLeftToRight: true
 });
+
+var pushRight = slate.operation("push", {
+  direction: "right",
+  style: "bar-resize:screenSizeX/2"
+});
+
+var pushBiggerRight = slate.operation("push", {
+  direction: "right",
+  style: "bar-resize:screenSizeX/1.5"
+});
+
+var pushLeft = slate.operation("push", {
+  direction: "left",
+  style: "bar-resize:screenSizeX/2"
+});
+
+var pushBiggerLeft = slate.operation("push", {
+  direction: "left",
+  style: "bar-resize:screenSizeX/1.5"
+});
+
+var fullscreen = slate.operation("move", {
+  x: "screenOriginX",
+  y: "screenOriginY",
+  width: "screenSizeX",
+  height: "screenSizeY"
+});
+
+var centered = slate.operation("move", {
+  x: "screenOriginX+150",
+  y: "screenOriginY+80",
+  width: "screenSizeX-300",
+  height: "screenSizeY-180"
+});
+
+var reloadSlateConfig = function() {
+  slate.source('~/.slate.js');
+};
 
 slate.bindAll({
   // Bring up the Grid.
   'space:ctrl,alt,cmd': slate.operation('grid'),
   'i:ctrl,alt,cmd': slate.operation('grid'),
 
-  // Nudge a window by then pixels.
-  'l:ctrl,shift,alt': slate.operation('nudge', { x: '+10', y: '+0' }),
-  'h:ctrl,shift,alt': slate.operation('nudge', { x: '-10', y: '+0' }),
-  'k:ctrl,shift,alt': slate.operation('nudge', { x: '+0', y: '-10' }),
-  'j:ctrl,shift,alt': slate.operation('nudge', { x: '+0', y: '+10' }),
+  'i:ctrl,shift,alt': slate.operation('grid'),
 
-  'r:ctrl,alt,cmd': function() { slate.source('~/.slate.js'); },
+  // Nudge a window by then pixels.
+  'l:ctrl,shift,alt': pushRight,
+  '.:ctrl,shift,alt': pushBiggerRight,
+  'h:ctrl,shift,alt': pushLeft,
+  'b:ctrl,shift,alt': pushBiggerLeft,
+  'k:ctrl,shift,alt': centered,
+  'j:ctrl,shift,alt': fullscreen,
+
+  'r:ctrl,alt,cmd': reloadSlateConfig
 });
