@@ -16,6 +16,11 @@ var pushBiggerRight = slate.operation("push", {
   style: "bar-resize:screenSizeX/1.5"
 });
 
+var pushSmallerRight = slate.operation("push", {
+  direction: "right",
+  style: "bar-resize:screenSizeX - screenSizeX/1.5"
+});
+
 var pushLeft = slate.operation("push", {
   direction: "left",
   style: "bar-resize:screenSizeX/2"
@@ -24,6 +29,11 @@ var pushLeft = slate.operation("push", {
 var pushBiggerLeft = slate.operation("push", {
   direction: "left",
   style: "bar-resize:screenSizeX/1.5"
+});
+
+var pushSmallerLeft = slate.operation("push", {
+  direction: "left",
+  style: "bar-resize:screenSizeX - screenSizeX/1.5"
 });
 
 var fullscreen = slate.operation("move", {
@@ -54,8 +64,10 @@ slate.bindAll({
   // Nudge a window by then pixels.
   'l:ctrl,shift,alt': pushRight,
   '.:ctrl,shift,alt': pushBiggerRight,
+  ',:ctrl,shift,alt': pushSmallerRight,
   'h:ctrl,shift,alt': pushLeft,
   'b:ctrl,shift,alt': pushBiggerLeft,
+  'n:ctrl,shift,alt': pushSmallerLeft,
   'k:ctrl,shift,alt': centered,
   'j:ctrl,shift,alt': fullscreen,
 
