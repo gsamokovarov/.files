@@ -183,6 +183,9 @@ set nowrap
 " Don't display the current Vim mode.
 set noshowmode
 
+" Automatically write buffers. Save keystrokes.
+set autowrite
+
 " Don't display any numbers, I have the current one in the airline status bar
 " anyway. Although the relative numbers are nice, they waste CPU and you can
 " really tell that on OSX.
