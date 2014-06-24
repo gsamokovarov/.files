@@ -436,7 +436,7 @@ let g:thematic#themes={
 
 let g:thematic#defaults={
     \ 'typeface': 'Ubuntu Mono derivative Powerline',
-    \ 'font-size': 13,
+    \ 'font-size': 14,
     \ 'laststatus': 2,
     \ 'sign-column-color-fix': 1,
     \ 'fullscreen-background-color-fix': 1,
