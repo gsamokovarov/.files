@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#
+# Reset the current branch to the exact state of a remote one.
+#
+# Usage:
+#   git like upstream/master
+
+git fetch
+git reset --hard $1
