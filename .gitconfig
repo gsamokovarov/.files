@@ -17,6 +17,7 @@
 	track = follow
 	state = status -s
 	rewind = reset --hard HEAD~1
+	choose = !git branch | cut -c 3- | selecta | xargs git checkout
 
 [help]
 	autocorrect = 1
