@@ -90,6 +90,7 @@ NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'sheerun/vim-polyglot'
 NeoBundle 'sjl/gundo.vim'
+NeoBundle 'tacahiroy/ctrlp-funky'
 NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'tpope/vim-bundler'
@@ -353,6 +354,9 @@ let g:ctrlp_user_command={
 
 " Use the C matcher function provided by ctrlp-cmatcher.
 let g:ctrlp_match_func={'match': 'matcher#cmatch'}
+
+" Use the funky extension to navigate more easily inside bigger files.
+let g:ctrlp_extensions = ['funky']
 
 " Use caching to speed CtrlP up.
 let g:ctrlp_use_caching=1
@@ -687,6 +691,9 @@ nnoremap = mmg=GG`m
 
 " I mistype that a lot. 
 nmap <C-m> <C-n>
+
+" Get funky with Ctrl-Space.
+nnoremap <C-@> :CtrlPFunky<CR>
 
 " Grep with unite, its better than ack.vim and the likes.
 nnoremap <C-g> :Unite grep:.<CR>
