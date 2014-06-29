@@ -694,6 +694,7 @@ nmap <C-m> <C-n>
 
 " Get funky with Ctrl-Space.
 nnoremap <C-@> :CtrlPFunky<CR>
+nnoremap <C-Space> :CtrlPFunky<CR>
 
 " Grep with unite, its better than ack.vim and the likes.
 nnoremap <C-g> :Unite grep:.<CR>
