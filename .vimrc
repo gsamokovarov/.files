@@ -74,7 +74,6 @@ NeoBundle 'gcmt/wildfire.vim'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'int3/vim-extradite/'
 NeoBundle 'jesseschalken/list-text-object'
-NeoBundle 'jistr/vim-nerdtree-tabs'
 NeoBundle 'justinmk/vim-sneak'
 NeoBundle 'kana/vim-textobj-user'
 NeoBundle 'kien/ctrlp.vim'
@@ -298,11 +297,8 @@ let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$', '^.sass-cache$']"}}}
 " headers.
 let NERDTreeMinimalUI=1
 
-" Just use one NERDTree on all tabs and don't show it on startup.
-let g:nerdtree_tabs_open_on_gui_startup=0
-let g:nerdtree_tabs_open_on_new_tab=1
-" Try to focus on actual file content when jumping to it.
-let g:nerdtree_tabs_focus_on_files=1
+" Trying out a split window approach.
+let NERDTreeHijackNetrw=1
 " }}}
 
 " {{{ Syntastic
@@ -645,9 +641,9 @@ nnoremap <Left> N
 nnoremap <Down>  n
 nnoremap <Right> n
 
-nnoremap <F5> :NERDTreeTabsToggle<CR>
-inoremap <F5> <ESC>:NERDTreeTabsToggle<CR>
-nnoremap <Leader>5 :NERDTreeTabsToggle<CR>
+nnoremap <F5> :edit .<CR>
+inoremap <F5> <ESC>:edit .<CR>
+nnoremap <Leader>5 :edit .<CR>
 
 nnoremap <F6> :GundoToggle<CR>
 inoremap <F6> <ESC>:GundoToggle<CR>
