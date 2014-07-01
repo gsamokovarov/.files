@@ -3,6 +3,7 @@
 	email = gsamokovarov@gmail.com
 
 [alias]
+	co = checkout
 	branches = branch -a
 	tags = tag -l
 	remotes = remote
