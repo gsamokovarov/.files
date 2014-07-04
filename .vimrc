@@ -645,9 +645,9 @@ nnoremap <Left> N
 nnoremap <Down>  n
 nnoremap <Right> n
 
-nnoremap <F5> :edit .<CR>
-inoremap <F5> <ESC>:edit .<CR>
-nnoremap <Leader>5 :edit .<CR>
+nnoremap <F5> :edit! .<CR>
+inoremap <F5> <ESC>:edit! .<CR>
+nnoremap <Leader>5 :edit! .<CR>
 
 nnoremap <F6> :GundoToggle<CR>
 inoremap <F6> <ESC>:GundoToggle<CR>
