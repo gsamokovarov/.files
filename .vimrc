@@ -74,6 +74,7 @@ NeoBundle 'gcmt/wildfire.vim'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'int3/vim-extradite/'
 NeoBundle 'jesseschalken/list-text-object'
+NeoBundle 'jistr/vim-nerdtree-tabs'
 NeoBundle 'justinmk/vim-sneak'
 NeoBundle 'kana/vim-textobj-user'
 NeoBundle 'kien/ctrlp.vim'
@@ -298,8 +299,58 @@ let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$', '^.sass-cache$']"}}}
 " headers.
 let NERDTreeMinimalUI=1
 
-" Trying out a split window approach.
-let NERDTreeHijackNetrw=1
+" Try to fill up most of the screen.
+let NERDTreeWinSize=999
+
+" Quit the NERDTree while opening files.
+let NERDTreeQuitOnOpen=1
+let NERDTreeAutoDeleteBuffer=1
+
+" Ripping off Stani (@StanAngeloff). Again :D
+let g:nerdtree_tabs_open_on_new_tab=0
+let g:nerdtree_tabs_focus_on_files=1
+
+function! CloseNERDTreeInTab(i)
+  let l:me = tabpagenr()
+  let l:previous_ei = &ei
+  set ei=all
+
+  exec 'tabnext ' . a:i
+  call nerdtree#closeTreeIfOpen()
+  exec 'tabnext ' . l:me
+
+  let &ei = l:previous_ei
+endfunction
+
+function! ToggleNERDTree()
+  let l:me = tabpagenr()
+  for i in range(1, tabpagenr('$'))
+    if i != l:me
+      call CloseNERDTreeInTab(i)
+    endif
+  endfor
+
+  " If NERDTree is visible and inactive in the current tab, focus.
+  if (nerdtree#treeExistsForTab() && nerdtree#getTreeWinNum() != -1) && ! nerdtree#treeExistsForBuf()
+    execute 'silent! NERDTreeFocus'
+  else
+    execute 'silent! NERDTreeMirrorToggle'
+  endif
+endfunction
+
+" Make sure a NERDTree instance is mirrored for all tabs.
+" This is needed as if the buffer with the only NERDTree instance is closed,
+" the state is reset for the next mirror.
+if has('autocmd')
+  " Silently open and immediately close a NERDTree.
+  au TabEnter * if !exists('t:hasNERDTree')
+          \ | let t:hasNERDTree=1
+          \ | execute 'silent! NERDTreeMirrorOpen'
+          \ | execute 'silent! NERDTreeMirrorToggle'
+        \ | endif
+
+endif
+
 " }}}
 
 " {{{ Syntastic
@@ -645,9 +696,9 @@ nnoremap <Left> N
 nnoremap <Down>  n
 nnoremap <Right> n
 
-nnoremap <F5> :edit! .<CR>
-inoremap <F5> <ESC>:edit! .<CR>
-nnoremap <Leader>5 :edit! .<CR>
+nnoremap <silent> <F5> :call ToggleNERDTree()<CR>
+inoremap <silent> <F5> <ESC>:call ToggleNERDTree()<CR>
+nnoremap <silent> <Leader>5 :call ToggleNERDTree()<CR>
 
 nnoremap <F6> :GundoToggle<CR>
 inoremap <F6> <ESC>:GundoToggle<CR>
