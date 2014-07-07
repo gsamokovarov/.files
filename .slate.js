@@ -13,12 +13,12 @@ var pushRight = slate.operation("push", {
 
 var pushBiggerRight = slate.operation("push", {
   direction: "right",
-  style: "bar-resize:screenSizeX/1.5"
+  style: "bar-resize:screenSizeX/1.75"
 });
 
 var pushSmallerRight = slate.operation("push", {
   direction: "right",
-  style: "bar-resize:screenSizeX - screenSizeX/1.5"
+  style: "bar-resize:screenSizeX - screenSizeX/1.75"
 });
 
 var pushLeft = slate.operation("push", {
@@ -28,12 +28,12 @@ var pushLeft = slate.operation("push", {
 
 var pushBiggerLeft = slate.operation("push", {
   direction: "left",
-  style: "bar-resize:screenSizeX/1.5"
+  style: "bar-resize:screenSizeX/1.75"
 });
 
 var pushSmallerLeft = slate.operation("push", {
   direction: "left",
-  style: "bar-resize:screenSizeX - screenSizeX/1.5"
+  style: "bar-resize:screenSizeX - screenSizeX/1.75"
 });
 
 var fullscreen = slate.operation("move", {
