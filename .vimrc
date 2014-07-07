@@ -639,6 +639,9 @@ endif
 " Map the <Leader> to the comma.
 let mapleader=","
 
+" No random help screens, please.
+nnoremap <F1> <NOP>
+
 " I have to force myself not to use those anymore.
 nnoremap <Up> <NOP>
 inoremap <Up> <NOP>
