@@ -306,9 +306,13 @@ let NERDTreeWinSize=999
 let NERDTreeQuitOnOpen=1
 let NERDTreeAutoDeleteBuffer=1
 
+" Hijack Netrw even though I don't use the drawer approach anymore.
+let NERDTreeHijackNetrw=1
+
 " Ripping off Stani (@StanAngeloff). Again :D
 let g:nerdtree_tabs_open_on_new_tab=0
 let g:nerdtree_tabs_focus_on_files=1
+let g:nerdtree_tabs_open_on_gui_startup=0
 
 function! CloseNERDTreeInTab(i)
   let l:me = tabpagenr()
