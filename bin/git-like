@@ -5,5 +5,5 @@
 # Usage:
 #   git like upstream/master
 
-git fetch
+git fetch --all
 git reset --hard $1
