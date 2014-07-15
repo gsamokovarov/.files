@@ -347,14 +347,13 @@ endfunction
 " the state is reset for the next mirror.
 if has('autocmd')
   " Silently open and immediately close a NERDTree.
-  au TabEnter * if !exists('t:hasNERDTree')
-          \ | let t:hasNERDTree=1
-          \ | execute 'silent! NERDTreeMirrorOpen'
-          \ | execute 'silent! NERDTreeMirrorToggle'
+  autocmd TabEnter * if !exists('t:hasNERDTree')
+        \ |   let t:hasNERDTree=1
+        \ |   execute 'silent! NERDTreeMirrorOpen'
+        \ |   execute 'silent! NERDTreeMirrorToggle'
         \ | endif
 
 endif
-
 " }}}
 
 " {{{ Syntastic
@@ -664,8 +663,8 @@ inoremap <Right> <NOP>
 vnoremap <Right> <NOP>
 
 " Filter Ex commands with <C-{P,N}>.
-cnoremap <C-p> <Up>
-cnoremap <C-n> <Down>
+cnoremap <C-P> <Up>
+cnoremap <C-N> <Down>
 
 if has("gui_macvim") && has("gui_running")
   " Map Command-# to switch tabs in MacVim.
@@ -725,7 +724,11 @@ nnoremap <S-Tab> <C-w><C-W>
 
 " I'm used to the fish shell and auto-completing suggestions with Ctrl-e.
 " Remapping it to Tab does the job for YouCompleteMe.
-imap <C-e> <Tab>
+imap <C-E> <Tab>
+
+" Go to the m marked spot. Its quite easier to type mm and when needing to go
+" back, `` will do the job. The default `` behaviour isn't useful for me.
+nnoremap `` `m
 
 " Choose '^' or '0' depending on the cursor position.
 nnoremap <expr> 0 CleverJumpFirst()
@@ -755,7 +758,7 @@ nnoremap <C-@> :CtrlPFunky<CR>
 nnoremap <C-Space> :CtrlPFunky<CR>
 
 " Grep with unite, its better than ack.vim and the likes.
-nnoremap <C-g> :Unite grep:.<CR>
+nnoremap <C-G> :Unite grep:.<CR>
 
 " I'm thinking of a decent usage for the Q key, so I'm starting with the rage
 " quit.
