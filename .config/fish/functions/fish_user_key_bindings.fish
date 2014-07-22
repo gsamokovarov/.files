@@ -4,7 +4,7 @@ function fish_user_key_bindings
   # it better.
   bind \cr history-search-backward
 
-# Bring a background process to the foreground witn Ctrl-X. Ctrl-Z cannot be
-# bound due to https://www.mail-archive.com/fish-users@lists.sourceforge.net/msg03480.html
+  # Bring a background process to the foreground witn Ctrl-X. Ctrl-Z cannot be
+  # bound due to https://www.mail-archive.com/fish-users@lists.sourceforge.net/msg03480.html
   bind \cx 'fg; commandline -f repaint'
 end

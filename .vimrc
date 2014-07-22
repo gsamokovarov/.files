@@ -396,6 +396,9 @@ let g:gitgutter_sign_column_always=1
 " }}}
 
 " {{{ CtrlP
+" Make CtrlPMixed the default command.
+let g:ctrlp_cmd="CtrlPMixed"
+
 " Use speedier git-list-files and mercurial alternatives to listing files in a
 " folder when possible and fall back to ag otherwise.
 let g:ctrlp_user_command={
