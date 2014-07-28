@@ -221,6 +221,10 @@ set splitbelow
 " the filling characters of the folded lines.
 set fillchars=vert:\ ,fold:\ 
 
+" Show trailing whitespace as ·
+set list
+set listchars=trail:·
+
 " Copy to the X clipboard too, unless we are on OSX and inside a tmux session.
 if !(has('macunix') || empty($TMUX))
   set clipboard+=unnamedplus
@@ -629,10 +633,6 @@ if has('autocmd')
     autocmd BufWritePost * if expand('%') != '' && &buftype !~ 'nofile' | mkview | endif
     autocmd BufRead      * if expand('%') != '' && &buftype !~ 'nofile' | silent loadview | endif
   endif
-
-  highlight                  ExtraWhitespace ctermbg=red guibg=red
-  highlight            clear SignColumn
-  autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\t/ containedin=ALL
 
   autocmd FileType markdown silent WeakWordy
   autocmd BufWinEnter *.md  silent WeakWordy
