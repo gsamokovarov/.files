@@ -596,6 +596,9 @@ if has('autocmd')
         \ set expandtab tabstop=2 shiftwidth=2 softtabstop=2 |
         \ set omnifunc=coffeecomplete#Complete
 
+  autocmd FileType puppet
+        \ let b:delimitMate_matchpairs = "(:),[:],{:}"
+
   autocmd FileType html
         \ set expandtab tabstop=2 shiftwidth=2 softtabstop=2 |
         \ set omnifunc=htmlcomplete#Complete |
