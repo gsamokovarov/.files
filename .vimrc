@@ -422,6 +422,9 @@ let g:ctrlp_extensions = ['funky']
 " Use caching to speed CtrlP up.
 let g:ctrlp_use_caching=1
 let g:ctrlp_max_files=10000
+
+" Don't use MRU files. They don't fit my workflow and annoy me. A lot.
+let g:ctrlp_mruf_max = 0
 " }}}
 
 " {{{ Litecorrect
