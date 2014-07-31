@@ -223,7 +223,7 @@ set fillchars=vert:\ ,fold:\
 
 " Show trailing whitespace as ·
 set list
-set listchars=trail:·
+set listchars=tab:\ \ ,trail:·
 
 " Copy to the X clipboard too, unless we are on OSX and inside a tmux session.
 if !(has('macunix') || empty($TMUX))
