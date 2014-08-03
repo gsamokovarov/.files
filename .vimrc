@@ -1,5 +1,5 @@
 " {{{ Setup
- 
+
 syntax on
 
 set nocompatible
@@ -276,7 +276,7 @@ endif
 " Syntax highlight shell scripts as per POSIX, not the original Bourne shell
 " which very few use.
 let g:is_posix=1
- 
+
 " Use the system Ruby for the ftplugin shenanigans.
 let g:ruby_path="/usr/bin/ruby"
 
@@ -430,7 +430,7 @@ let g:ctrlp_mruf_max = 0
 " {{{ Litecorrect
 " Don't use typographic quotes. Dunno how to type them :D
 let g:litecorrect#typographic=1
-" }}} 
+" }}}
 
 " {{{ Wildfire
 " Configure wildfire to accept caret fences and be more effective in HTML.
@@ -616,7 +616,7 @@ if has('autocmd')
         \ set omnifunc=csscomplete#Complete |
         \ :DetectIndent
 
-  autocmd FileType markdown 
+  autocmd FileType markdown
         \ nnoremap <buffer> = yypVr= |
         \ nnoremap <buffer> - yypVr-
 
@@ -759,7 +759,7 @@ vnoremap <Leader><Leader> ,
 " Format the whole file by default.
 nnoremap = mmg=GG`m
 
-" I mistype that a lot. 
+" I mistype that a lot.
 nmap <C-m> <C-n>
 
 " Get funky with Ctrl-Space.
