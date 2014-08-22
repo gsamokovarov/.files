@@ -549,14 +549,14 @@ if has('gui_running')
   " Gruvbox for the UI. Looks really cool on it.
   let g:thematic#theme_name='gruvbox'
 else
-  " Use fancy airline tabs in the terminal.
-  let g:airline#extensions#tabline#enabled=1
-  let g:airline#extensions#tabline#show_buffers=0
-  let g:airline#extensions#tabline#tab_nr_type=1
-
   " Solarized for the terminal.
   let g:thematic#theme_name='solarized_light'
 endif
+
+" Use fancy airline tabs in the terminal.
+let g:airline#extensions#tabline#enabled=1
+let g:airline#extensions#tabline#show_buffers=0
+let g:airline#extensions#tabline#tab_nr_type=1
 
 " }}}
 
