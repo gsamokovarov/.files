@@ -197,6 +197,9 @@ set nonumber
 set lazyredraw
 set ttyfast
 
+" Prefer full redraws for smaller scroll regions.
+set ttyscroll=10
+
 " Highlight the search term while still typing it.
 set hlsearch
 set incsearch
