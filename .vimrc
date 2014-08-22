@@ -533,9 +533,6 @@ if has('gui_running')
     " with the background color in MacVim.
     set fuoptions=maxvert,maxhorz
 
-    " Enable the graphical tabs on Macvim, as those look awesome.
-    set guioptions=e
-
     " Enable a bit of transperancy for the MacVim window. Looks pretty cool.
     set transparency=1
 
