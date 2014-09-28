@@ -70,41 +70,30 @@ NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'ciaranm/detectindent'
 NeoBundle 'dag/vim-fish'
-NeoBundle 'gcmt/wildfire.vim'
 NeoBundle 'godlygeek/tabular'
-NeoBundle 'int3/vim-extradite/'
 NeoBundle 'jesseschalken/list-text-object'
 NeoBundle 'jistr/vim-nerdtree-tabs'
-NeoBundle 'justinmk/vim-sneak'
 NeoBundle 'kana/vim-textobj-user'
 NeoBundle 'kien/ctrlp.vim'
-NeoBundle 'koron/nyancat-vim'
 NeoBundle 'morhetz/gruvbox'
 NeoBundle 'nelstrom/vim-textobj-rubyblock'
 NeoBundle 'reedes/vim-colors-pencil'
-NeoBundle 'reedes/vim-litecorrect'
 NeoBundle 'reedes/vim-textobj-sentence'
 NeoBundle 'reedes/vim-thematic'
-NeoBundle 'reedes/vim-wordy'
 NeoBundle 'rodjek/vim-puppet'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'sheerun/vim-polyglot'
 NeoBundle 'sjl/gundo.vim'
-NeoBundle 'tacahiroy/ctrlp-funky'
 NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'tomtom/tcomment_vim'
-NeoBundle 'tpope/vim-bundler'
-NeoBundle 'tpope/vim-dispatch'
 NeoBundle 'tpope/vim-endwise'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-markdown'
 NeoBundle 'tpope/vim-rails'
-NeoBundle 'tpope/vim-rake'
 NeoBundle 'tpope/vim-repeat'
 NeoBundle 'tpope/vim-sensible'
 NeoBundle 'tpope/vim-surround'
-NeoBundle 'tpope/vim-tbone'
 NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'vim-scripts/AutoTag'
 
@@ -419,9 +408,6 @@ let g:ctrlp_user_command={
 " Use the C matcher function provided by ctrlp-cmatcher.
 let g:ctrlp_match_func={'match': 'matcher#cmatch'}
 
-" Use the funky extension to navigate more easily inside bigger files.
-let g:ctrlp_extensions = ['funky']
-
 " Use caching to speed CtrlP up.
 let g:ctrlp_use_caching=1
 let g:ctrlp_max_files=10000
@@ -433,20 +419,6 @@ let g:ctrlp_mruf_max = 0
 " {{{ Litecorrect
 " Don't use typographic quotes. Dunno how to type them :D
 let g:litecorrect#typographic=1
-" }}}
-
-" {{{ Wildfire
-" Configure wildfire to accept caret fences and be more effective in HTML.
-let g:wildfire_objects={
-    \ "*" : ["i'", 'i"', "i`", "i)", "i]", "i}", "ip"],
-    \ "ruby" : ["i'", 'i"', "i`", "i)", "i]", "i}", "ir", "ar"],
-    \ "html,xml" : ["it", "at"],
-    \ "eruby" : ["it", "at"],
-    \ }
-" }}}
-
-" {{{ Sneak
-let g:sneak#s_next=1
 " }}}
 
 " {{{ YouCompleteMe
@@ -484,16 +456,6 @@ let g:thematic#themes={
     \   'background': 'dark',
     \   'airline-theme': 'solarized',
     \  },
-    \ 'pencil_dark': {
-    \   'colorscheme': 'pencil',
-    \   'background': 'dark',
-    \   'airline-theme': 'badwolf',
-    \ },
-    \ 'pencil_light': {
-    \   'colorscheme': 'pencil',
-    \   'background': 'light',
-    \   'airline-theme': 'badwolf',
-    \ },
     \ 'gruvbox': {
     \   'colorscheme': 'gruvbox',
     \   'background': 'dark',
@@ -761,10 +723,6 @@ nnoremap = mmg=GG`m
 
 " I mistype that a lot.
 nmap <C-m> <C-n>
-
-" Get funky with Ctrl-Space.
-nnoremap <C-@> :CtrlPFunky<CR>
-nnoremap <C-Space> :CtrlPFunky<CR>
 
 " Grep with unite, its better than ack.vim and the likes.
 nnoremap <C-G> :Unite grep:.<CR>
