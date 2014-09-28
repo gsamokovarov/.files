@@ -598,12 +598,6 @@ if has('autocmd')
     autocmd BufWritePost * if expand('%') != '' && &buftype !~ 'nofile' | mkview | endif
     autocmd BufRead      * if expand('%') != '' && &buftype !~ 'nofile' | silent loadview | endif
   endif
-
-  autocmd FileType markdown silent WeakWordy
-  autocmd BufWinEnter *.md  silent WeakWordy
-  autocmd InsertEnter *.md  silent WeakWordy
-  autocmd InsertLeave *.md  silent WeakWordy
-  autocmd BufWinLeave *.md  silent WeakWordy
 endif
 
 " }}}
@@ -730,9 +724,6 @@ nnoremap <C-G> :Unite grep:.<CR>
 " I'm thinking of a decent usage for the Q key, so I'm starting with the rage
 " quit.
 nnoremap <silent> Q :call WriteAndOrQuit()<CR>
-
-" Cycle through bad words.
-nnoremap <silent> K :NextWordy<CR>
 
 " Cycle through thematic themes.
 nnoremap <Leader>t :ThematicNext<CR>
