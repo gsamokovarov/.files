@@ -1,2 +1,0 @@
-#!/usr/bin/env bash
-exec vim +set\ noruler\ nonumber\ norelativenumber\ noshowmode\ colorcolumn=0 +`shuf -e Nyancat Nyancat2 | head -1`
