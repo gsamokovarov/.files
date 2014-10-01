@@ -295,9 +295,6 @@ let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$', '^.sass-cache$']"}}}
 " headers.
 let NERDTreeMinimalUI=1
 
-" Try to fill up most of the screen.
-let NERDTreeWinSize=999
-
 " Quit the NERDTree while opening files.
 let NERDTreeQuitOnOpen=1
 let NERDTreeAutoDeleteBuffer=1
