@@ -20,7 +20,6 @@ end
 require "optparse"
 require "io/console"
 
-KEY_CTRL_C = ?\C-c
 KEY_CTRL_N = ?\C-n
 KEY_CTRL_P = ?\C-p
 KEY_CTRL_U = ?\C-u
@@ -160,22 +159,29 @@ class Configuration < Struct.new(:visible_choices, :initial_search, :choices)
       # fixes this. I don't understand why. I found it via:
       #
       # http://stackoverflow.com/questions/2982677/ruby-1-9-invalid-byte-sequence-in-utf-8
-      utf16 = choice.encode('UTF-16', 'UTF-8', :invalid => :replace, :replace => '')
-      utf16.encode('UTF-8', 'UTF-16')
-    end.map(&:strip)
+      if choice.valid_encoding?
+        choice
+      else
+        utf16 = choice.encode('UTF-16', 'UTF-8', :invalid => :replace, :replace => '')
+        utf16.encode('UTF-8', 'UTF-16')
+      end.strip
+    end
   end
 end
 
 class Search
-  attr_reader :choices, :index, :query, :config
+  attr_reader :choices, :index, :query, :config, :matches
 
   def initialize(vars)
-    @vars = vars
     @config = vars.fetch(:config)
     @choices = vars.fetch(:choices)
     @index = vars.fetch(:index)
     @query = vars.fetch(:query)
     @done = vars.fetch(:done)
+
+    # Lazily compute matches if there aren't any
+    @matches = vars.fetch(:matches) { compute_matches }
+    @vars = vars.merge(:matches => @matches)
   end
 
   def self.blank(config)
@@ -186,8 +192,18 @@ class Search
         :done => false)
   end
 
-  def merge(vars)
-    Search.new(@vars.merge(vars))
+  # Construct a new Search by merging in a hash of changes.
+  def merge(changes)
+    vars = @vars.merge(changes)
+
+    # If the query changed, throw away the old matches so that new ones will be
+    # computed.
+    matches_are_stale = vars.fetch(:query) != @query
+    if matches_are_stale
+      vars = vars.reject { |key| key == :matches }
+    end
+
+    Search.new(vars)
   end
 
   def done?
@@ -199,12 +215,17 @@ class Search
   end
 
   def down
-    index = [@index + 1, matches.count - 1, config.visible_choices - 1].min
+    index = (@index + 1) % max_visible_choices
     merge(:index => index)
   end
 
   def up
-    merge(:index => [@index - 1, 0].max)
+    index = (@index - 1) % max_visible_choices
+    merge(:index => index)
+  end
+
+  def max_visible_choices
+    [@config.visible_choices, choices.count].min
   end
 
   def append_search_string(string)
@@ -227,9 +248,15 @@ class Search
           :query => @query.sub(/[^ ]* *$/, ""))
   end
 
-  def matches
+  def done
+    merge(:done => true)
+  end
+
+  private
+
+  def compute_matches
     @choices.map do |choice|
-      [choice, Score.score(choice, query)]
+      [choice, Score.score(choice, @query)]
     end.select do |choice, score|
       score > 0.0
     end.sort_by do |choice, score|
@@ -237,10 +264,6 @@ class Search
     end.map do |choice, score|
       choice
     end
-  end
-
-  def done
-    merge(:done => true)
   end
 
   class NoSelection; end
@@ -307,9 +330,9 @@ class Score
   end
 end
 
-class Renderer < Struct.new(:search, :screen)
+class Renderer < Struct.new(:search)
   def self.render!(search, screen)
-    rendered = Renderer.new(search, screen).render
+    rendered = Renderer.new(search).render
     start_line = screen.height - search.config.visible_choices - 1
     screen.with_cursor_hidden do
       screen.write_lines(start_line, rendered.choices)
@@ -318,10 +341,11 @@ class Renderer < Struct.new(:search, :screen)
   end
 
   def render
+    index, matches = search.index, search.matches
     search_line = "> " + search.query
-    matches = search.matches
     unless matches.empty?
-      matches[search.index] = Text[:inverse, matches.fetch(search.index), :reset]
+      selection_line = Text[:inverse, matches.fetch(index), :reset]
+      matches = replace_array_element(matches, index, selection_line)
     end
     matches = correct_match_count(matches)
     lines = [search_line] + matches
@@ -335,6 +359,14 @@ class Renderer < Struct.new(:search, :screen)
   end
 
   class Rendered < Struct.new(:choices, :search_line)
+  end
+
+  private
+
+  def replace_array_element(array, index, new_value)
+    array = array.dup
+    array[index] = new_value
+    array
   end
 end
 
@@ -425,7 +457,7 @@ class Screen
 
   def write_unrestricted(line, column, text)
     text = Text[:default, text] unless text.is_a? Text
-    write_text_object(line, column,text)
+    write_text_object(line, column, text)
   end
 
   def write_text_object(line, column, text)
