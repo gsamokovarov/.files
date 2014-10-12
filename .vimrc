@@ -7,18 +7,19 @@ set nocompatible
 filetype plugin indent on
 filetype off
 
+if filereadable(expand("~/.vimrc.local"))
+  source ~/.vimrc.local
+endif
+
 if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
+" Start installing bundles.
 call neobundle#begin(expand('~/.vim/bundle/'))
 
 " Let NeoBundle manage NeoBundle.
 NeoBundleFetch 'Shougo/neobundle.vim'
-
-if filereadable(expand("~/.vimrc.local"))
-  source ~/.vimrc.local
-endif
 
 " }}}
 
@@ -96,6 +97,9 @@ NeoBundle 'tpope/vim-sensible'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'vim-scripts/AutoTag'
+
+" Tell NeoBundle to not expect any more bundles.
+call neobundle#end()
 
 " }}}
 
