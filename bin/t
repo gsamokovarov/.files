@@ -11,11 +11,9 @@ SESSION_NAME=${1:-`basename $PWD`}
   # Unset the PATH as it will get carried by multiple exec's happening both
   # here and in reattach-to-user-namespace.
   export PATH=
-}
 
-# Setup iTerm2 integration on OSX. Its actually, pretty good. You get a usable
-# mouse, better mouse selection, easier copy-paste, etc.
-[ "$(uname)" == "Darwin" ] && {
+  # Setup iTerm2 integration on OSX. Its actually, pretty good. You get a usable
+  # mouse, better mouse selection, easier copy-paste, etc.
   TMUX_CMD="${TMUX_CMD} -CC"
 }
 
