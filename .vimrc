@@ -56,7 +56,7 @@ NeoBundle 'JazzCore/ctrlp-cmatcher', {
 NeoBundle 'Valloric/YouCompleteMe', {
         \ 'build' : {
         \     'cygwin' : './install.sh --clang-completer',
-        \     'mac' : './install.sh --clang-completer',
+        \     'mac' : 'bash -c "EXTRA_CMAKE_ARGS="-DEXTERNAL_LIBCLANG_PATH=/Library/Developer/CommandLineTools/usr/lib/libclang.dylib./install.sh --clang-completer --system-libclang"',
         \     'unix' : './install.sh --clang-completer',
         \    },
         \ }
