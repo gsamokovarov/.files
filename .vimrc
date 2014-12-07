@@ -432,6 +432,8 @@ let g:litecorrect#typographic=1
 " {{{ YouCompleteMe
 " Let YouCompleteMe load candidates from the tags file.
 let g:ycm_collect_identifiers_from_tags_files=1
+
+let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
 " }}}
 
 " {{{ Eclim
