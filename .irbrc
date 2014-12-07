@@ -9,7 +9,15 @@ require 'open-uri'
 $LOAD_PATH << './lib'
 
 begin
+  # When inside a gem, try to require it.
+  require Pathname.pwd.basename
+rescue LoadError
+  # Maybe we are not inside of a gem. That's fine.
+end
+
+begin
   require 'active_support/all'
 rescue LoadError
   # Well, I tried.
 end
+
