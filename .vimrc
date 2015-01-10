@@ -186,6 +186,9 @@ set autowrite
 set norelativenumber
 set nonumber
 
+" Don't show a tab bar. It is wasting real estate.
+set showtabline=0
+
 " Don't redraw while executing commands from macros and registers.
 set lazyredraw
 set ttyfast
@@ -525,11 +528,6 @@ else
   " Solarized for the terminal.
   let g:thematic#theme_name='solarized_light'
 endif
-
-" Use fancy airline tabs in the terminal.
-let g:airline#extensions#tabline#enabled=1
-let g:airline#extensions#tabline#show_buffers=0
-let g:airline#extensions#tabline#tab_nr_type=1
 
 " }}}
 
