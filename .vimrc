@@ -824,6 +824,9 @@ cnoreabbrev Wq wq
 " Tabe is typed quite often around here.
 cnoreabbrev Tabe tabe
 
+" Its impressive how often I mistype this.
+inoreabbrev inititalize initialize
+
 " }}}
 
 " vim: set et ts=2 sts=2 fdm=marker:
