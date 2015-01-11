@@ -199,7 +199,11 @@ set ttyscroll=10
 " This is the time in milliseconds that is waited for a key code or mapped key
 " sequence to complete. By default its a 1000, lower it a bunch. This speeds
 " up the exit of insert mode.
-set timeoutlen=50
+"
+" Note that this is also the timeout between multi stroke commands. yo or
+" <leader>5 will appear not working if I can't type them in the timeout. 200ms
+" seems fine for me.
+set timeoutlen=200
 
 " Highlight the search term while still typing it.
 set hlsearch
