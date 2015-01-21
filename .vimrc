@@ -705,6 +705,9 @@ nnoremap <Leader>8 :call ToggleRelativeNumbers()<CR>
 nnoremap <Tab> <C-w><C-w>
 nnoremap <S-Tab> <C-w><C-W>
 
+" I mistype C-M for C-N all the time. Use it for multiple cursors as well.
+nnoremap <C-N> <C-M>
+
 " I'm used to the fish shell and auto-completing suggestions with Ctrl-e.
 " Remapping it to Tab does the job for YouCompleteMe.
 imap <C-E> <Tab>
