@@ -739,6 +739,14 @@ nmap <C-m> <C-n>
 " Grep with unite, its better than ack.vim and the likes.
 nnoremap <C-G> :Unite grep:.<CR>
 
+" Search opened buffers with Ctrl-Space.
+inoremap <C-Space> :CtrlPBuffer<CR>
+inoremap <C-@> :CtrlPBuffer<CR>
+nnoremap <C-Space> :CtrlPBuffer<CR>
+nnoremap <C-@> :CtrlPBuffer<CR>
+vnoremap <C-Space> :CtrlPBuffer<CR>
+vnoremap <C-@> :CtrlPBuffer<CR>
+
 " I'm thinking of a decent usage for the Q key, so I'm starting with the rage
 " quit.
 nnoremap <silent> Q :call WriteAndOrQuit()<CR>
