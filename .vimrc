@@ -68,7 +68,6 @@ NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'bling/vim-airline'
 NeoBundle 'ciaranm/detectindent'
 NeoBundle 'dag/vim-fish'
 NeoBundle 'godlygeek/tabular'
@@ -186,6 +185,13 @@ set autowrite
 set norelativenumber
 set nonumber
 
+" Show the current line and character position in the command bar.
+set ruler
+
+" Don't show the status bar. Strive for minimalism!
+set laststatus=0
+set noshowmode
+
 " Don't show a tab bar. It is wasting real estate.
 set showtabline=0
 
@@ -291,11 +297,6 @@ let g:ruby_path="/usr/bin/ruby"
 " }}}
 
 " {{{ Plugin Settings
-
-" {{{ Powerline
-" Use powerline patched fonts in airline.
-let g:airline_powerline_fonts=1
-" }}}
 
 " {{{ DetectIndent
 " Tell detectindent to use one tab, if it is confused.
@@ -472,24 +473,20 @@ let g:thematic#themes={
     \ 'solarized_light': {
     \   'colorscheme': 'solarized',
     \   'background': 'light',
-    \   'airline-theme': 'solarized',
     \  },
     \ 'solarized_dark': {
     \   'colorscheme': 'solarized',
     \   'background': 'dark',
-    \   'airline-theme': 'solarized',
     \  },
     \ 'gruvbox': {
     \   'colorscheme': 'gruvbox',
     \   'background': 'dark',
-    \   'airline-theme': 'tomorrow',
     \ }
     \ }
 
 let g:thematic#defaults={
     \ 'typeface': 'Ubuntu Mono derivative Powerline',
     \ 'font-size': 14,
-    \ 'laststatus': 2,
     \ 'sign-column-color-fix': 1,
     \ 'fullscreen-background-color-fix': 1,
     \ 'columns': 120,
