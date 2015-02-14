@@ -65,7 +65,6 @@ NeoBundle 'AndrewRadev/sideways.vim'
 NeoBundle 'AndrewRadev/splitjoin.vim'
 NeoBundle 'AndrewRadev/switch.vim'
 NeoBundle 'Raimondi/delimitMate'
-NeoBundle 'Shougo/unite.vim'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'ciaranm/detectindent'
@@ -76,6 +75,7 @@ NeoBundle 'jistr/vim-nerdtree-tabs'
 NeoBundle 'kana/vim-textobj-user'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'morhetz/gruvbox'
+NeoBundle 'dyng/ctrlsf.vim'
 NeoBundle 'nelstrom/vim-textobj-rubyblock'
 NeoBundle 'reedes/vim-colors-pencil'
 NeoBundle 'reedes/vim-textobj-sentence'
@@ -460,9 +460,9 @@ let g:EclimCompletionMethod='omnifunc'
 let b:delimitMate_expand_cr=1
 " }}}
 
-" {{{ Unite
-let g:unite_source_grep_command='ag'
-let g:unite_source_grep_default_opts='--nogroup --nocolor --column'
+" {{{ CtrlSF
+" Show results as a split to the bottom, not to the left.
+let g:ctrlsf_position='bottom'
 " }}}
 
 " }}}
@@ -737,8 +737,13 @@ nnoremap = mmg=GG`m
 " I mistype that a lot.
 nmap <C-m> <C-n>
 
-" Grep with unite, its better than ack.vim and the likes.
-nnoremap <C-G> :Unite grep:.<CR>
+" Grep with CtrlSF, its better than ack.vim and the likes.
+nmap     <C-G>g <Plug>CtrlSFPrompt
+vmap     <C-G>g <Plug>CtrlSFVwordPath
+vmap     <C-G>G <Plug>CtrlSFVwordExec
+nmap     <C-G>n <Plug>CtrlSFCwordPath
+nmap     <C-G>p <Plug>CtrlSFPwordPath
+nnoremap <C-G>o :CtrlSFOpen<CR>
 
 " Search opened buffers with Ctrl-Space.
 inoremap <C-Space> :CtrlPBuffer<CR>
