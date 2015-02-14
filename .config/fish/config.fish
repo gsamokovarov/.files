@@ -53,5 +53,10 @@ if which dircolors > /dev/null ^&1
   test -f ~/.dir_colors; and . (echo 'set -x '(dircolors ~/.dir_colors | head -1) | psub)
 end
 
+if [ -f (brew --prefix)/share/autojump/autojump.fish ]
+  . (brew --prefix)/share/autojump/autojump.fish
+  complete -x -c j -a '(command autojump --complete (commandline -t))'
+end
+
 # Source the aliases in ~/.config/fish/aliases.fish.
 test -f ~/.config/fish/aliases.fish; and . ~/.config/fish/aliases.fish
