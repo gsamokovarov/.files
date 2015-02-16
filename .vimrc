@@ -738,12 +738,12 @@ nnoremap = mmg=GG`m
 nmap <C-m> <C-n>
 
 " Grep with CtrlSF, its better than ack.vim and the likes.
-nmap     <C-G>g <Plug>CtrlSFPrompt
-vmap     <C-G>g <Plug>CtrlSFVwordPath
-vmap     <C-G>G <Plug>CtrlSFVwordExec
-nmap     <C-G>n <Plug>CtrlSFCwordPath
-nmap     <C-G>p <Plug>CtrlSFPwordPath
-nnoremap <C-G>o :CtrlSFOpen<CR>
+nmap     <C-S> <Plug>CtrlSFPrompt
+vmap     <C-S> <Plug>CtrlSFVwordPath
+vmap     <C-S>s <Plug>CtrlSFVwordExec
+nmap     <C-S>n <Plug>CtrlSFCwordPath
+nmap     <C-S>p <Plug>CtrlSFPwordPath
+nnoremap <C-S>o :CtrlSFOpen<CR>
 
 " Search opened buffers with Ctrl-Space.
 inoremap <C-Space> :CtrlPBuffer<CR>
