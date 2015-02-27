@@ -248,6 +248,10 @@ endif
 " Always complete the longest available first.
 set completeopt+=longest
 
+" Set backspace explicitly and include start and eol for delimitMate
+" compatibility. Removing indentation with backspace is pretty handy as well.
+set backspace=indent,start,eol
+
 " Don't hilight the 80th (or any) column as an unobtrusive reminder.
 set colorcolumn=0
 
