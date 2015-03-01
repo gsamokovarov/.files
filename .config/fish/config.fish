@@ -1,5 +1,5 @@
 # Set the homebrew path to the default place where Boxen puts it.
-set PATH /opt/boxen/homebrew/bin $PATH
+set PATH /usr/local/homebrew/bin $PATH
 
 # Use my own .rbenv, I don't like what Boxen is doing.
 set PATH ~/.rbenv/bin ~/.rbenv/shims $PATH
