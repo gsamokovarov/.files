@@ -390,9 +390,6 @@ let g:syntastic_style_warning_symbol='≈'
 
 " Skip schema.rb, it can destroy the terminal Vim.
 let g:syntastic_ignore_files=['\mschema\.rb$']
-
-" Use rubocop as the default ruby linter, but first run it through MRI.
-let g:syntastic_ruby_checkers=['mri', 'rubocop']
 " }}}
 
 " {{{ Gundo
