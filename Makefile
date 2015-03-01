@@ -11,7 +11,7 @@ UNTAR_CMD = tar --extract --preserve-permissions --verbose --directory=$(INSTALL
 
 clone-git-repo-if-not-exist = @(cd ${INSTALL_PATH} ; [ -d $(2) ] || git clone $(1) $(2))
 
-install: install-dotfiles install-oh-my-zsh install-rbenv install-gem-rehash install-ruby-build install-vim-bundles
+install: install-dotfiles install-oh-my-zsh install-rbenv install-gem-rehash install-ruby-build install-nvimrc install-vim-bundles
 
 install-dotfiles:
 	@(${TAR_CMD} | ${UNTAR_CMD})
@@ -33,5 +33,8 @@ install-neobundle:
 
 install-vim-bundles: install-neobundle
 	@vim +"silent NeoBundleClean!" +"silent NeoBundleInstall!" +qall!
+
+install-nvimrc:
+	@ln -nsf ${INSTALL_PATH}/.vimrc ${INSTALL_PATH}/.nvimrc
 
 .PHONY: install install-dotfiles install-oh-my-zsh install-neobundle install-rbenv install-ruby-build install-gem-rehash install-vim-bundles

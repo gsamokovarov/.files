@@ -200,9 +200,6 @@ set showtabline=0
 set lazyredraw
 set ttyfast
 
-" Prefer full redraws for smaller scroll regions.
-set ttyscroll=10
-
 " This is the time in milliseconds that is waited for a key code or mapped key
 " sequence to complete. By default its a 1000, lower it a bunch. This speeds
 " up the exit of insert mode.
