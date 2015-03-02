@@ -463,6 +463,11 @@ let b:delimitMate_expand_cr=1
 let g:ctrlsf_position='bottom'
 " }}}
 
+" {{{ Markdown
+" Highlight code fences in markdown.
+let g:markdown_fenced_languages=['coffee', 'css', 'erb=eruby', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'html']
+" }}}
+
 " }}}
 
 " {{{ Style Settings
