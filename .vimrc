@@ -205,9 +205,11 @@ set ttyfast
 " up the exit of insert mode.
 "
 " Note that this is also the timeout between multi stroke commands. yo or
-" <leader>5 will appear not working if I can't type them in the timeout. 200ms
-" seems fine for me.
-set timeoutlen=200
+" <leader>5 will appear not working if I can't type them in the timeout.
+" Setting notimeout fixes the timeout for mappings.
+set notimeout
+set ttimeout
+set ttimeoutlen=10
 
 " Highlight the search term while still typing it.
 set hlsearch
