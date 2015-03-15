@@ -143,6 +143,17 @@ function! ToggleMouse()
     let &mouse=""
   endif
 endfunction
+
+" Those tag jumping functions are coming from Steve Losh.
+function! JumpToTag()
+  execute "normal! \<c-]>mzzvzz15\<c-e>"
+  execute "keepjumps normal! `z"
+endfunction
+
+function! JumpToTagInSplit()
+  execute "normal! \<c-w>s\<c-]>mzzMzvzz15\<c-e>"
+  execute "keepjumps normal! `z"
+endfunction
 " }}}
 
 " {{{ Builtin Settings
@@ -704,6 +715,9 @@ nmap <Left> N
 
 nmap <Down>  n
 nmap <Right> n
+
+nnoremap <c-]> :silent! call JumpToTag()<cr>
+nnoremap <c-\> :silent! call JumpToTagInSplit()<cr>
 
 " Uppercase whole words in INSERT mode. I rarely remember to remove the whole
 " line in INSERT mode and I don't have a CAPS LOCK anymore.
