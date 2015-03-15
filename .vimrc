@@ -693,11 +693,17 @@ vmap L $
 nnoremap * *<C-O>
 nnoremap # #<C-O>
 
-nnoremap <Up>   N
-nnoremap <Left> N
+" Keep search matches in the middle of the window.
+nnoremap n nzzzv
+nnoremap N Nzzzv
 
-nnoremap <Down>  n
-nnoremap <Right> n
+" Cheesy mappings if you still have the arrow keys on your keyboard. (Why
+" would you get a keyboard with arrows anyway, I don't get it.)
+nmap <Up>   N
+nmap <Left> N
+
+nmap <Down>  n
+nmap <Right> n
 
 " Uppercase whole words in INSERT mode. I rarely remember to remove the whole
 " line in INSERT mode and I don't have a CAPS LOCK anymore.
