@@ -699,6 +699,10 @@ nnoremap <Left> N
 nnoremap <Down>  n
 nnoremap <Right> n
 
+" Uppercase whole words in INSERT mode. I rarely remember to remove the whole
+" line in INSERT mode and I don't have a CAPS LOCK anymore.
+inoremap <C-u> <esc>mzgUiw`za
+
 nnoremap <silent> <F5> :call ToggleNERDTree()<CR>
 inoremap <silent> <F5> <ESC>:call ToggleNERDTree()<CR>
 nnoremap <silent> <Leader>5 :call ToggleNERDTree()<CR>
