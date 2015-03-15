@@ -687,6 +687,10 @@ vmap H 0
 nmap L $
 vmap L $
 
+" Don't jump on search.
+nnoremap * *<C-O>
+nnoremap # #<C-O>
+
 nnoremap <Up>   N
 nnoremap <Left> N
 
