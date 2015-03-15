@@ -680,6 +680,13 @@ vnoremap j gj
 nnoremap k gk
 vnoremap k gk
 
+" Alias H and L to stronger left and stronger right.
+nmap H 0
+vmap H 0
+
+nmap L $
+vmap L $
+
 nnoremap <Up>   N
 nnoremap <Left> N
 
