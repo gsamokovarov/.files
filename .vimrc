@@ -739,6 +739,9 @@ nnoremap <F8> :call ToggleRelativeNumbers()<CR>
 inoremap <F8> <ESC>:call ToggleRelativeNumbers()<CR>
 nnoremap <Leader>8 :call ToggleRelativeNumbers()<CR>
 
+" Clear search matches with comma-space.
+noremap <silent> <leader><space> :noh<cr>:call clearmatches()<cr>
+
 " Navigate through windows with Tab and Shift-Tab.
 nnoremap <Tab> <C-w><C-w>
 nnoremap <S-Tab> <C-w><C-W>
