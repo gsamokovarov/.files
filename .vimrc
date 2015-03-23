@@ -805,6 +805,7 @@ nnoremap <Leader>t :ThematicNext<CR>
 
 " Format a paragraph to fit in `textwidth`.
 nnoremap <Leader>f gqap
+nnoremap <Leader>ff Vgq
 vnoremap <Leader>f gq
 
 " Restore the last selection in VISUAL mode.
