@@ -799,6 +799,7 @@ vnoremap <C-@> :CtrlPBuffer<CR>
 " I'm thinking of a decent usage for the Q key, so I'm starting with the rage
 " quit.
 nnoremap <silent> Q :call WriteAndOrQuit()<CR>
+nnoremap <silent> Я :call WriteAndOrQuit()<CR>
 
 " Cycle through thematic themes.
 nnoremap <Leader>t :ThematicNext<CR>
