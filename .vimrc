@@ -154,6 +154,11 @@ function! JumpToTagInSplit()
   execute "normal! \<c-w>s\<c-]>mzzMzvzz15\<c-e>"
   execute "keepjumps normal! `z"
 endfunction
+
+function! JumpToTagInTab()
+  execute "normal! \<c-w>\<c-]>\<c-w>\TmzzMzvzz15\<c-e>"
+  execute "keepjumps normal! `z"
+endfunction
 " }}}
 
 " {{{ Builtin Settings
@@ -717,6 +722,7 @@ nmap <Down>  n
 nmap <Right> n
 
 nnoremap <c-]> :silent! call JumpToTag()<cr>
+nnoremap <c-[> :silent! call JumpToTagInTab()<cr>
 nnoremap <c-\> :silent! call JumpToTagInSplit()<cr>
 
 " Uppercase whole words in INSERT mode. I rarely remember to remove the whole
