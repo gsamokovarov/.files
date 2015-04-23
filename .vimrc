@@ -709,6 +709,10 @@ vmap L $
 nnoremap * *<C-O>
 nnoremap # #<C-O>
 
+" Center the screen when going back. I use it quite often to jump to the
+" previous location.
+nnoremap <C-O> <C-O>zz
+
 " Keep search matches in the middle of the window.
 nnoremap n nzzzv
 nnoremap N Nzzzv
@@ -761,7 +765,7 @@ imap <C-E> <Tab>
 
 " Go to the m marked spot. Its quite easier to type mm and when needing to go
 " back, `` will do the job. The default `` behaviour isn't useful for me.
-nnoremap `` `m
+nnoremap `` `mzz
 
 " Choose '^' or '0' depending on the cursor position.
 nnoremap <expr> 0 CleverJumpFirst()
