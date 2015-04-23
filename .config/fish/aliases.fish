@@ -22,12 +22,11 @@ alias ssh "env TERM=xterm command ssh"
 # vi if I mistype it and open multiple files in tabs.
 alias v vim;        complete_like v 'vim -p'
 alias vi vim;       complete_like vi 'vim -p'
-alias m mvim;       complete_like m 'mvim -p'
 
 # Shortcuts for rake, grunt, make, docker and git.
 alias r rake;   complete_like r 'rake'
 alias u grunt;  complete_like u 'grunt'
-alias n make;   complete_like n 'make'
+alias m make;   complete_like n 'make'
 alias d docker; complete_like d 'docker'
 alias g git;    complete_like g 'git'
 
