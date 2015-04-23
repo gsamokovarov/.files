@@ -22,7 +22,6 @@ alias ssh "env TERM=xterm command ssh"
 # vi if I mistype it and open multiple files in tabs.
 alias v vim;        complete_like v 'vim -p'
 alias vi vim;       complete_like vi 'vim -p'
-alias vim 'vim -p'; complete_like vim 'vim -p'
 alias m mvim;       complete_like m 'mvim -p'
 
 # Shortcuts for rake, grunt, make, docker and git.
@@ -68,6 +67,14 @@ function git
       end
   end
   hub $argv
+end
+
+function vim
+  if which nvim >/dev/null
+    command nvim -p $argv
+  else
+    command vim -p $argv
+  end
 end
 
 # Autocomplete the tags and branches as commands. The git function lets you do
