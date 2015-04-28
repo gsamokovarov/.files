@@ -622,19 +622,8 @@ if has('autocmd')
   " Automatically rebalance windows on Vim resize.
   autocmd VimResized * :wincmd =
 
-  " See https://github.com/tpope/vim-rails/issues/25.
-  autocmd BufReadPre *.rb let b:skip_auto_mkview_magic=1
-
   " Format Go files on write.
   autocmd BufWritePost *.go silent! Fmt
-
-  " Automatically save and load view state, unless it's Ruby, cause vim-rails
-  " gets really confused and the useful A* and R* commands don't work. Need to
-  " find a way to disable it only for Rails projects.
-  if !exists('b:skip_auto_mkview_magic')
-    autocmd BufWritePost * if expand('%') != '' && &buftype !~ 'nofile' | mkview | endif
-    autocmd BufRead      * if expand('%') != '' && &buftype !~ 'nofile' | silent loadview | endif
-  endif
 endif
 
 " }}}
