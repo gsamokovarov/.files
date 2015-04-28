@@ -95,7 +95,7 @@ NeoBundle 'tpope/vim-repeat'
 NeoBundle 'tpope/vim-sensible'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-unimpaired'
-NeoBundle 'vim-scripts/AutoTag'
+NeoBundle 'craigemery/vim-autotag'
 NeoBundle 'chriskempson/base16-vim'
 
 " Tell NeoBundle to not expect any more bundles.
