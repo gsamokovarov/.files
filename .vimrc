@@ -26,12 +26,12 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " {{{ Dependencies
 
 " Install vimproc, so NeoBundle can be async.
-NeoBundle 'Shougo/vimproc.vim', {
+NeoBundle 'Shougo/vimproc', {
         \ 'build' : {
         \     'windows' : 'make -f make_mingw32.mak',
         \     'cygwin' : 'make -f make_cygwin.mak',
-        \     'mac' : 'make',
-        \     'unix' : 'make',
+        \     'mac' : 'make -f make_mac.mak',
+        \     'unix' : 'make -f make_unix.mak',
         \    },
         \ }
 
@@ -41,6 +41,15 @@ NeoBundle 'marijnh/tern_for_vim', {
         \     'cygwin' : 'npm install .',
         \     'mac' : 'npm install .',
         \     'unix' : 'npm install .',
+        \    },
+        \ }
+
+NeoBundle 'JazzCore/ctrlp-cmatcher', {
+        \ 'build' : {
+        \     'windows' : 'install_windows.bat',
+        \     'cygwin' : './install.sh',
+        \     'mac' : './install.sh',
+        \     'unix' : './install.sh',
         \    },
         \ }
 
@@ -56,27 +65,22 @@ NeoBundle 'AndrewRadev/sideways.vim'
 NeoBundle 'AndrewRadev/splitjoin.vim'
 NeoBundle 'AndrewRadev/switch.vim'
 NeoBundle 'Raimondi/delimitMate'
-NeoBundle 'Shougo/neomru.vim'
-NeoBundle 'Shougo/unite-outline'
-NeoBundle 'Shougo/unite.vim'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'chriskempson/base16-vim'
 NeoBundle 'ciaranm/detectindent'
-NeoBundle 'craigemery/vim-autotag'
 NeoBundle 'dag/vim-fish'
-NeoBundle 'dyng/ctrlsf.vim'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'jesseschalken/list-text-object'
 NeoBundle 'jistr/vim-nerdtree-tabs'
 NeoBundle 'kana/vim-textobj-user'
+NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'morhetz/gruvbox'
+NeoBundle 'dyng/ctrlsf.vim'
 NeoBundle 'nelstrom/vim-textobj-rubyblock'
 NeoBundle 'reedes/vim-colors-pencil'
 NeoBundle 'reedes/vim-textobj-sentence'
 NeoBundle 'reedes/vim-thematic'
 NeoBundle 'rodjek/vim-puppet'
-NeoBundle 'rstacruz/vim-fastunite'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'sheerun/vim-polyglot'
@@ -91,7 +95,8 @@ NeoBundle 'tpope/vim-repeat'
 NeoBundle 'tpope/vim-sensible'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-unimpaired'
-NeoBundle 'tsukkee/unite-tag'
+NeoBundle 'craigemery/vim-autotag'
+NeoBundle 'chriskempson/base16-vim'
 
 " Tell NeoBundle to not expect any more bundles.
 call neobundle#end()
@@ -424,6 +429,31 @@ let g:gitgutter_realtime = 0
 let g:gitgutter_eager = 0
 " }}}
 
+" {{{ CtrlP
+" Make CtrlPMixed the default command.
+let g:ctrlp_cmd="CtrlPMixed"
+
+" Use speedier git-list-files and mercurial alternatives to listing files in a
+" folder when possible and fall back to ag otherwise.
+let g:ctrlp_user_command={
+    \ 'types': {
+    \   1: ['.git', 'cd %s && git ls-files . -co --exclude-standard'],
+    \   2: ['.hg', 'hg --cwd %s locate -I .'],
+    \ },
+    \ 'fallback': 'ag %s -l --nocolor -g --ignore=vendor --ignore=node_modules --ignore=.bundle""'
+    \ }
+
+" Use the C matcher function provided by ctrlp-cmatcher.
+let g:ctrlp_match_func={'match': 'matcher#cmatch'}
+
+" Use caching to speed CtrlP up.
+let g:ctrlp_use_caching=1
+let g:ctrlp_max_files=10000
+
+" Don't use MRU files. They don't fit my workflow and annoy me. A lot.
+let g:ctrlp_mruf_max = 0
+" }}}
+
 " {{{ Litecorrect
 " Don't use typographic quotes. Dunno how to type them :D
 let g:litecorrect#typographic=1
@@ -454,13 +484,6 @@ let g:ctrlsf_position='bottom'
 " {{{ Markdown
 " Highlight code fences in markdown.
 let g:markdown_fenced_languages=['coffee', 'css', 'erb=eruby', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'html']
-" }}}
-
-" {{{ Fastunite
-let g:fastunite_default_options = {
-    \ 'direction': 'botright',
-    \ 'prompt': ''
-    \ }
 " }}}
 
 " }}}
@@ -764,8 +787,13 @@ nmap     <C-S>n <Plug>CtrlSFCwordPath
 nmap     <C-S>p <Plug>CtrlSFPwordPath
 nnoremap <C-S>o :CtrlSFOpen<CR>
 
-" Use fastunite for Ctrlp replacement.
-map <C-p> [unite]p
+" Search opened buffers with Ctrl-Space.
+inoremap <C-Space> :CtrlPBuffer<CR>
+inoremap <C-@> :CtrlPBuffer<CR>
+nnoremap <C-Space> :CtrlPBuffer<CR>
+nnoremap <C-@> :CtrlPBuffer<CR>
+vnoremap <C-Space> :CtrlPBuffer<CR>
+vnoremap <C-@> :CtrlPBuffer<CR>
 
 " I'm thinking of a decent usage for the Q key, so I'm starting with the rage
 " quit.
