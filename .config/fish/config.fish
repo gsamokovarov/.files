@@ -7,7 +7,7 @@ set PATH ~/.rbenv/bin ~/.rbenv/shims $PATH
 # Make sure that ~/bin is prepended to the PATH, so we can override system
 # utils, if needed. The path for the custom coreutils and /usr/loca/bin are my
 # preferences on OSX.
-set PATH ~/bin (brew --prefix)"/opt/coreutils/libexec/gnubin" /usr/local/bin $PATH
+set PATH ~/bin (brew --prefix)"/opt/coreutils/libexec/gnubin" /usr/local/bin /usr/local/sbin $PATH
 
 # Prepend the relative ./bin, so I can get binstubs and the like in the PATH
 # automatically. The node modules binaries are also handy to have around. I
