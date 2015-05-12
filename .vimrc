@@ -553,8 +553,8 @@ if has('gui_running')
   " Gruvbox for the UI. Looks really cool on it.
   let g:thematic#theme_name='gruvbox'
 else
-  " Solarized for the terminal.
-  let g:thematic#theme_name='solarized_light'
+  " Run the gruvbox theme on the terminal as well.
+  let g:thematic#theme_name='gruvbox'
 endif
 
 " }}}
