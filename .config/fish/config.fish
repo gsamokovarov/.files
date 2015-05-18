@@ -1,9 +1,6 @@
 # Set the homebrew path to the default place where Boxen puts it.
 set PATH /usr/local/homebrew/bin $PATH
 
-# Use my own .rbenv, I don't like what Boxen is doing.
-set PATH ~/.rbenv/bin ~/.rbenv/shims $PATH
-
 # Make sure that ~/bin is prepended to the PATH, so we can override system
 # utils, if needed. The path for the custom coreutils and /usr/loca/bin are my
 # preferences on OSX.
@@ -13,6 +10,9 @@ set PATH ~/bin (brew --prefix)"/opt/coreutils/libexec/gnubin" /usr/local/bin /us
 # automatically. The node modules binaries are also handy to have around. I
 # don't like installing global node packages.
 set PATH ./bin ./node_modules/.bin $PATH
+
+# Use my own .rbenv, I don't like what Boxen is doing.
+set PATH ~/.rbenv/bin ~/.rbenv/shims $PATH
 
 # Don't show the greeting message on fish boot.
 set -x fish_greeting ''
