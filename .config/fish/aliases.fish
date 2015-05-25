@@ -26,7 +26,7 @@ alias vi vim;       complete_like vi 'vim -p'
 # Shortcuts for rake, grunt, make, docker and git.
 alias r rake;   complete_like r 'rake'
 alias u grunt;  complete_like u 'grunt'
-alias m make;   complete_like n 'make'
+alias m make;   complete_like m 'make'
 alias d docker; complete_like d 'docker'
 alias g git;    complete_like g 'git'
 
