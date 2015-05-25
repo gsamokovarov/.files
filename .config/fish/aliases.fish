@@ -38,6 +38,10 @@ alias gl 'git log';            complete_like gl 'git log'
 alias gs 'git state';          complete_like gs 'git state'
 alias ga 'git commit --amend'; complete_like ga 'git commit'
 
+# Lifted of @skanev. See the source of it here:
+# https://github.com/skanev/dotfiles/commit/688779716dc678ef9801759f5bd543566137239e
+alias gri 'git rebase -i (git rev-list --all --merges | head -1)'
+
 # Yes, that happened today. Age, you know...
 alias mdkir mkdir
 
