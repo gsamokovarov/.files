@@ -280,8 +280,11 @@ set matchpairs=
 if has('mouse')
   set mouse=a
 
-  " Force dragging support with the mouse.
-  set ttymouse=xterm2
+  " Neovim, for example, doesn't have it
+  if has('ttymouse')
+    " Force dragging support with the mouse.
+    set ttymouse=xterm2
+  endif
 endif
 
 " Make you keyboard actually do something while you are switched to Cyrillic
