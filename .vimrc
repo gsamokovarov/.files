@@ -67,15 +67,18 @@ NeoBundle 'AndrewRadev/switch.vim'
 NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'chriskempson/base16-vim'
 NeoBundle 'ciaranm/detectindent'
+NeoBundle 'craigemery/vim-autotag'
 NeoBundle 'dag/vim-fish'
+NeoBundle 'dyng/ctrlsf.vim'
+NeoBundle 'fatih/vim-go'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'jesseschalken/list-text-object'
 NeoBundle 'jistr/vim-nerdtree-tabs'
 NeoBundle 'kana/vim-textobj-user'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'morhetz/gruvbox'
-NeoBundle 'dyng/ctrlsf.vim'
 NeoBundle 'nelstrom/vim-textobj-rubyblock'
 NeoBundle 'reedes/vim-colors-pencil'
 NeoBundle 'reedes/vim-textobj-sentence'
@@ -95,8 +98,6 @@ NeoBundle 'tpope/vim-repeat'
 NeoBundle 'tpope/vim-sensible'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-unimpaired'
-NeoBundle 'craigemery/vim-autotag'
-NeoBundle 'chriskempson/base16-vim'
 
 " Tell NeoBundle to not expect any more bundles.
 call neobundle#end()
@@ -489,6 +490,15 @@ let g:ctrlsf_position='bottom'
 " {{{ Markdown
 " Highlight code fences in markdown.
 let g:markdown_fenced_languages=['coffee', 'css', 'erb=eruby', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'html']
+" }}}
+
+" {{{ Go
+let g:go_highlight_functions=1
+let g:go_highlight_methods=1
+let g:go_highlight_structs=1
+let g:go_highlight_operators=1
+let g:go_highlight_build_constraints=1
+let g:go_fmt_fail_silently=1
 " }}}
 
 " }}}
