@@ -98,6 +98,7 @@ NeoBundle 'tpope/vim-repeat'
 NeoBundle 'tpope/vim-sensible'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-unimpaired'
+NeoBundle 'wincent/terminus'
 
 " Tell NeoBundle to not expect any more bundles.
 call neobundle#end()
