@@ -11,10 +11,13 @@ UNTAR_CMD = tar --extract --preserve-permissions --verbose --directory=$(INSTALL
 
 clone-git-repo-if-not-exist = @(cd ${INSTALL_PATH} ; [ -d $(2) ] || git clone $(1) $(2))
 
-install: install-dotfiles install-oh-my-zsh install-rbenv install-gem-rehash install-ruby-build install-nvimrc
+install: install-dotfiles install-go install-oh-my-zsh install-rbenv install-gem-rehash install-ruby-build install-nvimrc
 
 install-dotfiles:
 	@(${TAR_CMD} | ${UNTAR_CMD})
+
+install-go:
+	@(mkdir -p ~/.go)
 
 install-oh-my-zsh:
 	$(call clone-git-repo-if-not-exist,${OH_MY_ZSH_REPO},.oh-my-zsh)

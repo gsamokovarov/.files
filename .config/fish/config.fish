@@ -9,6 +9,10 @@ set PATH ~/bin (brew --prefix)"/opt/coreutils/libexec/gnubin" /usr/local/bin /us
 # Use my own .rbenv, I don't like what Boxen is doing.
 set PATH ~/.rbenv/bin ~/.rbenv/shims $PATH
 
+# Setup GOPATH to .go and pit its bin folder in the regular $PATH.
+set -x GOPATH ~/.go
+set PATH ~/$GOPATH/bin $PATH
+
 # Prepend the relative ./bin, so I can get binstubs and the like in the PATH
 # automatically. The node modules binaries are also handy to have around. I
 # don't like installing global node packages.
