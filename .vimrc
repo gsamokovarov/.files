@@ -87,7 +87,6 @@ NeoBundle 'rodjek/vim-puppet'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'sheerun/vim-polyglot'
-NeoBundle 'sjl/gundo.vim'
 NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'tpope/vim-endwise'
@@ -417,11 +416,6 @@ let g:syntastic_style_warning_symbol='≈'
 let g:syntastic_ignore_files=['\mschema\.rb$']
 " }}}
 
-" {{{ Gundo
-" Show gundo on the right side of the screen.
-let g:gundo_right=1
-" }}}
-
 " {{{ SplitJoin
 " Clear the default splitjoin mappings.
 let g:splitjoin_split_mapping=''
@@ -742,10 +736,6 @@ inoremap <C-u> <esc>mzgUiw`za
 nnoremap <silent> <F5> :call ToggleNERDTree()<CR>
 inoremap <silent> <F5> <ESC>:call ToggleNERDTree()<CR>
 nnoremap <silent> <Leader>5 :call ToggleNERDTree()<CR>
-
-nnoremap <F6> :GundoToggle<CR>
-inoremap <F6> <ESC>:GundoToggle<CR>
-nnoremap <Leader>6 :GundoToggle<CR>
 
 nnoremap <F7> :call ToggleMouse()<CR>
 inoremap <F7> <ESC>:call ToggleMouse()<CR>
