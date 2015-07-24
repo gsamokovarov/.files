@@ -67,9 +67,7 @@ NeoBundle 'AndrewRadev/switch.vim'
 NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'chriskempson/base16-vim'
 NeoBundle 'ciaranm/detectindent'
-NeoBundle 'craigemery/vim-autotag'
 NeoBundle 'dag/vim-fish'
 NeoBundle 'dyng/ctrlsf.vim'
 NeoBundle 'fatih/vim-go'
@@ -97,7 +95,6 @@ NeoBundle 'tpope/vim-repeat'
 NeoBundle 'tpope/vim-sensible'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-unimpaired'
-NeoBundle 'wincent/terminus'
 
 " Tell NeoBundle to not expect any more bundles.
 call neobundle#end()
