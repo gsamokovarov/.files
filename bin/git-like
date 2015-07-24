@@ -8,4 +8,4 @@
 IFS=/ read -a args <<< "$1"
 
 git fetch ${args[0]}
-git reset --hard ${args[1]}
+git reset --hard $1
