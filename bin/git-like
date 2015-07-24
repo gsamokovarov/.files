@@ -5,5 +5,7 @@
 # Usage:
 #   git like upstream/master
 
-git fetch --all
-git reset --hard $1
+IFS=/ read -a args <<< "$1"
+
+git fetch ${args[0]}
+git reset --hard ${args[1]}
