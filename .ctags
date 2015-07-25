@@ -1,3 +1,4 @@
+-f .tags
 --tag-relative=yes
 --format=2
 --excmd=pattern
@@ -7,3 +8,4 @@
 --exclude="\.sass-cache"
 --exclude="node_modules"
 --fields=aiklmnsSt
+--extra=q

@@ -76,6 +76,7 @@ NeoBundle 'jesseschalken/list-text-object'
 NeoBundle 'jistr/vim-nerdtree-tabs'
 NeoBundle 'kana/vim-textobj-user'
 NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'ludovicchabant/vim-gutentags'
 NeoBundle 'morhetz/gruvbox'
 NeoBundle 'nelstrom/vim-textobj-rubyblock'
 NeoBundle 'reedes/vim-colors-pencil'
@@ -180,7 +181,7 @@ set viewoptions=folds,cursor
 set directory=$HOME/.vim/swap
 
 " I name my tags file .tags as I don't like them listed by ls and the like.
-set tags+=.tags
+set tags+=.tags,.git/tags
 
 " Watch for file changes.
 set autoread
@@ -492,6 +493,10 @@ let g:go_highlight_operators=1
 let g:go_highlight_build_constraints=1
 let g:go_fmt_fail_silently=1
 let g:go_fmt_command="goimports"
+" }}}
+
+" {{{ Gutentags
+let g:gutentags_tagfile='.tags'
 " }}}
 
 " }}}
