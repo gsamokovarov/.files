@@ -44,6 +44,8 @@ alias mdkir mkdir
 
 # Bundle shortcuts.
 abbr -a be='bundle exec'
+abbr -a bo='bundle open'
+abbr -a bi='bundle install'
 
 # Just don't, OK?
 abbr -a vag vagrant
