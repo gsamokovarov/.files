@@ -49,6 +49,8 @@ abbr -a bi='bundle install'
 
 # Just don't, OK?
 abbr -a vag vagrant
+abbr -a vup vagrant up
+abbr -a vpr vagrant provision
 
 # Use hub for git with a twist -- if the first argument is an existing branch
 # then switch to it.
