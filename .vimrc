@@ -732,6 +732,7 @@ nnoremap <C-\>      :silent! call JumpToTagInSplit()<cr>
 inoremap <C-u> <esc>mzgUiw`za
 
 nnoremap <silent> <Leader>5 :call ToggleNERDTree()<CR>
+nnoremap <silent> <C-m> :call ToggleNERDTree()<CR>
 
 nnoremap <Leader>7 :call ToggleMouse()<CR>
 
@@ -774,9 +775,6 @@ vnoremap <Leader><Leader> ,
 
 " Format the current paragraph.
 nnoremap = mmVap=`m
-
-" I mistype that a lot.
-nmap <C-m> <C-n>
 
 " Grep with CtrlSF, its better than ack.vim and the likes.
 nmap     <C-S> <Plug>CtrlSFPrompt
