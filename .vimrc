@@ -731,16 +731,10 @@ nnoremap <C-\>      :silent! call JumpToTagInSplit()<cr>
 " line in INSERT mode and I don't have a CAPS LOCK anymore.
 inoremap <C-u> <esc>mzgUiw`za
 
-nnoremap <silent> <F5> :call ToggleNERDTree()<CR>
-inoremap <silent> <F5> <ESC>:call ToggleNERDTree()<CR>
 nnoremap <silent> <Leader>5 :call ToggleNERDTree()<CR>
 
-nnoremap <F7> :call ToggleMouse()<CR>
-inoremap <F7> <ESC>:call ToggleMouse()<CR>
 nnoremap <Leader>7 :call ToggleMouse()<CR>
 
-nnoremap <F8> :call ToggleRelativeNumbers()<CR>
-inoremap <F8> <ESC>:call ToggleRelativeNumbers()<CR>
 nnoremap <Leader>8 :call ToggleRelativeNumbers()<CR>
 
 " Clear search matches with comma-space.
