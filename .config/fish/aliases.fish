@@ -44,6 +44,7 @@ alias mdkir mkdir
 
 # Bundle shortcuts.
 abbr -a be='bundle exec'
+abbr -a ber='bundle exec rake'
 abbr -a bo='bundle open'
 abbr -a bi='bundle install'
 
