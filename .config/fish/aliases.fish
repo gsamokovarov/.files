@@ -43,8 +43,10 @@ abbr -a ga='git commit --amend'
 alias mdkir mkdir
 
 # Bundle shortcuts.
+abbr -a b='bundle'
 abbr -a be='bundle exec'
 abbr -a ber='bundle exec rake'
+abbr -a bra='bundle exec rails'
 abbr -a bo='bundle open'
 abbr -a bi='bundle install'
 
