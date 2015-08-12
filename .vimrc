@@ -63,7 +63,6 @@ NeoBundle 'Valloric/YouCompleteMe', {
 NeoBundle 'AndrewRadev/sideways.vim'
 NeoBundle 'AndrewRadev/splitjoin.vim'
 NeoBundle 'AndrewRadev/switch.vim'
-NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'ciaranm/detectindent'
@@ -82,6 +81,7 @@ NeoBundle 'reedes/vim-colors-pencil'
 NeoBundle 'reedes/vim-textobj-sentence'
 NeoBundle 'reedes/vim-thematic'
 NeoBundle 'rodjek/vim-puppet'
+NeoBundle 'rstacruz/vim-closer'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'sheerun/vim-polyglot'
@@ -469,11 +469,6 @@ let g:ycm_confirm_extra_conf=0
 let g:EclimCompletionMethod='omnifunc'
 " }}}
 
-" {{{ DelimitMate
-" Let it work with vim-endwise which also expands on return.
-let b:delimitMate_expand_cr=1
-" }}}
-
 " {{{ CtrlSF
 " Show results as a split to the bottom, not to the left.
 let g:ctrlsf_position='bottom'
@@ -589,8 +584,7 @@ if has('autocmd')
         \ set smartindent cindent expandtab tabstop=4 shiftwidth=4 softtabstop=4
 
   autocmd Filetype go
-        \ set noexpandtab tabstop=4 shiftwidth=4 softtabstop=4 |
-        \ let b:delimitMate_matchpairs = "(:),[:],{:}"
+        \ set noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
 
   autocmd FileType ruby
         \ set expandtab tabstop=2 shiftwidth=2 softtabstop=2 |
@@ -603,15 +597,11 @@ if has('autocmd')
   autocmd FileType javascript
         \ set expandtab tabstop=2 shiftwidth=2 softtabstop=2 |
         \ set omnifunc=javascriptcomplete#Complete |
-        \ let b:delimitMate_matchpairs = "(:),[:],{:}" |
         \ :DetectIndent
 
   autocmd FileType coffee
         \ set expandtab tabstop=2 shiftwidth=2 softtabstop=2 |
         \ set omnifunc=coffeecomplete#Complete
-
-  autocmd FileType puppet
-        \ let b:delimitMate_matchpairs = "(:),[:],{:}"
 
   autocmd FileType html
         \ set expandtab tabstop=2 shiftwidth=2 softtabstop=2 |
