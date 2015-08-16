@@ -51,15 +51,13 @@ status --is-interactive; and . (rbenv init - | psub)
 # Initialize direnv for the fish shell.
 eval (direnv hook fish)
 
+# Initialize jump for the fish shell.
+status --is-interactive; and . (jump shell | psub)
+
 # Use the custom solarized LS colors. Its quite hacky, because they expect bash
 # or zsh and exporting environment variables looks differently in fish.
 if which dircolors > /dev/null ^&1
   test -f ~/.dir_colors; and . (echo 'set -x '(dircolors ~/.dir_colors | head -1) | psub)
-end
-
-if [ -f (brew --prefix)/share/autojump/autojump.fish ]
-  . (brew --prefix)/share/autojump/autojump.fish
-  complete -x -c j -a '(command autojump --complete (commandline -t))'
 end
 
 # Source the aliases in ~/.config/fish/aliases.fish.
