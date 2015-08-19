@@ -102,16 +102,6 @@ call neobundle#end()
 " }}}
 
 " {{{ Functions
-function! CalculateBestNumberWidth()
-  " Only try to calculate the width, if there is a number setting turned on.
-  if &l:relativenumber || &l:number
-    " A default numberwidth of 4, looks great to me. You will rarely have
-    " files that are less than 10 lines of code and having the relative lines
-    " centered is great.
-    return max([strlen(line('$')), 3]) + 1
-  endif
-endfunction
-
 function! WriteAndOrQuit()
   try
     execute "ZZ"
@@ -720,12 +710,8 @@ nnoremap <C-\>      :silent! call JumpToTagInSplit()<cr>
 " line in INSERT mode and I don't have a CAPS LOCK anymore.
 inoremap <C-u> <esc>mzgUiw`za
 
-nnoremap <silent> <Leader>5 :call ToggleNERDTree()<CR>
 nnoremap <silent> <C-m> :call ToggleNERDTree()<CR>
-
-nnoremap <Leader>7 :call ToggleMouse()<CR>
-
-nnoremap <Leader>8 :call ToggleRelativeNumbers()<CR>
+nnoremap <Leader>, :call ToggleMouse()<CR>
 
 " Clear search matches with comma-space.
 noremap <silent> <leader><space> :noh<cr>:call clearmatches()<cr>
@@ -772,14 +758,6 @@ vmap     <C-S>s <Plug>CtrlSFVwordExec
 nmap     <C-S>n <Plug>CtrlSFCwordPath
 nmap     <C-S>p <Plug>CtrlSFPwordPath
 nnoremap <C-S>o :CtrlSFOpen<CR>
-
-" Search opened buffers with Ctrl-Space.
-inoremap <C-Space> :CtrlPBuffer<CR>
-inoremap <C-@> :CtrlPBuffer<CR>
-nnoremap <C-Space> :CtrlPBuffer<CR>
-nnoremap <C-@> :CtrlPBuffer<CR>
-vnoremap <C-Space> :CtrlPBuffer<CR>
-vnoremap <C-@> :CtrlPBuffer<CR>
 
 " I'm thinking of a decent usage for the Q key, so I'm starting with the rage
 " quit.
