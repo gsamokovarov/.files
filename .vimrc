@@ -135,18 +135,11 @@ endfunction
 
 " Those tag jumping functions are coming from Steve Losh.
 function! JumpToTag()
-  execute "normal! \<c-]>mzzvzz15\<c-e>"
-  execute "keepjumps normal! `z"
+  execute "normal! \<c-]zz>"
 endfunction
 
 function! JumpToTagInSplit()
-  execute "normal! \<c-w>s\<c-]>mzzMzvzz15\<c-e>"
-  execute "keepjumps normal! `z"
-endfunction
-
-function! JumpToTagInTab()
-  execute "normal! \<c-w>\<c-]>\<c-w>\TmzzMzvzz15\<c-e>"
-  execute "keepjumps normal! `z"
+  execute "normal! \<c-w>s\<c-]>zz"
 endfunction
 " }}}
 
@@ -703,9 +696,8 @@ nmap <Left> N
 nmap <Down>  n
 nmap <Right> n
 
-nnoremap <C-]>      :silent! call JumpToTag()<cr>
-nnoremap <C-]><C-]> :silent! call JumpToTagInTab()<cr>
-nnoremap <C-\>      :silent! call JumpToTagInSplit()<cr>
+nnoremap <C-]> :silent! call JumpToTag()<cr>
+nnoremap <C-\> :silent! call JumpToTagInSplit()<cr>
 
 " Uppercase whole words in INSERT mode. I rarely remember to remove the whole
 " line in INSERT mode and I don't have a CAPS LOCK anymore.
