@@ -54,9 +54,10 @@ NeoBundle 'nixprime/cpsm', {
 
 NeoBundle 'Valloric/YouCompleteMe', {
         \ 'build' : {
-        \     'cygwin' : './install.sh --clang-completer',
-        \     'mac' : './install.sh --clang-completer --system-libclang',
-        \     'unix' : './install.sh --clang-completer',
+        \     'mac' : './install.py --clang-completer --system-libclang --omnisharp-completer',
+        \     'unix' : './install.py --clang-completer --system-libclang --omnisharp-completer',
+        \     'windows' : './install.py --clang-completer --system-libclang --omnisharp-completer',
+        \     'cygwin' : './install.py --clang-completer --system-libclang --omnisharp-completer'
         \    },
         \ }
 
