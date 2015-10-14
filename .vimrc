@@ -67,7 +67,6 @@ NeoBundle 'AndrewRadev/switch.vim'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'bogado/file-line'
-NeoBundle 'ciaranm/detectindent'
 NeoBundle 'dag/vim-fish'
 NeoBundle 'dyng/ctrlsf.vim'
 NeoBundle 'fatih/vim-go'
@@ -95,6 +94,7 @@ NeoBundle 'tpope/vim-markdown'
 NeoBundle 'tpope/vim-rails'
 NeoBundle 'tpope/vim-repeat'
 NeoBundle 'tpope/vim-sensible'
+NeoBundle 'tpope/vim-sleuth'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-unimpaired'
 
@@ -303,11 +303,6 @@ let g:ruby_path="/usr/bin/ruby"
 " }}}
 
 " {{{ Plugin Settings
-
-" {{{ DetectIndent
-" Tell detectindent to use one tab, if it is confused.
-let g:detectindent_preferred_expandtab=1
-" }}}
 
 " {{{ NERDTree
 " Ignore tilda editor leftovers and python junk in the NERDTree. Keep those as
@@ -557,46 +552,27 @@ if has('autocmd')
   " Save the last position in a file.
   autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
-  autocmd FileType python
-        \ set expandtab tabstop=4 shiftwidth=4 softtabstop=4 |
-        \ set omnifunc=pythoncomplete#Complete
-
-  autocmd FileType c
-        \ set smartindent cindent expandtab tabstop=2 shiftwidth=2 softtabstop=2 |
-        \ set omnifunc=ccomplete#Complete
-
-  autocmd FileType java
-        \ set smartindent cindent expandtab tabstop=4 shiftwidth=4 softtabstop=4
-
-  autocmd Filetype go
-        \ set noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
-
   autocmd FileType ruby
-        \ set expandtab tabstop=2 shiftwidth=2 softtabstop=2 |
         \ set omnifunc=rubycomplete#Complete |
         \ set iskeyword+=?,! |
         " Use the older RegExp engine as Ruby syntax is painfully slow with
         " the current one.
         \ setlocal re=1
 
+  autocmd Filetype go
+        \ set noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
+
   autocmd FileType javascript
-        \ set expandtab tabstop=2 shiftwidth=2 softtabstop=2 |
-        \ set omnifunc=javascriptcomplete#Complete |
-        \ :DetectIndent
+        \ set omnifunc=javascriptcomplete#Complete
 
   autocmd FileType coffee
-        \ set expandtab tabstop=2 shiftwidth=2 softtabstop=2 |
         \ set omnifunc=coffeecomplete#Complete
 
   autocmd FileType html
-        \ set expandtab tabstop=2 shiftwidth=2 softtabstop=2 |
-        \ set omnifunc=htmlcomplete#Complete |
-        \ :DetectIndent
+        \ set omnifunc=htmlcomplete#Complete
 
   autocmd FileType css
-        \ set expandtab tabstop=2 shiftwidth=2 softtabstop=1 |
-        \ set omnifunc=csscomplete#Complete |
-        \ :DetectIndent
+        \ set omnifunc=csscomplete#Complete
 
   autocmd FileType markdown
         \ nnoremap <buffer> = yypVr= |
@@ -604,9 +580,6 @@ if has('autocmd')
 
   " Automatically rebalance windows on Vim resize.
   autocmd VimResized * :wincmd =
-
-  " Format Go files on write.
-  autocmd BufWritePost *.go silent! Fmt
 endif
 
 " }}}
