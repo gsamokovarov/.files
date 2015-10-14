@@ -670,7 +670,6 @@ nmap <Left> N
 nmap <Down>  n
 nmap <Right> n
 
-nnoremap <C-]> :silent! call JumpToTag()<cr>
 nnoremap <C-\> :silent! call JumpToTagInSplit()<cr>
 
 " Uppercase whole words in INSERT mode. I rarely remember to remove the whole
