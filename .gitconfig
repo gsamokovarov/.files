@@ -4,6 +4,7 @@
 
 [alias]
 	co = checkout
+	cp = cherry-pick
 	branches = branch -a
 	tags = tag -l
 	remotes = remote
