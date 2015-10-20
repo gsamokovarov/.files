@@ -51,11 +51,6 @@ status --is-interactive; and . (rbenv init - | psub)
 # Initialize direnv for the fish shell.
 eval (direnv hook fish)
 
-# Setup a docker environment on OSX, if docker installed.
-if which docker-machine > /dev/null ^&1
-  eval (docker-machine env default)
-end
-
 # Initialize jump for the fish shell.
 status --is-interactive; and . (jump shell | psub)
 
