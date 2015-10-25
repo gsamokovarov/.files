@@ -21,9 +21,12 @@ export PATH=~/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:$PATH
 # Initialize direnv for the ZSH.
 [ -z $SKIP_DIRENV ] && $(which direnv &> /dev/null) && eval "$(direnv hook zsh)"
 
+# Initialize jump for the ZSH.
+[ -z $SKIP_JUMP ] && $(which jump &> /dev/null) && eval "$(jump shell zsh)"
+
 # Add Ubuntu's command-not-found ZSH alternative and use ssh-agent on the first
 # terminal run. The other ones are just candies.
-plugins=(git ruby bundler autojump ssh-agent command-not-found)
+plugins=(git ruby bundler ssh-agent command-not-found)
 source $ZSH/oh-my-zsh.sh
 
 # Add color support for terminals pretending to be xterm.
