@@ -1,8 +1,3 @@
-# Setup the oh-my-zsh home directory and theme.
-export ZSH=~/.oh-my-zsh
-export ZSH_CUSTOM=~
-export ZSH_THEME=".smiley"
-
 # Include local machine custom settings.
 [ -f ~/.zshrc.befor ] && source ~/.zshrc.before
 
@@ -23,11 +18,6 @@ export PATH=~/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:$PATH
 
 # Initialize jump for the ZSH.
 [ -z $SKIP_JUMP ] && $(which jump &> /dev/null) && eval "$(jump shell zsh)"
-
-# Add Ubuntu's command-not-found ZSH alternative and use ssh-agent on the first
-# terminal run. The other ones are just candies.
-plugins=(git ruby bundler ssh-agent command-not-found)
-source $ZSH/oh-my-zsh.sh
 
 # Add color support for terminals pretending to be xterm.
 [ $TERM = xterm ] && export TERM=xterm-256color
@@ -56,6 +46,6 @@ $(which dircolors &> /dev/null) && {
 # Include local machine custom settings.
 [ -f ~/.zshrc.after ] && source ~/.zshrc.after
 
-# Be happy. (The above are expressions, If I don't have a ~/.zshrc.local file
+# Be happy. (The above line is an expression, If I don't have a ~/.zshrc.local file
 # I'll start with a sad face. I like happy faces.)
 true
