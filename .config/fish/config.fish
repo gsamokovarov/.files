@@ -11,7 +11,7 @@ set PATH ~/.rbenv/bin ~/.rbenv/shims $PATH
 
 # Setup GOPATH to .go and pit its bin folder in the regular $PATH.
 set -x GOPATH ~/.go
-set PATH ~/$GOPATH/bin $PATH
+set PATH $GOPATH/bin $PATH
 
 # Prepend the relative ./bin, so I can get binstubs and the like in the PATH
 # automatically. The node modules binaries are also handy to have around. I
