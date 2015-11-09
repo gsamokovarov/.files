@@ -10,7 +10,7 @@ $LOAD_PATH << './lib'
 
 begin
   # When inside a gem, try to require it.
-  require Pathname.pwd.basename
+  require Pathname.pwd.basename.to_s
 rescue LoadError
   # Maybe we are not inside of a gem. That's fine.
 end
