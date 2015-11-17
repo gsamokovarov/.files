@@ -41,9 +41,6 @@ set -x BROWSER open
 # Tell Vagrant to use VMware Fusion as it's default provider.
 set -x VAGRANT_DEFAULT_PROVIDER vmware_fusion
 
-# Allow the use of VMware Fusion Technology Preview versions.
-set -x VAGRANT_VMWARE_FUSION_EXP 1
-
 # Initialize rbenv for the fish shell. Now, the `tail -n +2` is a huge hack,
 # with which I stop rbenv prepending ~/.rbenv/shims to the $PATH.
 status --is-interactive; and . (rbenv init - | psub)
