@@ -45,6 +45,7 @@ alias mdkir mkdir
 # Bundle shortcuts.
 abbr -a b='bundle'
 abbr -a be='bundle exec'
+abbr -a bu='bundle update'
 abbr -a ber='bundle exec rake'
 abbr -a bra='bundle exec rails'
 abbr -a bo='bundle open'
