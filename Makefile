@@ -34,7 +34,8 @@ install-vim-bundles: install-neobundle
 	@vim +"silent NeoBundleClean!" +"silent NeoBundleInstall!" +qall!
 
 install-nvimrc:
-	@ln -nsf ${INSTALL_PATH}/.vimrc ${INSTALL_PATH}/.nvimrc
+	@ln -nsf ${INSTALL_PATH}/.vim ${INSTALL_PATH}/.config/nvim
+	@ln -nsf ${INSTALL_PATH}/.vimrc ${INSTALL_PATH}/.config/nvim/init.vim
 
 vim: install-vim-bundles
 
