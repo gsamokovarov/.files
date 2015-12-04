@@ -392,6 +392,9 @@ let g:syntastic_style_warning_symbol='≈'
 
 " Skip schema.rb, it can destroy the terminal Vim.
 let g:syntastic_ignore_files=['\mschema\.rb$']
+
+" Run Syntastic only on :SyntasticCheck.
+let g:syntastic_mode_map={'mode': 'passive', 'active_filetypes': [], 'passive_filetypes': []}
 " }}}
 
 " {{{ SplitJoin
