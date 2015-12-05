@@ -61,7 +61,6 @@ NeoBundle 'Valloric/YouCompleteMe', {
         \    },
         \ }
 
-NeoBundle 'AndrewRadev/sideways.vim'
 NeoBundle 'AndrewRadev/splitjoin.vim'
 NeoBundle 'AndrewRadev/switch.vim'
 NeoBundle 'airblade/vim-gitgutter'
@@ -757,10 +756,6 @@ inoremap кк <ESC>lk
 " Those seems friendlier to type than g{t,T}.
 nnoremap <C-K> gt
 nnoremap <C-J> gT
-
-" Move function arguments left and right.
-nnoremap <C-H> :SidewaysLeft<CR>
-nnoremap <C-L> :SidewaysRight<CR>
 
 " Toggle the current fold.
 nnoremap <silent> <Space> @=(foldlevel('.') ? 'za' : "\<Space>")<CR>
