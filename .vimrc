@@ -84,7 +84,6 @@ NeoBundle 'reedes/vim-thematic'
 NeoBundle 'rodjek/vim-puppet'
 NeoBundle 'rstacruz/vim-closer'
 NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'scrooloose/syntastic'
 NeoBundle 'sheerun/vim-polyglot'
 NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'tomtom/tcomment_vim'
@@ -367,33 +366,6 @@ if has('autocmd')
         \ | endif
 
 endif
-" }}}
-
-" {{{ Syntastic
-" Shush syntastic about its locked values.
-let g:syntastic_quiet_messages={"level": "warnings"}
-
-" Tell syntastic not to jump to errors and skip /c(++)?/ files.
-let g:syntastic_enable_signs=1
-let g:syntastic_auto_jump=0
-
-" Try to optimize syntastic in terminal Vim as its already 0 on MacVim.
-let syntastic_full_redraws=0
-
-" Speed up syntastic a bit.
-let g:syntastic_enable_highlighting=0
-
-" Add some fancy symbols for the error and warning messages.
-let g:syntastic_error_symbol='✗'
-let g:syntastic_style_error_symbol='✠'
-let g:syntastic_warning_symbol='⚠'
-let g:syntastic_style_warning_symbol='≈'
-
-" Skip schema.rb, it can destroy the terminal Vim.
-let g:syntastic_ignore_files=['\mschema\.rb$']
-
-" Run Syntastic only on :SyntasticCheck.
-let g:syntastic_mode_map={'mode': 'passive', 'active_filetypes': [], 'passive_filetypes': []}
 " }}}
 
 " {{{ SplitJoin
