@@ -1,5 +1,5 @@
 # Include local machine custom settings.
-[ -f ~/.zshrc.befor ] && source ~/.zshrc.before
+[ -f ~/.zshrc.before ] && source ~/.zshrc.before
 
 # Make sure that ~/.rbenv/bin and ~/bin are prepended to the PATH, so we can
 # override system utils, if needed. The path for the custom coreutils and
@@ -42,9 +42,6 @@ export PAGER=less
 $(which dircolors &> /dev/null) && {
   [ -z $SKIP_DIRCOLORS ] && [ -f ~/.dir_colors ] && eval "$(dircolors ~/.dir_colors)"
 }
-
-# Include local machine custom settings.
-[ -f ~/.zshrc.after ] && source ~/.zshrc.after
 
 # Be happy. (The above line is an expression, If I don't have a ~/.zshrc.local file
 # I'll start with a sad face. I like happy faces.)
