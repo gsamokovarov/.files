@@ -36,7 +36,7 @@ abbr -a gco='git commit'
 abbr -a gcp='git cherry-pick'
 abbr -a gd='git diff'
 abbr -a gl='git log'
-abbr -a gs='git state'
+abbr -a gs='git status'
 abbr -a ga='git commit --amend'
 
 # Yes, that happened today. Age, you know...
