@@ -447,6 +447,9 @@ let g:go_fmt_command="goimports"
 
 " {{{ Gutentags
 let g:gutentags_tagfile='.tags'
+
+" Use ripper-tags to generate tags for Ruby.
+let g:gutentags_ctags_executable_ruby='ripper-tags'
 " }}}
 
 " }}}
