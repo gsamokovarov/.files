@@ -15,6 +15,9 @@ alias apt-get "sudo apt-get"
 alias kilalll killall
 alias kilall killall
 
+# Do it by default. Don't let me think about it.
+alias mkdir "mkdir -p"
+
 # Some systems may not be happy with the $TERM of screen-256colors, so be sane.
 alias ssh "env TERM=xterm command ssh"
 
