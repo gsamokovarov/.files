@@ -30,13 +30,8 @@ install-gem-rehash:
 install-neobundle:
 	$(call clone-git-repo-if-not-exist,${NEOBUNDLE_REPO},.vim/bundle/neobundle.vim)
 
-install-vim-bundles: install-neobundle
-	@vim +"silent NeoBundleClean!" +"silent NeoBundleInstall!" +qall!
-
 install-nvimrc:
 	@ln -nsf ${INSTALL_PATH}/.vim ${INSTALL_PATH}/.config/nvim
 	@ln -nsf ${INSTALL_PATH}/.vimrc ${INSTALL_PATH}/.config/nvim/init.vim
 
-vim: install-vim-bundles
-
-.PHONY: install install-dotfiles install-neobundle install-rbenv install-ruby-build install-gem-rehash install-vim-bundles
+.PHONY: install install-dotfiles install-neobundle install-rbenv install-ruby-build install-gem-rehash
