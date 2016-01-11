@@ -20,6 +20,7 @@ install-go:
 
 install-rbenv:
 	$(call clone-git-repo-if-not-exist,${RBENV_REPO},.rbenv)
+	@(cd ~/.rbenv && src/configure && make -C src 1>/dev/null)
 
 install-ruby-build:
 	$(call clone-git-repo-if-not-exist,${RUBY_BUILD_REPO},.rbenv/plugins/ruby-build)
