@@ -8,7 +8,7 @@ EXCLUDES        ?= ./.git ./.files.png ./Makefile ./README.markdown
 TAR_CMD   = find . -print0 | xargs -0 tar `echo $(EXCLUDES) | tr ' ' '\n' | awk '{print "--exclude " $$0}'` --create
 UNTAR_CMD = tar --extract --preserve-permissions --verbose --directory=$(INSTALL_PATH)
 
-clone-git-repo-if-not-exist = @(cd ${INSTALL_PATH} ; [ -d $(2) ] || git clone $(1) $(2))
+clone-git-repo-unless-exist = @(cd ${INSTALL_PATH} ; [ -d $(2) ] || git clone $(1) $(2))
 
 install: install-dotfiles install-go install-rbenv install-gem-rehash install-ruby-build install-nvimrc
 
@@ -19,17 +19,17 @@ install-go:
 	@(mkdir -p ~/.go)
 
 install-rbenv:
-	$(call clone-git-repo-if-not-exist,${RBENV_REPO},.rbenv)
+	$(call clone-git-repo-unless-exist,${RBENV_REPO},.rbenv)
 	@(cd ~/.rbenv && src/configure && make -C src 1>/dev/null)
 
 install-ruby-build:
-	$(call clone-git-repo-if-not-exist,${RUBY_BUILD_REPO},.rbenv/plugins/ruby-build)
+	$(call clone-git-repo-unless-exist,${RUBY_BUILD_REPO},.rbenv/plugins/ruby-build)
 
 install-gem-rehash:
-	$(call clone-git-repo-if-not-exist,${RUBY_BUILD_REPO},.rbenv/plugins/rbenv-gem-rehash)
+	$(call clone-git-repo-unless-exist,${RUBY_BUILD_REPO},.rbenv/plugins/rbenv-gem-rehash)
 
 install-neobundle:
-	$(call clone-git-repo-if-not-exist,${NEOBUNDLE_REPO},.vim/bundle/neobundle.vim)
+	$(call clone-git-repo-unless-exist,${NEOBUNDLE_REPO},.vim/bundle/neobundle.vim)
 
 install-nvimrc:
 	@ln -nsf ${INSTALL_PATH}/.vim ${INSTALL_PATH}/.config/nvim
