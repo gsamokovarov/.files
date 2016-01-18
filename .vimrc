@@ -65,6 +65,7 @@ NeoBundle 'AndrewRadev/splitjoin.vim'
 NeoBundle 'AndrewRadev/switch.vim'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'benekastah/neomake'
 NeoBundle 'bogado/file-line'
 NeoBundle 'dag/vim-fish'
 NeoBundle 'dyng/ctrlsf.vim'
@@ -559,6 +560,10 @@ if has('autocmd')
 
   " Automatically rebalance windows on Vim resize.
   autocmd VimResized * :wincmd =
+
+  " Run neomake on every write. It's async on neovim, so take that, single
+  " threaded vim.
+  autocmd! BufWritePost * Neomake
 endif
 
 " }}}
