@@ -44,8 +44,9 @@ NeoBundle 'marijnh/tern_for_vim', {
         \    },
         \ }
 
-NeoBundle 'nixprime/cpsm', {
+NeoBundle 'JazzCore/ctrlp-cmatcher', {
         \ 'build' : {
+        \     'windows' : 'install_windows.bat',
         \     'cygwin' : './install.sh',
         \     'mac' : './install.sh',
         \     'unix' : './install.sh',
@@ -396,8 +397,8 @@ let g:ctrlp_user_command={
     \ 'fallback': 'ag %s -l --nocolor -g --ignore=vendor --ignore=node_modules --ignore=.bundle""'
     \ }
 
-" Use the C matcher function provided by cpsm.
-let g:ctrlp_match_func={'match': 'cpsm#CtrlPMatch'}
+" Use the C matcher function provided by ctrlp-cmatcher.
+let g:ctrlp_match_func={'match': 'matcher#cmatch'}
 
 " Use caching to speed CtrlP up.
 let g:ctrlp_use_caching=1
