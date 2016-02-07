@@ -757,15 +757,6 @@ inoremap kj <ESC>
 inoremap йк <ESC>
 inoremap кй <ESC>
 
-" If you double tap {j,k} in INSERT mode it will go into NORMAL and scroll one
-" line up or down. The l is there to make up for cursor being displayed one
-" character before the point you hit {jj,kk}.
-inoremap jj <ESC>lj
-inoremap kk <ESC>lk
-
-inoremap йй <ESC>lj
-inoremap кк <ESC>lk
-
 " Those seems friendlier to type than g{t,T}.
 nnoremap <C-K> gt
 nnoremap <C-J> gT
