@@ -454,6 +454,13 @@ let g:gutentags_tagfile='.tags'
 let g:gutentags_ctags_executable_ruby='ripper-tags'
 " }}}
 
+" {{{ Neomake
+let g:neomake_error_sign={ 'text': '~' }
+let g:neomake_warning_sign={ 'text': '~' }
+let g:neomake_message_sign={ 'text': '~' }
+let g:neomake_informational_sign={ 'text': '~' }
+" }}}
+
 " }}}
 
 " {{{ Style Settings
@@ -541,7 +548,8 @@ if has('autocmd')
         \ setlocal re=1
 
   autocmd Filetype go
-        \ set noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
+        \ set noexpandtab tabstop=4 shiftwidth=4 softtabstop=4 |
+        \ autocmd! BufWritePost * Neomake
 
   autocmd FileType javascript
         \ set omnifunc=javascriptcomplete#Complete
@@ -561,10 +569,6 @@ if has('autocmd')
 
   " Automatically rebalance windows on Vim resize.
   autocmd VimResized * :wincmd =
-
-  " Run neomake on every write. It's async on neovim, so take that, single
-  " threaded vim.
-  autocmd! BufWritePost * Neomake
 endif
 
 " }}}
