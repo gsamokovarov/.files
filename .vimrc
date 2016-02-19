@@ -460,6 +460,8 @@ let g:neomake_error_sign={ 'text': '~' }
 let g:neomake_warning_sign={ 'text': '~' }
 let g:neomake_message_sign={ 'text': '~' }
 let g:neomake_informational_sign={ 'text': '~' }
+
+let g:neomake_verbose=0
 " }}}
 
 " }}}
