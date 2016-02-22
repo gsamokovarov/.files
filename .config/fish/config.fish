@@ -59,3 +59,5 @@ end
 
 # Source the aliases in ~/.config/fish/aliases.fish.
 test -f ~/.config/fish/aliases.fish; and . ~/.config/fish/aliases.fish
+
+test -f ~/.config/fish/iterm2.fish ; and source ~/.config/fish/iterm2.fish
