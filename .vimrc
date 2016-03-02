@@ -64,7 +64,6 @@ NeoBundle 'Valloric/YouCompleteMe', {
 
 NeoBundle 'AndrewRadev/splitjoin.vim'
 NeoBundle 'AndrewRadev/switch.vim'
-NeoBundle 'Valloric/MatchTagAlways'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'benekastah/neomake'
