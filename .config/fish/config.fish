@@ -60,4 +60,7 @@ end
 # Source the aliases in ~/.config/fish/aliases.fish.
 test -f ~/.config/fish/aliases.fish; and . ~/.config/fish/aliases.fish
 
-test -f ~/.config/fish/iterm2.fish ; and source ~/.config/fish/iterm2.fish
+if test -f ~/.config/fish/iterm2.fish
+  set -x iterm2_hostname ""
+  source ~/.config/fish/iterm2.fish
+end
