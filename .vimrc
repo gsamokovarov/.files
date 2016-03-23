@@ -543,7 +543,7 @@ if has('autocmd')
   " Save the last position in a file.
   autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
-  autocmd FileType ruby
+  autocmd FileType ruby,eruby
         \ set omnifunc=rubycomplete#Complete |
         \ set iskeyword+=?,! |
         " Use the older RegExp engine as Ruby syntax is painfully slow with
