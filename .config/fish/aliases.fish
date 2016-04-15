@@ -21,6 +21,9 @@ alias mkdir "mkdir -p"
 # Some systems may not be happy with the $TERM of screen-256colors, so be sane.
 alias ssh "env TERM=xterm command ssh"
 
+# Let there be colors in cat!
+alias cat ccat
+
 # I use vim a lot, so shortcut it to just v. On top of that, don't bother with
 # vi if I mistype it and open multiple files in tabs.
 abbr -a v=vim
