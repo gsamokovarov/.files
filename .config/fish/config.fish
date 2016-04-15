@@ -38,9 +38,6 @@ set -x EDITOR nvim
 set -x PAGER less
 set -x BROWSER open
 
-# Tell Vagrant to use VMware Fusion as it's default provider.
-set -x VAGRANT_DEFAULT_PROVIDER vmware_fusion
-
 # Initialize rbenv for the fish shell. Now, the `tail -n +2` is a huge hack,
 # with which I stop rbenv prepending ~/.rbenv/shims to the $PATH.
 status --is-interactive; and . (rbenv init - | psub)
