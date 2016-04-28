@@ -69,6 +69,9 @@ abbr -a vpr vagrant provision
 # then switch to it.
 function git
   switch (count $argv)
+    case 0
+      command git status
+      return $status
     case 1
       set -l target_branch $argv[1]
 
