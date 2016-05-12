@@ -26,39 +26,39 @@ alias cat ccat
 
 # I use vim a lot, so shortcut it to just v. On top of that, don't bother with
 # vi if I mistype it and open multiple files in tabs.
-abbr -a v=vim
-abbr -a vi=vim
+abbr -a v vim
+abbr -a vi vim
 
 # Shortcuts for rake, grunt, make, docker and git.
-abbr -a r=rake
-abbr -a u=grunt
-abbr -a m=make
-abbr -a d=docker
-abbr -a g=git
+abbr -a r rake
+abbr -a u grunt
+abbr -a m make
+abbr -a d docker
+abbr -a g git
 
 # Git subcommands shortcuts.
-abbr -a gc='git commit'
-abbr -a gco='git commit'
-abbr -a gcp='git cherry-pick'
-abbr -a gd='git diff'
-abbr -a gl='git log'
-abbr -a gs='git status'
-abbr -a ga='git commit --amend'
+abbr -a gc git commit
+abbr -a gco git commit
+abbr -a gcp git cherry-pick
+abbr -a gd git diff
+abbr -a gl git log
+abbr -a gs git status
+abbr -a ga git commit --amend
 
-abbr -a g[='git ['
-abbr -a g]='git ]'
+abbr -a g[ git [
+abbr -a g] git ]
 
 # Yes, that happened today. Age, you know...
 alias mdkir mkdir
 
 # Bundle shortcuts.
-abbr -a b='bundle'
-abbr -a be='bundle exec'
-abbr -a bu='bundle update'
-abbr -a ber='bundle exec rake'
-abbr -a bra='bundle exec rails'
-abbr -a bo='bundle open'
-abbr -a bi='bundle install'
+abbr -a b bundle
+abbr -a be bundle exec
+abbr -a bu bundle update
+abbr -a ber bundle exec rake
+abbr -a bra bundle exec rails
+abbr -a bo bundle open
+abbr -a bi bundle install
 
 # Just don't, OK?
 abbr -a vag vagrant
