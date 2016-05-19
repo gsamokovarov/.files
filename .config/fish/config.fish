@@ -1,6 +1,3 @@
-# Set the homebrew path to the default place where Boxen puts it.
-set PATH /usr/local/homebrew/bin $PATH
-
 # Make sure that ~/bin is prepended to the PATH, so we can override system
 # utils, if needed. The path for the custom coreutils and /usr/loca/bin are my
 # preferences on OSX.
