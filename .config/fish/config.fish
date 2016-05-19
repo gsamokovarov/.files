@@ -51,7 +51,7 @@ status --is-interactive; and . (jump shell | psub)
 # Use the custom solarized LS colors. Its quite hacky, because they expect bash
 # or zsh and exporting environment variables looks differently in fish.
 if which dircolors > /dev/null ^&1
-  test -f ~/.dir_colors; and . (echo 'set -x '(dircolors ~/.dir_colors | head -1) | psub)
+  test -f ~/.dir_colors; and eval (dircolors --c-shell ~/.dir_colors)
 end
 
 # Source the aliases in ~/.config/fish/aliases.fish.
