@@ -550,6 +550,9 @@ if has('autocmd')
         " the current one.
         \ setlocal re=1
 
+  autocmd FileType puppet
+        \ set iskeyword+=:
+
   autocmd Filetype go
         \ set noexpandtab tabstop=4 shiftwidth=4 softtabstop=4 |
         \ autocmd! BufWritePost * Neomake
