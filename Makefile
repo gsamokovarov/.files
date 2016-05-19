@@ -16,7 +16,7 @@ install-dotfiles:
 	@(${TAR_CMD} | ${UNTAR_CMD})
 
 install-go:
-	@(mkdir -p ~/.go)
+	@(mkdir -p ~/.go/bin)
 
 install-rbenv:
 	$(call clone-git-repo-unless-exist,${RBENV_REPO},.rbenv)
