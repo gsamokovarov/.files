@@ -25,16 +25,6 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 " {{{ Dependencies
 
-" Install vimproc, so NeoBundle can be async.
-NeoBundle 'Shougo/vimproc', {
-        \ 'build' : {
-        \     'windows' : 'make -f make_mingw32.mak',
-        \     'cygwin' : 'make -f make_cygwin.mak',
-        \     'mac' : 'make -f make_mac.mak',
-        \     'unix' : 'make -f make_unix.mak',
-        \    },
-        \ }
-
 NeoBundle 'marijnh/tern_for_vim', {
         \ 'build' : {
         \     'windows' : 'npm install .',
