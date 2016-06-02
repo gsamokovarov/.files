@@ -454,6 +454,12 @@ let g:neomake_informational_sign={ 'text': '~' }
 let g:neomake_verbose=0
 " }}}
 
+" {{{ Ruby
+let ruby_no_expensive=1
+let ruby_minlines=100
+let ruby_spellcheck_strings=0
+" }}}
+
 " }}}
 
 " {{{ Style Settings
