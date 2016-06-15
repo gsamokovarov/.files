@@ -13,29 +13,31 @@ function fzf_key_bindings
     end
   end
 
-  function __fzf_ctrl_t
+  function fzf-file-widget
     set -q FZF_CTRL_T_COMMAND; or set -l FZF_CTRL_T_COMMAND "
     command find -L . \\( -path '*/\\.*' -o -fstype 'dev' -o -fstype 'proc' \\) -prune \
       -o -type f -print \
       -o -type d -print \
       -o -type l -print 2> /dev/null | sed 1d | cut -b3-"
-    eval $FZF_CTRL_T_COMMAND | eval (__fzfcmd) -m > $TMPDIR/fzf.result
-    and commandline -i (cat $TMPDIR/fzf.result | __fzf_escape)
+    eval "$FZF_CTRL_T_COMMAND | "(__fzfcmd)" -m $FZF_CTRL_T_OPTS > $TMPDIR/fzf.result"
+    and for i in (seq 20); commandline -i (cat $TMPDIR/fzf.result | __fzf_escape) 2> /dev/null; and break; sleep 0.1; end
     commandline -f repaint
     rm -f $TMPDIR/fzf.result
   end
 
-  function __fzf_ctrl_r
-    history | eval (__fzfcmd) +s +m --tiebreak=index --toggle-sort=ctrl-r > $TMPDIR/fzf.result
+  function fzf-history-widget
+    history | eval (__fzfcmd) +s +m --tiebreak=index --toggle-sort=ctrl-r $FZF_CTRL_R_OPTS > $TMPDIR/fzf.result
     and commandline (cat $TMPDIR/fzf.result)
     commandline -f repaint
     rm -f $TMPDIR/fzf.result
   end
 
-  function __fzf_alt_c
+  function fzf-cd-widget
+    set -q FZF_ALT_C_COMMAND; or set -l FZF_ALT_C_COMMAND "
+    command find -L . \\( -path '*/\\.*' -o -fstype 'dev' -o -fstype 'proc' \\) -prune \
+      -o -type d -print 2> /dev/null | sed 1d | cut -b3-"
     # Fish hangs if the command before pipe redirects (2> /dev/null)
-    command find -L . \( -path '*/\.*' -o -fstype 'dev' -o -fstype 'proc' \) \
-      -prune -o -type d -print 2> /dev/null | sed 1d | cut -b3- | eval (__fzfcmd) +m > $TMPDIR/fzf.result
+    eval "$FZF_ALT_C_COMMAND | "(__fzfcmd)" +m $FZF_ALT_C_OPTS > $TMPDIR/fzf.result"
     [ (cat $TMPDIR/fzf.result | wc -l) -gt 0 ]
     and cd (cat $TMPDIR/fzf.result)
     commandline -f repaint
@@ -56,14 +58,13 @@ function fzf_key_bindings
     end
   end
 
-  bind \ct '__fzf_ctrl_t'
-  bind \cr '__fzf_ctrl_r'
-  bind \ec '__fzf_alt_c'
+  bind \ct fzf-file-widget
+  bind \cr fzf-history-widget
+  bind \ec fzf-cd-widget
 
   if bind -M insert > /dev/null 2>&1
-    bind -M insert \ct '__fzf_ctrl_t'
-    bind -M insert \cr '__fzf_ctrl_r'
-    bind -M insert \ec '__fzf_alt_c'
+    bind -M insert \ct fzf-file-widget
+    bind -M insert \cr fzf-history-widget
+    bind -M insert \ec fzf-cd-widget
   end
 end
-
