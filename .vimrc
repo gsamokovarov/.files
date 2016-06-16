@@ -629,19 +629,6 @@ if has("gui_macvim") && has("gui_running")
   inoremap <D-9> <Esc>:tablast<CR>
 endif
 
-" When text is wrapped, move up and down by visual lines.
-nnoremap j gj
-vnoremap j gj
-nnoremap k gk
-vnoremap k gk
-
-" Alias H and L to stronger left and stronger right.
-nmap H 0
-vmap H 0
-
-nmap L $
-vmap L $
-
 " Don't jump on search.
 nnoremap * *<C-O>
 nnoremap # #<C-O>
@@ -664,22 +651,11 @@ nmap <Right> n
 
 nnoremap <C-\> :silent! call JumpToTagInSplit()<cr>
 
-" Uppercase whole words in INSERT mode. I rarely remember to remove the whole
-" line in INSERT mode and I don't have a CAPS LOCK anymore.
-inoremap <C-u> <esc>mzgUiw`za
-
 nnoremap <silent> <C-m> :call ToggleNERDTree()<CR>
-nnoremap <Leader>, :call ToggleMouse()<CR>
-
-" Clear search matches with comma-space.
-noremap <silent> <leader><space> :noh<cr>:call clearmatches()<cr>
 
 " Navigate through windows with Tab and Shift-Tab.
 nnoremap <Tab> <C-w><C-w>
 nnoremap <S-Tab> <C-w><C-W>
-
-" I mistype C-M for C-N all the time. Use it for multiple cursors as well.
-nnoremap <C-N> <C-M>
 
 " I'm used to the fish shell and auto-completing suggestions with Ctrl-e.
 " Remapping it to Tab does the job for YouCompleteMe.
@@ -729,13 +705,6 @@ nnoremap <Leader>t :ThematicNext<CR>
 nnoremap <Leader>f gqap
 vnoremap <Leader>f gq
 
-" Restore the last selection in VISUAL mode.
-nnoremap <Leader>v gv
-
-" Edit an inlined chunked of code in it's own buffer.
-nnoremap <Leader>e :InlineEdit<CR>
-vnoremap <Leader>e :InlineEdit<CR>
-
 " Align commands. Ripped off @StanAngeloff.
 nnoremap <Leader>a= :Tabularize /=<CR>
 vnoremap <Leader>a= m[om]:Tabularize /=<CR>`]V`[
@@ -745,11 +714,6 @@ vnoremap <Leader>a> m[om]:Tabularize /=><CR>`]V`[
 
 nnoremap <Leader>a: :Tabularize /:\zs/l0l1<CR>
 vnoremap <Leader>a: m[om]:Tabularize /:\zs/l0l1<CR>`]V`[
-
-" I always mess these up on my Das Keyboard. Trying to work around them at
-" least in VISUAL mode.
-vnoremap u y
-vnoremap U Y
 
 " Have a saner ESCAPE in INSERT mode. Don't try to map those in VISUAL mode or
 " you'll get a nasty delay if you type {j,k}.
@@ -793,9 +757,6 @@ cnoreabbrev яалл qаll
 cnoreabbrev W w
 cnoreabbrev Q q
 cnoreabbrev Wq wq
-
-" Tabe is typed quite often around here.
-cnoreabbrev Tabe tabe
 
 " Its impressive how often I mistype this.
 inoreabbrev inititalize initialize
