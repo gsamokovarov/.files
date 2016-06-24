@@ -91,9 +91,9 @@ end
 
 function vim
   if which nvim >/dev/null
-    command nvim -p $argv
+    command nvim -p $argv 2>/dev/null
   else
-    command vim -p $argv
+    command vim -p $argv 2>/dev/null
   end
 end
 
