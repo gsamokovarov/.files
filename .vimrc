@@ -488,9 +488,6 @@ let g:thematic#defaults={
 let g:gruvbox_sign_column='dark0'
 let g:gruvbox_contrast_dark='soft'
 
-" Use 256 colors everywhere.
-set t_Co=256
-
 " The terminal Vim on OSX is slow as f*ck. I don't believe its iTerm that
 " is bringing the slownes, either. Someone... HALP!
 if has('gui_running')
