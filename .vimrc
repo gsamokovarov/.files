@@ -470,10 +470,6 @@ let g:thematic#themes={
     \   'colorscheme': 'solarized',
     \   'background': 'light',
     \  },
-    \ 'solarized_dark': {
-    \   'colorscheme': 'solarized',
-    \   'background': 'dark',
-    \  },
     \ 'gruvbox': {
     \   'colorscheme': 'gruvbox',
     \   'background': 'dark',
