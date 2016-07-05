@@ -451,7 +451,6 @@ let g:neomake_verbose=0
 " }}}
 
 " {{{ Ruby
-let ruby_no_expensive=1
 let ruby_minlines=100
 let ruby_spellcheck_strings=0
 " }}}
@@ -517,10 +516,10 @@ if has('gui_running')
   endif
 
   " Gruvbox for the UI. Looks really cool on it.
-  let g:thematic#theme_name='gruvbox_dark'
+  let g:thematic#theme_name='gruvbox_light'
 else
   " Run the gruvbox theme on the terminal as well.
-  let g:thematic#theme_name='gruvbox_dark'
+  let g:thematic#theme_name='gruvbox_light'
 endif
 
 " }}}
