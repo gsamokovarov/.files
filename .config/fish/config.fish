@@ -45,12 +45,6 @@ eval (direnv hook fish)
 # Initialize jump for the fish shell.
 status --is-interactive; and . (jump shell | psub)
 
-# Use the custom solarized LS colors. Its quite hacky, because they expect bash
-# or zsh and exporting environment variables looks differently in fish.
-if which dircolors > /dev/null ^&1
-  test -f ~/.dir_colors; and eval (dircolors --c-shell ~/.dir_colors)
-end
-
 # Source the aliases in ~/.config/fish/aliases.fish.
 test -f ~/.config/fish/aliases.fish; and . ~/.config/fish/aliases.fish
 
@@ -58,3 +52,6 @@ if test -f ~/.config/fish/iterm2.fish
   set -x iterm2_hostname ""
   source ~/.config/fish/iterm2.fish
 end
+
+# Source the gruvbox color adjustments.
+test -f ~/.config/fish/colors.fish; and source ~/.config/fish/colors.fish

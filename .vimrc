@@ -464,13 +464,16 @@ let ruby_spellcheck_strings=0
 
 " {{{ Style Settings
 
+" Enable true colors for neovim.
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+
 " Define my common used thematic themes.
 let g:thematic#themes={
-    \ 'solarized_light': {
-    \   'colorscheme': 'solarized',
+    \ 'gruvbox_light': {
+    \   'colorscheme': 'gruvbox',
     \   'background': 'light',
     \  },
-    \ 'gruvbox': {
+    \ 'gruvbox_dark': {
     \   'colorscheme': 'gruvbox',
     \   'background': 'dark',
     \ }
@@ -486,7 +489,6 @@ let g:thematic#defaults={
 
 " Blend the sign column background.
 let g:gruvbox_sign_column='dark0'
-let g:gruvbox_contrast_dark='soft'
 
 " The terminal Vim on OSX is slow as f*ck. I don't believe its iTerm that
 " is bringing the slownes, either. Someone... HALP!
@@ -519,10 +521,10 @@ if has('gui_running')
   endif
 
   " Gruvbox for the UI. Looks really cool on it.
-  let g:thematic#theme_name='gruvbox'
+  let g:thematic#theme_name='gruvbox_dark'
 else
   " Run the gruvbox theme on the terminal as well.
-  let g:thematic#theme_name='gruvbox'
+  let g:thematic#theme_name='gruvbox_dark'
 endif
 
 " }}}
