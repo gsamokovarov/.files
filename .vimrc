@@ -484,6 +484,7 @@ let g:thematic#defaults={
 
 " Blend the sign column background.
 let g:gruvbox_sign_column='dark0'
+let g:gruvbox_contrast_dark='soft'
 
 " The terminal Vim on OSX is slow as f*ck. I don't believe its iTerm that
 " is bringing the slownes, either. Someone... HALP!
