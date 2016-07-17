@@ -29,9 +29,8 @@ alias cat ccat
 abbr -a v vim
 abbr -a vi vim
 
-# Shortcuts for rake, grunt, make, docker and git.
-abbr -a r rake
-abbr -a u grunt
+# Shortcuts for rails, grunt, make, docker and git.
+abbr -a r rails
 abbr -a m make
 abbr -a d docker
 abbr -a g git
@@ -55,8 +54,7 @@ alias mdkir mkdir
 abbr -a b bundle
 abbr -a be bundle exec
 abbr -a bu bundle update
-abbr -a ber bundle exec rake
-abbr -a bra bundle exec rails
+abbr -a br bundle exec rails
 abbr -a bo bundle open
 abbr -a bi bundle install
 
