@@ -13,7 +13,7 @@ set PATH $GOPATH/bin $PATH
 # Prepend the relative ./bin, so I can get binstubs and the like in the PATH
 # automatically. The node modules binaries are also handy to have around. I
 # don't like installing global node packages.
-set PATH ./bin ./node_modules/.bin $PATH
+set PATH ./bin ./exe ./node_modules/.bin $PATH
 
 # Don't show the greeting message on fish boot.
 set -x fish_greeting ''
