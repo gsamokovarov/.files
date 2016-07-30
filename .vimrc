@@ -108,19 +108,6 @@ function! CleverJumpFirst()
   return '^'
 endfunction
 
-function! ToggleMouse()
-  if !exists("s:old_mouse")
-    let s:old_mouse = "a"
-  endif
-
-  if &mouse == ""
-    let &mouse = s:old_mouse
-  else
-    let s:old_mouse = &mouse
-    let &mouse=""
-  endif
-endfunction
-
 " Those tag jumping functions are coming from Steve Losh.
 function! JumpToTag()
   execute "normal! \<c-]zz>"
@@ -128,6 +115,57 @@ endfunction
 
 function! JumpToTagInSplit()
   execute "normal! \<c-w>s\<c-]>zz"
+endfunction
+
+" Create new test files in vim-rails powered projects. Ripped of from:
+" https://github.com/AndrewRadev/Vimfiles/blob/master/personal/plugin/rnew.vim
+command! -nargs=0 Rnew call s:Rnew(@%)
+function! s:Rnew(name)
+  let parts     = split(a:name, '/')
+  let base_name = parts[-1]
+  let dir_parts = parts[0:-2]
+
+  let underscored_name = base_name
+  if underscored_name =~ '\.rb$'
+    let underscored_name = fnamemodify(underscored_name, ':r')
+  endif
+
+  call s:CreateRubyTest(underscored_name, dir_parts)
+
+  redraw!
+endfunction
+
+function! s:CreateRubyTest(name, dir_parts)
+  let test_name = join(a:dir_parts + [a:name . '_test.rb'], '/')
+
+  if test_name =~ '\<app/'
+    let test_name = s:SubstitutePathSegment(test_name, 'app', 'test')
+  else
+    let test_name = s:SubstitutePathSegment(test_name, 'lib', 'test/lib')
+  endif
+
+  call s:EnsureDirectoryExists(test_name)
+
+  exe 'split '.test_name
+  call append(0, [
+        \ 'require ''test_helper''',
+        \ '',
+        \ ])
+  $delete _
+  normal! G
+  write
+endfunction
+
+function! s:SubstitutePathSegment(expr, segment, replacement)
+  return substitute(a:expr, '\(^\|/\)'.a:segment.'\(/\|$\)', '\1'.a:replacement.'\2', '')
+endfunction
+
+function! s:EnsureDirectoryExists(file)
+  let dir = fnamemodify(a:file, ':p:h')
+
+  if !isdirectory(dir)
+    call mkdir(dir, 'p')
+  endif
 endfunction
 " }}}
 
