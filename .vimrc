@@ -11,82 +11,45 @@ if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
 
-if has('vim_starting')
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
-endif
-
-" Start installing bundles.
-call neobundle#begin(expand('~/.vim/bundle/'))
-
-" Let NeoBundle manage NeoBundle.
-NeoBundleFetch 'Shougo/neobundle.vim'
+" Start installing plugins.
+call plug#begin(expand('~/.vim/bundle/'))
 
 " }}}
 
 " {{{ Dependencies
 
-NeoBundle 'marijnh/tern_for_vim', {
-        \ 'build' : {
-        \     'windows' : 'npm install .',
-        \     'cygwin' : 'npm install .',
-        \     'mac' : 'npm install .',
-        \     'unix' : 'npm install .',
-        \    },
-        \ }
+Plug 'AndrewRadev/splitjoin.vim'
+Plug 'AndrewRadev/switch.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'bogado/file-line'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'dyng/ctrlsf.vim' | Plug 'JazzCore/ctrlp-cmatcher', { 'do': './install.sh' }
+Plug 'elzr/vim-json'
+Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoInstallBinaries' }
+Plug 'jesseschalken/list-text-object'
+Plug 'gsamokovarov/vim-ruby-heredoc-syntax', { 'for': 'ruby' }
+Plug 'kana/vim-textobj-user'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'morhetz/gruvbox'| Plug 'reedes/vim-thematic'
+Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby' }
+Plug 'reedes/vim-textobj-sentence'
+Plug 'rstacruz/vim-closer'
+Plug 'scrooloose/nerdtree' | Plug 'jistr/vim-nerdtree-tabs'
+Plug 'sheerun/vim-polyglot'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'tomtom/tcomment_vim'
+Plug 'tpope/vim-endwise', { 'for': 'ruby' }
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rails', { 'for': 'ruby' }
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-sleuth'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 
-NeoBundle 'JazzCore/ctrlp-cmatcher', {
-        \ 'build' : {
-        \     'windows' : 'install_windows.bat',
-        \     'cygwin' : './install.sh',
-        \     'mac' : './install.sh',
-        \     'unix' : './install.sh',
-        \    },
-        \ }
-
-NeoBundle 'Valloric/YouCompleteMe', {
-        \ 'build' : {
-        \     'mac' : './install.py --clang-completer --system-libclang --omnisharp-completer',
-        \     'unix' : './install.py --clang-completer --system-libclang --omnisharp-completer',
-        \     'windows' : './install.py --clang-completer --system-libclang --omnisharp-completer',
-        \     'cygwin' : './install.py --clang-completer --system-libclang --omnisharp-completer'
-        \    },
-        \ }
-
-NeoBundle 'AndrewRadev/splitjoin.vim'
-NeoBundle 'AndrewRadev/switch.vim'
-NeoBundle 'airblade/vim-gitgutter'
-NeoBundle 'bogado/file-line'
-NeoBundle 'ctrlpvim/ctrlp.vim'
-NeoBundle 'dyng/ctrlsf.vim'
-NeoBundle 'elzr/vim-json'
-NeoBundle 'fatih/vim-go'
-NeoBundle 'godlygeek/tabular'
-NeoBundle 'jesseschalken/list-text-object'
-NeoBundle 'jistr/vim-nerdtree-tabs'
-NeoBundle 'gsamokovarov/vim-ruby-heredoc-syntax'
-NeoBundle 'kana/vim-textobj-user'
-NeoBundle 'ludovicchabant/vim-gutentags'
-NeoBundle 'morhetz/gruvbox'
-NeoBundle 'nelstrom/vim-textobj-rubyblock'
-NeoBundle 'reedes/vim-textobj-sentence'
-NeoBundle 'reedes/vim-thematic'
-NeoBundle 'rodjek/vim-puppet'
-NeoBundle 'rstacruz/vim-closer'
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'sheerun/vim-polyglot'
-NeoBundle 'terryma/vim-multiple-cursors'
-NeoBundle 'tomtom/tcomment_vim'
-NeoBundle 'tpope/vim-endwise'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'tpope/vim-rails'
-NeoBundle 'tpope/vim-repeat'
-NeoBundle 'tpope/vim-sensible'
-NeoBundle 'tpope/vim-sleuth'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'tpope/vim-unimpaired'
-
-" Tell NeoBundle to not expect any more bundles.
-call neobundle#end()
+" Tell vim-plug to not expect any more bundles.
+call plug#end()
 
 " }}}
 
