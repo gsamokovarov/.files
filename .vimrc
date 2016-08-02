@@ -26,12 +26,12 @@ Plug 'ctrlpvim/ctrlp.vim' | Plug 'JazzCore/ctrlp-cmatcher', { 'do': './install.s
 Plug 'dyng/ctrlsf.vim'
 Plug 'elzr/vim-json'
 Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoInstallBinaries' }
+Plug 'junegunn/vim-easy-align'
 Plug 'jesseschalken/list-text-object'
+Plug 'kana/vim-textobj-user' | Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby' }
 Plug 'gsamokovarov/vim-ruby-heredoc-syntax', { 'for': 'ruby' }
-Plug 'kana/vim-textobj-user'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'morhetz/gruvbox'| Plug 'reedes/vim-thematic'
-Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby' }
 Plug 'reedes/vim-textobj-sentence'
 Plug 'rstacruz/vim-closer'
 Plug 'scrooloose/nerdtree' | Plug 'jistr/vim-nerdtree-tabs'
@@ -697,15 +697,11 @@ nnoremap <Leader>t :ThematicNext<CR>
 nnoremap <Leader>f gqap
 vnoremap <Leader>f gq
 
-" Align commands. Ripped off @StanAngeloff.
-nnoremap <Leader>a= :Tabularize /=<CR>
-vnoremap <Leader>a= m[om]:Tabularize /=<CR>`]V`[
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
 
-nnoremap <Leader>a> :Tabularize /=><CR>
-vnoremap <Leader>a> m[om]:Tabularize /=><CR>`]V`[
-
-nnoremap <Leader>a: :Tabularize /:\zs/l0l1<CR>
-vnoremap <Leader>a: m[om]:Tabularize /:\zs/l0l1<CR>`]V`[
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
 
 " Have a saner ESCAPE in INSERT mode. Don't try to map those in VISUAL mode or
 " you'll get a nasty delay if you type {j,k}.
