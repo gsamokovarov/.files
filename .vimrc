@@ -411,10 +411,6 @@ let g:ycm_confirm_extra_conf=0
 let g:ycm_autoclose_preview_window_after_completion=1
 " }}}
 
-" {{{ Eclim
-let g:EclimCompletionMethod='omnifunc'
-" }}}
-
 " {{{ CtrlSF
 " Show results as a split to the bottom, not to the left.
 let g:ctrlsf_position='bottom'
@@ -440,15 +436,6 @@ let g:gutentags_tagfile='.tags'
 
 " Use ripper-tags to generate tags for Ruby.
 let g:gutentags_ctags_executable_ruby='ripper-tags'
-" }}}
-
-" {{{ Neomake
-let g:neomake_error_sign={ 'text': '~' }
-let g:neomake_warning_sign={ 'text': '~' }
-let g:neomake_message_sign={ 'text': '~' }
-let g:neomake_informational_sign={ 'text': '~' }
-
-let g:neomake_verbose=0
 " }}}
 
 " {{{ Ruby
@@ -543,8 +530,7 @@ if has('autocmd')
         \ set iskeyword+=:
 
   autocmd Filetype go
-        \ set noexpandtab tabstop=4 shiftwidth=4 softtabstop=4 |
-        \ autocmd! BufWritePost * Neomake
+        \ set noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
 
   autocmd FileType javascript
         \ set omnifunc=javascriptcomplete#Complete
