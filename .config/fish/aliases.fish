@@ -41,6 +41,7 @@ abbr -a rc rails console
 abbr -a rs rails server
 abbr -a rials rails
 abbr -a riasl rails
+abbr -a raisl rails
 
 # Git subcommands shortcuts.
 abbr -a gc git commit
