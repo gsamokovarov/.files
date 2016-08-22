@@ -22,7 +22,7 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'AndrewRadev/switch.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'bogado/file-line'
-Plug 'ctrlpvim/ctrlp.vim' | Plug 'JazzCore/ctrlp-cmatcher', { 'do': './install.sh' }
+Plug 'ctrlpvim/ctrlp.vim' | Plug 'nixprime/cpsm', { 'do': './install.sh' }
 Plug 'dyng/ctrlsf.vim'
 Plug 'elzr/vim-json'
 Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoInstallBinaries' }
@@ -375,7 +375,7 @@ let g:gitgutter_eager = 0
 " Make CtrlPMixed the default command.
 let g:ctrlp_cmd="CtrlPMixed"
 
-" Use speedier git-list-files and mercurial alternatives to listing files in a
+" Use speedier git-ls-files and mercurial alternatives to listing files in a
 " folder when possible and fall back to ag otherwise.
 let g:ctrlp_user_command={
     \ 'types': {
@@ -385,14 +385,15 @@ let g:ctrlp_user_command={
     \ 'fallback': 'ag %s -l --nocolor -g --ignore=vendor --ignore=node_modules --ignore=.bundle""'
     \ }
 
-" Use the C matcher function provided by ctrlp-cmatcher.
-let g:ctrlp_match_func={'match': 'matcher#cmatch'}
+" Use the C matcher function provided by cpsm.
+let g:ctrlp_match_func={'match': 'cpsm#CtrlPMatch'}
 
 " Use caching to speed CtrlP up.
 let g:ctrlp_use_caching=1
 let g:ctrlp_max_files=10000
 
-" Don't use MRU files. They don't fit my workflow and annoy me. A lot.
+" Don't use MRU files. They don't fit into my workflow and annoy the shit out
+" of me. A lot.
 let g:ctrlp_mruf_max = 0
 " }}}
 
