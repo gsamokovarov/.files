@@ -308,8 +308,8 @@ let NERDTreeAutoDeleteBuffer=1
 " Hijack Netrw even though I don't use the drawer approach anymore.
 let NERDTreeHijackNetrw=1
 
-let g:NERDTreeDirArrowExpandable = ''
-let g:NERDTreeDirArrowCollapsible = ''
+let g:NERDTreeDirArrowExpandable = '+'
+let g:NERDTreeDirArrowCollapsible = '-'
 
 " Ripping off Stani (@StanAngeloff). Again :D
 let g:nerdtree_tabs_open_on_new_tab=0
