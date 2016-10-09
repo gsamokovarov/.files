@@ -292,6 +292,11 @@ let g:ruby_path="/usr/bin/ruby"
 
 " {{{ Plugin Settings
 
+" {{{ VimFiler
+" Replace netrw with vimfiler.
+let g:vimfiler_as_default_explorer=1
+" }}}
+
 " {{{ SplitJoin
 " Clear the default splitjoin mappings.
 let g:splitjoin_split_mapping=''
