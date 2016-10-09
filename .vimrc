@@ -34,7 +34,7 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'morhetz/gruvbox'| Plug 'reedes/vim-thematic'
 Plug 'reedes/vim-textobj-sentence'
 Plug 'rstacruz/vim-closer'
-Plug 'scrooloose/nerdtree' | Plug 'jistr/vim-nerdtree-tabs'
+Plug 'Shougo/unite.vim' | Plug 'gsamokovarov/vimfiler.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tomtom/tcomment_vim'
@@ -291,74 +291,6 @@ let g:ruby_path="/usr/bin/ruby"
 " }}}
 
 " {{{ Plugin Settings
-
-" {{{ NERDTree
-" Ignore tilda editor leftovers and python junk in the NERDTree. Keep those as
-" NERDTree seem not to respect wildignore"{{{
-let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$', '^.sass-cache$']"}}}
-
-" Use a minimal UI for the NERDTree. No wasted space on 'Press ? for help'
-" headers.
-let NERDTreeMinimalUI=1
-
-" Quit the NERDTree while opening files.
-let NERDTreeQuitOnOpen=1
-let NERDTreeAutoDeleteBuffer=1
-
-" Hijack Netrw even though I don't use the drawer approach anymore.
-let NERDTreeHijackNetrw=1
-
-let g:NERDTreeDirArrowExpandable = '+'
-let g:NERDTreeDirArrowCollapsible = '-'
-
-" Ripping off Stani (@StanAngeloff). Again :D
-let g:nerdtree_tabs_open_on_new_tab=0
-let g:nerdtree_tabs_focus_on_files=1
-let g:nerdtree_tabs_open_on_gui_startup=0
-
-function! CloseNERDTreeInTab(i)
-  let l:me = tabpagenr()
-  let l:previous_ei = &ei
-  set ei=all
-
-  exec 'tabnext ' . a:i
-  if g:NERDTree.IsOpen()
-    call g:NERDTree.Close()
-  endif
-  exec 'tabnext ' . l:me
-
-  let &ei = l:previous_ei
-endfunction
-
-function! ToggleNERDTree()
-  let l:me = tabpagenr()
-  for i in range(1, tabpagenr('$'))
-    if i != l:me
-      call CloseNERDTreeInTab(i)
-    endif
-  endfor
-
-  " If NERDTree is visible and inactive in the current tab, focus.
-  if (g:NERDTree.ExistsForTab() && g:NERDTree.GetWinNum() != -1) && ! g:NERDTree.ExistsForBuf()
-    execute 'silent! NERDTreeFocus'
-  else
-    execute 'silent! NERDTreeMirrorToggle'
-  endif
-endfunction
-
-" Make sure a NERDTree instance is mirrored for all tabs.
-" This is needed as if the buffer with the only NERDTree instance is closed,
-" the state is reset for the next mirror.
-if has('autocmd')
-  " Silently open and immediately close a NERDTree.
-  autocmd TabEnter * if !exists('t:hasNERDTree')
-        \ |   let t:hasNERDTree=1
-        \ |   execute 'silent! NERDTreeMirrorOpen'
-        \ |   execute 'silent! NERDTreeMirrorToggle'
-        \ | endif
-
-endif
-" }}}
 
 " {{{ SplitJoin
 " Clear the default splitjoin mappings.
@@ -632,9 +564,9 @@ nmap <Left> N
 nmap <Down>  n
 nmap <Right> n
 
-nnoremap <C-\> :silent! call JumpToTagInSplit()<cr>
+nnoremap <C-\> :silent! call JumpToTagInSplit()<CR>
 
-nnoremap <silent> <C-m> :call ToggleNERDTree()<CR>
+nnoremap <silent> <C-m> :VimFiler -toggle<CR>
 
 " Navigate through windows with Tab and Shift-Tab.
 nnoremap <Tab> <C-w><C-w>
