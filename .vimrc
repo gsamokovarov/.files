@@ -293,6 +293,9 @@ let g:ruby_path="/usr/bin/ruby"
 " {{{ Plugin Settings
 
 " {{{ VimFiler
+" Disable netrw.
+let g:loaded_netrwPlugin=1
+
 " Replace netrw with vimfiler.
 let g:vimfiler_as_default_explorer=1
 " }}}
