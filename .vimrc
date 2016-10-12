@@ -574,7 +574,7 @@ nmap <Right> n
 
 nnoremap <C-\> :silent! call JumpToTagInSplit()<CR>
 
-nnoremap <silent> <C-m> :VimFiler -toggle<CR>
+nnoremap <silent> <C-m> :VimFilerExplorer -toggle -force-hide<CR>
 
 " Navigate through windows with Tab and Shift-Tab.
 nnoremap <Tab> <C-w><C-w>
