@@ -430,8 +430,7 @@ let g:thematic#defaults={
     \ }
 
 " Blend the sign column background.
-let g:gruvbox_sign_column='dark0'
-let g:gruvbox_contrast_dark='soft'
+let g:gruvbox_sign_column='light0'
 
 " Use 256 colors everywhere.
 set t_Co=256
