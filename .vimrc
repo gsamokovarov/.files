@@ -20,21 +20,23 @@ call plug#begin(expand('~/.vim/bundle/'))
 
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'AndrewRadev/switch.vim'
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'Shougo/unite.vim' | Plug 'gsamokovarov/vimfiler.vim'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'airblade/vim-gitgutter'
 Plug 'bogado/file-line'
 Plug 'ctrlpvim/ctrlp.vim' | Plug 'nixprime/cpsm', { 'do': './install.sh' }
 Plug 'dyng/ctrlsf.vim'
 Plug 'elzr/vim-json'
 Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoInstallBinaries' }
-Plug 'junegunn/vim-easy-align'
-Plug 'jesseschalken/list-text-object'
-Plug 'kana/vim-textobj-user' | Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby' }
 Plug 'gsamokovarov/vim-ruby-heredoc-syntax', { 'for': 'ruby' }
+Plug 'jesseschalken/list-text-object'
+Plug 'junegunn/vim-easy-align'
+Plug 'kana/vim-textobj-user' | Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby' }
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'morhetz/gruvbox'| Plug 'reedes/vim-thematic'
 Plug 'reedes/vim-textobj-sentence'
 Plug 'rstacruz/vim-closer'
-Plug 'Shougo/unite.vim' | Plug 'gsamokovarov/vimfiler.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tomtom/tcomment_vim'
@@ -46,7 +48,6 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 
 " Tell vim-plug to not expect any more bundles.
 call plug#end()
