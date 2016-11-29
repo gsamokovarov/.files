@@ -494,8 +494,10 @@ if has('autocmd')
   autocmd Filetype go
         \ set noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
 
-  autocmd FileType javascript
-        \ set omnifunc=javascriptcomplete#Complete
+  autocmd FileType javascript,typescript,jsx,tsx
+        \ set omnifunc=javascriptcomplete#Complete |
+        \ let b:closer = 1 |
+        \ let b:closer_flags = '([{'
 
   autocmd FileType coffee
         \ set omnifunc=coffeecomplete#Complete
