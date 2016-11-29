@@ -96,7 +96,11 @@ function git
 end
 
 function vim
-  command vim -p $argv 2>/dev/null
+  if which nvim >/dev/null
+    command nvim -p $argv 2>/dev/null
+  else
+    command vim -p $argv 2>/dev/null
+  end
 end
 
 # Autocomplete the tags and branches as commands. The git function lets you do
