@@ -24,6 +24,7 @@ Plug 'HerringtonDarkholme/yats.vim'
 Plug 'Shougo/unite.vim' | Plug 'gsamokovarov/vimfiler.vim'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'airblade/vim-gitgutter'
+Plug 'alvan/vim-closetag'
 Plug 'bogado/file-line'
 Plug 'ctrlpvim/ctrlp.vim' | Plug 'nixprime/cpsm', { 'do': './install.sh' }
 Plug 'dyng/ctrlsf.vim'
@@ -401,6 +402,10 @@ let g:gutentags_ctags_executable_ruby='ripper-tags'
 " {{{ Ruby
 let ruby_minlines=100
 let ruby_spellcheck_strings=0
+" }}}
+
+" {{{ Closetag
+let g:closetag_filenames='*.html,*.html.erb,*.xhtml,*.phtml'
 " }}}
 
 " }}}
