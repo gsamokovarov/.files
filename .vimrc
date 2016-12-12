@@ -20,6 +20,7 @@ call plug#begin(expand('~/.vim/bundle/'))
 
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'AndrewRadev/switch.vim'
+Plug 'ElmCast/elm-vim'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'Shougo/unite.vim' | Plug 'gsamokovarov/vimfiler.vim'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
@@ -405,6 +406,10 @@ let ruby_spellcheck_strings=0
 
 " {{{ Closetag
 let g:closetag_filenames='*.html,*.html.erb,*.xhtml,*.phtml'
+" }}}
+
+" {{{ Elm
+let g:elm_format_autosave=1
 " }}}
 
 " }}}
