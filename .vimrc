@@ -40,6 +40,7 @@ Plug 'morhetz/gruvbox'| Plug 'reedes/vim-thematic'
 Plug 'reedes/vim-textobj-sentence'
 Plug 'rstacruz/vim-closer'
 Plug 'sheerun/vim-polyglot'
+Plug 'slashmili/alchemist.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-endwise', { 'for': 'ruby' }
