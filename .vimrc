@@ -370,6 +370,11 @@ let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf=0
 
 let g:ycm_autoclose_preview_window_after_completion=1
+
+" Make Elm great again!
+let g:ycm_semantic_triggers={
+      \ 'elm' : ['.'],
+      \}
 " }}}
 
 " {{{ CtrlSF
@@ -411,6 +416,7 @@ let g:closetag_filenames='*.html,*.html.erb,*.xhtml,*.phtml'
 
 " {{{ Elm
 let g:elm_format_autosave=1
+let g:elm_format_fail_silently=1
 " }}}
 
 " }}}
