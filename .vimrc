@@ -21,7 +21,7 @@ call plug#begin(expand('~/.vim/bundle/'))
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'AndrewRadev/switch.vim'
 Plug 'ElmCast/elm-vim'
-Plug 'HerringtonDarkholme/yats.vim'
+Plug 'HerringtonDarkholme/yats.vim', { 'for': 'typescript' }
 Plug 'Shougo/unite.vim' | Plug 'gsamokovarov/vimfiler.vim'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'airblade/vim-gitgutter'
@@ -40,7 +40,7 @@ Plug 'morhetz/gruvbox'| Plug 'reedes/vim-thematic'
 Plug 'reedes/vim-textobj-sentence'
 Plug 'rstacruz/vim-closer'
 Plug 'sheerun/vim-polyglot'
-Plug 'slashmili/alchemist.vim'
+Plug 'slashmili/alchemist.vim', { 'for': 'elixir' }
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-endwise', { 'for': 'ruby' }
