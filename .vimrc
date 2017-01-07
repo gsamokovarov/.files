@@ -23,7 +23,7 @@ Plug 'AndrewRadev/switch.vim'
 Plug 'ElmCast/elm-vim'
 Plug 'HerringtonDarkholme/yats.vim', { 'for': 'typescript' }
 Plug 'Shougo/unite.vim' | Plug 'gsamokovarov/vimfiler.vim'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'airblade/vim-gitgutter'
 Plug 'alvan/vim-closetag'
 Plug 'bogado/file-line'
@@ -362,19 +362,11 @@ let g:ctrlp_mruf_max = 0
 let g:litecorrect#typographic=1
 " }}}
 
-" {{{ YouCompleteMe
-" Let YouCompleteMe load candidates from the tags file.
-let g:ycm_collect_identifiers_from_tags_files=1
+" {{{ Deoplete.nvim
+let g:deoplete#enable_at_startup=1
 
-let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
-let g:ycm_confirm_extra_conf=0
-
-let g:ycm_autoclose_preview_window_after_completion=1
-
-" Make Elm great again!
-let g:ycm_semantic_triggers={
-      \ 'elm' : ['.'],
-      \}
+" Close the scratch window automagically.
+autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 " }}}
 
 " {{{ CtrlSF
@@ -617,7 +609,10 @@ nnoremap <S-Tab> <C-w><C-W>
 
 " I'm used to the fish shell and auto-completing suggestions with Ctrl-e.
 " Remapping it to Tab does the job for YouCompleteMe.
-imap <C-E> <Tab>
+" imap <C-E> <Tab>
+
+" Make Tab/Ctrl-E do a C-n for Deoplete.
+inoremap <Expr><C-e> pumvisible() ? "\<C-n>" : "\<Tab>"
 
 " Go to the m marked spot. Its quite easier to type mm and when needing to go
 " back, `` will do the job. The default `` behaviour isn't useful for me.
