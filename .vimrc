@@ -612,7 +612,7 @@ nnoremap <S-Tab> <C-w><C-W>
 " imap <C-E> <Tab>
 
 " Make Tab/Ctrl-E do a C-n for Deoplete.
-inoremap <Expr><C-e> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr><C-e> pumvisible() ? "\<C-n>" : "\<Tab>"
 
 " Go to the m marked spot. Its quite easier to type mm and when needing to go
 " back, `` will do the job. The default `` behaviour isn't useful for me.
