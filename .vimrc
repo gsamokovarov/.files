@@ -33,11 +33,9 @@ Plug 'dyng/ctrlsf.vim'
 Plug 'elzr/vim-json'
 Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoInstallBinaries' }
 Plug 'gsamokovarov/vim-ruby-heredoc-syntax', { 'for': 'ruby' }
-Plug 'jesseschalken/list-text-object'
 Plug 'junegunn/vim-easy-align'
-Plug 'kana/vim-textobj-user' | Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby' }
 Plug 'ludovicchabant/vim-gutentags'
-Plug 'morhetz/gruvbox'| Plug 'reedes/vim-thematic'
+Plug 'reedes/vim-thematic' | Plug 'morhetz/gruvbox'
 Plug 'reedes/vim-textobj-sentence'
 Plug 'rstacruz/vim-closer'
 Plug 'sheerun/vim-polyglot'
