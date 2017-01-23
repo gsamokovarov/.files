@@ -35,7 +35,7 @@ Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoInstallBinaries' }
 Plug 'gsamokovarov/vim-ruby-heredoc-syntax', { 'for': 'ruby' }
 Plug 'junegunn/vim-easy-align'
 Plug 'ludovicchabant/vim-gutentags'
-Plug 'reedes/vim-thematic' | Plug 'morhetz/gruvbox'
+Plug 'morhetz/gruvbox' | Plug 'reedes/vim-thematic'
 Plug 'reedes/vim-textobj-sentence'
 Plug 'rstacruz/vim-closer'
 Plug 'sheerun/vim-polyglot'
@@ -423,6 +423,10 @@ let g:elm_format_fail_silently=1
 
 " Enable true colors for neovim.
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+
+" Set a colorscheme here, so we avoid the initial unstyled flash.
+colorscheme gruvbox
+set background=light
 
 " Define my common used thematic themes.
 let g:thematic#themes={
