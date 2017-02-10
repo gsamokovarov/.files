@@ -20,9 +20,9 @@ call plug#begin(expand('~/.vim/bundle/'))
 
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'AndrewRadev/switch.vim'
-Plug 'ElmCast/elm-vim', { 'for': 'elm' }
-Plug 'slashmili/alchemist.vim', { 'for': 'elixir' }
-Plug 'HerringtonDarkholme/yats.vim', { 'for': 'typescript' }
+Plug 'ElmCast/elm-vim'
+Plug 'slashmili/alchemist.vim'
+Plug 'HerringtonDarkholme/yats.vim'
 Plug 'Shougo/unite.vim' | Plug 'gsamokovarov/vimfiler.vim'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'airblade/vim-gitgutter'
@@ -31,8 +31,8 @@ Plug 'bogado/file-line'
 Plug 'ctrlpvim/ctrlp.vim' | Plug 'nixprime/cpsm', { 'do': './install.sh' }
 Plug 'dyng/ctrlsf.vim'
 Plug 'elzr/vim-json'
-Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoInstallBinaries' }
-Plug 'gsamokovarov/vim-ruby-heredoc-syntax', { 'for': 'ruby' }
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+Plug 'gsamokovarov/vim-ruby-heredoc-syntax'
 Plug 'junegunn/vim-easy-align'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'morhetz/gruvbox' | Plug 'reedes/vim-thematic'
@@ -41,9 +41,9 @@ Plug 'rstacruz/vim-closer'
 Plug 'sheerun/vim-polyglot'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tomtom/tcomment_vim'
-Plug 'tpope/vim-endwise', { 'for': ['ruby', 'elixir'] }
+Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rails', { 'for': 'ruby' }
+Plug 'tpope/vim-rails'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
@@ -387,6 +387,7 @@ let g:markdown_fenced_languages=['coffee', 'css', 'erb=eruby', 'javascript', 'js
 " }}}
 
 " {{{ Go
+let g:polyglot_disabled=['go']
 let g:go_highlight_functions=1
 let g:go_highlight_methods=1
 let g:go_highlight_structs=1
