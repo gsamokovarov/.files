@@ -34,9 +34,8 @@ Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'gsamokovarov/vim-ruby-heredoc-syntax'
 Plug 'junegunn/vim-easy-align'
 Plug 'ludovicchabant/vim-gutentags'
-Plug 'morhetz/gruvbox'
-Plug 'reedes/vim-colors-pencil' | Plug 'reedes/vim-thematic'
-Plug 'reedes/vim-textobj-sentence'
+Plug 'reedes/vim-colors-pencil'
+Plug 'reedes/vim-thematic'
 Plug 'rstacruz/vim-closer'
 Plug 'sheerun/vim-polyglot'
 Plug 'terryma/vim-multiple-cursors'
@@ -209,6 +208,10 @@ set smartcase
 
 " Read Vim file specific options.
 set modeline
+
+" Start scrolling when you reach three lines before the end of the screen.
+" Helps with the neck pain.
+set scrolloff=3
 
 " Just indent manually with zf.
 set foldmethod=manual
@@ -450,9 +453,6 @@ let g:thematic#defaults={
     \ 'columns': 120,
     \ }
 
-" Blend the sign column background.
-" let g:gruvbox_sign_column='light0'
-
 " Use 256 colors everywhere.
 set t_Co=256
 
@@ -486,7 +486,7 @@ if has('gui_running')
     set columns=120
   endif
 
-  " Gruvbox for the UI. Looks really cool on it.
+  " Pencil for the UI. Looks really cool on it.
   let g:thematic#theme_name='pencil_light'
 else
   " Run the pencil theme on the terminal as well.
