@@ -21,7 +21,6 @@ call plug#begin(expand('~/.vim/bundle/'))
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'AndrewRadev/switch.vim'
 Plug 'ElmCast/elm-vim'
-Plug 'slashmili/alchemist.vim'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'Shougo/unite.vim' | Plug 'gsamokovarov/vimfiler.vim'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
@@ -35,7 +34,8 @@ Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'gsamokovarov/vim-ruby-heredoc-syntax'
 Plug 'junegunn/vim-easy-align'
 Plug 'ludovicchabant/vim-gutentags'
-Plug 'morhetz/gruvbox' | Plug 'reedes/vim-thematic'
+Plug 'morhetz/gruvbox'
+Plug 'reedes/vim-colors-pencil' | Plug 'reedes/vim-thematic'
 Plug 'reedes/vim-textobj-sentence'
 Plug 'rstacruz/vim-closer'
 Plug 'sheerun/vim-polyglot'
@@ -428,31 +428,30 @@ let g:elm_format_fail_silently=0
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 " Set a colorscheme here, so we avoid the initial unstyled flash.
-colorscheme gruvbox
+colorscheme pencil
 set background=light
 
 " Define my common used thematic themes.
 let g:thematic#themes={
-    \ 'gruvbox_light': {
-    \   'colorscheme': 'gruvbox',
+    \ 'pencil_light': {
+    \   'colorscheme': 'pencil',
     \   'background': 'light',
     \  },
-    \ 'gruvbox_dark': {
-    \   'colorscheme': 'gruvbox',
+    \ 'pencil_dark': {
+    \   'colorscheme': 'pencil',
     \   'background': 'dark',
     \ }
     \ }
 
 let g:thematic#defaults={
     \ 'typeface': 'Ubuntu Mono derivative Powerline',
-    \ 'font-size': 14,
-    \ 'sign-column-color-fix': 1,
+    \ 'font-size': 16,
     \ 'fullscreen-background-color-fix': 1,
     \ 'columns': 120,
     \ }
 
 " Blend the sign column background.
-let g:gruvbox_sign_column='light0'
+" let g:gruvbox_sign_column='light0'
 
 " Use 256 colors everywhere.
 set t_Co=256
@@ -488,10 +487,10 @@ if has('gui_running')
   endif
 
   " Gruvbox for the UI. Looks really cool on it.
-  let g:thematic#theme_name='gruvbox_light'
+  let g:thematic#theme_name='pencil_light'
 else
-  " Run the gruvbox theme on the terminal as well.
-  let g:thematic#theme_name='gruvbox_light'
+  " Run the pencil theme on the terminal as well.
+  let g:thematic#theme_name='pencil_light'
 endif
 
 " }}}
