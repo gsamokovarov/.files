@@ -34,8 +34,7 @@ Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'gsamokovarov/vim-ruby-heredoc-syntax'
 Plug 'junegunn/vim-easy-align'
 Plug 'ludovicchabant/vim-gutentags'
-Plug 'reedes/vim-colors-pencil'
-Plug 'reedes/vim-thematic'
+Plug 'reedes/vim-colors-pencil' | Plug 'reedes/vim-thematic'
 Plug 'rstacruz/vim-closer'
 Plug 'sheerun/vim-polyglot'
 Plug 'terryma/vim-multiple-cursors'
@@ -430,9 +429,12 @@ let g:elm_format_fail_silently=0
 " Enable true colors for neovim.
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
+" Use 256 colors everywhere.
+set t_Co=256
+
 " Set a colorscheme here, so we avoid the initial unstyled flash.
-colorscheme pencil
 set background=light
+colorscheme pencil
 
 " Define my common used thematic themes.
 let g:thematic#themes={
@@ -452,9 +454,6 @@ let g:thematic#defaults={
     \ 'fullscreen-background-color-fix': 1,
     \ 'columns': 120,
     \ }
-
-" Use 256 colors everywhere.
-set t_Co=256
 
 " The terminal Vim on OSX is slow as f*ck. I don't believe its iTerm that
 " is bringing the slownes, either. Someone... HALP!
