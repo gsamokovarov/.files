@@ -21,3 +21,10 @@ rescue LoadError
   # Well, I tried.
 end
 
+def h(value)
+  value.to_s(16)
+end
+
+def b(value)
+  value.to_s(2)
+end
