@@ -71,6 +71,9 @@ abbr -a vag vagrant
 abbr -a vup vagrant up
 abbr -a vpr vagrant provision
 
+# Direnv is used quite often around here.
+abbr -a da direnv allow
+
 # Use hub for git with a twist -- if the first argument is an existing branch
 # then switch to it.
 function git
