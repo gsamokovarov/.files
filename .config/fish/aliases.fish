@@ -65,6 +65,7 @@ abbr -a bu bundle update
 abbr -a br bundle exec rails
 abbr -a bo bundle open
 abbr -a bi bundle install
+abbr -a bam bundle exec middleman
 
 # Just don't, OK?
 abbr -a vag vagrant
