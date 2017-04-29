@@ -67,6 +67,9 @@ abbr -a bo bundle open
 abbr -a bi bundle install
 abbr -a bam bundle exec middleman
 
+# Make shortcuts.
+abbr -a mat make test
+
 # Just don't, OK?
 abbr -a vag vagrant
 abbr -a vup vagrant up
