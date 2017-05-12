@@ -63,6 +63,7 @@ abbr -a b bundle
 abbr -a be bundle exec
 abbr -a bu bundle update
 abbr -a br bundle exec rails
+abbr -a brat bundle exec rails test
 abbr -a bo bundle open
 abbr -a bi bundle install
 abbr -a bam bundle exec middleman
