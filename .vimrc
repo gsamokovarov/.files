@@ -295,6 +295,22 @@ let g:ruby_path="/usr/bin/ruby"
 
 " {{{ Plugin Settings
 
+" {{{ DemoteFromLet
+
+" Turn rspec let{,!} calls into local variable declarations. This helps with
+" the converting specs from the bad style to the explicit one. It also helps
+" for the good minitest conversions.
+function! DemoteFromLet()
+  :.s/let!\?(:\(\w\+\)) { \(.*\) }$/\1 = \2/
+  :normal ==
+endfunction
+
+command! DemoteFromLet :call DemoteFromLet()
+
+nnoremap <Leader>l <Esc>:DemoteFromLet<CR>
+vnoremap <Leader>l <Esc>:DemoteFromLet<CR>
+" }}}
+
 " {{{ VimFiler
 " Disable netrw.
 let g:loaded_netrwPlugin=1
