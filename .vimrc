@@ -301,14 +301,28 @@ let g:ruby_path="/usr/bin/ruby"
 " the converting specs from the bad style to the explicit one. It also helps
 " for the good minitest conversions.
 function! DemoteFromLet()
-  :.s/let!\?(:\(\w\+\)) { \(.*\) }$/\1 = \2/
+  try
+    :.s/let!\?(:\(\w\+\)) { \(.*\) }$/\1 = \2/
+  catch
+  endtry
+
+  try
+    :.s/subject { \(.*\) }$/\1/
+  catch
+  endtry
+
+  try
+    :.s/before { \(.*\) }$/\1/
+  catch
+  endtry
+
   :normal ==
 endfunction
 
 command! DemoteFromLet :call DemoteFromLet()
 
-nnoremap <Leader>l <Esc>:DemoteFromLet<CR>
-vnoremap <Leader>l <Esc>:DemoteFromLet<CR>
+nnoremap dl <ESC>:DemoteFromLet<CR>
+vnoremap dl <ESC>:DemoteFromLet<CR>
 " }}}
 
 " {{{ VimFiler
@@ -524,7 +538,9 @@ if has('autocmd')
         \ set iskeyword+=?,! |
         " Use the older RegExp engine as Ruby syntax is painfully slow with
         " the current one.
-        \ setlocal re=1
+        \ setlocal re=1 |
+        \ nnoremap dl <ESC>:DemoteFromLet<CR> |
+        \ vnoremap dl <ESC>:DemoteFromLet<CR>
 
   autocmd FileType puppet
         \ set iskeyword+=:
