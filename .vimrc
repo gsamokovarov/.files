@@ -295,6 +295,10 @@ let g:ruby_path="/usr/bin/ruby"
 
 " {{{ Plugin Settings
 
+" {{{ Sleuth
+let g:sleuth_automatic=1
+" }}}
+
 " {{{ DemoteFromLet
 
 " Turn rspec let{,!} calls into local variable declarations. This helps with
