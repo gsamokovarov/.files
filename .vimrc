@@ -23,7 +23,8 @@ Plug 'AndrewRadev/switch.vim'
 Plug 'ElmCast/elm-vim'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'Shougo/unite.vim' | Plug 'gsamokovarov/vimfiler.vim'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'roxma/nvim-completion-manager'
+Plug 'roxma/ncm-rct-complete'
 Plug 'airblade/vim-gitgutter'
 Plug 'alvan/vim-closetag'
 Plug 'bogado/file-line'
@@ -46,6 +47,10 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
+
+if !has('nvim')
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
 
 " Tell vim-plug to not expect any more bundles.
 call plug#end()
@@ -394,21 +399,6 @@ let g:ctrlp_mruf_max = 0
 " {{{ Litecorrect
 " Don't use typographic quotes. Dunno how to type them :D
 let g:litecorrect#typographic=1
-" }}}
-
-" {{{ YouCompleteMe
-" Let YouCompleteMe load candidates from the tags file.
-let g:ycm_collect_identifiers_from_tags_files=1
-
-let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
-let g:ycm_confirm_extra_conf=0
-
-let g:ycm_autoclose_preview_window_after_completion=1
-
-" Make Elm great again!
-let g:ycm_semantic_triggers={
-      \ 'elm' : ['.'],
-      \}
 " }}}
 
 " {{{ CtrlSF
