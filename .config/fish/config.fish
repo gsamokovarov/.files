@@ -31,7 +31,7 @@ set -x SHELL (which fish)
 
 # Help out programs spawning editors based on $EDITOR. The same for pagers,
 # just use less for them.
-set -x EDITOR vim
+set -x EDITOR nvim
 set -x PAGER less
 set -x BROWSER open
 
