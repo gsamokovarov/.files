@@ -23,8 +23,6 @@ Plug 'AndrewRadev/switch.vim'
 Plug 'ElmCast/elm-vim'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'Shougo/unite.vim' | Plug 'gsamokovarov/vimfiler.vim'
-Plug 'roxma/nvim-completion-manager'
-Plug 'roxma/ncm-rct-complete'
 Plug 'airblade/vim-gitgutter'
 Plug 'alvan/vim-closetag'
 Plug 'bogado/file-line'
@@ -33,9 +31,12 @@ Plug 'dyng/ctrlsf.vim'
 Plug 'elzr/vim-json'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'gsamokovarov/vim-ruby-heredoc-syntax'
+Plug 'janko-m/vim-test'
 Plug 'junegunn/vim-easy-align'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'reedes/vim-colors-pencil' | Plug 'reedes/vim-thematic'
+Plug 'roxma/ncm-rct-complete'
+Plug 'roxma/nvim-completion-manager'
 Plug 'rstacruz/vim-closer'
 Plug 'sheerun/vim-polyglot'
 Plug 'terryma/vim-multiple-cursors'
@@ -299,6 +300,12 @@ let g:ruby_path="/usr/bin/ruby"
 " }}}
 
 " {{{ Plugin Settings
+
+" {{{ VimTest
+nnoremap <Leader>t :TestFile<CR>
+
+let test#strategy='neovim'
+" }}}
 
 " {{{ Sleuth
 let g:sleuth_automatic=1
@@ -687,9 +694,6 @@ nnoremap <C-S>o :CtrlSFOpen<CR>
 " quit.
 nnoremap <silent> Q :call WriteAndOrQuit()<CR>
 nnoremap <silent> Я :call WriteAndOrQuit()<CR>
-
-" Cycle through thematic themes.
-nnoremap <Leader>t :ThematicNext<CR>
 
 " Format a paragraph to fit in `textwidth`.
 nnoremap <Leader>f gqap
