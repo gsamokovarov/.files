@@ -38,6 +38,7 @@ Plug 'reedes/vim-colors-pencil' | Plug 'reedes/vim-thematic'
 Plug 'roxma/ncm-rct-complete'
 Plug 'roxma/nvim-completion-manager'
 Plug 'rstacruz/vim-closer'
+Plug 'sebdah/vim-delve'
 Plug 'sheerun/vim-polyglot'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tomtom/tcomment_vim'
@@ -302,8 +303,6 @@ let g:ruby_path="/usr/bin/ruby"
 " {{{ Plugin Settings
 
 " {{{ VimTest
-nnoremap <Leader>t :TestFile<CR>
-
 let test#strategy='neovim'
 " }}}
 
@@ -540,8 +539,6 @@ if has('autocmd')
         " Use the older RegExp engine as Ruby syntax is painfully slow with
         " the current one.
         \ setlocal re=1 |
-        \ nnoremap dl <ESC>:DemoteFromLet<CR> |
-        \ vnoremap dl <ESC>:DemoteFromLet<CR>
 
   autocmd FileType puppet
         \ set iskeyword+=:
@@ -704,6 +701,12 @@ xmap ga <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
+
+" Run the current test file.
+nnoremap <Leader>t :TestFile<CR>
+
+" Show info about the signature of the object underneath the cursor.
+nnoremap <Leader>i :GoInfo<CR>
 
 " Have a saner ESCAPE in INSERT mode. Don't try to map those in VISUAL mode or
 " you'll get a nasty delay if you type {j,k}.
