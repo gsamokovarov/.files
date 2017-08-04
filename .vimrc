@@ -369,7 +369,7 @@ let g:splitjoin_join_mapping=''
 " }}}
 
 " {{{ GitGutter
-let g:gitgutter_sign_column_always=1
+set signcolumn=yes
 
 " Trade speed for accuracy.
 let g:gitgutter_realtime = 0
