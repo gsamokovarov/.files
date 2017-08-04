@@ -34,7 +34,7 @@ Plug 'gsamokovarov/vim-ruby-heredoc-syntax'
 Plug 'janko-m/vim-test'
 Plug 'junegunn/vim-easy-align'
 Plug 'ludovicchabant/vim-gutentags'
-Plug 'reedes/vim-colors-pencil' | Plug 'reedes/vim-thematic'
+Plug 'reedes/vim-colors-pencil'
 Plug 'roxma/ncm-rct-complete'
 Plug 'roxma/nvim-completion-manager'
 Plug 'rstacruz/vim-closer'
@@ -369,8 +369,6 @@ let g:splitjoin_join_mapping=''
 " }}}
 
 " {{{ GitGutter
-set signcolumn=yes
-
 " Trade speed for accuracy.
 let g:gitgutter_realtime = 0
 let g:gitgutter_eager = 0
@@ -379,16 +377,6 @@ let g:gitgutter_eager = 0
 " {{{ CtrlP
 " Make CtrlPMixed the default command.
 let g:ctrlp_cmd="CtrlPMixed"
-
-" Use speedier git-ls-files and mercurial alternatives to listing files in a
-" folder when possible and fall back to ag otherwise.
-let g:ctrlp_user_command={
-    \ 'types': {
-    \   1: ['.git', 'cd %s && git ls-files . -co --exclude-standard'],
-    \   2: ['.hg', 'hg --cwd %s locate -I .'],
-    \ },
-    \ 'fallback': 'ag %s -l --nocolor -g --ignore=vendor --ignore=node_modules --ignore=.bundle""'
-    \ }
 
 " Use the C matcher function provided by cpsm.
 let g:ctrlp_match_func={'match': 'cpsm#CtrlPMatch'}
@@ -469,27 +457,8 @@ set t_Co=256
 set background=light
 colorscheme pencil
 
-" Define my common used thematic themes.
-let g:thematic#themes={
-    \ 'pencil_light': {
-    \   'colorscheme': 'pencil',
-    \   'background': 'light',
-    \  },
-    \ 'pencil_dark': {
-    \   'colorscheme': 'pencil',
-    \   'background': 'dark',
-    \ }
-    \ }
-
-let g:thematic#defaults={
-    \ 'typeface': 'Ubuntu Mono derivative Powerline',
-    \ 'font-size': 16,
-    \ 'fullscreen-background-color-fix': 1,
-    \ 'columns': 120,
-    \ }
-
 " The terminal Vim on OSX is slow as f*ck. I don't believe its iTerm that
-" is bringing the slownes, either. Someone... HALP!
+" is bringing the slowness, either. Someone... HALP!
 if has('gui_running')
   " If we are running in a gui like GVim, make sure to hide every annoying UI
   " piece, by default. In MacVim I like the graphical tabs, but those actually
@@ -505,26 +474,13 @@ if has('gui_running')
     " with the background color in MacVim.
     set fuoptions=maxvert,maxhorz
 
-    " Enable a bit of transperancy for the MacVim window. Looks pretty cool.
+    " Enable a bit of transparency for the MacVim window. Looks pretty cool.
     set transparency=1
 
     " The focus follows the mouse. No need to click on a window for that.
     set mousefocus
-
-    " Don't let thematic spawn the window to its fullest. Use 120 columns, which
-    " are enough for NERDTree, Gundo, etc. and text around 80 chars. On the
-    " other hand, if I don't follow the 79 char rule for that piece of code,
-    " 120 chars are a good measurement for a long line.
-    set columns=120
   endif
-
-  " Pencil for the UI. Looks really cool on it.
-  let g:thematic#theme_name='pencil_light'
-else
-  " Run the pencil theme on the terminal as well.
-  let g:thematic#theme_name='pencil_light'
 endif
-
 " }}}
 
 " {{{ Auto Commands
