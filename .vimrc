@@ -39,6 +39,7 @@ Plug 'roxma/ncm-rct-complete'
 Plug 'roxma/nvim-completion-manager'
 Plug 'rstacruz/vim-closer'
 Plug 'sebdah/vim-delve'
+Plug 'junegunn/seoul256.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tomtom/tcomment_vim'
@@ -372,6 +373,7 @@ let g:splitjoin_join_mapping=''
 " Trade speed for accuracy.
 let g:gitgutter_realtime = 0
 let g:gitgutter_eager = 0
+let g:gitgutter_override_sign_column_highlight = 0
 " }}}
 
 " {{{ CtrlP
@@ -447,15 +449,10 @@ let g:elm_format_fail_silently=0
 
 " {{{ Style Settings
 
-" Enable true colors for neovim.
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-
-" Use 256 colors everywhere.
-set t_Co=256
-
 " Set a colorscheme here, so we avoid the initial unstyled flash.
 set background=light
-colorscheme pencil
+colorscheme seoul256-light
+highlight SignColumn ctermbg=NONE guibg=NONE
 
 " The terminal Vim on OSX is slow as f*ck. I don't believe its iTerm that
 " is bringing the slowness, either. Someone... HALP!
