@@ -24,7 +24,6 @@ Plug 'ElmCast/elm-vim'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'Shougo/unite.vim' | Plug 'gsamokovarov/vimfiler.vim'
 Plug 'airblade/vim-gitgutter'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'alvan/vim-closetag'
 Plug 'bogado/file-line'
 Plug 'ctrlpvim/ctrlp.vim' | Plug 'nixprime/cpsm', { 'do': './install.sh' }
@@ -51,6 +50,10 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
+
+if !has('nvim')
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
 
 " Tell vim-plug to not expect any more bundles.
 call plug#end()
@@ -299,21 +302,6 @@ let g:ruby_path="/usr/bin/ruby"
 " }}}
 
 " {{{ Plugin Settings
-
-" {{{ YouCompleteMe
-" Let YouCompleteMe load candidates from the tags file.
-let g:ycm_collect_identifiers_from_tags_files=1
-
-" let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
-let g:ycm_confirm_extra_conf=0
-
-let g:ycm_autoclose_preview_window_after_completion=1
-
-" Make Elm great again!
-let g:ycm_semantic_triggers={
-      \ 'elm' : ['.'],
-      \}
-" }}}
 
 " {{{ VimTest
 let test#strategy='neovim'
@@ -617,10 +605,7 @@ nnoremap <Tab> <C-w><C-w>
 nnoremap <S-Tab> <C-w><C-W>
 
 " I'm used to the fish shell and auto-completing suggestions with Ctrl-e.
-" Remapping it to Tab does the job for YouCompleteMe.
-" imap <C-E> <Tab>
-
-" Make Tab/Ctrl-E do a C-n for Deoplete.
+" Make Tab/Ctrl-E do a C-n for completions.
 inoremap <expr><C-e> pumvisible() ? "\<C-n>" : "\<Tab>"
 
 " Go to the m marked spot. Its quite easier to type mm and when needing to go
