@@ -12,7 +12,7 @@ if filereadable(expand("~/.vimrc.local"))
 endif
 
 " Start installing plugins.
-call plug#begin(expand('~/.vim/bundle/'))
+call plug#begin(expand('~/.vim/plugged'))
 
 " }}}
 
@@ -32,14 +32,15 @@ Plug 'elzr/vim-json'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'gsamokovarov/vim-ruby-heredoc-syntax'
 Plug 'janko-m/vim-test'
+Plug 'junegunn/seoul256.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'ludovicchabant/vim-gutentags'
+Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
 Plug 'reedes/vim-colors-pencil'
 Plug 'roxma/ncm-rct-complete'
 Plug 'roxma/nvim-completion-manager'
 Plug 'rstacruz/vim-closer'
 Plug 'sebdah/vim-delve'
-Plug 'junegunn/seoul256.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tomtom/tcomment_vim'
@@ -50,10 +51,6 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
-
-if !has('nvim')
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
 
 " Tell vim-plug to not expect any more bundles.
 call plug#end()
