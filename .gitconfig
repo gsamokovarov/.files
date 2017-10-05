@@ -8,7 +8,7 @@
 	branches = branch -a
 	tags = tag -l
 	remotes = remote
-	sprout = checkout -b
+	sprout = checkout -B
 	switch = checkout
 	unstash = stash pop
 	forget = checkout -f
