@@ -20,6 +20,7 @@ call plug#begin(expand('~/.vim/plugged'))
 
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'AndrewRadev/switch.vim'
+Plug 'w0rp/ale'
 Plug 'ElmCast/elm-vim'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'Shougo/unite.vim' | Plug 'gsamokovarov/vimfiler.vim'
@@ -299,6 +300,20 @@ let g:ruby_path="/usr/bin/ruby"
 " }}}
 
 " {{{ Plugin Settings
+
+" {{{ ALE
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_enter = 0
+
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 1
+
+let g:ale_sign_column_always = 1
+let g:ale_sign_error = '>'
+let g:ale_sign_warning = '-'
+
+let g:ale_keep_list_window_open = 1
+" }}}
 
 " {{{ VimTest
 let test#strategy='neovim'
