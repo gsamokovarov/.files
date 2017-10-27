@@ -612,11 +612,9 @@ nmap <Left> N
 nmap <Down>  n
 nmap <Right> n
 
-nnoremap <C-\> :silent! call JumpToTagInSplit()<CR>
-
 nnoremap <silent> <C-m> :VimFiler -explorer -find -toggle -force-hide<CR>
 
-nnoremap <C-P> :FZF<CR>
+nnoremap <silent> <C-P> call fzf#vim#files('.', {'options': '--prompt ">> " --inline-info --no-color'})<CR>
 
 " Navigate through windows with Tab and Shift-Tab.
 nnoremap <Tab> <C-w><C-w>
