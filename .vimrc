@@ -30,14 +30,13 @@ Plug 'bogado/file-line'
 Plug 'dyng/ctrlsf.vim'
 Plug 'elzr/vim-json'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+Plug 'rakr/vim-one'
 Plug 'gsamokovarov/vim-ruby-heredoc-syntax'
 Plug 'janko-m/vim-test'
 Plug 'junegunn/fzf.vim'
-Plug 'junegunn/seoul256.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
-Plug 'reedes/vim-colors-pencil'
 Plug 'roxma/ncm-rct-complete'
 Plug 'roxma/nvim-completion-manager'
 Plug 'rstacruz/vim-closer'
@@ -402,7 +401,7 @@ let g:fzf_tags_command = 'ctags -R'
 " This is the default extra key bindings
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
-  \ 'ctrl-x': 'split',
+  \ 'ctrl-s': 'split',
   \ 'ctrl-v': 'vsplit' }
 
 let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --glob \!.git'
@@ -466,8 +465,15 @@ let g:elm_format_fail_silently=0
 " {{{ Style Settings
 
 " Set a colorscheme here, so we avoid the initial unstyled flash.
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+
+if (has("termguicolors"))
+	set termguicolors
+endif
+
 set background=light
-colorscheme seoul256-light
+colorscheme one
+
 highlight SignColumn ctermbg=NONE guibg=NONE
 
 " The terminal Vim on OSX is slow as f*ck. I don't believe its iTerm that
@@ -614,7 +620,7 @@ nmap <Right> n
 
 nnoremap <silent> <C-m> :VimFiler -explorer -find -toggle -force-hide<CR>
 
-nnoremap <silent> <C-P> call fzf#vim#files('.', {'options': '--prompt ">> " --inline-info --no-color'})<CR>
+nnoremap <silent> <C-P> :call fzf#vim#files('.', {'options': '--prompt ">> " --inline-info'})<CR>
 
 " Navigate through windows with Tab and Shift-Tab.
 nnoremap <Tab> <C-w><C-w>
