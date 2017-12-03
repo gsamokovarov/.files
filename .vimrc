@@ -472,6 +472,7 @@ if (has("termguicolors"))
 endif
 
 set background=light
+let g:one_allow_italics = 1
 colorscheme one
 
 highlight SignColumn ctermbg=NONE guibg=NONE
