@@ -29,11 +29,12 @@ alias cat ccat
 abbr -a v vim
 abbr -a vi vim
 
-# Shortcuts for rails, grunt, make, docker and git.
+# Shortcuts for common executables.
 abbr -a r rails
 abbr -a m make
 abbr -a d docker
 abbr -a g git
+abbr -a h heroku
 
 # Rails related shortcuts
 abbr -a rt rails test
