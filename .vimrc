@@ -30,13 +30,13 @@ Plug 'bogado/file-line'
 Plug 'dyng/ctrlsf.vim'
 Plug 'elzr/vim-json'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
-Plug 'rakr/vim-one'
 Plug 'gsamokovarov/vim-ruby-heredoc-syntax'
 Plug 'janko-m/vim-test'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
+Plug 'rakr/vim-one'
 Plug 'roxma/ncm-rct-complete'
 Plug 'roxma/nvim-completion-manager'
 Plug 'rstacruz/vim-closer'
@@ -58,6 +58,7 @@ call plug#end()
 " }}}
 
 " {{{ Functions
+
 function! WriteAndOrQuit()
   try
     execute "ZZ"
@@ -134,6 +135,7 @@ function! s:EnsureDirectoryExists(file)
     call mkdir(dir, 'p')
   endif
 endfunction
+
 " }}}
 
 " {{{ Builtin Settings
@@ -507,7 +509,7 @@ if has('autocmd')
         \ set iskeyword+=:
 
   autocmd Filetype go
-        \ set noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
+        \ set noexpandtab tabstop=2 shiftwidth=2 softtabstop=2
 
   autocmd FileType javascript,typescript,jsx,tsx
         \ set omnifunc=javascriptcomplete#Complete |
