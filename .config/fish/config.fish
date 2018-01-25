@@ -4,16 +4,20 @@
 set PATH ~/bin (brew --prefix)"/opt/coreutils/libexec/gnubin" /usr/local/bin /usr/local/sbin $PATH
 
 # Use my own .rbenv, I don't like what Boxen is doing.
-set PATH ~/.rbenv/bin ~/.rbenv/shims $PATH
+set PATH ~/.rbenv/bin $PATH
 
 # Setup GOPATH to .go and pit its bin folder in the regular $PATH.
 set -x GOPATH ~/.go
 set PATH $GOPATH/bin $PATH
 
-# Prepend the relative ./bin, so I can get binstubs and the like in the PATH
+# Include the relative ./bin, so I can get binstubs and the like in the PATH
 # automatically. The node modules binaries are also handy to have around. I
 # don't like installing global node packages.
-set PATH ./bin ./exe ./node_modules/.bin $PATH
+set PATH ./node_modules/.bin $PATH
+
+# Append ./bin, so we don't break the shell when binaries like `test` are
+# prepended before /usr/bin/test.
+set PATH $PATH ./bin ./exe
 
 # Don't show the greeting message on fish boot.
 set -x fish_greeting ''
