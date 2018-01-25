@@ -51,7 +51,6 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
-Plug 'w0rp/ale'
 
 " Tell vim-plug to not expect any more bundles.
 call plug#end()
@@ -300,20 +299,6 @@ let g:ruby_path="/usr/bin/ruby"
 " }}}
 
 " {{{ Plugin Settings
-
-" {{{ ALE
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_lint_on_enter = 0
-
-let g:ale_set_loclist = 0
-let g:ale_set_quickfix = 1
-
-let g:ale_sign_column_always = 1
-let g:ale_sign_error = '>'
-let g:ale_sign_warning = '-'
-
-let g:ale_keep_list_window_open = 1
-" }}}
 
 " {{{ VimTest
 let test#strategy='neovim'
