@@ -521,6 +521,7 @@ if has('autocmd')
 
   autocmd FileType html
         \ set omnifunc=htmlcomplete#Complete
+        \ set noexpandtab tabstop=2 shiftwidth=2 softtabstop=2
 
   autocmd FileType css
         \ set omnifunc=csscomplete#Complete
