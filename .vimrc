@@ -429,9 +429,11 @@ let g:gutentags_ctags_executable_ruby='ripper-tags'
 " }}}
 
 " {{{ Ruby
-let ruby_minlines=100
-let ruby_spellcheck_strings=0
-let g:ruby_indent_end_alignment="variable"
+let ruby_minlines = 100
+let ruby_spellcheck_strings = 0
+
+let g:ruby_indent_end_alignment = "variable"
+let g:ruby_indent_block_style = 'do'
 " }}}
 
 " {{{ Closetag
