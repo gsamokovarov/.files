@@ -518,8 +518,9 @@ if has('autocmd')
   autocmd FileType coffee
         \ set omnifunc=coffeecomplete#Complete
 
+  au BufRead,BufNewFile *.ego setfiletype html
   autocmd FileType html
-        \ set omnifunc=htmlcomplete#Complete
+        \ set omnifunc=htmlcomplete#Complete |
         \ set noexpandtab tabstop=2 shiftwidth=2 softtabstop=2
 
   autocmd FileType css
