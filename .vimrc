@@ -19,6 +19,7 @@ call plug#begin(expand('~/.vim/plugged'))
 " {{{ Dependencies
 
 Plug '/usr/local/opt/fzf'
+Plug 'morhetz/gruvbox'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'AndrewRadev/switch.vim'
 Plug 'ElmCast/elm-vim'
@@ -461,7 +462,7 @@ if (has("termguicolors"))
 endif
 
 set background=light
-colorscheme typewriter
+colorscheme gruvbox
 
 highlight SignColumn ctermbg=NONE guibg=NONE
 
