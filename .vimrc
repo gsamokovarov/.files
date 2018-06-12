@@ -537,23 +537,6 @@ let mapleader=","
 " No random help screens, please.
 nnoremap <F1> <NOP>
 
-" I have to force myself not to use those anymore.
-nnoremap <Up> <NOP>
-inoremap <Up> <NOP>
-vnoremap <Up> <NOP>
-
-nnoremap <Down> <NOP>
-inoremap <Down> <NOP>
-vnoremap <Down> <NOP>
-
-nnoremap <Left> <NOP>
-inoremap <Left> <NOP>
-vnoremap <Left> <NOP>
-
-nnoremap <Right> <NOP>
-inoremap <Right> <NOP>
-vnoremap <Right> <NOP>
-
 " Filter Ex commands with <C-{P,N}>.
 cnoremap <C-P> <Up>
 cnoremap <C-N> <Down>
@@ -594,16 +577,10 @@ nnoremap <C-O> <C-O>zz
 nnoremap n nzzzv
 nnoremap N Nzzzv
 
-" Cheesy mappings if you still have the arrow keys on your keyboard. (Why
-" would you get a keyboard with arrows anyway, I don't get it.)
-nmap <Up>   N
-nmap <Left> N
-
-nmap <Down>  n
-nmap <Right> n
-
+" Map to C-m, which is triggered by Enter/Return as well.
 nnoremap <silent> <C-m> :VimFiler -explorer -find -toggle -force-hide<CR>
 
+" Keep the old CtrlP shortcut.
 nnoremap <silent> <C-P> :call fzf#vim#files('.', {'options': '--prompt ">> " --inline-info'})<CR>
 
 " Navigate through windows with Tab and Shift-Tab.
@@ -666,15 +643,6 @@ nnoremap <Leader>t :TestFile<CR>
 
 " Show info about the signature of the object underneath the cursor.
 nnoremap <Leader>i :GoInfo<CR>
-
-" Have a saner ESCAPE in INSERT mode. Don't try to map those in VISUAL mode or
-" you'll get a nasty delay if you type {j,k}.
-inoremap jk <ESC>
-inoremap kj <ESC>
-
-" If you're writing in Bulgarian, don't switch to English only to ESCAPE.
-inoremap йк <ESC>
-inoremap кй <ESC>
 
 " Those seems friendlier to type than g{t,T}.
 nnoremap <C-K> gt
