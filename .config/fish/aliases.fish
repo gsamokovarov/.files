@@ -59,6 +59,7 @@ abbr -a ga git commit --amend
 abbr -a "g[" git [
 abbr -a "g]" git ]
 abbr -a "g+" git +
+abbr -a "g-" git--
 
 # Yes, that happened today. Age, you know...
 alias mdkir mkdir
