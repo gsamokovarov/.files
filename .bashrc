@@ -16,6 +16,15 @@ export PATH=~/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:$PATH
 # Initialize direnv for the bash
 [ -z $SKIP_DIRENV ] && $(which direnv &> /dev/null) && eval "$(direnv hook bash)"
 
+# Use the custom solarized LS colors.
+[ -z $SKIP_DIRCOLORS ] && $(which dircolors &> /dev/null) && {
+  [ -f ~/.dir_colors ] && eval "$(dircolors ~/.dir_colors)"
+}
+
+[ -z $SKIP_JUMP ] && $(which jump &> /dev/null) && {
+  eval "$(jump shell bash)"
+}
+
 # Add color support for terminals pretending to be xterm.
 [ $TERM = xterm ] && export TERM=xterm-256color
 
@@ -31,11 +40,6 @@ export PAGER=less
 
 # Source all of the aliases living in ~/.aliases.
 [ -z $SKIP_ALIASES] && [ -f ~/.aliases ] && source ~/.aliases
-
-# Use the custom solarized LS colors.
-$(which dircolors &> /dev/null) && {
-  [ -z $SKIP_DIRCOLORS ] && [ -f ~/.dir_colors ] && eval "$(dircolors ~/.dir_colors)"
-}
 
 # Include local machine custom settings.
 [ -f ~/.bashrc.after ] && source ~/.bashrc.after
