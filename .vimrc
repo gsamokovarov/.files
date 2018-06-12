@@ -35,7 +35,6 @@ Plug 'gsamokovarov/vim-ruby-heredoc-syntax'
 Plug 'janko-m/vim-test'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
-Plug 'ludovicchabant/vim-gutentags'
 Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
 Plug 'rakr/vim-one'
 Plug 'roxma/ncm-rct-complete'
@@ -422,13 +421,6 @@ let g:go_highlight_operators=1
 let g:go_highlight_build_constraints=1
 let g:go_fmt_fail_silently=0
 let g:go_fmt_command="goimports"
-" }}}
-
-" {{{ Gutentags
-let g:gutentags_ctags_tagfile='.tags'
-
-" Use ripper-tags to generate tags for Ruby.
-let g:gutentags_ctags_executable_ruby='ripper-tags'
 " }}}
 
 " {{{ Ruby
