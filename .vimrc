@@ -19,7 +19,6 @@ call plug#begin(expand('~/.vim/plugged'))
 " {{{ Dependencies
 
 Plug '/usr/local/opt/fzf'
-Plug 'morhetz/gruvbox'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'AndrewRadev/switch.vim'
 Plug 'ElmCast/elm-vim'
@@ -35,10 +34,11 @@ Plug 'gsamokovarov/vim-ruby-heredoc-syntax'
 Plug 'janko-m/vim-test'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
+Plug 'morhetz/gruvbox'
 Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
 Plug 'rakr/vim-one'
-Plug 'roxma/ncm-rct-complete'
-Plug 'roxma/nvim-completion-manager'
+Plug 'ncm2/ncm2'
+Plug 'roxma/nvim-yarp'
 Plug 'rstacruz/vim-closer'
 Plug 'sebdah/vim-delve'
 Plug 'sheerun/vim-polyglot'
