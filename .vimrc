@@ -24,6 +24,7 @@ Plug 'AndrewRadev/switch.vim'
 Plug 'ElmCast/elm-vim'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'Shougo/unite.vim' | Plug 'gsamokovarov/vimfiler.vim'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'airblade/vim-gitgutter'
 Plug 'alvan/vim-closetag'
 Plug 'bogado/file-line'
@@ -36,11 +37,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'morhetz/gruvbox'
 Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
-Plug 'rakr/vim-one'
-Plug 'ncm2/ncm2'
-Plug 'roxma/nvim-yarp'
 Plug 'rstacruz/vim-closer'
-Plug 'sebdah/vim-delve'
 Plug 'sheerun/vim-polyglot'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tomtom/tcomment_vim'
@@ -397,6 +394,21 @@ let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --glob \!.git'
 " {{{ Litecorrect
 " Don't use typographic quotes. Dunno how to type them :D
 let g:litecorrect#typographic=1
+" }}}
+
+" {{{ YouCompleteMe
+" Let YouCompleteMe load candidates from the tags file.
+let g:ycm_collect_identifiers_from_tags_files=1
+
+let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
+let g:ycm_confirm_extra_conf=0
+
+let g:ycm_autoclose_preview_window_after_completion=1
+
+" Make Elm great again!
+let g:ycm_semantic_triggers={
+      \ 'elm' : ['.'],
+      \}
 " }}}
 
 " {{{ CtrlSF
