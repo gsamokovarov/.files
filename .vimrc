@@ -405,6 +405,15 @@ let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_semantic_triggers={
       \ 'elm' : ['.'],
       \}
+
+" Speed up vim-multiple-cursors interactions.
+function! Multiple_cursors_before()
+  call youcompleteme#DisableCursorMovedAutocommands()
+endfunction
+
+function! Multiple_cursors_after()
+  call youcompleteme#EnableCursorMovedAutocommands()
+endfunction
 " }}}
 
 " {{{ CtrlSF
