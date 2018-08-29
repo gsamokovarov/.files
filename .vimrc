@@ -23,7 +23,6 @@ Plug 'AndrewRadev/switch.vim'
 Plug 'ElmCast/elm-vim'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'Shougo/unite.vim' | Plug 'gsamokovarov/vimfiler.vim'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'airblade/vim-gitgutter'
 Plug 'alvan/vim-closetag'
 Plug 'bogado/file-line'
@@ -36,6 +35,10 @@ Plug 'janko-m/vim-test'
 Plug 'junegunn/vim-easy-align'
 Plug 'morhetz/gruvbox'
 Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
+Plug 'rakr/vim-one'
+Plug 'ncm2/ncm2'
+Plug 'roxma/nvim-yarp'
+Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
 Plug 'rstacruz/vim-closer'
 Plug 'sheerun/vim-polyglot'
 Plug 'terryma/vim-multiple-cursors'
@@ -237,9 +240,6 @@ if !(has('macunix') || empty($TMUX))
   set clipboard+=unnamedplus
 endif
 
-" Always complete the longest available first.
-set completeopt+=longest
-
 " Set backspace explicitly and include start and eol for delimitMate
 " compatibility. Removing indentation with backspace is pretty handy as well.
 set backspace=indent,start,eol
@@ -297,6 +297,13 @@ let g:ruby_path="/usr/bin/ruby"
 " }}}
 
 " {{{ Plugin Settings
+
+" {{{ ncm2
+set runtimepath+=~/.vim-plugins/LanguageClient-neovim
+set completeopt=noinsert,menuone,noselect
+
+autocmd BufEnter * call ncm2#enable_for_buffer()
+" }}}
 
 " {{{ VimTest
 let test#strategy='neovim'
@@ -401,11 +408,6 @@ let g:ycm_confirm_extra_conf=0
 
 let g:ycm_autoclose_preview_window_after_completion=1
 
-" Make Elm great again!
-let g:ycm_semantic_triggers={
-      \ 'elm' : ['.'],
-      \}
-
 " Speed up vim-multiple-cursors interactions.
 function! Multiple_cursors_before()
   call youcompleteme#DisableCursorMovedAutocommands()
@@ -414,6 +416,11 @@ endfunction
 function! Multiple_cursors_after()
   call youcompleteme#EnableCursorMovedAutocommands()
 endfunction
+
+" Make Elm great again!
+let g:ycm_semantic_triggers={
+      \ 'elm' : ['.'],
+      \}
 " }}}
 
 " {{{ CtrlSF
