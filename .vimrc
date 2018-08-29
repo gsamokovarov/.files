@@ -34,7 +34,6 @@ Plug 'gsamokovarov/vim-ruby-heredoc-syntax'
 Plug 'janko-m/vim-test'
 Plug 'junegunn/vim-easy-align'
 Plug 'morhetz/gruvbox'
-Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
 Plug 'rakr/vim-one'
 Plug 'ncm2/ncm2'
 Plug 'roxma/nvim-yarp'
