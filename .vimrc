@@ -18,6 +18,7 @@ call plug#begin(expand('~/.vim/plugged'))
 
 " {{{ Dependencies
 
+Plug '/usr/local/opt/fzf'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'AndrewRadev/switch.vim'
 Plug 'ElmCast/elm-vim'
@@ -26,12 +27,12 @@ Plug 'Shougo/unite.vim' | Plug 'gsamokovarov/vimfiler.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'alvan/vim-closetag'
 Plug 'bogado/file-line'
-Plug 'ctrlpvim/ctrlp.vim' | Plug 'nixprime/cpsm', { 'do': './install.sh' }
 Plug 'dyng/ctrlsf.vim'
 Plug 'elzr/vim-json'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'gsamokovarov/vim-ruby-heredoc-syntax'
 Plug 'janko-m/vim-test'
+Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'morhetz/gruvbox'
 Plug 'rakr/vim-one'
@@ -376,20 +377,23 @@ let g:gitgutter_eager = 0
 let g:gitgutter_override_sign_column_highlight = 0
 " }}}
 
-" {{{ CtrlP
-" Make CtrlPMixed the default command.
-let g:ctrlp_cmd="CtrlPMixed"
+" {{{ FZF
+" [Buffers] Jump to the existing window if possible
+let g:fzf_buffers_jump = 1
 
-" Use the C matcher function provided by cpsm.
-let g:ctrlp_match_func={'match': 'cpsm#CtrlPMatch'}
+" [[B]Commits] Customize the options used by 'git log':
+let g:fzf_commits_log_options = '--graph --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
 
-" Use caching to speed CtrlP up.
-let g:ctrlp_use_caching=1
-let g:ctrlp_max_files=10000
+" [Tags] Command to generate tags file
+let g:fzf_tags_command = 'ctags -R'
 
-" Don't use MRU files. They don't fit into my workflow and annoy the shit out
-" of me. A lot.
-let g:ctrlp_mruf_max = 0
+" This is the default extra key bindings
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-s': 'split',
+  \ 'ctrl-v': 'vsplit' }
+
+let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --glob \!.git'
 " }}}
 
 " {{{ Litecorrect
@@ -601,6 +605,9 @@ nnoremap N Nzzzv
 
 " Map to C-m, which is triggered by Enter/Return as well.
 nnoremap <silent> <C-m> :VimFiler -explorer -find -toggle -force-hide<CR>
+
+" Keep the old CtrlP shortcut.
+nnoremap <silent> <C-P> :call fzf#vim#files('.', {'options': '--prompt ">> " --inline-info'})<CR>
 
 " Navigate through windows with Tab and Shift-Tab.
 nnoremap <Tab> <C-w><C-w>
