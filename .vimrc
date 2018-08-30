@@ -35,8 +35,7 @@ Plug 'janko-m/vim-test'
 Plug 'junegunn/vim-easy-align'
 Plug 'morhetz/gruvbox'
 Plug 'rakr/vim-one'
-Plug 'ncm2/ncm2'
-Plug 'roxma/nvim-yarp'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
 Plug 'rstacruz/vim-closer'
 Plug 'sheerun/vim-polyglot'
@@ -297,11 +296,10 @@ let g:ruby_path="/usr/bin/ruby"
 
 " {{{ Plugin Settings
 
-" {{{ ncm2
-set runtimepath+=~/.vim-plugins/LanguageClient-neovim
+" {{{ deoplete.vim
 set completeopt=noinsert,menuone,noselect
 
-autocmd BufEnter * call ncm2#enable_for_buffer()
+let g:deoplete#enable_at_startup = 1
 " }}}
 
 " {{{ VimTest
