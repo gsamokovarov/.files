@@ -22,7 +22,6 @@ Plug '/usr/local/opt/fzf'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'AndrewRadev/switch.vim'
 Plug 'ElmCast/elm-vim'
-Plug 'HerringtonDarkholme/yats.vim'
 Plug 'Shougo/unite.vim' | Plug 'gsamokovarov/vimfiler.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'alvan/vim-closetag'
@@ -39,6 +38,8 @@ Plug 'rakr/vim-one'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-go', {'build': {'unix': 'make'}}
 Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
 Plug 'rstacruz/vim-closer'
 Plug 'sheerun/vim-polyglot'
 Plug 'terryma/vim-multiple-cursors'
@@ -417,30 +418,6 @@ let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --glob \!.git'
 " {{{ Litecorrect
 " Don't use typographic quotes. Dunno how to type them :D
 let g:litecorrect#typographic=1
-" }}}
-
-" {{{ YouCompleteMe
-" Let YouCompleteMe load candidates from the tags file.
-let g:ycm_collect_identifiers_from_tags_files=1
-
-let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
-let g:ycm_confirm_extra_conf=0
-
-let g:ycm_autoclose_preview_window_after_completion=1
-
-" Speed up vim-multiple-cursors interactions.
-function! Multiple_cursors_before()
-  call youcompleteme#DisableCursorMovedAutocommands()
-endfunction
-
-function! Multiple_cursors_after()
-  call youcompleteme#EnableCursorMovedAutocommands()
-endfunction
-
-" Make Elm great again!
-let g:ycm_semantic_triggers={
-      \ 'elm' : ['.'],
-      \}
 " }}}
 
 " {{{ CtrlSF
