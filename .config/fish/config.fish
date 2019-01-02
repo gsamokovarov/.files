@@ -1,7 +1,7 @@
 # Make sure that ~/bin is prepended to the PATH, so we can override system
 # utils, if needed. The path for the custom coreutils and /usr/loca/bin are my
 # preferences on OSX.
-set PATH ~/bin (brew --prefix)"/opt/coreutils/libexec/gnubin" /usr/local/bin $PATH
+set PATH ~/bin (brew --prefix)"/opt/coreutils/libexec/gnubin" /usr/local/bin /usr/local/sbin $PATH
 
 # Use my own .rbenv, I don't like what Boxen is doing.
 set PATH ~/.rbenv/bin $PATH
