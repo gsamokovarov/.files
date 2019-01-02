@@ -37,6 +37,7 @@ Plug 'morhetz/gruvbox'
 Plug 'rakr/vim-one'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-go', {'build': {'unix': 'make'}}
+Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
 Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
