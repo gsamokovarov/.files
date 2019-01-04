@@ -39,6 +39,10 @@ set -x EDITOR nvim
 set -x PAGER less
 set -x BROWSER open
 
+# Hint about the background color. By default, it's light, buy I can switch it
+# from the light and dark functions.
+set -x BACKGROUND light
+
 # Initialize rbenv for the fish shell. Now, the `tail -n +2` is a huge hack,
 # with which I stop rbenv prepending ~/.rbenv/shims to the $PATH.
 status --is-interactive; and . (rbenv init - | psub)

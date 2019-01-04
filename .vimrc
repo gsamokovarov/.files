@@ -474,7 +474,12 @@ if (has("termguicolors"))
 	set termguicolors
 endif
 
-set background=light
+if $BACKGROUND ==# "dark"
+  set background=dark
+else
+  set background=light
+endif
+
 colorscheme gruvbox
 
 highlight SignColumn ctermbg=NONE guibg=NONE
