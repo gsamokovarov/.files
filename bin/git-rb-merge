@@ -1,0 +1,27 @@
+#!/usr/bin/env ruby
+
+module Kernel
+  alias sh system
+end
+
+remote = "origin"
+
+current_branch = `git rev-parse --abbrev-ref HEAD`.strip
+target_branch = ARGV.first or abort "git rb-merge requires a branch to merge"
+
+# Make sure the current branch is up-to-date.
+sh "git fetch #{remote}"
+sh "git reset --hard #{remote}/#{current_branch}"
+
+# Rebase the target branch to the current one for that "greasy" git history.
+sh "git rebase #{remote} #{target_branch} --onto #{current_branch}"
+sh "git checkout #{current_branch}"
+
+# Push the rebased target branch to the remote branch.
+sh "git push #{remote} #{target_branch}"
+
+# Merge the local target branch.
+sh "git merge #{target_branch} --no-ff"
+
+# YOLO!
+sh "git push #{remote} #{current_branch}"
