@@ -1,7 +1,9 @@
 #!/usr/bin/env ruby
 
 module Kernel
-  alias sh system
+  def sh(*args)
+    system(*args) or abort
+  end
 end
 
 remote = "origin"
