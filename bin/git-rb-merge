@@ -18,7 +18,7 @@ sh "git rebase #{remote} #{target_branch} --onto #{current_branch}"
 sh "git checkout #{current_branch}"
 
 # Push the rebased target branch to the remote branch.
-sh "git push #{remote} #{target_branch}"
+sh "git push --force #{remote} #{target_branch}"
 
 # Merge the local target branch.
 sh "git merge #{target_branch} --no-ff"
