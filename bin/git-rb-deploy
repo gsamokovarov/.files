@@ -1,0 +1,38 @@
+#!/usr/bin/env ruby
+
+module Kernel
+  def sh(*args)
+    system(*args) or abort
+  end
+end
+
+remote = "origin"
+current_branch = `git rev-parse --abbrev-ref HEAD`.strip
+
+case current_branch
+when "staging"
+  target_branch = ARGV.first or
+    abort "git rb-deploy requires a target branch name to deploy to staging"
+
+  # Make sure the staging branch is up-to-date.
+  sh "git fetch #{remote}"
+  sh "git reset --hard #{remote}/#{current_branch}"
+
+  # Make the target branch into a single commit, for now.
+  sh "git merge --squash #{target_branch} -m #{target_branch}"
+
+  # YOLO!
+  sh "git push #{remote} #{current_branch}"
+when "production"
+  # Make sure the production branch is up-to-date.
+  sh "git fetch #{remote}"
+  sh "git reset --hard #{remote}/#{current_branch}"
+
+  # Merge master and check that we can do that only in fast-forward mode.
+  sh "git merge master --ff-only"
+
+  # YOLO!
+  sh "git push #{remote} #{current_branch}"
+else
+  abort "git rb-deploy can be run only from the staging or production branch"
+end
