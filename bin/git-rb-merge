@@ -9,6 +9,8 @@ end
 remote = "origin"
 
 current_branch = `git rev-parse --abbrev-ref HEAD`.strip
+abort "git rb-merge should be run from the master branch" if current_branch != "master"
+
 target_branch = ARGV.first or abort "git rb-merge requires a branch to merge"
 
 # Make sure the current branch is up-to-date.
