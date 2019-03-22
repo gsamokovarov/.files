@@ -18,8 +18,9 @@ when "staging"
   sh "git fetch #{remote}"
   sh "git reset --hard #{remote}/#{current_branch}"
 
-  # Make the target branch into a single commit, for now.
-  sh "git merge --squash #{target_branch} -m #{target_branch}"
+  # Cherry pick the commits from the target branch.
+  target_branch_ref = `git rev-parse --abbrev-ref #{target_branch}`.strip
+  sh "git cherry-pick master..#{target_branch_ref}"
 
   # YOLO!
   sh "git push #{remote} #{current_branch}"
