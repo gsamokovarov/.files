@@ -35,9 +35,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'morhetz/gruvbox'
 Plug 'rakr/vim-one'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'zchee/deoplete-go', {'build': {'unix': 'make'}}
-Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
+Plug 'neoclide/coc.nvim', {'do': {-> coc#util#install()}}
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
 Plug 'rstacruz/vim-closer'
@@ -299,12 +297,6 @@ let g:ruby_path="/usr/bin/ruby"
 
 " {{{ Plugin Settings
 
-" {{{ deoplete.vim
-set completeopt=noinsert,menuone,noselect
-
-let g:deoplete#enable_at_startup = 1
-" }}}
-
 " {{{ VimTest
 let test#strategy='neovim'
 " }}}
@@ -461,22 +453,6 @@ let g:polyglot_disabled=['elm']
 let g:elm_detailed_complete=1
 let g:elm_format_autosave=1
 let g:elm_format_fail_silently=0
-" }}}
-
-" {{{ MultipleCursors
-func! Multiple_cursors_before()
-  if deoplete#is_enabled()
-    call deoplete#disable()
-    let g:deoplete_is_enable_before_multi_cursors = 1
-  else
-    let g:deoplete_is_enable_before_multi_cursors = 0
-  endif
-endfunc
-func! Multiple_cursors_after()
-  if g:deoplete_is_enable_before_multi_cursors
-    call deoplete#enable()
-  endif
-endfunc
 " }}}
 
 " }}}
