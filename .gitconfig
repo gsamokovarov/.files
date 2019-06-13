@@ -30,6 +30,9 @@
 	logallrefupdates = true
 	whitespace = space-before-tab, trailing-space
 
+[commit]
+	cleanup = scissors
+
 [color]
 	ui = auto
 
