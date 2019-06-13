@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#
+# Rebase interactively to a branch, most likely the one we sprouted from.
+#
+# Usage:
+#   git irebase [branch]
+
+BRANCH=${1:-master}
+
+git rebase -i HEAD~$(git rev-list --count $BRANCH..HEAD)
