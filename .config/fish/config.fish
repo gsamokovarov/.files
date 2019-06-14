@@ -56,9 +56,18 @@ status --is-interactive; and . (jump shell | psub)
 # Source the aliases in ~/.config/fish/aliases.fish.
 test -f ~/.config/fish/aliases.fish; and . ~/.config/fish/aliases.fish
 
+# Source iTerm2 integration.
 if test -f ~/.config/fish/iterm2.fish
   set -x iterm2_hostname ""
   source ~/.config/fish/iterm2.fish
+end
+
+# Preserve dark/light colorscheme settings on new tabs.
+if test -f ~/.colorscheme
+  set -l color (cat ~/.colorscheme)
+
+  test "$color" = "light"; and light
+  test "$color" = "dark"; and dark
 end
 
 # Source the gruvbox color adjustments.
