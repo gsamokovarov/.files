@@ -22,6 +22,7 @@ Plug '/usr/local/opt/fzf'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'AndrewRadev/switch.vim'
 Plug 'ElmCast/elm-vim'
+Plug 'HerringtonDarkholme/yats.vim'
 Plug 'Shougo/unite.vim' | Plug 'gsamokovarov/vimfiler.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'alvan/vim-closetag'
@@ -33,11 +34,11 @@ Plug 'gsamokovarov/vim-ruby-heredoc-syntax'
 Plug 'janko-m/vim-test'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
-Plug 'morhetz/gruvbox'
-Plug 'rakr/vim-one'
-Plug 'neoclide/coc.nvim', {'do': {-> coc#util#install()}}
-Plug 'HerringtonDarkholme/yats.vim'
 Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
+Plug 'morhetz/gruvbox'
+Plug 'neoclide/coc.nvim', {'do': {-> coc#util#install()}}
+Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'for': ['javascript', 'typescript', 'json', 'css', 'scss'] }
+Plug 'rakr/vim-one'
 Plug 'rstacruz/vim-closer'
 Plug 'sheerun/vim-polyglot'
 Plug 'terryma/vim-multiple-cursors'
@@ -453,6 +454,15 @@ let g:polyglot_disabled=['elm']
 let g:elm_detailed_complete=1
 let g:elm_format_autosave=1
 let g:elm_format_fail_silently=0
+" }}}
+
+" {{{ Prettier
+let g:prettier#quickfix_enabled = 0
+let g:prettier#config#print_width = 120
+let g:prettier#config#semi = 'false'
+
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.scss,*.json,*.graphql,*.md,*.vue, PrettierAsync
 " }}}
 
 " }}}
