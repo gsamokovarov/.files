@@ -34,7 +34,6 @@ Plug 'gsamokovarov/vim-ruby-heredoc-syntax'
 Plug 'janko-m/vim-test'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
-Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
 Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'do': {-> coc#util#install()}}
 Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'for': ['javascript', 'typescript', 'json', 'css', 'scss'] }
