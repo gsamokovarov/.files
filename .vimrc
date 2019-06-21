@@ -457,8 +457,6 @@ let g:elm_format_fail_silently=0
 
 " {{{ Prettier
 let g:prettier#quickfix_enabled = 0
-let g:prettier#config#print_width = 120
-let g:prettier#config#semi = 'false'
 
 let g:prettier#autoformat = 0
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.scss,*.json,*.graphql,*.md,*.vue, PrettierAsync
