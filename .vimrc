@@ -228,7 +228,7 @@ set splitbelow
 
 " Get rid of the annoying |,= characters on vertical split bar separator and
 " the filling characters of the folded lines.
-set fillchars=vert:\ ,fold:\
+set fillchars=vert:\ ,fold:\ 
 
 " Show trailing whitespace as ·
 set list
