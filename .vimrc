@@ -457,7 +457,6 @@ let g:elm_format_fail_silently=0
 
 " {{{ ALE
 let g:ale_fixers = {
-\   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'javascript': ['prettier', 'eslint'],
 \   'ruby': ['rubocop'],
 \}
