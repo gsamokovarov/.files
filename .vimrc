@@ -36,7 +36,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'do': {-> coc#util#install()}}
-Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'for': ['javascript', 'typescript', 'json', 'css', 'scss'] }
 Plug 'rakr/vim-one'
 Plug 'rstacruz/vim-closer'
 Plug 'sheerun/vim-polyglot'
@@ -229,7 +228,7 @@ set splitbelow
 
 " Get rid of the annoying |,= characters on vertical split bar separator and
 " the filling characters of the folded lines.
-set fillchars=vert:\ ,fold:\ 
+set fillchars=vert:\ ,fold:\
 
 " Show trailing whitespace as ·
 set list
@@ -454,13 +453,6 @@ let g:polyglot_disabled=['elm']
 let g:elm_detailed_complete=1
 let g:elm_format_autosave=1
 let g:elm_format_fail_silently=0
-" }}}
-
-" {{{ Prettier
-let g:prettier#quickfix_enabled = 0
-
-let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.scss,*.json,*.graphql,*.vue, PrettierAsync
 " }}}
 
 " {{{ ALE
