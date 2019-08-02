@@ -22,7 +22,6 @@ Plug '/usr/local/opt/fzf'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'AndrewRadev/switch.vim'
 Plug 'ElmCast/elm-vim'
-Plug 'HerringtonDarkholme/yats.vim'
 Plug 'Shougo/unite.vim' | Plug 'gsamokovarov/vimfiler.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'alvan/vim-closetag'
@@ -458,6 +457,7 @@ let g:elm_format_fail_silently=0
 " {{{ ALE
 let g:ale_fixers = {
 \   'javascript': ['prettier', 'eslint'],
+\   'typescript': ['prettier', 'eslint'],
 \   'ruby': ['rubocop'],
 \}
 
