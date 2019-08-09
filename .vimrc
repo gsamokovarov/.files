@@ -31,6 +31,7 @@ Plug 'elzr/vim-json'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'gsamokovarov/vim-ruby-heredoc-syntax'
 Plug 'janko-m/vim-test'
+Plug 'jparise/vim-graphql'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'morhetz/gruvbox'
@@ -458,6 +459,7 @@ let g:elm_format_fail_silently=0
 let g:ale_fixers = {
 \   'javascript': ['prettier', 'eslint'],
 \   'typescript': ['prettier', 'eslint'],
+\   'graphql': ['prettier'],
 \   'ruby': ['rubocop'],
 \}
 
