@@ -537,9 +537,9 @@ if has('autocmd')
         \ set noexpandtab tabstop=2 shiftwidth=2 softtabstop=2
 
   autocmd FileType javascript,typescript,jsx,tsx
-        \ set omnifunc=javascriptcomplete#Complete |
         \ let b:closer = 1 |
-        \ let b:closer_flags = '([{'
+        \ let b:closer_flags = '([{' |
+        \ set expandtab tabstop=2 shiftwidth=2 softtabstop=2
 
   autocmd FileType coffee
         \ set omnifunc=coffeecomplete#Complete
