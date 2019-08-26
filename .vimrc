@@ -674,8 +674,8 @@ nmap ga <Plug>(EasyAlign)
 " Run the current test file.
 nnoremap <Leader>t :TestFile<CR>
 
-" Show info about the signature of the object underneath the cursor.
-nnoremap <Leader>i :GoInfo<CR>
+" Try to fix the term under the cursor with CoC's language server.
+nnoremap <Leader>i :CocFix<CR>
 
 " Those seems friendlier to type than g{t,T}.
 nnoremap <C-K> gt
