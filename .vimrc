@@ -677,6 +677,9 @@ nnoremap <Leader>t :TestFile<CR>
 " Try to fix the term under the cursor with CoC's language server.
 nnoremap <Leader>i :CocFix<CR>
 
+" Show more details about a Language Server message.
+nnoremap <Leader>d :ALEDetail<CR>
+
 " Those seems friendlier to type than g{t,T}.
 nnoremap <C-K> gt
 nnoremap <C-J> gT
