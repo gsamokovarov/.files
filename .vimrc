@@ -673,6 +673,7 @@ nmap ga <Plug>(EasyAlign)
 
 " Run the current test file.
 nnoremap <Leader>t :TestFile<CR>
+nnoremap <Leader>T :TestNearest<CR>
 
 " Try to fix the term under the cursor with CoC's language server.
 nnoremap <Leader>i :CocFix<CR>
