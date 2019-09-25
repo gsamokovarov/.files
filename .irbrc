@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 IRB.conf[:PROMPT_MODE] = :SIMPLE
 
 # When I open the IRB, I probably wanna have those around.
@@ -13,12 +15,6 @@ begin
   require Pathname.pwd.basename.to_s
 rescue LoadError
   # Maybe we are not inside of a gem. That's fine.
-end
-
-begin
-  require 'active_support/all'
-rescue LoadError
-  # Well, I tried.
 end
 
 def h(value)
