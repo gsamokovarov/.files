@@ -102,19 +102,19 @@ function! s:Rnew(name)
 endfunction
 
 function! s:CreateRubyTest(name, dir_parts)
-  let test_name = join(a:dir_parts + [a:name . '_test.rb'], '/')
+  let test_name = join(a:dir_parts + [a:name . '_spec.rb'], '/')
 
   if test_name =~ '\<app/'
-    let test_name = s:SubstitutePathSegment(test_name, 'app', 'test')
+    let test_name = s:SubstitutePathSegment(test_name, 'app', 'spec')
   else
-    let test_name = s:SubstitutePathSegment(test_name, 'lib', 'test/lib')
+    let test_name = s:SubstitutePathSegment(test_name, 'lib', 'spec/lib')
   endif
 
   call s:EnsureDirectoryExists(test_name)
 
   exe 'split '.test_name
   call append(0, [
-        \ 'require ''test_helper''',
+        \ 'require ''rails_helper''',
         \ '',
         \ ])
   $delete _
