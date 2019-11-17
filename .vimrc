@@ -459,7 +459,9 @@ let g:elm_format_fail_silently=0
 let g:ale_fixers = {
 \   'javascript': ['prettier', 'eslint'],
 \   'typescript': ['prettier', 'eslint'],
-\   'graphql': ['prettier'],
+\   'typescriptreact': ['prettier', 'eslint'],
+\   'scss': ['stylelint'],
+\   'css': ['stylelint'],
 \   'ruby': ['rubocop'],
 \}
 
