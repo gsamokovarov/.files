@@ -74,15 +74,6 @@ function! CleverJumpFirst()
   return '^'
 endfunction
 
-" Those tag jumping functions are coming from Steve Losh.
-function! JumpToTag()
-  execute "normal! \<c-]zz>"
-endfunction
-
-function! JumpToTagInSplit()
-  execute "normal! \<c-w>s\<c-]>zz"
-endfunction
-
 " Create new test files in vim-rails powered projects. Ripped of from:
 " https://github.com/AndrewRadev/Vimfiles/blob/master/personal/plugin/rnew.vim
 command! -nargs=0 Rnew call s:Rnew(@%)
@@ -296,6 +287,37 @@ let g:ruby_path="/usr/bin/ruby"
 " }}}
 
 " {{{ Plugin Settings
+
+" {{{ CoC
+" Try to fix the term under the cursor with CoC's language server.
+nnoremap <Leader>i :CocFix<CR>
+
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+nmap <silent> <C-]> gd
+nmap <silent> <C-[> <C-o>
+
+" Use K to show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+" Highlight symbol under cursor on CursorHold
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" Remap for rename current word
+nmap <leader>rn <Plug>(coc-rename)
+" }}}
 
 " {{{ VimTest
 let test#strategy='neovim'
@@ -676,9 +698,6 @@ nmap ga <Plug>(EasyAlign)
 " Run the current test file.
 nnoremap <Leader>t :TestFile<CR>
 nnoremap <Leader>T<CR> :TestNearest<CR>
-
-" Try to fix the term under the cursor with CoC's language server.
-nnoremap <Leader>i :CocFix<CR>
 
 " Show more details about a Language Server message.
 nnoremap <Leader>d :ALEDetail<CR>
