@@ -27,6 +27,9 @@ alias cat ccat
 # Downloads YouTube videos with ease.
 alias yt youtube-dl
 
+# Isn't hive a much better name for the binary?
+alias hive hivemind
+
 # I use vim a lot, so shortcut it to just v. On top of that, don't bother with
 # vi if I mistype it and open multiple files in tabs.
 abbr -a v vim
