@@ -481,6 +481,7 @@ let g:elm_format_fail_silently=0
 
 " {{{ ALE
 let g:ale_fixers = {
+\   'json': ['prettier'],
 \   'javascript': ['prettier', 'eslint'],
 \   'typescript': ['prettier', 'eslint'],
 \   'typescriptreact': ['prettier', 'eslint'],
