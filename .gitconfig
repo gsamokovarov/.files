@@ -9,7 +9,6 @@
 	tags = tag -l
 	remotes = remote
 	sprout = checkout -B
-	switch = checkout
 	unstash = stash pop
 	forget = checkout -f
 	remember = checkout -f
