@@ -289,13 +289,11 @@ let g:ruby_path="/usr/bin/ruby"
 " {{{ Plugin Settings
 
 " {{{ CoC
-" Try to fix the term under the cursor with CoC's language server.
-nnoremap <Leader>i :CocFix<CR>
-
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gf <Plug>(coc-fix-current)
 nmap <silent> gr <Plug>(coc-references)
 
 nmap <silent> <C-]> gd
