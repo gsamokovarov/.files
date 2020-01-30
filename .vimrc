@@ -623,10 +623,6 @@ if has("gui_macvim") && has("gui_running")
   inoremap <D-9> <Esc>:tablast<CR>
 endif
 
-" Don't jump on search.
-nnoremap * *<C-O>
-nnoremap # #<C-O>
-
 " Center the screen when going back. I use it quite often to jump to the
 " previous location.
 nnoremap <C-O> <C-O>zz
