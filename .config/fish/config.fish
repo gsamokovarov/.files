@@ -45,16 +45,16 @@ set -x BACKGROUND light
 
 # Initialize rbenv for the fish shell. Now, the `tail -n +2` is a huge hack,
 # with which I stop rbenv prepending ~/.rbenv/shims to the $PATH.
-status --is-interactive; and . (rbenv init - | psub)
+status --is-interactive; and source (rbenv init - | psub)
 
 # Initialize direnv for the fish shell.
 eval (direnv hook fish)
 
 # Initialize jump for the fish shell.
-status --is-interactive; and . (jump shell | psub)
+status --is-interactive; and source (jump shell fish | psub)
 
 # Source the aliases in ~/.config/fish/aliases.fish.
-test -f ~/.config/fish/aliases.fish; and . ~/.config/fish/aliases.fish
+test -f ~/.config/fish/aliases.fish; and source ~/.config/fish/aliases.fish
 
 # Source iTerm2 integration.
 if test -f ~/.config/fish/iterm2.fish
