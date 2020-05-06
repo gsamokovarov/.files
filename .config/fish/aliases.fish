@@ -5,6 +5,9 @@ alias .... "cd ../../.."
 alias ..... "cd ../../../.."
 alias ...... "cd ../../../../.."
 
+# Exa is the new ls, yo!
+alias ls exa
+
 # Rage quit everywhere.
 alias Q exit
 
