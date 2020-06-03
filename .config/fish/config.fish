@@ -66,8 +66,8 @@ end
 if test -f ~/.colorscheme
   set -l color (cat ~/.colorscheme)
 
-  test "$color" = "light"; and light
-  test "$color" = "dark"; and dark
+  test "$color" = "light"; and echo -e "\033]50;SetProfile=Light\a"
+  test "$color" = "dark"; and echo -e "\033]50;SetProfile=Dark\a"
 end
 
 # Source the gruvbox color adjustments.
