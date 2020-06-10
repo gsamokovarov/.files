@@ -70,6 +70,3 @@ if test -f ~/.colorscheme
   test "$color" = "light"; and echo -e "\033]50;SetProfile=Light\a"
   test "$color" = "dark"; and echo -e "\033]50;SetProfile=Dark\a"
 end
-
-# Source the gruvbox color adjustments.
-test -f ~/.config/fish/colors.fish; and source ~/.config/fish/colors.fish
