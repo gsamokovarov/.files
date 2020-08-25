@@ -67,6 +67,6 @@ if test -f ~/.colorscheme
   set -l color (cat ~/.colorscheme)
   set -x BACKGROUND $color
 
-  test "$color" = "light"; and echo -e "\033]50;SetProfile=Light\a"
-  test "$color" = "dark"; and echo -e "\033]50;SetProfile=Dark\a"
+  test "$color" = "light"; and light
+  test "$color" = "dark"; and dark
 end
