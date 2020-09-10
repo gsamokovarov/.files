@@ -443,7 +443,6 @@ let g:markdown_fenced_languages=['coffee', 'css', 'erb=eruby', 'javascript', 'js
 " }}}
 
 " {{{ Go
-let g:polyglot_disabled = ['go']
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_fields = 1
@@ -471,7 +470,6 @@ let g:closetag_filenames='*.html,*.html.erb,*.xhtml,*.phtml'
 " }}}
 
 " {{{ Elm
-let g:polyglot_disabled=['elm']
 let g:elm_detailed_complete=1
 let g:elm_format_autosave=1
 let g:elm_format_fail_silently=0
