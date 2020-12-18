@@ -8,9 +8,9 @@ function fish_prompt
   set_color normal
 
   if test $status -eq 0
-    echo -n (set_color -o black)"› "
+    echo -n (set_color -o black)"-> "
   else
-    echo -n (set_color -o red)"› "
+    echo -n (set_color -o red)"-> "
   end
   set_color normal
 end
