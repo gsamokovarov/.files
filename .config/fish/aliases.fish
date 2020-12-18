@@ -91,6 +91,11 @@ abbr -a vpr vagrant provision
 # Direnv is used quite often around here.
 abbr -a da direnv allow
 
+alias kubedemo "kubectl --kubeconfig=/Users/genadi/.kube/demo_cluster.yml"
+alias kubestaging "kubectl --kubeconfig=/Users/genadi/.kube/staging_cluster.yml"
+alias kubeproduction "kubectl --kubeconfig=/Users/genadi/.kube/production_cluster.yml"
+alias kubeinfrastructure "kubectl --kubeconfig=/Users/genadi/.kube/infrastructure_cluster.yml"
+
 # Use hub for git with a twist -- if the first argument is an existing branch
 # then switch to it.
 function git

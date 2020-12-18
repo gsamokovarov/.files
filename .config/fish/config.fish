@@ -56,6 +56,9 @@ status --is-interactive; and source (jump shell fish | psub)
 # Source the aliases in ~/.config/fish/aliases.fish.
 test -f ~/.config/fish/aliases.fish; and source ~/.config/fish/aliases.fish
 
+# Append ~/.krew to the PATH if krew (https://krew.sigs.k8s.io) is installed.
+test -d $HOME/.krew; and set -gx PATH $PATH $HOME/.krew/bin
+
 # Source iTerm2 integration.
 if test -f ~/.config/fish/iterm2.fish
   set -x iterm2_hostname ""
