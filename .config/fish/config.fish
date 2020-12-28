@@ -47,6 +47,9 @@ set -x BACKGROUND light
 # with which I stop rbenv prepending ~/.rbenv/shims to the $PATH.
 status --is-interactive; and source (rbenv init - | psub)
 
+# Try-out asdf as an all-in-one Ruby/Node.js/Whatever manager.
+source "(brew --prefix asdf)"/asdf.fish
+
 # Initialize direnv for the fish shell.
 eval (direnv hook fish)
 
