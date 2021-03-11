@@ -25,18 +25,16 @@ Plug 'Shougo/unite.vim' | Plug 'gsamokovarov/vimfiler.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'alvan/vim-closetag'
 Plug 'bogado/file-line'
+Plug 'dense-analysis/ale'
 Plug 'dyng/ctrlsf.vim'
 Plug 'elzr/vim-json'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'gsamokovarov/vim-ruby-heredoc-syntax'
 Plug 'janko-m/vim-test'
 Plug 'jparise/vim-graphql'
-Plug 'nvim-lua/popup.nvim'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
 Plug 'junegunn/vim-easy-align'
 Plug 'morhetz/gruvbox'
-Plug 'neoclide/coc.nvim', {'do': {-> coc#util#install()}}
+Plug 'neoclide/coc.nvim', { 'do': {-> coc#util#install()} }
 Plug 'rakr/vim-one'
 Plug 'rstacruz/vim-closer'
 Plug 'sheerun/vim-polyglot'
@@ -49,7 +47,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
-Plug 'dense-analysis/ale'
+Plug 'wincent/command-t', { 'do': 'cd ruby/command-t/ext/command-t && ruby extconf.rb && make' }
 
 " Tell vim-plug to not expect any more bundles.
 call plug#end()
@@ -601,7 +599,7 @@ nnoremap N Nzzzv
 nnoremap <silent> <C-m> :VimFiler -explorer -find -toggle -force-hide<CR>
 
 " Keep the old CtrlP shortcut.
-nnoremap <silent> <C-P> <CMD>lua require('telescope.builtin').find_files()<CR>
+nnoremap <silent> <C-P> :CommandT<CR>
 
 " Navigate through windows with Tab and Shift-Tab.
 nnoremap <Tab> <C-w><C-w>
