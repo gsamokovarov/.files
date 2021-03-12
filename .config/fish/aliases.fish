@@ -72,7 +72,6 @@ alias mdkir mkdir
 
 # Bundle shortcuts.
 abbr -a b bundle
-abbr -a be bundle exec
 abbr -a bu bundle update
 abbr -a br bundle exec rails
 abbr -a brat bundle exec rails test
@@ -95,6 +94,18 @@ alias kubedemo "kubectl --kubeconfig=/Users/genadi/.kube/demo_cluster.yml"
 alias kubestaging "kubectl --kubeconfig=/Users/genadi/.kube/staging_cluster.yml"
 alias kubeproduction "kubectl --kubeconfig=/Users/genadi/.kube/production_cluster.yml"
 alias kubeinfrastructure "kubectl --kubeconfig=/Users/genadi/.kube/infrastructure_cluster.yml"
+
+# Faster bundle exec if a local `./bin/$stub` is available.
+function be
+  set -l stub $argv[1]
+  set -l arguments $argv[2..-1]
+
+  if test -f "./bin/$stub"
+    ./bin/$stub $arguments
+  else
+    bundle exec $argv
+  end
+end
 
 # Use hub for git with a twist -- if the first argument is an existing branch
 # then switch to it.
