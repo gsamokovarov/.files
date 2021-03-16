@@ -260,7 +260,7 @@ set langmap+=чявертъуиопшщасдфгхйклзьцжбнмЧЯВЕ�
 
 " Widely ignore vim swapfiles, tilda backups, python bytecode, .git dirs and
 " node modules and vendor directories. Some plugins actually respect those.
-set wildignore+=*.sw?,*.un,*~,*py?,.git,node_modules,vendor
+set wildignore+=*.sw?,*.un,*~,*py?,.git,node_modules
 
 " Don't ring any bells.
 set visualbell t_vb=
