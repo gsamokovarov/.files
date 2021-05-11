@@ -449,8 +449,9 @@ let g:ale_fixers = {
 \   'ruby': ['rubocop'],
 \}
 
-" Run the project specific rubocop version.
+" Run the project specific rubocop/standardrb version.
 let g:ale_ruby_rubocop_executable = 'bundle'
+let g:ale_ruby_standardrb_executable = 'bundle'
 
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_insert_leave = 0
