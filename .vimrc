@@ -32,6 +32,8 @@ Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'gsamokovarov/vim-ruby-heredoc-syntax'
 Plug 'janko-m/vim-test'
 Plug 'jparise/vim-graphql'
+Plug 'junegunn/fzf', { 'do': './install --bin' }
+Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', { 'do': {-> coc#util#install()} }
@@ -48,7 +50,6 @@ Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'vim-scripts/gitignore'
-Plug 'wincent/command-t', { 'do': 'cd ruby/command-t/ext/command-t && ruby extconf.rb && make' }
 
 " Tell vim-plug to not expect any more bundles.
 call plug#end()
@@ -389,6 +390,43 @@ let g:gitgutter_eager = 0
 let g:gitgutter_override_sign_column_highlight = 0
 " }}}
 
+" {{{ FZF
+set rtp+=/usr/local/opt/fzf
+
+" [Buffers] Jump to the existing window if possible
+let g:fzf_buffers_jump = 1
+
+" [[B]Commits] Customize the options used by 'git log':
+let g:fzf_commits_log_options = '--graph --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
+
+" [Tags] Command to generate tags file
+let g:fzf_tags_command = 'ctags -R'
+
+" This is the default extra key bindings
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-s': 'split',
+  \ 'ctrl-v': 'vsplit' }
+
+" Customize fzf colors to match your color scheme
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+
+let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --glob \!.git'
+" }}}
+
 " {{{ Litecorrect
 " Don't use typographic quotes. Dunno how to type them :D
 let g:litecorrect#typographic=1
@@ -601,7 +639,7 @@ nnoremap N Nzzzv
 nnoremap <silent> <C-m> :VimFiler -explorer -find -toggle -force-hide<CR>
 
 " Keep the old CtrlP shortcut.
-nnoremap <silent> <C-P> :CommandT<CR>
+nnoremap <silent> <C-P> :call fzf#vim#files('.', {'options': '--prompt ">> " --inline-info'})<CR>
 
 " Navigate through windows with Tab and Shift-Tab.
 nnoremap <Tab> <C-w><C-w>
