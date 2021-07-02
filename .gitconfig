@@ -45,9 +45,6 @@
   mnemonicprefix = true
   compactionHeuristic = true
 
-[interactive]
-  diffFilter = delta --diff-so-fancy
-
 [delta]
   features = line-numbers decorations diff-so-fancy
   whitespace-error-style = 22 reverse
@@ -59,6 +56,9 @@
 
 [push]
   default = current
+
+[pull]
+  rebase = true
 
 [hub]
   protocol = ssh
