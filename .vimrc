@@ -498,6 +498,22 @@ let g:ale_lint_on_enter = 0
 let g:ale_fix_on_save = 1
 " }}}
 
+" {{{ Dark Mode
+
+" Credit to the approach goes to @fatih! See:
+" https://arslan.io/2021/02/15/automatic-dark-mode-for-terminal-applications
+function! ResetBackground()
+  if system("cat ~/.colorscheme") =~ 'dark'
+    set background=dark
+  else
+    set background=light
+  endif
+endfunction
+
+autocmd Signal SIGUSR1 call ResetBackground()
+
+" }}}
+
 " }}}
 
 " {{{ Style Settings
