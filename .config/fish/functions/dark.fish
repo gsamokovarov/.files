@@ -1,6 +1,7 @@
 function dark
-  echo -e "\033]50;SetProfile=Dark\a"
   set -x BACKGROUND dark
 
-  echo "dark" > ~/.colorscheme
+  echo "light" > ~/.colorscheme
+
+  kitty @ set-colors ~/.config/kitty/gruvbox_dark.conf
 end
