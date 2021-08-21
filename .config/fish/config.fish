@@ -58,18 +58,3 @@ test -f ~/.config/fish/aliases.fish; and source ~/.config/fish/aliases.fish
 
 # Append ~/.krew to the PATH if krew (https://krew.sigs.k8s.io) is installed.
 test -d $HOME/.krew; and set -gx PATH $PATH $HOME/.krew/bin
-
-# Source iTerm2 integration.
-if test -f ~/.config/fish/iterm2.fish
-  set -x iterm2_hostname ""
-  source ~/.config/fish/iterm2.fish
-end
-
-# Preserve dark/light colorscheme settings on new tabs.
-if test -f ~/.colorscheme
-  set -l color (cat ~/.colorscheme)
-  set -x BACKGROUND $color
-
-  test "$color" = "light"; and light
-  test "$color" = "dark"; and dark
-end
