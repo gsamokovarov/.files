@@ -3,19 +3,17 @@ function dark
 
   echo $BACKGROUND > ~/.colorscheme
 
+  # Change the kitty colorscheme for every window.
+  kitty @ set-colors --all --configured ~/.config/kitty/gruvbox_$BACKGROUND.conf
+
   # Notify NeoVim for the color change.
   for pid in (pgrep nvim)
     kill -SIGUSR1 $pid
   end
 
-  for id in (kitty @ ls | jq '.[] | .tabs[].windows[].id')
-    # Change the kitty colorscheme for every window.
-    kitty @ set-colors --match id:$id --configured ~/.config/kitty/gruvbox_$BACKGROUND.conf
-
-    # Focus NeoVim so the changes actually take effect.
+  # Focus NeoVim so the changes actually take effect. Bring back the focus to
+  # the current window ($KITTY_WINDOW_ID) at the end.
+  for id in (kitty @ ls | jq '.[] | .tabs[].windows[].id') $KITTY_WINDOW_ID
     kitty @ focus-window --match id:$id
   end
-
-  # Focus back the current kitty window that issued the command.
-  kitty @ focus-window --match id:$KITTY_WINDOW_ID
 end
