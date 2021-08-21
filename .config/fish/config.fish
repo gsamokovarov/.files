@@ -1,7 +1,7 @@
 # Make sure that ~/bin is prepended to the PATH, so we can override system
 # utils, if needed. The path for the custom coreutils and /usr/loca/bin are my
 # preferences on OSX.
-set PATH ~/bin (brew --prefix)"/opt/coreutils/libexec/gnubin" /usr/local/bin /usr/local/sbin $PATH
+set PATH ~/bin (/usr/local/bin/brew --prefix)"/opt/coreutils/libexec/gnubin" /usr/local/bin /usr/local/sbin $PATH
 
 # Use my own .rbenv, I don't like what Boxen is doing.
 set PATH ~/.rbenv/bin $PATH
@@ -21,9 +21,6 @@ set PATH $PATH ./bin ./exe
 
 # Don't show the greeting message on fish boot.
 set -x fish_greeting ''
-
-# Add color support for terminals pretending to be xterm.
-test $TERM = xterm; and set -x TERM xterm-256color
 
 # Make sure we have a unicode capable LANG and LC_CTYPE so the unicode
 # characters does not look like crap on OSX and other environments.
