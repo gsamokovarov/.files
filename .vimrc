@@ -502,7 +502,7 @@ let g:ale_fix_on_save = 1
 
 " Credit to the approach goes to @fatih! See:
 " https://arslan.io/2021/02/15/automatic-dark-mode-for-terminal-applications
-function! ResetBackground()
+function! BackgroundFromSetting()
   if system("cat ~/.colorscheme") =~ 'dark'
     set background=dark
   else
@@ -510,7 +510,9 @@ function! ResetBackground()
   endif
 endfunction
 
-autocmd Signal SIGUSR1 call ResetBackground()
+call BackgroundFromSetting()
+
+autocmd Signal SIGUSR1 call BackgroundFromSetting()
 
 " }}}
 
@@ -523,12 +525,6 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 if (has("termguicolors"))
 	set termguicolors
-endif
-
-if $BACKGROUND ==# "dark"
-  set background=dark
-else
-  set background=light
 endif
 
 colorscheme gruvbox
