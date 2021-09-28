@@ -1,7 +1,7 @@
 function darkmode --argument preference
   set -l background "light"
   if test -z $preference
-    defaults read -g AppleInterfaceStyle 2>/dev/null
+    defaults read -g AppleInterfaceStyle &>/dev/null
     if test $status -eq 0
       set background "dark"
     end
