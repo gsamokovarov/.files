@@ -715,8 +715,9 @@ nnoremap <Leader>T<CR> :TestNearest<CR>
 " Show more details about a Language Server message.
 nnoremap <Leader>d :ALEDetail<CR>
 
-" I'm used to the :Gco and :Gst commands but they are deprecated by fugitive.
+" I'm used to these commands but they are deprecated by fugitive.
 cnoremap Gco Git commit
+cnoremap Gblame Git blame
 cnoremap Gst Git
 
 " Those seems friendlier to type than g{t,T}.
