@@ -36,6 +36,9 @@ set -x EDITOR nvim
 set -x PAGER less
 set -x BROWSER open
 
+# Tell every neovim instance to listen on that socket.
+set -x NVIM_LISTEN_ADDRESS /tmp/nvim.sock
+
 # Hint about the background color. By default, it's light, buy I can switch it
 # from the light and dark functions.
 set -x BACKGROUND light

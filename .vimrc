@@ -500,8 +500,7 @@ let g:ale_fix_on_save = 1
 
 " {{{ Dark Mode
 
-" Credit to the approach goes to @fatih! See:
-" https://arslan.io/2021/02/15/automatic-dark-mode-for-terminal-applications
+" Set the initial background theme.
 function! BackgroundFromSetting()
   if system("cat ~/.colorscheme") =~ 'dark'
     set background=dark
@@ -511,8 +510,6 @@ function! BackgroundFromSetting()
 endfunction
 
 call BackgroundFromSetting()
-
-autocmd Signal SIGUSR1 call BackgroundFromSetting()
 
 " }}}
 
