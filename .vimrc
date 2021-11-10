@@ -502,7 +502,7 @@ let g:ale_fix_on_save = 1
 
 " Set the initial background theme.
 function! BackgroundFromSetting()
-  if system("cat ~/.colorscheme") =~ 'dark'
+  if readfile($HOME . "/.colorscheme") == ['dark']
     set background=dark
   else
     set background=light
