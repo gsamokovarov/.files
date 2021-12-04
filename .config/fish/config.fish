@@ -45,7 +45,7 @@ set -x BACKGROUND light
 
 # Initialize rbenv for the fish shell. Now, the `tail -n +2` is a huge hack,
 # with which I stop rbenv prepending ~/.rbenv/shims to the $PATH.
-status --is-interactive; and source (rbenv init - | psub)
+rbenv init - | source
 
 # Try-out asdf as an all-in-one Ruby/Node.js/Whatever manager.
 source (brew --prefix asdf)/asdf.fish
@@ -54,7 +54,7 @@ source (brew --prefix asdf)/asdf.fish
 eval (direnv hook fish)
 
 # Initialize jump for the fish shell.
-status --is-interactive; and source (jump shell fish | psub)
+jump shell fish | source
 
 # Source the aliases in ~/.config/fish/aliases.fish.
 test -f ~/.config/fish/aliases.fish; and source ~/.config/fish/aliases.fish
