@@ -18,22 +18,8 @@ function darkmode --argument preference
   # Change the kitty colorscheme for every window.
   kitty @ --to $kitty_socket set-colors --all --configured ~/.config/kitty/gruvbox_$BACKGROUND.conf
 
-  # Change the neovim background.
-  echo '
-    begin
-      require "neovim"
-    rescue LoadError
-      abort "The neovim gem is not found, install it with `gem install neovim`"
-    end
-
-    socket = ENV.fetch("NVIM_LISTEN_ADDRESS")
-    background = ENV.fetch("BACKGROUND")
-
-    begin
-      client = Neovim.attach_unix socket
-      client.command "set background=#{background}"
-    rescue Errno::ENOENT
-      # Ignore the error if no neovim is running.
-    end
-  ' | ruby
+  # Notify NeoVim for the color change.
+  for pid in (pgrep nvim)
+    kill -SIGUSR1 $pid
+  end
 end

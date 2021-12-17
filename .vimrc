@@ -501,15 +501,18 @@ let g:ale_fix_on_save = 1
 " {{{ Dark Mode
 
 " Set the initial background theme.
-function! BackgroundFromSetting()
+function! ResetBackground()
   if readfile($HOME . "/.colorscheme") == ['dark']
     set background=dark
   else
     set background=light
   endif
+  redraw
 endfunction
 
-call BackgroundFromSetting()
+call ResetBackground()
+
+autocmd Signal SIGUSR1 call ResetBackground()
 
 " }}}
 
