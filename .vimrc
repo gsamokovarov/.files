@@ -21,7 +21,6 @@ call plug#begin(expand('~/.vim/plugged'))
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'AndrewRadev/switch.vim'
 Plug 'ElmCast/elm-vim'
-Plug 'Shougo/unite.vim' | Plug 'gsamokovarov/vimfiler.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'alvan/vim-closetag'
 Plug 'bogado/file-line'
@@ -355,26 +354,14 @@ nnoremap dl <ESC>:DemoteFromLet<CR>
 vnoremap dl <ESC>:DemoteFromLet<CR>
 " }}}
 
-" {{{ VimFiler
-" Disable netrw.
-let g:loaded_netrwPlugin=1
+" {{{ Vinegar
 
-" Replace netrw with vimfiler.
-let g:vimfiler_as_default_explorer=1
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 3
+let g:netrw_altv = 1
+let g:netrw_winsize = 30
 
-" Enable file operation commands.
-" Edit file by tabedit.
-call vimfiler#custom#profile('default', 'context', {
-     \ 'safe': 0,
-     \ 'edit_action': 'tabopen',
-     \ })
-
-" Like Textmate icons.
-let g:vimfiler_tree_leaf_icon=' '
-let g:vimfiler_tree_opened_icon='▾'
-let g:vimfiler_tree_closed_icon='▸'
-let g:vimfiler_file_icon='-'
-let g:vimfiler_marked_file_icon='*'
 " }}}
 
 " {{{ SplitJoin
@@ -648,7 +635,7 @@ nnoremap n nzzzv
 nnoremap N Nzzzv
 
 " Map to CR, which is triggered by Enter/Return as well.
-nnoremap <silent> <CR> :VimFiler -explorer -find<CR>
+nnoremap <CR> :Vexplore<CR>
 
 " Keep the old CtrlP shortcut.
 nnoremap <silent> <C-P> :call fzf#vim#files('.', {'options': '--prompt ">> " --inline-info'})<CR>
