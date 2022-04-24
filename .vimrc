@@ -647,8 +647,8 @@ nnoremap <C-O> <C-O>zz
 nnoremap n nzzzv
 nnoremap N Nzzzv
 
-" Map to C-m, which is triggered by Enter/Return as well.
-nnoremap <silent> <C-m> :VimFiler -explorer -find -toggle -force-hide<CR>
+" Map to CR, which is triggered by Enter/Return as well.
+nnoremap <silent> <CR> :VimFiler -explorer -find<CR>
 
 " Keep the old CtrlP shortcut.
 nnoremap <silent> <C-P> :call fzf#vim#files('.', {'options': '--prompt ">> " --inline-info'})<CR>
