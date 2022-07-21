@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-if git svn info &>/dev/null; then
-  exec git svn dcommit $@
-else
-  exec git push $@
-fi

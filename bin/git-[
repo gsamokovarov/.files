@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-if git svn info &>/dev/null; then
-  git svn fetch $@ && exec git svn rebase
-else
-  exec git pull $@
-fi

@@ -107,6 +107,14 @@ function be
   end
 end
 
+function __git_magic_available_branches
+  command git branch --no-color -a 2>/dev/null | grep -v ' -> ' | sed -e 's/^..//' -e 's/^remotes\///'
+end
+
+function __git_magic_available_tags
+  command git tag 2>/dev/null
+end
+
 # Use hub for git with a twist -- if the first argument is an existing branch
 # then switch to it.
 function git
@@ -116,18 +124,30 @@ function git
       return $status
     case 1
       set -l target_branch $argv[1]
-
-      # For some reason, the __fish_git_branches and __fish_git_tags functions
-      # are not defined during the first run of the git function. Just inline
-      # them for now.
-      set -l available_branches (command git branch --no-color -a | grep -v ' -> ' | sed -e 's/^..//' -e 's/^remotes\///')
-      set -l available_tags (command git tag >/dev/null)
+      set -l available_branches (__git_magic_available_branches)
+      set -l available_tags (__git_magic_available_tags)
 
       if contains $target_branch $available_branches $available_tags
         command git checkout $target_branch
         return 0
       end
   end
+
+  switch $argv[1]
+    case "+"
+      command git add $argv[2..]
+      return $status
+    case "-"
+      command git rm $argv[2..]
+      return $status
+    case "]"
+      command git push $argv[2..]
+      return $status
+    case "["
+      command git pull $argv[2..]
+      return $status
+  end
+
   hub $argv
 end
 
@@ -137,5 +157,5 @@ end
 
 # Autocomplete the tags and branches as commands. The git function lets you do
 # that and having completion for it is pretty cool.
-complete -f -c git -a '(__fish_git_branches)' --description 'Branch'
-complete -f -c git -a '(__fish_git_tags)' --description 'Tag'
+complete -f -c git -a '(__git_magic_available_branches)' --description 'Branch'
+complete -f -c git -a '(__git_magic_available_tags)' --description 'Tag'
