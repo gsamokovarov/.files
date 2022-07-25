@@ -422,7 +422,6 @@ let g:litecorrect#typographic=1
 " {{{ CtrlSF
 " Show results as a split to the bottom, not to the left.
 let g:ctrlsf_position='bottom'
-let g:ctrlsf_ackprg='/usr/local/bin/rg'
 " }}}
 
 " {{{ Markdown
