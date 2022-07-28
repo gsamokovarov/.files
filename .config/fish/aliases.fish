@@ -128,7 +128,7 @@ function git
       set -l available_tags (__git_magic_available_tags)
 
       if contains $target_branch $available_branches $available_tags
-        command git switch $target_branch
+        command git switch --guess $target_branch
         return 0
       end
   end
