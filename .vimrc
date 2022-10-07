@@ -35,7 +35,7 @@ Plug 'junegunn/fzf', { 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'morhetz/gruvbox'
-Plug 'neoclide/coc.nvim', { 'do': {-> coc#util#install()} }
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'rakr/vim-one'
 Plug 'rstacruz/vim-closer'
 Plug 'sheerun/vim-polyglot'
