@@ -640,9 +640,8 @@ nnoremap <silent> <C-P> :call fzf#vim#files('.', {'options': '--prompt ">> " --i
 nnoremap <Tab> <C-w><C-w>
 nnoremap <S-Tab> <C-w><C-W>
 
-" I'm used to the fish shell and auto-completing suggestions with Ctrl-e.
-" Make Tab/Ctrl-E do a C-n for completions.
-inoremap <expr><C-e> pumvisible() ? "\<C-n>" : "\<Tab>"
+" I'm used to the fish shell auto-completing suggestions with Ctrl-e.
+inoremap <silent><expr> <C-e> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " Go to the m marked spot. Its quite easier to type mm and when needing to go
 " back, `` will do the job. The default `` behaviour isn't useful for me.
