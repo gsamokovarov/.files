@@ -640,8 +640,28 @@ nnoremap <silent> <C-P> :call fzf#vim#files('.', {'options': '--prompt ">> " --i
 nnoremap <Tab> <C-w><C-w>
 nnoremap <S-Tab> <C-w><C-W>
 
-" I'm used to the fish shell auto-completing suggestions with Ctrl-e.
-inoremap <silent><expr> <C-e> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+inoremap <silent><expr> <TAB>
+         \ coc#pum#visible() ? coc#pum#next(1) :
+         \ CheckBackspace() ? "\<Tab>" :
+         \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+" Make <CR> to accept selected completion item or notify coc.nvim to format
+" <C-g>u breaks current undo, please make your own choice.
+inoremap <silent><expr> <CR>
+         \ coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use <c-space> to trigger completion.
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
 
 " Go to the m marked spot. Its quite easier to type mm and when needing to go
 " back, `` will do the job. The default `` behaviour isn't useful for me.
