@@ -6,9 +6,6 @@
 # preferences on OSX.
 set PATH ~/bin "$HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin" "$HOMEBREW_PREFIX/bin" /usr/local/bin $PATH
 
-# Use my own .rbenv, I don't like what Boxen is doing.
-set PATH ~/.rbenv/bin $PATH
-
 # Setup GOPATH to .go and pit its bin folder in the regular $PATH.
 set -x GOPATH ~/.go
 set PATH $GOPATH/bin $PATH
@@ -43,12 +40,8 @@ set -x BROWSER open
 # from the light and dark functions.
 set -x BACKGROUND light
 
-# Initialize rbenv for the fish shell. Now, the `tail -n +2` is a huge hack,
-# with which I stop rbenv prepending ~/.rbenv/shims to the $PATH.
-rbenv init - | source
-
 # Try-out asdf as an all-in-one Ruby/Node.js/Whatever manager.
-source (brew --prefix asdf)/asdf.fish
+source (brew --prefix asdf)/libexec/asdf.fish
 
 # Initialize direnv for the fish shell.
 eval (direnv hook fish)
