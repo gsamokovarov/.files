@@ -6,6 +6,9 @@
 # preferences on OSX.
 set PATH ~/bin "$HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin" "$HOMEBREW_PREFIX/bin" /usr/local/bin $PATH
 
+# Setup rust toolchain.
+set PATH ~/.cargo/bin $PATH
+
 # Setup GOPATH to .go and pit its bin folder in the regular $PATH.
 set -x GOPATH ~/.go
 set PATH $GOPATH/bin $PATH
