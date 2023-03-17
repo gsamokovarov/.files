@@ -76,3 +76,4 @@
 
 [credential]
   helper = osxkeychain
+	username = gsamokovarov
