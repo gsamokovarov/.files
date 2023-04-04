@@ -28,6 +28,7 @@ Plug 'dense-analysis/ale'
 Plug 'dyng/ctrlsf.vim'
 Plug 'elzr/vim-json'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+Plug 'github/copilot.vim'
 Plug 'gsamokovarov/vim-ruby-heredoc-syntax'
 Plug 'janko-m/vim-test'
 Plug 'jparise/vim-graphql'
