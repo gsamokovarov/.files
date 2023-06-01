@@ -28,15 +28,16 @@ Plug 'dense-analysis/ale'
 Plug 'dyng/ctrlsf.vim'
 Plug 'elzr/vim-json'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
-Plug 'github/copilot.vim'
+Plug 'github/copilot.vim', { 'branch': 'release' }
 Plug 'gsamokovarov/vim-ruby-heredoc-syntax'
 Plug 'janko-m/vim-test'
 Plug 'jparise/vim-graphql'
 Plug 'junegunn/fzf', { 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
+Plug 'lambdalisue/fern.vim', { 'branch': 'main' }
 Plug 'morhetz/gruvbox'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'rakr/vim-one'
 Plug 'rstacruz/vim-closer'
 Plug 'sheerun/vim-polyglot'
@@ -282,6 +283,35 @@ let g:ruby_path="/usr/bin/ruby"
 
 " {{{ Plugin Settings
 
+" {{{ Fern
+let g:fern_disable_startup_warnings = 1
+
+function! s:init_fern() abort
+  " Define NERDTree like mappings
+  nmap <buffer> o <Plug>(fern-open-open:edit)
+  nmap <buffer> go <Plug>(fern-action-open:edit)<C-w>p
+  nmap <buffer> t <Plug>(fern-action-open:tabedit)
+  nmap <buffer> T <Plug>(fern-action-open:tabedit)gT
+  nmap <buffer> i <Plug>(fern-action-open:split)
+  nmap <buffer> gi <Plug>(fern-action-open:split)<C-w>p
+  nmap <buffer> s <Plug>(fern-action-open:vsplit)
+  nmap <buffer> gs <Plug>(fern-action-open:vsplit)<C-w>p
+  nmap <buffer> ma <Plug>(fern-action-new-path)
+  nmap <buffer> P gg
+
+  nmap <buffer> C <Plug>(fern-action-enter)
+  nmap <buffer> u <Plug>(fern-action-leave)
+  nmap <buffer> r <Plug>(fern-action-reload)
+  nmap <buffer> R gg<Plug>(fern-action-reload)<C-o>
+  nmap <buffer> cd <Plug>(fern-action-cd)
+  nmap <buffer> CD gg<Plug>(fern-action-cd)<C-o>
+
+  nmap <buffer> I <Plug>(fern-action-hidden-toggle)
+
+  nmap <buffer> q :<C-u>quit<CR>
+endfunction
+" }}}
+
 " {{{ CoC
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
@@ -346,16 +376,6 @@ command! DemoteFromLet :call DemoteFromLet()
 
 nnoremap dl <ESC>:DemoteFromLet<CR>
 vnoremap dl <ESC>:DemoteFromLet<CR>
-" }}}
-
-" {{{ Vinegar
-
-let g:netrw_banner = 0
-let g:netrw_liststyle = 3
-let g:netrw_browse_split = 3
-let g:netrw_altv = 1
-let g:netrw_winsize = 30
-
 " }}}
 
 " {{{ SplitJoin
@@ -628,7 +648,7 @@ nnoremap n nzzzv
 nnoremap N Nzzzv
 
 " Map to CR, which is triggered by Enter/Return as well.
-nnoremap <CR> :Vexplore<CR>
+nnoremap <CR> :Fern . -drawer -toggle -reveal=%<CR>
 
 " Keep the old CtrlP shortcut.
 nnoremap <silent> <C-P> :call fzf#vim#files('.', {'options': '--prompt ">> " --inline-info'})<CR>
