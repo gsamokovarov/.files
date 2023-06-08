@@ -14,6 +14,10 @@ endif
 " Start installing plugins.
 call plug#begin(expand('~/.vim/plugged'))
 
+" Disable netrw before activating nvim-tree.
+let g:loaded_netrw = 1
+let g:loaded_netrwPlugin = 1
+
 " }}}
 
 " {{{ Dependencies
@@ -35,9 +39,9 @@ Plug 'jparise/vim-graphql'
 Plug 'junegunn/fzf', { 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
-Plug 'lambdalisue/fern.vim', { 'branch': 'main' }
 Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'nvim-tree/nvim-tree.lua'
 Plug 'rakr/vim-one'
 Plug 'rstacruz/vim-closer'
 Plug 'sheerun/vim-polyglot'
@@ -283,33 +287,42 @@ let g:ruby_path="/usr/bin/ruby"
 
 " {{{ Plugin Settings
 
-" {{{ Fern
-let g:fern_disable_startup_warnings = 1
 
-function! s:init_fern() abort
-  " Define NERDTree like mappings
-  nmap <buffer> o <Plug>(fern-open-open:edit)
-  nmap <buffer> go <Plug>(fern-action-open:edit)<C-w>p
-  nmap <buffer> t <Plug>(fern-action-open:tabedit)
-  nmap <buffer> T <Plug>(fern-action-open:tabedit)gT
-  nmap <buffer> i <Plug>(fern-action-open:split)
-  nmap <buffer> gi <Plug>(fern-action-open:split)<C-w>p
-  nmap <buffer> s <Plug>(fern-action-open:vsplit)
-  nmap <buffer> gs <Plug>(fern-action-open:vsplit)<C-w>p
-  nmap <buffer> ma <Plug>(fern-action-new-path)
-  nmap <buffer> P gg
+" {{{ nvim-tree
+lua << EOF
+require("nvim-tree").setup({
+  on_attach = function(bufnr)
+    local api = require("nvim-tree.api")
 
-  nmap <buffer> C <Plug>(fern-action-enter)
-  nmap <buffer> u <Plug>(fern-action-leave)
-  nmap <buffer> r <Plug>(fern-action-reload)
-  nmap <buffer> R gg<Plug>(fern-action-reload)<C-o>
-  nmap <buffer> cd <Plug>(fern-action-cd)
-  nmap <buffer> CD gg<Plug>(fern-action-cd)<C-o>
+    -- Default mappings
+    api.config.mappings.default_on_attach(bufnr)
 
-  nmap <buffer> I <Plug>(fern-action-hidden-toggle)
+    local function opts(desc)
+      return { desc = "nvim-tree: " .. desc, buffer = bufnr, silent = true, nowait = true }
+    end
 
-  nmap <buffer> q :<C-u>quit<CR>
-endfunction
+    vim.keymap.set("n", "<CR>", ":q<CR>", opts("Quit"))
+    vim.keymap.set('n', '?', api.tree.toggle_help, opts('Help'))
+  end,
+  view = {
+    adaptive_size = true,
+  },
+  update_focused_file = {
+    enable = true,
+  },
+  renderer = {
+    icons = {
+      show = {
+        file = false,
+        folder = false,
+        folder_arrow = false,
+        git = false,
+        modified = false,
+      },
+    }
+  },
+})
+EOF
 " }}}
 
 " {{{ CoC
@@ -648,7 +661,7 @@ nnoremap n nzzzv
 nnoremap N Nzzzv
 
 " Map to CR, which is triggered by Enter/Return as well.
-nnoremap <CR> :Fern . -drawer -toggle -reveal=%<CR>
+nnoremap <CR> :NvimTreeToggle<CR>
 
 " Keep the old CtrlP shortcut.
 nnoremap <silent> <C-P> :call fzf#vim#files('.', {'options': '--prompt ">> " --inline-info'})<CR>
