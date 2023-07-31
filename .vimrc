@@ -306,6 +306,9 @@ require("nvim-tree").setup({
   end,
   view = {
     adaptive_size = true,
+    float = {
+      enable = true,
+    },
   },
   update_focused_file = {
     enable = true,
@@ -327,7 +330,7 @@ require("nvim-tree").setup({
           empty_open = "📂",
         },
       },
-    }
+    },
   },
 })
 EOF
