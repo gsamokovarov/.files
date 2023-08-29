@@ -108,7 +108,7 @@ function be
 end
 
 function __git_magic_available_branches
-  command git branch --no-color -a 2>/dev/null | grep -v ' -> ' | sed -e 's/^..//' -e 's/^remotes\///'
+  command git branch --no-color -a 2>/dev/null | ruby -n -e 'puts $_.gsub(/\s*?\w+\/\w+\//, "")'
 end
 
 function __git_magic_available_tags
