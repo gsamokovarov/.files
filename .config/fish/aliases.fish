@@ -108,7 +108,10 @@ function be
 end
 
 function __git_magic_available_branches
-  command git branch --no-color -a 2>/dev/null | ruby -n -e 'puts $_.gsub(/\s*?\w+\/\w+\//, "")'
+  command git branch --no-color -a 2>/dev/null \
+    | grep -v ' -> ' \
+    | grep -v '* ' \
+    | ruby -n -e 'line = $_.gsub(/\s*?\w+\/\w+\//, "").strip; puts line unless line.empty?'
 end
 
 function __git_magic_available_tags
