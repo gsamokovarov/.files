@@ -25,9 +25,9 @@ let g:loaded_netrwPlugin = 1
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'AndrewRadev/switch.vim'
 Plug 'ElmCast/elm-vim'
-Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter', { 'branch': 'main' }
 Plug 'alvan/vim-closetag'
-Plug 'bogado/file-line'
+Plug 'bogado/file-line', { 'branch': 'main' }
 Plug 'dense-analysis/ale'
 Plug 'dyng/ctrlsf.vim'
 Plug 'elzr/vim-json'
