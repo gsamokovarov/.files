@@ -41,6 +41,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'norcalli/nvim-colorizer.lua'
 Plug 'nvim-tree/nvim-tree.lua'
 Plug 'rakr/vim-one'
 Plug 'rstacruz/vim-closer'
@@ -287,6 +288,13 @@ let g:ruby_path="/usr/bin/ruby"
 
 " {{{ Plugin Settings
 
+" {{{ nvim-colorizer
+set termguicolors
+
+lua << EOF
+require("colorizer").setup()
+EOF
+" }}}
 
 " {{{ nvim-tree
 lua << EOF
@@ -546,10 +554,6 @@ autocmd Signal SIGUSR1 call ResetBackground()
 
 " Set a colorscheme here, so we avoid the initial unstyled flash.
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-
-if (has("termguicolors"))
-  set termguicolors
-endif
 
 colorscheme gruvbox
 
