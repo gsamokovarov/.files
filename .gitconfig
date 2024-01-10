@@ -30,6 +30,7 @@
   filemode = true
   logallrefupdates = true
   whitespace = space-before-tab, trailing-space
+  pager = /usr/bin/less
 
 [commit]
   cleanup = scissors
@@ -76,4 +77,4 @@
 
 [credential]
   helper = osxkeychain
-	username = gsamokovarov
+  username = gsamokovarov
