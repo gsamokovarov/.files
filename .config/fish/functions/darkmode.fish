@@ -13,10 +13,11 @@ function darkmode --argument preference
 
   echo $BACKGROUND > ~/.colorscheme
 
-  set -l kitty_socket unix:(echo /tmp/mykitty-*)
-
-  # Change the kitty colorscheme for every window.
-  kitty @ --to $kitty_socket set-colors --all --configured ~/.config/kitty/gruvbox_$BACKGROUND.conf
+  if [ "$background" = "dark" ]
+    sed -i '' -e 's/Gruvbox (Gogh)/Gruvbox Dark (Gogh)/' ~/.wezterm.lua
+  else
+    sed -i '' -e 's/Gruvbox Dark (Gogh)/Gruvbox (Gogh)/' ~/.wezterm.lua
+  end
 
   # Notify NeoVim for the color change.
   for pid in (pgrep nvim)
