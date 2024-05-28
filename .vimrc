@@ -30,6 +30,7 @@ Plug 'alvan/vim-closetag'
 Plug 'bogado/file-line', { 'branch': 'main' }
 Plug 'dense-analysis/ale'
 Plug 'dyng/ctrlsf.vim'
+Plug 'ellisonleao/gruvbox.nvim'
 Plug 'elzr/vim-json'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'github/copilot.vim', { 'branch': 'release' }
@@ -39,7 +40,6 @@ Plug 'jparise/vim-graphql'
 Plug 'junegunn/fzf', { 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
-Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'nvim-tree/nvim-tree.lua'
