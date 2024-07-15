@@ -11,6 +11,8 @@ config.color_scheme = 'Gruvbox (Gogh)'
 config.inactive_pane_hsb = { saturation = 1.0, brightness = 1.0 }
 
 config.keys = {
+  { key = ']', mods = 'CMD', action = wezterm.action.RotatePanes 'Clockwise' },
+  { key = '[', mods = 'CMD', action = wezterm.action.RotatePanes 'CounterClockwise' },
   { key = 'd', mods = 'CMD', action = wezterm.action { SplitHorizontal = { domain = 'CurrentPaneDomain' } } },
   { key = 'd', mods = 'CMD|SHIFT', action = wezterm.action { SplitVertical = { domain = 'CurrentPaneDomain' } } },
   { key = 'LeftArrow', mods = 'CMD', action = wezterm.action { ActivatePaneDirection = 'Left' } },
