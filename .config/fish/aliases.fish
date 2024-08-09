@@ -90,6 +90,9 @@ abbr -a vpr vagrant provision
 # Direnv is used quite often around here.
 abbr -a da direnv allow
 
+# I'm trying modern neovim distribution.
+alias lazy "NVIM_APPNAME=lazy vim"
+
 alias kubedemo "kubectl --kubeconfig=/Users/genadi/.kube/demo_cluster.yml"
 alias kubestaging "kubectl --kubeconfig=/Users/genadi/.kube/staging_cluster.yml"
 alias kubeproduction "kubectl --kubeconfig=/Users/genadi/.kube/production_cluster.yml"
