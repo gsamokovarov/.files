@@ -257,7 +257,7 @@ if has('mouse')
   endif
 endif
 
-" Make you keyboard actually do something while you are switched to Cyrillic
+" Make your keyboard actually do something while you are switched to Cyrillic
 " layout. Ripped off @StanAngeloff.
 set langmap+=чявертъуиопшщасдфгхйклзьцжбнмЧЯВЕРТЪУИОПШЩАСДФГХЙКЛЗѝЦЖБНМ;`qwertyuiop[]asdfghjklzxcvbnm~QWERTYUIOP{}ASDFGHJKLZXCVBNM,ю\\,Ю\|,
 
@@ -680,6 +680,8 @@ nnoremap <CR> :NvimTreeToggle<CR>
 
 " Keep the old CtrlP shortcut.
 nnoremap <silent> <C-P> :call fzf#vim#files('.', {'options': '--prompt ">> " --inline-info'})<CR>
+
+nnoremap <Leader><Space> :call fzf#vim#buffers()<CR>
 
 " Navigate through windows with Tab and Shift-Tab.
 nnoremap <Tab> <C-w><C-w>
