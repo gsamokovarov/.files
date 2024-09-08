@@ -92,6 +92,7 @@ abbr -a da direnv allow
 
 # I'm trying modern neovim distribution.
 alias lazy "NVIM_APPNAME=lazy vim"
+alias lz lazy
 
 alias kubedemo "kubectl --kubeconfig=/Users/genadi/.kube/demo_cluster.yml"
 alias kubestaging "kubectl --kubeconfig=/Users/genadi/.kube/staging_cluster.yml"
