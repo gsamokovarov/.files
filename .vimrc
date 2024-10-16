@@ -211,9 +211,9 @@ set smartcase
 " Read Vim file specific options.
 set modeline
 
-" Start scrolling when you reach three lines before the end of the screen.
+" Start scrolling when you reach four lines before the end of the screen.
 " Helps with the neck pain.
-set scrolloff=3
+set scrolloff=4
 
 " Just indent manually with zf.
 set foldmethod=manual
@@ -348,11 +348,10 @@ EOF
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gf <Plug>(coc-fix-current)
+nmap <silent> gi <Plug>(coc-fix-current)
 nmap <silent> gr <Plug>(coc-references)
 
-nmap <silent> <C-]> gd
+nmap <silent> <C-]> <Plug>(coc-definition)
 
 " Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -634,7 +633,7 @@ endif
 " {{{ Mappings
 
 " Map the <Leader> to the comma.
-let mapleader=","
+let mapleader=" "
 
 " No random help screens, please.
 nnoremap <F1> <NOP>
@@ -679,9 +678,9 @@ nnoremap N Nzzzv
 nnoremap <CR> :NvimTreeToggle<CR>
 
 " Keep the old CtrlP shortcut.
-nnoremap <silent> <C-P> :call fzf#vim#files('.', {'options': '--prompt ">> " --inline-info'})<CR>
+nnoremap <Leader><Space> :call fzf#vim#files('.', {'options': '--prompt ">> " --inline-info'})<CR>
 
-nnoremap <Leader><Space> :call fzf#vim#buffers()<CR>
+nnoremap <Leader>, :call fzf#vim#buffers()<CR>
 
 " Navigate through windows with Tab and Shift-Tab.
 nnoremap <Tab> <C-w><C-w>
@@ -718,29 +717,12 @@ nnoremap `` `mzz
 nnoremap <expr> 0 CleverJumpFirst()
 vnoremap <expr> 0 CleverJumpFirst()
 
-" Easier to type than :. I don't really use the default ; behavior, but I'm
-" keeping it just in case in the :. Plus, swapping those two will teach me not
-" to press the damn Shift anymore.
-nnoremap ; :
-nnoremap : ;
-
-vnoremap ; :
-vnoremap : ;
-
-" Get back the "Undo motion".
-nnoremap <Leader><Leader> ,
-vnoremap <Leader><Leader> ,
-
 " Format the current paragraph.
 nnoremap = mmVap=`m
 
-" Grep with CtrlSF, its better than ack.vim and the likes.
-nmap     <C-S> <Plug>CtrlSFPrompt
-vmap     <C-S> <Plug>CtrlSFVwordPath
-vmap     <C-S>s <Plug>CtrlSFVwordExec
-nmap     <C-S>n <Plug>CtrlSFCwordPath
-nmap     <C-S>p <Plug>CtrlSFPwordPath
-nnoremap <C-S>o :CtrlSFOpen<CR>
+" Grep with CtrlSF, it's better than ack.vim and the likes.
+nmap     <Leader>s <Plug>CtrlSFPrompt
+vmap     <Leader>s <Plug>CtrlSFVwordPath
 
 " I'm thinking of a decent usage for the Q key, so I'm starting with the rage
 " quit.
@@ -772,10 +754,6 @@ cnoremap Gst Git
 " Those seems friendlier to type than g{t,T}.
 nnoremap <C-K> gt
 nnoremap <C-J> gT
-
-" Toggle the current fold.
-nnoremap <silent> <Space> @=(foldlevel('.') ? 'za' : "\<Space>")<CR>
-vnoremap <Space> zf
 
 " Use {_,+}. I refuse to remember the gJ and gS.
 nnoremap _ :SplitjoinJoin<CR>
