@@ -685,9 +685,9 @@ nnoremap N Nzzzv
 nnoremap <CR> :NvimTreeToggle<CR>
 
 " Keep the old CtrlP shortcut.
-nnoremap <Leader><Space> :call fzf#vim#files('.', {'options': '--prompt ">> " --inline-info'})<CR>
+nnoremap <silent> <Leader><Space> :call fzf#vim#files('.', {'options': '--prompt ">> " --inline-info'})<CR>
 
-nnoremap <Leader>, :call fzf#vim#buffers()<CR>
+nnoremap <silent> <Leader>, :call fzf#vim#buffers()<CR>
 
 " Navigate through windows with Tab and Shift-Tab.
 nnoremap <Tab> <C-w><C-w>
