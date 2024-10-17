@@ -728,8 +728,9 @@ vnoremap <expr> 0 CleverJumpFirst()
 nnoremap = mmVap=`m
 
 " Grep with CtrlSF, it's better than ack.vim and the likes.
-nmap     <Leader>s <Plug>CtrlSFPrompt
-vmap     <Leader>s <Plug>CtrlSFVwordPath
+nmap <Leader>s <Plug>CtrlSFPrompt
+nmap <Leader>/ <Plug>CtrlSFPrompt
+vmap <Leader>s <Plug>CtrlSFVwordPath
 
 " I'm thinking of a decent usage for the Q key, so I'm starting with the rage
 " quit.
