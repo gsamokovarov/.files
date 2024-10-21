@@ -641,6 +641,10 @@ endif
 
 " Map the <Leader> to the comma.
 let mapleader=" "
+let maplocalleader=" "
+lua << EOF
+  vim.api.nvim_set_keymap('', '‹Space>', '‹Nop>', { noremap = true, silent = true })
+EOF
 
 " No random help screens, please.
 nnoremap <F1> <NOP>
