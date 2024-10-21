@@ -228,10 +228,8 @@ set splitbelow
 set list
 set listchars=tab:\ \ ,trail:·
 
-" Copy to the X clipboard too, unless we are on OSX and inside a tmux session.
-if !(has('macunix') || empty($TMUX))
-  set clipboard+=unnamedplus
-endif
+" Copy to the clipboard too.
+set clipboard+=unnamedplus
 
 " Set backspace explicitly and include start and eol for delimitMate
 " compatibility. Removing indentation with backspace is pretty handy as well.
