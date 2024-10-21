@@ -309,7 +309,7 @@ require("nvim-tree").setup({
       return { desc = "nvim-tree: " .. desc, buffer = bufnr, silent = true, nowait = true }
     end
 
-    vim.keymap.set("n", "<CR>", ":q<CR>", opts("Quit"))
+    vim.keymap.set("n", "<Leader>e", ":q<CR>", opts("Quit"))
     vim.keymap.set('n', '?', api.tree.toggle_help, opts('Help'))
   end,
   view = {
@@ -681,8 +681,7 @@ nnoremap <C-O> <C-O>zz
 nnoremap n nzzzv
 nnoremap N Nzzzv
 
-" Map to CR, which is triggered by Enter/Return as well.
-nnoremap <CR> :NvimTreeToggle<CR>
+nnoremap <silent> <Leader>e :NvimTreeToggle<CR>
 
 " Keep the old CtrlP shortcut.
 nnoremap <silent> <Leader><Space> :call fzf#vim#files('.', {'options': '--prompt ">> " --inline-info'})<CR>
