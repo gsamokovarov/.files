@@ -21,8 +21,8 @@ config.keys = {
   { key = 'DownArrow', mods = 'CMD', action = wezterm.action { ActivatePaneDirection = 'Down' } },
   { key = 'h', mods = 'CMD', action = wezterm.action { ActivatePaneDirection = 'Left' } },
   { key = 'l', mods = 'CMD', action = wezterm.action { ActivatePaneDirection = 'Right' } },
-  { key = 'j', mods = 'CMD', action = wezterm.action { ActivatePaneDirection = 'Up' } },
-  { key = 'k', mods = 'CMD', action = wezterm.action { ActivatePaneDirection = 'Down' } },
+  { key = 'j', mods = 'CMD', action = wezterm.action { ActivatePaneDirection = 'Down' } },
+  { key = 'k', mods = 'CMD', action = wezterm.action { ActivatePaneDirection = 'Up' } },
 }
 
 return config
