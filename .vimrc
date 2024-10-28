@@ -733,6 +733,10 @@ nmap <Leader>s <Plug>CtrlSFPrompt
 nmap <Leader>/ <Plug>CtrlSFPrompt
 vmap <Leader>s <Plug>CtrlSFVwordPath
 
+" Go to the related and alternate Rails files.
+nnoremap <Leader>rs <Cmd>RS<CR>
+nnoremap <Leader>ra <Cmd>A<CR>
+
 " I'm thinking of a decent usage for the Q key, so I'm starting with the rage
 " quit.
 nnoremap <silent> Q :call WriteAndOrQuit()<CR>
