@@ -39,7 +39,6 @@ Plug 'janko-m/vim-test'
 Plug 'jparise/vim-graphql'
 Plug 'junegunn/fzf', { 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
-Plug 'junegunn/vim-easy-align'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'nvim-tree/nvim-tree.lua'
@@ -745,12 +744,6 @@ nnoremap <silent> Я <Cmd>call WriteAndOrQuit()<CR>
 " Format a paragraph to fit in `textwidth`.
 nnoremap <Leader>f gqap
 vnoremap <Leader>f gq
-
-" Start interactive EasyAlign in visual mode (e.g. vipga)
-xmap ga <Plug>(EasyAlign)
-
-" Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap ga <Plug>(EasyAlign)
 
 " Run the current test file.
 nnoremap <Leader>t <Cmd>TestFile<CR>
