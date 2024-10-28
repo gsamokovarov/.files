@@ -683,12 +683,12 @@ nnoremap <C-O> <C-O>zz
 nnoremap n nzzzv
 nnoremap N Nzzzv
 
-nnoremap <silent> <Leader>e :NvimTreeToggle<CR>
+nnoremap <silent> <Leader>e <Cmd>NvimTreeToggle<CR>
 
 " Keep the old CtrlP shortcut.
-nnoremap <silent> <Leader><Space> :call fzf#vim#files('.', {'options': '--prompt ">> " --inline-info'})<CR>
+nnoremap <silent> <Leader><Space> <Cmd>call fzf#vim#files('.', {'options': '--prompt ">> " --inline-info'})<CR>
 
-nnoremap <silent> <Leader>, :call fzf#vim#buffers()<CR>
+nnoremap <silent> <Leader>, <Cmd>call fzf#vim#buffers()<CR>
 
 " Navigate through windows with Tab and Shift-Tab.
 nnoremap <Tab> <C-w><C-w>
@@ -739,8 +739,8 @@ nnoremap <Leader>ra <Cmd>A<CR>
 
 " I'm thinking of a decent usage for the Q key, so I'm starting with the rage
 " quit.
-nnoremap <silent> Q :call WriteAndOrQuit()<CR>
-nnoremap <silent> Я :call WriteAndOrQuit()<CR>
+nnoremap <silent> Q <Cmd>call WriteAndOrQuit()<CR>
+nnoremap <silent> Я <Cmd>call WriteAndOrQuit()<CR>
 
 " Format a paragraph to fit in `textwidth`.
 nnoremap <Leader>f gqap
@@ -753,8 +753,8 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 " Run the current test file.
-nnoremap <Leader>t :TestFile<CR>
-nnoremap <Leader>T<CR> :TestNearest<CR>
+nnoremap <Leader>t <Cmd>TestFile<CR>
+nnoremap <Leader>T <Cmd>TestNearest<CR>
 
 " Show more details about a Language Server message.
 nnoremap <Leader>d :ALEDetail<CR>
@@ -769,11 +769,11 @@ nnoremap <C-K> gt
 nnoremap <C-J> gT
 
 " Use {_,+}. I refuse to remember the gJ and gS.
-nnoremap _ :SplitjoinJoin<CR>
-nnoremap + :SplitjoinSplit<CR>
+nnoremap _ <Cmd>SplitjoinJoin<CR>
+nnoremap + <Cmd>SplitjoinSplit<CR>
 
 " Use - to switch stuff around, like old-style to new-style Ruby hashes.
-nnoremap - :Switch<CR>
+nnoremap - <Cmd>Switch<CR>
 
 " Write using `sudo` in COMMAND mode if the file is read-only.
 " Ripped off @StanAngeloff.
