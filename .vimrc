@@ -645,7 +645,7 @@ nnoremap <C-O> <C-O>zz
 nnoremap n nzzzv
 nnoremap N Nzzzv
 
-nnoremap <silent> <Leader>e <Cmd>Neotree toggle<CR>
+nnoremap <silent> <Leader>e <Cmd>Neotree reveal toggle<CR>
 
 " Keep the old CtrlP shortcut.
 nnoremap <silent> <Leader><Space> <Cmd>call fzf#vim#files('.', {'options': '--prompt ">> " --inline-info'})<CR>
