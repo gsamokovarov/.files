@@ -41,7 +41,10 @@ Plug 'junegunn/fzf', { 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'norcalli/nvim-colorizer.lua'
-Plug 'nvim-tree/nvim-tree.lua'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-tree/nvim-web-devicons'
+Plug 'MunifTanjim/nui.nvim'
+Plug 'nvim-neo-tree/neo-tree.nvim'
 Plug 'rakr/vim-one'
 Plug 'rstacruz/vim-closer'
 Plug 'sheerun/vim-polyglot'
@@ -293,50 +296,10 @@ require("colorizer").setup()
 EOF
 " }}}
 
-" {{{ nvim-tree
+" {{{ neotree
 lua << EOF
-require("nvim-tree").setup({
-  on_attach = function(bufnr)
-    local api = require("nvim-tree.api")
-
-    -- Default mappings
-    api.config.mappings.default_on_attach(bufnr)
-
-    local function opts(desc)
-      return { desc = "nvim-tree: " .. desc, buffer = bufnr, silent = true, nowait = true }
-    end
-
-    vim.keymap.set("n", "<Leader>e", ":q<CR>", opts("Quit"))
-    vim.keymap.set('n', '?', api.tree.toggle_help, opts('Help'))
-  end,
-  view = {
-    adaptive_size = true,
-    float = {
-      enable = true,
-    },
-  },
-  update_focused_file = {
-    enable = true,
-  },
-  renderer = {
-    icons = {
-      show = {
-        file = false,
-        folder = true,
-        folder_arrow = false,
-        git = false,
-        modified = false,
-      },
-      glyphs = {
-        folder = {
-          default = "📁",
-          open = "📂",
-          empty = "📁",
-          empty_open = "📂",
-        },
-      },
-    },
-  },
+require("neo-tree").setup({
+  close_if_last_window = true,
 })
 EOF
 " }}}
@@ -682,7 +645,7 @@ nnoremap <C-O> <C-O>zz
 nnoremap n nzzzv
 nnoremap N Nzzzv
 
-nnoremap <silent> <Leader>e <Cmd>NvimTreeToggle<CR>
+nnoremap <silent> <Leader>e <Cmd>Neotree toggle<CR>
 
 " Keep the old CtrlP shortcut.
 nnoremap <silent> <Leader><Space> <Cmd>call fzf#vim#files('.', {'options': '--prompt ">> " --inline-info'})<CR>
