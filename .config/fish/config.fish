@@ -55,7 +55,6 @@ jump shell fish | source
 # Source the aliases in ~/.config/fish/aliases.fish.
 test -f ~/.config/fish/aliases.fish; and source ~/.config/fish/aliases.fish
 
-# Append ~/.krew to the PATH if krew (https://krew.sigs.k8s.io) is installed.
-test -d $HOME/.krew; and set -gx PATH $PATH $HOME/.krew/bin
+# Setup volta for nodejs and yarn management.
 set -gx VOLTA_HOME "$HOME/.volta"
 set -gx PATH "$VOLTA_HOME/bin" $PATH
