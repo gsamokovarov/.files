@@ -46,9 +46,6 @@ set -x BACKGROUND light
 # Try-out mise as an all-in-one Ruby/Node.js/Whatever manager.
 mise activate fish | source
 
-# Initialize direnv for the fish shell.
-eval (direnv hook fish)
-
 # Initialize jump for the fish shell.
 jump shell fish | source
 
