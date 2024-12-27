@@ -85,7 +85,7 @@ abbr -a vup vagrant up
 abbr -a vpr vagrant provision
 
 # Direnv is used quite often around here.
-abbr -a da direnv allow
+abbr -a da mise activate
 
 # I'm trying modern neovim distribution.
 alias lazy "NVIM_APPNAME=lazy vim"
