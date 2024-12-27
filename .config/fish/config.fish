@@ -43,8 +43,8 @@ set -x BROWSER open
 # from the light and dark functions.
 set -x BACKGROUND light
 
-# Try-out asdf as an all-in-one Ruby/Node.js/Whatever manager.
-source (brew --prefix asdf)/libexec/asdf.fish
+# Try-out mise as an all-in-one Ruby/Node.js/Whatever manager.
+mise activate fish | source
 
 # Initialize direnv for the fish shell.
 eval (direnv hook fish)
