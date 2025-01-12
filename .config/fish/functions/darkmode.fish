@@ -6,6 +6,14 @@ function darkmode --argument preference
       set background "dark"
     end
   else
+    switch $preference
+      case light
+        osascript -l JavaScript -e "Application('System Events').appearancePreferences.darkMode = false" >/dev/null
+        set background "light"
+      case dark
+        osascript -l JavaScript -e "Application('System Events').appearancePreferences.darkMode = true" >/dev/null
+        set background "dark"
+    end
     set background $preference
   end
 
