@@ -6,14 +6,6 @@ function darkmode --argument preference
       set background "dark"
     end
   else
-    switch $preference
-      case light
-        osascript -l JavaScript -e "Application('System Events').appearancePreferences.darkMode = false" >/dev/null
-        set background "light"
-      case dark
-        osascript -l JavaScript -e "Application('System Events').appearancePreferences.darkMode = true" >/dev/null
-        set background "dark"
-    end
     set background $preference
   end
 
@@ -23,9 +15,22 @@ function darkmode --argument preference
 
   if [ "$background" = "dark" ]
     sed -i '' -e 's/Gruvbox (Gogh)/Gruvbox Dark (Gogh)/' ~/.wezterm.lua
+    sed -i '' -e 's/GruvboxLight/GruvboxDark/' ~/.config/ghostty/config
   else
     sed -i '' -e 's/Gruvbox Dark (Gogh)/Gruvbox (Gogh)/' ~/.wezterm.lua
+    sed -i '' -e 's/GruvboxDark/GruvboxLight/' ~/.config/ghostty/config
   end
+
+  # Tell Ghostty to reload the configuration.
+  osascript -e '
+    tell application "System Events"
+      tell application "Ghostty" to activate
+      delay 0.5
+      tell process "Ghostty"
+        click menu item "Reload configuration" of menu "Ghostty" of menu bar 1
+      end tell
+    end tell
+  ' >/dev/null
 
   # Notify NeoVim for the color change.
   for pid in (pgrep nvim)
