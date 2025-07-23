@@ -22,10 +22,15 @@ function darkmode --argument preference
   end
 
   # Tell Ghostty to reload the configuration.
-  set -l ghostty_pid (ps ax | grep [G]hostty | awk '{print $1}')
-  if test -n "$ghostty_pid"
-    kill -SIGUSR2 $ghostty_pid
-  end
+  osascript -e '
+    tell application "System Events"
+      tell application "Ghostty" to activate
+      delay 0.5
+      tell process "Ghostty"
+        click menu item "Reload configuration" of menu "Ghostty" of menu bar 1
+      end tell
+    end tell
+  ' >/dev/null
 
   # Notify NeoVim for the color change.
   for pid in (pgrep nvim)
