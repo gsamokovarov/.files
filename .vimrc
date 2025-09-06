@@ -525,6 +525,11 @@ colorscheme gruvbox
 
 highlight SignColumn ctermbg=NONE guibg=NONE
 
+" Hide the ~ characters on empty lines by setting EndOfBuffer highlight to bg color.
+lua <<EOF
+  vim.api.nvim_set_hl(0, 'EndOfBuffer', { fg = "bg" })
+EOF
+
 " The terminal Vim on OSX is slow as f*ck. I don't believe its iTerm that
 " is bringing the slowness, either. Someone... HALP!
 if has('gui_running')
