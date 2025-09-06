@@ -500,10 +500,10 @@ let g:ale_fix_on_save = 1
 
 " Set the initial background theme.
 function! ResetBackground()
-  if readfile($HOME . "/.colorscheme") == ['dark']
-    set background=dark
-  else
+  if filereadable($HOME . "/.colorscheme") && readfile($HOME . "/.colorscheme") == ['light']
     set background=light
+  else
+    set background=dark
   endif
   redraw
 endfunction
