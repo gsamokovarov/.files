@@ -48,6 +48,10 @@ return {
         end
       end, { expr = true })
 
+      -- Make <CR> to accept selected completion item or notify coc.nvim to format.
+      vim.keymap.set('i', '<CR>', 'coc#pum#visible() ? coc#pum#confirm() : "\\<C-g>u\\<CR>\\<C-r>=coc#on_enter()\\<CR>"',
+        { expr = true, silent = true })
+
       -- Use <c-space> to trigger completion
       if vim.fn.has('nvim') == 1 then
         vim.keymap.set('i', '<c-space>', 'coc#refresh()', { silent = true, expr = true })
