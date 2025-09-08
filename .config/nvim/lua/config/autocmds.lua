@@ -25,8 +25,13 @@ autocmd('FileType', {
     vim.opt_local.omnifunc = 'rubycomplete#Complete'
     vim.opt_local.iskeyword:append('?')
     vim.opt_local.iskeyword:append('!')
-    -- Use the older RegExp engine as Ruby syntax is painfully slow with the current one
-    vim.opt_local.regexpengine = 1
+
+    -- Stop any native LSP clients for Ruby to prevent conflicts with CoC
+    for _, client in ipairs(vim.lsp.get_clients()) do
+      if client.name and client.name:match("solargraph") then
+        vim.lsp.stop_client(client.id)
+      end
+    end
   end,
 })
 
