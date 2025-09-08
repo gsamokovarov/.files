@@ -1,18 +1,3 @@
--- Setup
-vim.cmd("syntax on")
-vim.opt.compatible = false
-vim.cmd("filetype plugin indent on")
-
--- Load local vimrc if exists
-local local_vimrc = vim.fn.expand("~/.vimrc.local")
-if vim.fn.filereadable(local_vimrc) == 1 then
-  vim.cmd("source " .. local_vimrc)
-end
-
--- Builtin Settings
--- Enforce UTF-8 to reduce my WTF's per minute
-vim.opt.encoding = "utf-8"
-
 -- Keep backup files in ~/.vim/backup
 vim.opt.backupdir = vim.fn.expand("$HOME/.vim/backup")
 
@@ -58,10 +43,6 @@ vim.opt.showmode = false
 
 -- Don't show a tab bar. It is wasting real estate.
 vim.opt.showtabline = 0
-
--- Don't redraw while executing commands from macros and registers
-vim.opt.lazyredraw = true
-vim.opt.ttyfast = true
 
 -- This is the time in milliseconds that is waited for a key code or mapped key
 -- sequence to complete. By default its a 1000, lower it a bunch. This speeds
