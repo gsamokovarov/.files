@@ -3,6 +3,27 @@ return {
   priority = 1000,
   lazy = false,
   opts = {
+    picker = {
+      enabled = true,
+      sources = {
+        explorer = {
+          win = {
+            input = {
+              keys = {
+                ['o'] = { 'edit', mode = { 'i', 'n' } },
+                ['t'] = { 'tab', mode = { 'i', 'n' } },
+              },
+            },
+            list = {
+              keys = {
+                ['o'] = 'edit',
+                ['t'] = 'tab',
+              }
+            }
+          }
+        }
+      }
+    },
     explorer = { enabled = true },
     indent = { enabled = true },
     input = { enabled = true },
