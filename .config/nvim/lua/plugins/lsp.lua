@@ -4,14 +4,6 @@ return {
     "neoclide/coc.nvim",
     branch = "release",
     config = function()
-      -- Copy coc-settings.json to the right location if it doesn't exist
-      local coc_settings_path = vim.fn.stdpath("config") .. "/coc-settings.json"
-      local old_coc_settings = vim.fn.expand("~/.vim/coc-settings.json")
-
-      if vim.fn.filereadable(old_coc_settings) == 1 and vim.fn.filereadable(coc_settings_path) == 0 then
-        vim.fn.system("cp " .. old_coc_settings .. " " .. coc_settings_path)
-      end
-
       -- CoC keymaps
       vim.keymap.set('n', 'gd', '<Plug>(coc-definition)', { silent = true })
       vim.keymap.set('n', 'gy', '<Plug>(coc-type-definition)', { silent = true })
@@ -55,15 +47,6 @@ return {
           return "<C-h>"
         end
       end, { expr = true })
-
-      -- Make <CR> to accept selected completion item
-      vim.keymap.set('i', '<CR>', function()
-        if vim.fn['coc#pum#visible']() ~= 0 then
-          return vim.fn['coc#pum#confirm']()
-        else
-          return "<C-g>u<CR><c-r>=coc#on_enter()<CR>"
-        end
-      end, { silent = true, expr = true })
 
       -- Use <c-space> to trigger completion
       if vim.fn.has('nvim') == 1 then
