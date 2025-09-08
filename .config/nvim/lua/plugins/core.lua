@@ -11,6 +11,7 @@ return {
       vim.keymap.set('n', '_', '<Cmd>SplitjoinJoin<CR>', { noremap = true })
       vim.keymap.set('n', '+', '<Cmd>SplitjoinSplit<CR>', { noremap = true })
     end,
+    lazy = false,
   },
 
   {
@@ -19,12 +20,14 @@ return {
       -- Switch keymap
       vim.keymap.set('n', '-', '<Cmd>Switch<CR>', { noremap = true })
     end,
+    lazy = false,
   },
 
   -- File line jumping
   {
     "bogado/file-line",
     branch = "main",
+    lazy = false,
   },
 
   -- Close tags automatically
@@ -39,21 +42,19 @@ return {
   -- Multiple cursors
   {
     "terryma/vim-multiple-cursors",
+    lazy = false,
   },
 
   -- Auto closer
   {
     "rstacruz/vim-closer",
-  },
-
-  -- Gitignore syntax
-  {
-    "vim-scripts/gitignore",
+    lazy = false,
   },
 
   -- GitHub Copilot
   {
     "github/copilot.vim",
     branch = "release",
+    lazy = false,
   },
 }
