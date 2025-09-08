@@ -24,9 +24,7 @@ return {
   -- Sleuth for automatic indentation detection
   {
     "tpope/vim-sleuth",
-    config = function()
-      vim.g.sleuth_automatic = 1
-    end,
+    lazy = false,
   },
 
   -- Go support
@@ -53,30 +51,6 @@ return {
   -- GraphQL support
   {
     "jparise/vim-graphql",
-  },
-
-
-  -- Ruby settings
-  {
-    "vim-ruby/vim-ruby",
-    ft = "ruby",
-    config = function()
-      vim.g.ruby_minlines = 100
-      vim.g.ruby_spellcheck_strings = 0
-      vim.g.ruby_indent_end_alignment = "variable"
-      vim.g.ruby_indent_block_style = 'do'
-    end,
-  },
-
-  -- Markdown settings
-  {
-    "plasticboy/vim-markdown",
-    ft = "markdown",
-    config = function()
-      vim.g.markdown_fenced_languages = {
-        'coffee', 'css', 'eruby', 'javascript', 'ruby', 'html'
-      }
-    end,
   },
 }
 
