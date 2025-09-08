@@ -1,15 +1,32 @@
 return {
-  -- Language support and syntax
+  -- Treesitter for syntax highlighting and parsing
   {
-    "sheerun/vim-polyglot",
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
     config = function()
-      -- Configure sleuth settings (polyglot includes sleuth)
-      vim.g.sleuth_automatic = 1
+      require("nvim-treesitter.configs").setup({
+        ensure_installed = {
+          "bash", "css", "go", "graphql", "html", "javascript", "json",
+          "lua", "markdown", "ruby", "scss", "typescript", "vim", "yaml"
+        },
+        auto_install = true,
+        highlight = {
+          enable = true,
+          additional_vim_regex_highlighting = false,
+        },
+        indent = {
+          enable = true,
+        },
+      })
     end,
   },
 
+  -- Sleuth for automatic indentation detection
   {
-    "elzr/vim-json",
+    "tpope/vim-sleuth",
+    config = function()
+      vim.g.sleuth_automatic = 1
+    end,
   },
 
   -- Go support
@@ -38,11 +55,6 @@ return {
     "jparise/vim-graphql",
   },
 
-  -- Ruby heredoc syntax
-  {
-    "gsamokovarov/vim-ruby-heredoc-syntax",
-    ft = "ruby",
-  },
 
   -- Ruby settings
   {
@@ -62,8 +74,7 @@ return {
     ft = "markdown",
     config = function()
       vim.g.markdown_fenced_languages = {
-        'coffee', 'css', 'erb=eruby', 'javascript',
-        'js=javascript', 'json=javascript', 'ruby', 'html'
+        'coffee', 'css', 'eruby', 'javascript', 'ruby', 'html'
       }
     end,
   },
