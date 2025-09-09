@@ -1,8 +1,5 @@
--- Auto commands
 local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
-
--- General autocmds group
 local general = augroup('General', { clear = true })
 
 -- Save the last position in a file
@@ -26,12 +23,15 @@ autocmd('FileType', {
     vim.opt_local.iskeyword:append('?')
     vim.opt_local.iskeyword:append('!')
 
-    -- Stop any native LSP clients for Ruby to prevent conflicts with CoC
+    -- Stop all native LSP clients for Ruby to prevent conflicts with CoC
     for _, client in ipairs(vim.lsp.get_clients()) do
-      if client.name and client.name:match("solargraph") then
+      if client.name and (client.name:match("solargraph") or client.name:match("ruby") or client.name:match("rubocop")) then
         vim.lsp.stop_client(client.id)
       end
     end
+    
+    -- Disable LSP for this buffer
+    vim.lsp.stop_client(vim.lsp.get_clients({ bufnr = 0 }))
   end,
 })
 
@@ -147,5 +147,3 @@ autocmd('CmdwinEnter', {
 
 -- Insert mode abbreviations
 vim.cmd('inoreabbrev inititalize initialize')
-
--- Plugin-specific autocmds are now defined in their respective plugin configurations
