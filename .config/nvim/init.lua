@@ -1,4 +1,3 @@
--- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -12,16 +11,10 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Load settings
-require("config.settings")
-
--- Load keymaps
+require("config.options")
 require("config.keymaps")
-
--- Load autocmds
 require("config.autocmds")
 
--- Setup lazy.nvim
 require("lazy").setup("plugins", {
   change_detection = {
     enabled = true,
