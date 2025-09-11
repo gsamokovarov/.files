@@ -30,5 +30,9 @@ vim.keymap.set('v', '<Leader>f', 'gq', { noremap = true })
 vim.keymap.set('n', '<C-K>', 'gt', { noremap = true })
 vim.keymap.set('n', '<C-J>', 'gT', { noremap = true })
 
+-- Navigate buffers with Ctrl-H and Ctrl-L
+vim.keymap.set('n', '<C-H>', '<cmd>bprevious<cr>', { noremap = true, desc = 'Prev buffer' })
+vim.keymap.set('n', '<C-L>', '<cmd>bnext<cr>', { noremap = true, desc = 'Next buffer' })
+
 -- Close current buffer with Q
 vim.keymap.set('n', 'Q', '<Cmd>q<CR>', { noremap = true })
