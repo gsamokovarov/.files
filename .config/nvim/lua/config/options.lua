@@ -125,7 +125,6 @@ vim.opt.wildignore:append("node_modules")
 
 -- Don't ring any bells
 vim.opt.visualbell = true
--- Note: t_vb doesn't exist in Neovim, visualbell is sufficient
 
 -- Some plugins expect bash or zsh as their shells. Fish shell has a different
 -- stderr redirection syntax and it may break stuff, like Syntastic, for

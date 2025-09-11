@@ -57,4 +57,10 @@ return {
     branch = "release",
     lazy = false,
   },
+
+  -- Disable noice
+  {
+    "folke/noice.nvim",
+    enabled = false,
+  },
 }
