@@ -18,6 +18,9 @@ return {
           enable = true,
         },
       })
+
+      -- Treat eruby.yaml files as yaml for Treesitter
+      vim.treesitter.language.register("yaml", "eruby.yaml")
     end,
   },
 
