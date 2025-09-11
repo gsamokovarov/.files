@@ -64,9 +64,6 @@
 [hub]
   protocol = ssh
 
-[browser "gitscm"]
-  cmd = sh -c 'gnome-open http://git-scm.com/docs/$(basename $1 .html)' --
-
 [include]
   path = .gitconfig.local
 
@@ -74,7 +71,3 @@
   clean = git-lfs clean -- %f
   smudge = git-lfs smudge -- %f
   required = true
-
-[credential]
-  helper = osxkeychain
-  username = gsamokovarov
