@@ -55,4 +55,12 @@ return {
   {
     "jparise/vim-graphql",
   },
+
+  -- Color highlighting
+  {
+    "norcalli/nvim-colorizer.lua",
+    config = function()
+      require("colorizer").setup()
+    end,
+  },
 }
