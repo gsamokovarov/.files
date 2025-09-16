@@ -3,7 +3,7 @@ function darkmode --argument preference
   if test -z $preference
     defaults read -g AppleInterfaceStyle 2>/dev/null
     if test $status -eq 0
-        set background dark
+      set background dark
     end
   else
     set background $preference
@@ -20,15 +20,10 @@ function darkmode --argument preference
   end
 
   # Tell Ghostty to reload the configuration.
-  osascript -e '
-    tell application "System Events"
-      tell application "Ghostty" to activate
-      delay 0.5
-      tell process "Ghostty"
-        click menu item "Reload configuration" of menu "Ghostty" of menu bar 1
-      end tell
-    end tell
-  ' >/dev/null
+  set -l ghostty_pid (ps ax | grep [G]hostty | awk '{print $1}')
+  if test -n "$ghostty_pid"
+    kill -SIGUSR2 $ghostty_pid
+  end
 
   # Notify NeoVim for the color change.
   for pid in (pgrep nvim)
