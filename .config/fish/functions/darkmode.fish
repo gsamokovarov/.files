@@ -1,9 +1,9 @@
 function darkmode --argument preference
-  set -l background "light"
+  set -l background light
   if test -z $preference
     defaults read -g AppleInterfaceStyle 2>/dev/null
     if test $status -eq 0
-      set background "dark"
+        set background dark
     end
   else
     set background $preference
@@ -11,14 +11,12 @@ function darkmode --argument preference
 
   set -x BACKGROUND $background
 
-  echo $BACKGROUND > ~/.colorscheme
+  echo $BACKGROUND >~/.colorscheme
 
-  if [ "$background" = "dark" ]
-    sed -i '' -e 's/Gruvbox (Gogh)/Gruvbox Dark (Gogh)/' ~/.wezterm.lua
-    sed -i '' -e 's/GruvboxLight/GruvboxDark/' ~/.config/ghostty/config
+  if [ "$background" = dark ]
+    sed -i '' -e 's/Gruvbox Light/Gruvbox Dark/' ~/.config/ghostty/config
   else
-    sed -i '' -e 's/Gruvbox Dark (Gogh)/Gruvbox (Gogh)/' ~/.wezterm.lua
-    sed -i '' -e 's/GruvboxDark/GruvboxLight/' ~/.config/ghostty/config
+    sed -i '' -e 's/Gruvbox Dark/Gruvbox Light/' ~/.config/ghostty/config
   end
 
   # Tell Ghostty to reload the configuration.

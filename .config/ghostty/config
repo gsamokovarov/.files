@@ -1,4 +1,4 @@
-theme = GruvboxDark
+theme = Gruvbox Dark
 font-size = 15
 background-opacity = 0.999
 keybind = super+\=toggle_split_zoom
