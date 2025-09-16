@@ -1,4 +1,7 @@
 return {
+  -- Don't use nvim-treesitter-textobjects
+  { "nvim-treesitter-textobjects", enabled = false },
+
   -- Treesitter for syntax highlighting and parsing
   {
     "nvim-treesitter/nvim-treesitter",
