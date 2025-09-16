@@ -2,34 +2,31 @@ return {
   -- Tim Pope's essential plugins
   {
     "tpope/vim-commentary",
+    lazy = false,
   },
 
   {
     "tpope/vim-endwise",
+    lazy = false,
   },
 
   {
     "tpope/vim-fugitive",
-  },
-
-  {
-    "tpope/vim-rails",
-    config = function()
-      -- Rails keymaps
-      vim.keymap.set('n', '<Leader>rs', '<Cmd>RS<CR>', { noremap = true })
-      vim.keymap.set('n', '<Leader>ra', '<Cmd>A<CR>', { noremap = true })
-    end,
+    lazy = false,
   },
 
   {
     "tpope/vim-repeat",
+    lazy = false,
   },
 
   {
     "tpope/vim-surround",
+    lazy = false,
   },
 
   {
     "tpope/vim-unimpaired",
+    lazy = false,
   },
 }
