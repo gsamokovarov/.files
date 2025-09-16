@@ -63,4 +63,15 @@ return {
       require("colorizer").setup()
     end,
   },
+
+  -- Better rails support
+  {
+    "tpope/vim-rails",
+    lazy = false,
+    config = function()
+      -- Rails keymaps
+      vim.keymap.set('n', '<Leader>rs', '<Cmd>RS<CR>', { noremap = true })
+      vim.keymap.set('n', '<Leader>ra', '<Cmd>A<CR>', { noremap = true })
+    end,
+  },
 }
