@@ -32,7 +32,7 @@ return {
       vim.keymap.set('n', '<leader>rn', '<Plug>(coc-rename)', {})
 
       -- Use K to show documentation in preview window
-      vim.keymap.set('n', 'K', function()
+      function _G.show_docs()
         local cw = vim.fn.expand('<cword>')
         if vim.fn.index({'vim', 'help'}, vim.bo.filetype) >= 0 then
           vim.api.nvim_command('h ' .. cw)
@@ -41,42 +41,27 @@ return {
         else
           vim.api.nvim_command('!' .. vim.o.keywordprg .. ' ' .. cw)
         end
-      end, { noremap = true, silent = true })
+      end
+      vim.keymap.set("n", "K", '<CMD>lua _G.show_docs()<CR>', {silent = true})
 
-      -- CoC completion mappings
-      local function check_backspace()
+      -- Autocomplete
+      function _G.check_back_space()
         local col = vim.fn.col('.') - 1
-        return col == 0 or vim.fn.getline('.'):sub(col, col):match('%s')
+        return col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') ~= nil
       end
 
-      vim.keymap.set('i', '<TAB>', function()
-        if vim.fn['coc#pum#visible']() ~= 0 then
-          return vim.fn['coc#pum#next'](1)
-        elseif check_backspace() then
-          return "<Tab>"
-        else
-          return vim.fn['coc#refresh']()
-        end
-      end, { silent = true, expr = true })
+      vim.keymap.set('i', '<TAB>', 'coc#pum#visible() ? coc#pum#next(1) : v:lua.check_back_space() ? "<TAB>" : coc#refresh()',
+        { silent = true, expr = true, replace_keycodes = false })
 
-      vim.keymap.set('i', '<S-TAB>', function()
-        if vim.fn['coc#pum#visible']() ~= 0 then
-          return vim.fn['coc#pum#prev'](1)
-        else
-          return "<C-h>"
-        end
-      end, { expr = true })
+      vim.keymap.set('i', '<S-TAB>', [[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]],
+        { silent = true, expr = true, replace_keycodes = false })
 
       -- Make <CR> to accept selected completion item or notify coc.nvim to format.
-      vim.keymap.set('i', '<CR>', 'coc#pum#visible() ? coc#pum#confirm() : "\\<C-g>u\\<CR>\\<C-r>=coc#on_enter()\\<CR>"',
-        { expr = true, silent = true })
+      vim.keymap.set('i', '<CR>', [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]],
+        { expr = true, silent = true, replace_keycodes = false })
 
       -- Use <c-space> to trigger completion
-      if vim.fn.has('nvim') == 1 then
-        vim.keymap.set('i', '<c-space>', 'coc#refresh()', { silent = true, expr = true })
-      else
-        vim.keymap.set('i', '<c-@>', 'coc#refresh()', { silent = true, expr = true })
-      end
+      vim.keymap.set('i', '<c-space>', 'coc#refresh()', { silent = true, expr = true })
 
       -- CoC autocmds
       local coc_group = vim.api.nvim_create_augroup('CoC', { clear = true })
