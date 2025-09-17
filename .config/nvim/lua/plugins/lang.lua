@@ -55,9 +55,7 @@ return {
   },
 
   -- GraphQL support
-  {
-    "jparise/vim-graphql",
-  },
+  { "jparise/vim-graphql", lazy = false, },
 
   -- Color highlighting
   {
