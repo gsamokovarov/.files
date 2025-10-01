@@ -22,17 +22,35 @@ return {
     },
     picker = {
       enabled = true,
+      win = {
+        input = {
+          keys = {
+            ["<Tab>"] = false,
+            ["<S-Tab>"] = false,
+          },
+        },
+        list = {
+          keys = {
+            ["<Tab>"] = false,
+            ["<S-Tab>"] = false,
+          },
+        },
+      },
       sources = {
         explorer = {
           win = {
             input = {
               keys = {
+                ["<Tab>"] = false,
+                ["<S-Tab>"] = false,
                 ['o'] = { 'edit', mode = { 'i', 'n' } },
                 ['t'] = { 'tab', mode = { 'i', 'n' } },
               },
             },
             list = {
               keys = {
+                ["<Tab>"] = false,
+                ["<S-Tab>"] = false,
                 ['o'] = 'edit',
                 ['t'] = 'tab',
               }
