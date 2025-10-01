@@ -59,7 +59,10 @@ return {
         }
       }
     },
-    explorer = { enabled = true },
+    explorer = {
+      enabled = true,
+      auto_close = true
+    },
     indent = { enabled = true },
     input = { enabled = true },
     notifier = {
