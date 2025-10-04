@@ -145,5 +145,8 @@ autocmd('CmdwinEnter', {
   end,
 })
 
+-- Write using sudo command
+vim.cmd('cnoremap w!! w !sudo tee % >/dev/null')
+
 -- Insert mode abbreviations
 vim.cmd('inoreabbrev inititalize initialize')
