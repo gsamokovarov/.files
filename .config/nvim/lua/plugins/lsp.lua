@@ -2,8 +2,8 @@
 return {
   -- Disable LazyVim's default LSP plugins
   { "neovim/nvim-lspconfig", enabled = false, },
-  { "williamboman/mason.nvim", enabled = false, },
-  { "williamboman/mason-lspconfig.nvim", enabled = false, },
+  { "mason-org/mason.nvim", enabled = false, },
+  { "mason-org/mason-lspconfig.nvim", enabled = false, },
   { "hrsh7th/nvim-cmp", enabled = false, },
   { "Saghen/blink.cmp", enabled = false, },
 
