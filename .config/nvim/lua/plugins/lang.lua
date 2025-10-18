@@ -5,23 +5,21 @@ return {
   -- Treesitter for syntax highlighting and parsing
   {
     "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
-    config = function()
-      require("nvim-treesitter.configs").setup({
-        ensure_installed = {
-          "bash", "css", "go", "graphql", "html", "javascript", "json",
-          "lua", "markdown", "ruby", "scss", "typescript", "vim", "yaml"
-        },
-        auto_install = true,
-        highlight = {
-          enable = true,
-          additional_vim_regex_highlighting = false,
-        },
-        indent = {
-          enable = false,
-        },
-      })
-
+    opts = {
+      ensure_installed = {
+        "bash", "css", "go", "graphql", "html", "javascript", "json",
+        "lua", "markdown", "ruby", "scss", "typescript", "vim", "yaml",
+      },
+      auto_install = true,
+      highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = false,
+      },
+      indent = {
+        enable = false,
+      },
+    },
+    init = function()
       -- Treat eruby.yaml files as yaml for Treesitter
       vim.treesitter.language.register("yaml", "eruby.yaml")
     end,
