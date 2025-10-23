@@ -86,9 +86,13 @@ return {
         local file = vim.fn.expand("$HOME/.colorscheme")
 
         if vim.fn.filereadable(file) == 1 and vim.fn.readfile(file)[1] == "light" then
-          vim.opt.background = "light"
+          vim.schedule(function()
+            vim.opt.background = "light"
+          end)
         else
-          vim.opt.background = "dark"
+          vim.schedule(function()
+            vim.opt.background = "dark"
+          end)
         end
       end
 
