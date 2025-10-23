@@ -82,18 +82,24 @@ return {
       end
 
       -- Set the initial background theme
-      function M.reset_background()
-        local file = vim.fn.expand("$HOME/.colorscheme")
-
-        if vim.fn.filereadable(file) == 1 and vim.fn.readfile(file)[1] == "light" then
-          vim.schedule(function()
-            vim.opt.background = "light"
-          end)
-        else
-          vim.schedule(function()
-            vim.opt.background = "dark"
-          end)
+      function M.reset_background(immediate)
+        local function execution(callback)
+          if immediate then
+            callback()
+          else
+            vim.schedule(callback)
+          end
         end
+
+        local file = vim.fn.expand("$HOME/.colorscheme")
+        local background = "dark"
+        if vim.fn.filereadable(file) == 1 and vim.fn.readfile(file)[1] == "light" then
+          background = "light"
+        end
+
+        execution(function()
+          vim.opt.background = "light"
+        end)
       end
 
       -- Create user commands
@@ -113,12 +119,12 @@ return {
         group = signals_group,
         pattern = 'SIGUSR1',
         callback = function()
-          M.reset_background()
+          M.reset_background(false)
           vim.cmd("redraw")
         end,
       })
 
-      M.reset_background()
+      M.reset_background(true)
 
       -- Export module globally
       _G.config_functions = M
