@@ -20,6 +20,14 @@ return {
       vim.keymap.set('n', '<C-]>', '<Plug>(coc-definition)', { silent = true })
       vim.keymap.set('n', '<leader>rn', '<Plug>(coc-rename)', {})
 
+      -- Unmap default LSP keymaps that conflict with CoC
+      vim.keymap.del('n', 'grt')
+      vim.keymap.del('n', 'gri')
+      vim.keymap.del('n', 'grr')
+      vim.keymap.del('n', 'grn')
+      vim.keymap.del('n', 'gra')
+      vim.keymap.del('x', 'gra')
+
       -- Use K to show documentation in preview window
       function _G.show_docs()
         local cw = vim.fn.expand('<cword>')
