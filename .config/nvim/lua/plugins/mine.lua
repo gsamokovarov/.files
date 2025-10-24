@@ -98,7 +98,7 @@ return {
         end
 
         execution(function()
-          vim.opt.background = "light"
+          vim.opt.background = background
         end)
       end
 
