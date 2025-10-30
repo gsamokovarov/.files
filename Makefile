@@ -19,4 +19,4 @@ linux: SOURCE_DIR = linux
 linux:
 	@(${TAR_CMD} | ${UNTAR_CMD})
 
-.PHONY: install osx osx-dotfiles linux linux-dotfiles
+.PHONY: install osx linux
