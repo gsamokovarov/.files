@@ -1,15 +1,22 @@
+ifeq ($(shell uname -s),Darwin)
+	DETECTED_OS = osx
+else
+	DETECTED_OS = linux
+endif
+
 INSTALL_PATH ?= $$HOME
-EXCLUDES     ?= ./.git ./.files.png ./Makefile ./README.markdown
-TAR_CMD       = find . -print0 | xargs -0 tar `echo $(EXCLUDES) | tr ' ' '\n' | awk '{print "--exclude " $$0}'` --create
+SOURCE_DIR   ?= .
+TAR_CMD       = find $(SOURCE_DIR) -print0 | xargs -0 tar --create
 UNTAR_CMD     = tar --extract --preserve-permissions --verbose --directory=$(INSTALL_PATH)
 
-install: install-dotfiles install-nvimrc
+install: $(DETECTED_OS)
 
-install-dotfiles:
+osx: SOURCE_DIR = osx
+osx:
 	@(${TAR_CMD} | ${UNTAR_CMD})
 
-install-nvimrc:
-	@ln -nsf ${INSTALL_PATH}/.vim ${INSTALL_PATH}/.config/nvim
-	@ln -nsf ${INSTALL_PATH}/.vimrc ${INSTALL_PATH}/.config/nvim/init.vim
+linux: SOURCE_DIR = linux
+linux:
+	@(${TAR_CMD} | ${UNTAR_CMD})
 
-.PHONY: install install-dotfiles
+.PHONY: install osx osx-dotfiles linux linux-dotfiles
