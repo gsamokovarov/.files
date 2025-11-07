@@ -47,7 +47,7 @@ set -x BACKGROUND light
 mise activate fish | source
 
 # Initialize jump for the fish shell.
-jump shell fish | source
+jump shell fish --based-bind=z | source
 
 # Source the aliases in ~/.config/fish/aliases.fish.
 test -f ~/.config/fish/aliases.fish; and source ~/.config/fish/aliases.fish
