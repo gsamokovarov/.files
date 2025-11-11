@@ -7,5 +7,8 @@
 
 IFS=/ read -a args <<< "$1"
 
-git fetch ${args[0]}
-git reset --hard $1
+remote=${args[0]:-origin}
+branch=${args[1]:-$(git branch --show-current)}
+
+git fetch "$remote"
+git reset --hard "$remote/$branch"
