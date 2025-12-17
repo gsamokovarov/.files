@@ -5,18 +5,13 @@ else
 endif
 
 INSTALL_PATH ?= $$HOME
-SOURCE_DIR   ?= .
-TAR_CMD       = find $(SOURCE_DIR) -print0 | xargs -0 tar --create
-UNTAR_CMD     = tar --extract --preserve-permissions --verbose --directory=$(INSTALL_PATH)
 
 install: $(DETECTED_OS)
 
-osx: SOURCE_DIR = osx
 osx:
-	@(${TAR_CMD} | ${UNTAR_CMD})
+	@(tar --create --dereference --file=- --directory=osx . | tar --extract --preserve-permissions --verbose --directory=$(INSTALL_PATH))
 
-linux: SOURCE_DIR = linux
 linux:
-	@(${TAR_CMD} | ${UNTAR_CMD})
+	@(tar --create --dereference --file=- --directory=linux . | tar --extract --preserve-permissions --verbose --directory=$(INSTALL_PATH))
 
 .PHONY: install osx linux
