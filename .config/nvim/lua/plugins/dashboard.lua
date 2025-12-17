@@ -36,33 +36,8 @@ return {
           },
         },
       },
-      sources = {
-        explorer = {
-          win = {
-            input = {
-              keys = {
-                ["<Tab>"] = false,
-                ["<S-Tab>"] = false,
-                ['o'] = { 'edit', mode = { 'i', 'n' } },
-                ['t'] = { 'tab', mode = { 'i', 'n' } },
-              },
-            },
-            list = {
-              keys = {
-                ["<Tab>"] = false,
-                ["<S-Tab>"] = false,
-                ['o'] = 'edit',
-                ['t'] = 'tab',
-              }
-            }
-          }
-        }
-      }
     },
-    explorer = {
-      enabled = true,
-      auto_close = true
-    },
+    explorer = { enabled = false, },
     indent = { enabled = true },
     input = { enabled = true },
     notifier = {
@@ -77,12 +52,11 @@ return {
     terminal = { enabled = false },
   },
   keys = {
-    -- Top Pickers & Explorer
+    -- Top Pickers
     { "<leader><space>", function() Snacks.picker.smart() end, desc = "Smart Find Files" },
     { "<leader>,", function() Snacks.picker.buffers() end, desc = "Buffers" },
     { "<leader>/", function() Snacks.picker.grep() end, desc = "Grep" },
     { "<leader>sf", function() Snacks.picker.grep_word() end, desc = "Visual selection or word", mode = { "n", "x" } },
     { "<leader>:", function() Snacks.picker.command_history() end, desc = "Command History" },
-    { "<leader>e", function() Snacks.explorer() end, desc = "File Explorer" },
   },
 }
