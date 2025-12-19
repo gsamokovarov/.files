@@ -3,8 +3,8 @@
 
 # Make sure that ~/bin is prepended to the PATH, so we can override system
 # utils, if needed. The path for the custom coreutils and /usr/local/bin are my
-# preferences on OSX.
-set PATH ~/bin "$HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin" "$HOMEBREW_PREFIX/bin" /usr/local/bin $PATH
+# preferences on OSX. Include ~/.local/bin as it seems to the new standard.
+set PATH ~/bin ~/.local/bin "$HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin" "$HOMEBREW_PREFIX/bin" /usr/local/bin $PATH
 
 # Setup rust toolchain.
 set PATH ~/.cargo/bin $PATH
