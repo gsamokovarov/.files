@@ -66,7 +66,9 @@ return {
         group = coc_group,
         pattern = '*',
         callback = function()
-          vim.fn.CocActionAsync('highlight')
+          if vim.api.nvim_eval('coc#rpc#ready()') == 1 then
+            vim.fn.CocActionAsync('highlight')
+          end
         end,
         desc = 'Highlight symbol under cursor on CursorHold'
       })
