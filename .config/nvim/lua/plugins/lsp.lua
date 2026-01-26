@@ -79,6 +79,9 @@ return {
   {
     "dense-analysis/ale",
     config = function()
+      -- Disable Neovim's diagnostics API to avoid race condition on VimSuspend
+      vim.g.ale_use_neovim_diagnostics_api = 0
+
       vim.g.ale_fixers = {
         json = {'prettier'},
         javascript = {'prettier'},
