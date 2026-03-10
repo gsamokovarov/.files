@@ -88,6 +88,9 @@ abbr -a vpr vagrant provision
 alias lazy "NVIM_APPNAME=lazy vim"
 alias lz lazy
 
+# YOLO mode for Claude Code.
+alias yolo "claude --dangerously-skip-permissions --chrome"
+
 alias kubedemo "kubectl --kubeconfig=/Users/genadi/.kube/demo_cluster.yml"
 alias kubestaging "kubectl --kubeconfig=/Users/genadi/.kube/staging_cluster.yml"
 alias kubeproduction "kubectl --kubeconfig=/Users/genadi/.kube/production_cluster.yml"
