@@ -1,4 +1,5 @@
 theme = Gruvbox Dark
+cursor-invert-fg-bg = true
 font-size = 15
 background-opacity = 0.999
 keybind = super+\=toggle_split_zoom
