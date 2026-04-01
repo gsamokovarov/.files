@@ -12,7 +12,6 @@ local groups = {
   "Normal",
   "NormalFloat",
   "FloatBorder",
-  "Pmenu",
   "Terminal",
   "EndOfBuffer",
   "FoldColumn",
@@ -57,3 +56,5 @@ local groups = {
 for _, name in ipairs(groups) do
   make_transparent(name)
 end
+
+vim.opt.pumblend = 0
