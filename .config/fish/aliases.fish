@@ -62,7 +62,7 @@ abbr -a ga git commit --amend
 abbr -a "g[" git [
 abbr -a "g]" git ]
 abbr -a "g+" git +
-abbr -a "g-" git--
+abbr -a g- git--
 
 # Yes, that happened today. Age, you know...
 alias mdkir mkdir
@@ -98,68 +98,68 @@ alias kubeinfrastructure "kubectl --kubeconfig=/Users/genadi/.kube/infrastructur
 
 # Faster bundle exec if a local `./bin/$stub` is available.
 function be
-  set -l stub $argv[1]
-  set -l arguments $argv[2..-1]
+    set -l stub $argv[1]
+    set -l arguments $argv[2..-1]
 
-  if test -f "./bin/$stub"
-    ./bin/$stub $arguments
-  else
-    bundle exec $argv
-  end
+    if test -f "./bin/$stub"
+        ./bin/$stub $arguments
+    else
+        bundle exec $argv
+    end
 end
 
 function __git_magic_available_branches
-  command git branch --no-color -a 2>/dev/null \
-    | grep -v ' -> ' \
-    | grep -v '* ' \
-    | ruby -n -e 'line = $_.gsub(/\s*?\w+\/\w+\//, "").strip; puts line unless line.empty?'
+    command git branch --no-color -a 2>/dev/null \
+        | grep -v ' -> ' \
+        | grep -v '* ' \
+        | ruby -n -e 'line = $_.gsub(/\s*?\w+\/\w+\//, "").strip; puts line unless line.empty?'
 end
 
 function __git_magic_available_tags
-  command git tag 2>/dev/null
+    command git tag 2>/dev/null
 end
 
 # Use hub for git with a twist -- if the first argument is an existing branch
 # then switch to it.
 function git
-  switch (count $argv)
-    case 0
-      command git status
-      return $status
-    case 1
-      set -l target_branch $argv[1]
-      set -l available_branches (__git_magic_available_branches)
-      set -l available_tags (__git_magic_available_tags)
+    switch (count $argv)
+        case 0
+            command git status
+            return $status
+        case 1
+            set -l target_branch $argv[1]
+            set -l available_branches (__git_magic_available_branches)
+            set -l available_tags (__git_magic_available_tags)
 
-      if contains -- $target_branch $available_branches $available_tags
-        command git switch --guess $target_branch
-        return 0
-      end
-  end
+            if contains -- $target_branch $available_branches $available_tags
+                command git switch --guess $target_branch
+                return 0
+            end
+    end
 
-  switch $argv[1]
-    case "+"
-      command git add $argv[2..]
-      return $status
-    case "-"
-      command git rm $argv[2..]
-      return $status
-    case "]"
-      command git push $argv[2..]
-      return $status
-    case "["
-      command git pull $argv[2..]
-      return $status
-  end
+    switch $argv[1]
+        case "+"
+            command git add $argv[2..]
+            return $status
+        case -
+            command git rm $argv[2..]
+            return $status
+        case "]"
+            command git push $argv[2..]
+            return $status
+        case "["
+            command git pull $argv[2..]
+            return $status
+    end
 
-  hub $argv
+    hub $argv
 end
 
 function vim
-  SHELL=/bin/bash command nvim -p $argv 2>/dev/null
+    SHELL=/bin/bash command nvim -p $argv 2>/dev/null
 end
 
 # Autocomplete the tags and branches as commands. The git function lets you do
 # that and having completion for it is pretty cool.
-complete -f -c git -a '(__git_magic_available_branches)' --description 'Branch'
-complete -f -c git -a '(__git_magic_available_tags)' --description 'Tag'
+complete -f -c git -a '(__git_magic_available_branches)' --description Branch
+complete -f -c git -a '(__git_magic_available_tags)' --description Tag
