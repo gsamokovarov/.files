@@ -89,7 +89,7 @@ alias lazy "NVIM_APPNAME=lazy vim"
 alias lz lazy
 
 # YOLO mode for Claude Code.
-alias yolo "CLAUDE_CODE_NO_FLICKER=1 claude --dangerously-skip-permissions --chrome"
+alias yolo "claude --dangerously-skip-permissions --chrome"
 
 alias kubedemo "kubectl --kubeconfig=/Users/genadi/.kube/demo_cluster.yml"
 alias kubestaging "kubectl --kubeconfig=/Users/genadi/.kube/staging_cluster.yml"
