@@ -1,0 +1,19 @@
+onboarding = false
+[theme]
+name = "gruvbox"
+auto_switch = false
+dark_name = "gruvbox"
+light_name = "gruvbox-light"
+
+[keys]
+prefix = "ctrl+a"
+cycle_pane_next = "prefix+]"
+cycle_pane_previous = "prefix+["
+toggle_sidebar = "prefix+tab"
+zoom = "prefix+\\"
+split_vertical = "prefix+|"
+new_tab = "prefix+t"
+
+[ui]
+pane_scrollbars = false
+agent_panel_sort = "spaces"
