@@ -29,7 +29,17 @@ tab=$(
   herdr tab create --workspace "$HERDR_WORKSPACE_ID" --cwd "$PWD" \
     --label "hive: $(basename "$PWD")" --no-focus
 )
+tab_id=$(jq -r '.result.tab.tab_id' <<< "$tab")
 pane=$(jq -r '.result.root_pane.pane_id' <<< "$tab")
+
+# Place the new tab right after the current one instead of last. The CLI
+# doesn't expose tab.move, so call the socket API directly.
+index=$(
+  herdr tab list --workspace "$HERDR_WORKSPACE_ID" |
+    jq --arg tab "$HERDR_TAB_ID" '.result.tabs | map(.tab_id) | index($tab) + 1'
+)
+printf '{"id":"hive","method":"tab.move","params":{"tab_id":"%s","insert_index":%d}}\n' \
+  "$tab_id" "$index" | nc -U "$HERDR_SOCKET_PATH" > /dev/null
 
 for ((i = 0; i < count; i++)); do
   if (( i > 0 )); then
@@ -50,6 +60,6 @@ for ((i = 0; i < count; i++)); do
 done
 
 # Only jump to the tab once every pane is split and running.
-herdr tab focus "$(jq -r '.result.tab.tab_id' <<< "$tab")" > /dev/null
+herdr tab focus "$tab_id" > /dev/null
 
 echo "hive: started $count processes from $procfile"
