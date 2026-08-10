@@ -25,9 +25,11 @@ done < "$procfile"
 count=${#names[@]}
 (( count > 0 )) || { echo "hive: no processes found in $procfile" >&2; exit 1; }
 
+label=$(herdr tab get "$HERDR_TAB_ID" | jq -r '.result.tab.label')
+
 tab=$(
   herdr tab create --workspace "$HERDR_WORKSPACE_ID" --cwd "$PWD" \
-    --label "hive: $(basename "$PWD")" --no-focus
+    --label "hive: $label" --no-focus
 )
 tab_id=$(jq -r '.result.tab.tab_id' <<< "$tab")
 pane=$(jq -r '.result.root_pane.pane_id' <<< "$tab")
