@@ -3,16 +3,21 @@
 # Foreman-lite for herdr. Parses a Procfile and runs each process in its own
 # pane, evenly stacked in a new tab of the current herdr workspace.
 #
-# Usage: hive [Procfile]
+# Usage: hive [KEY=VALUE]... [Procfile]
 
 set -euo pipefail
+
+env_args=()
+while [[ ${1:-} =~ ^[A-Za-z_][A-Za-z0-9_]*= ]]; do
+  env_args+=(--env "$1")
+  shift
+done
 
 procfile=${1:-Procfile}
 
 [ "${HERDR_ENV:-}" = 1 ] || { echo "hive: not inside a herdr session" >&2; exit 1; }
 [ -f "$procfile" ] || { echo "hive: $procfile not found" >&2; exit 1; }
 
-# A Procfile entry is `name: command`, same as foreman. Other lines are ignored.
 names=()
 commands=()
 while IFS= read -r line; do
@@ -29,7 +34,7 @@ label=$(herdr tab get "$HERDR_TAB_ID" | jq -r '.result.tab.label')
 
 tab=$(
   herdr tab create --workspace "$HERDR_WORKSPACE_ID" --cwd "$PWD" \
-    --label "hive: $label" --no-focus
+    --label "hive: $label" --no-focus "${env_args[@]:0}"
 )
 tab_id=$(jq -r '.result.tab.tab_id' <<< "$tab")
 pane=$(jq -r '.result.root_pane.pane_id' <<< "$tab")
@@ -45,12 +50,10 @@ printf '{"id":"hive","method":"tab.move","params":{"tab_id":"%s","insert_index":
 
 for ((i = 0; i < count; i++)); do
   if (( i > 0 )); then
-    # Split the last pane, keeping it one 1/N share of the tab so the final
-    # layout comes out as an even vertical stack.
     ratio=$(awk -v k=$((count - i + 1)) 'BEGIN { printf "%.4f", 1 / k }')
     pane=$(
       herdr pane split --pane "$pane" --direction down --ratio "$ratio" \
-        --cwd "$PWD" --no-focus |
+        --cwd "$PWD" --no-focus "${env_args[@]:0}" |
         jq -r '.result.pane.pane_id'
     )
   fi
@@ -61,7 +64,6 @@ for ((i = 0; i < count; i++)); do
   herdr pane run "$pane" "sh -c '$command'"
 done
 
-# Only jump to the tab once every pane is split and running.
 herdr tab focus "$tab_id" > /dev/null
 
 echo "hive: started $count processes from $procfile"
