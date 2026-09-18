@@ -17,4 +17,6 @@ new_tab = "prefix+t"
 
 [ui]
 pane_scrollbars = false
-agent_panel_sort = "spaces"
+
+[ui.toast.clipboard]
+enabled = false
