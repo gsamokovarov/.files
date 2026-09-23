@@ -87,6 +87,7 @@ alias lz lazy
 
 # YOLO mode for Claude Code.
 alias yolo "claude --dangerously-skip-permissions --chrome"
+alias yo yolo
 
 alias kubedemo "kubectl --kubeconfig=/Users/genadi/.kube/demo_cluster.yml"
 alias kubestaging "kubectl --kubeconfig=/Users/genadi/.kube/staging_cluster.yml"
