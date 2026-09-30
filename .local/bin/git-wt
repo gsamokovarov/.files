@@ -4,7 +4,8 @@
 # worktree/<name>, but our remotes don't allow slashes in branch names, so it
 # lives as <name> on origin. git wt makes worktree/<name> track origin/<name>,
 # so after the first git wt push, plain git push and git pull work as well.
-# On any other branch, it runs plain git push and git pull.
+# On any other branch, or without the omnimind CLI, it runs plain git push
+# and git pull.
 #
 # Usage:
 #   git wt push [git push options]
@@ -41,6 +42,13 @@ track() {
 
 command=${1:-}
 [ $# -gt 0 ] && shift
+
+# Without omnimind there are no worktree branches to map, so act like plain git.
+if ! command -v omnimind > /dev/null; then
+  case $command in
+    push|pull) exec git "$command" "$@" ;;
+  esac
+fi
 
 case $command in
   push)
