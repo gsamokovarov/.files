@@ -23,19 +23,19 @@ usage() {
   exit 1
 }
 
-# Prints the current branch when it is an omnimind worktree branch.
 worktree_branch() {
   local branch
   branch=$(git symbolic-ref --short -q HEAD) || return 1
   [[ $branch == "$prefix"* ]] && echo "$branch"
 }
 
-# Makes worktree/<name> track origin/<name>, unless it already tracks a branch
-# (omnimind sets the PR branch for PR worktrees). The config is written
-# directly, so it works before origin/<name> exists.
+tracking() {
+  git config "branch.$1.merge" > /dev/null
+}
+
 track() {
   local branch=$1
-  git config "branch.$branch.merge" > /dev/null && return
+  tracking "$branch" && return
   git config "branch.$branch.remote" "$remote"
   git config "branch.$branch.merge" "refs/heads/${branch#"$prefix"}"
 }
@@ -43,7 +43,6 @@ track() {
 command=${1:-}
 [ $# -gt 0 ] && shift
 
-# Without omnimind there are no worktree branches to map, so act like plain git.
 if ! command -v omnimind > /dev/null; then
   case $command in
     push|pull) exec git "$command" "$@" ;;
@@ -54,7 +53,6 @@ case $command in
   push)
     if branch=$(worktree_branch); then
       track "$branch"
-      # Push to the tracked branch even where push.default isn't upstream.
       exec git -c push.default=upstream push "$@"
     fi
     exec git push "$@"
@@ -67,7 +65,8 @@ case $command in
       track "$prefix$name"
       exit
     fi
-    if branch=$(worktree_branch); then
+    if branch=$(worktree_branch) && ! tracking "$branch" &&
+      git ls-remote --exit-code "$remote" "refs/heads/${branch#"$prefix"}" > /dev/null; then
       track "$branch"
     fi
     exec git pull "$@"
