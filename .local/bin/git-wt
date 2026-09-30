@@ -1,0 +1,76 @@
+#!/usr/bin/env bash
+#
+# Pushes and pulls omnimind worktree branches. Omnimind names the local branch
+# worktree/<name>, but our remotes don't allow slashes in branch names, so it
+# lives as <name> on origin. git wt makes worktree/<name> track origin/<name>,
+# so after the first git wt push, plain git push and git pull work as well.
+# On any other branch, it runs plain git push and git pull.
+#
+# Usage:
+#   git wt push [git push options]
+#   git wt pull [git pull options]
+#   git wt pull <name>    check out origin/<name> as a new omnimind worktree
+#   git wt track          track origin/<name> without pushing
+
+set -euo pipefail
+
+remote=origin
+prefix=worktree/
+
+usage() {
+  sed -n 's/^#   //p' "$0" >&2
+  exit 1
+}
+
+# Prints the current branch when it is an omnimind worktree branch.
+worktree_branch() {
+  local branch
+  branch=$(git symbolic-ref --short -q HEAD) || return 1
+  [[ $branch == "$prefix"* ]] && echo "$branch"
+}
+
+# Makes worktree/<name> track origin/<name>, unless it already tracks a branch
+# (omnimind sets the PR branch for PR worktrees). The config is written
+# directly, so it works before origin/<name> exists.
+track() {
+  local branch=$1
+  git config "branch.$branch.merge" > /dev/null && return
+  git config "branch.$branch.remote" "$remote"
+  git config "branch.$branch.merge" "refs/heads/${branch#"$prefix"}"
+}
+
+command=${1:-}
+[ $# -gt 0 ] && shift
+
+case $command in
+  push)
+    if branch=$(worktree_branch); then
+      track "$branch"
+      # Push to the tracked branch even where push.default isn't upstream.
+      exec git -c push.default=upstream push "$@"
+    fi
+    exec git push "$@"
+    ;;
+  pull)
+    if [[ ${1:-} && $1 != -* ]]; then
+      name=$1
+      git fetch "$remote" "$name"
+      omnimind worktree create "$name" --from "$remote/$name"
+      track "$prefix$name"
+      exit
+    fi
+    if branch=$(worktree_branch); then
+      track "$branch"
+    fi
+    exec git pull "$@"
+    ;;
+  track)
+    branch=$(worktree_branch) || { echo "git wt: not on a $prefix branch" >&2; exit 1; }
+    track "$branch"
+    merge=$(git config "branch.$branch.merge")
+    echo "$branch tracks $(git config "branch.$branch.remote")/${merge#refs/heads/}"
+    ;;
+  *)
+    usage
+    ;;
+esac

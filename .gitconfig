@@ -39,7 +39,7 @@
   ui = auto
 
 [branch]
-  autosetupmerge = true
+  autosetupmerge = simple
 
 [diff]
   renames = copies
@@ -56,7 +56,8 @@
   file-decoration-style = none
 
 [push]
-  default = current
+  default = upstream
+  autosetupremote = true
 
 [pull]
   rebase = true
