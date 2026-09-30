@@ -87,7 +87,17 @@ alias lz lazy
 
 # YOLO mode for Claude Code.
 alias yolo "claude --dangerously-skip-permissions --chrome"
-alias yo yolo
+
+# Pick a model with `yo opus`, `yo fable`, `yo sonnet` or `yo haiku`, pass
+# anything else to yolo.
+function yo
+    switch "$argv[1]"
+        case opus fable sonnet haiku
+            yolo --model $argv[1] $argv[2..]
+        case '*'
+            yolo $argv
+    end
+end
 
 alias kubedemo "kubectl --kubeconfig=/Users/genadi/.kube/demo_cluster.yml"
 alias kubestaging "kubectl --kubeconfig=/Users/genadi/.kube/staging_cluster.yml"
