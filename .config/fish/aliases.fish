@@ -143,10 +143,18 @@ function git
             command git rm $argv[2..]
             return $status
         case "]"
-            command git wt push $argv[2..]
+            if command -q git-wt
+                command git wt push $argv[2..]
+            else
+                command git push $argv[2..]
+            end
             return $status
         case "["
-            command git wt pull $argv[2..]
+            if command -q git-wt
+                command git wt pull $argv[2..]
+            else
+                command git pull $argv[2..]
+            end
             return $status
     end
 
