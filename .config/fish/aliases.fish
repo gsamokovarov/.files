@@ -85,13 +85,16 @@ abbr -a vpr vagrant provision
 alias lazy "NVIM_APPNAME=lazy vim"
 alias lz lazy
 
-# YOLO mode for Claude Code.
+# YOLO mode for Cluade Code.
 alias yolo "claude --dangerously-skip-permissions --chrome"
 
-# Pick a model with `yo opus`, `yo fable`, `yo sonnet` or `yo haiku`, pass
-# anything else to yolo.
+# YOLO mode for Cluade Code and Codex. `yo fable`, `yo [have no] sol`
 function yo
     switch "$argv[1]"
+        case astra
+            codex --dangerously-bypass-approvals-and-sandbox --model gpt-6-astra $argv[2..]
+        case sol
+            codex --dangerously-bypass-approvals-and-sandbox --model gpt-6.1-sol $argv[2..]
         case opus fable sonnet haiku
             yolo --model $argv[1] $argv[2..]
         case '*'
