@@ -38,6 +38,7 @@ abbr -a m make
 abbr -a d docker
 abbr -a g git
 abbr -a h herdr
+alias omni omnimind
 
 # Rails related shortcuts
 abbr -a rt rails test
